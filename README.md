@@ -119,8 +119,8 @@ npm run start
 
 ```bash
 # launch/relaunch custom game
-dota_launch_custom_game windy10v10ai dota
-dota_launch_custom_game windy10v10ai custom
+dota_launch_custom_game windyanime dota
+dota_launch_custom_game windyanime custom
 # show game end panel
 dota_custom_ui_debug_panel 7
 # reload lua
