@@ -1,0 +1,173 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode =
+	{
+		_class = "RootNode"
+		children =
+		[
+			// Reuse the exact render mesh, material and 156-bone skeleton compiled by
+			// the active custom siege model; only the deathsim sequence contract differs.
+			{
+				_class = "MaterialGroupList"
+				children =
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps =
+						[
+							{
+								from = "models/creeps/lane_creeps/creep_bad_melee/creep_bad_flagbearer.vmat"
+								to = "models/creeps/lane_creeps/creep_good_siege/creep_good_siege.fbm/xiaoemo.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "BoneMarkupList"
+				children = [ ]
+				bone_cull_type = "None"
+			},
+			{
+				_class = "RenderMeshList"
+				children =
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "creep_good_siege_deathsim"
+						filename = "models/creeps/lane_creeps/creep_good_siege/creep_good_siege_runtime_authoritative.fbx"
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children =
+				[
+					// The legacy Dire siege death controller randomly requests deathsim1-3.
+					// All three aliases retain anim_1's world-space deathsim semantics.
+					{
+						_class = "AnimFile"
+						name = "deathsim1"
+						source_filename = "models/creeps/lane_creeps/creep_bad_siege/deathsim_anim_1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = true
+						hidden = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "deathsim2"
+						source_filename = "models/creeps/lane_creeps/creep_bad_siege/deathsim_anim_1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = true
+						hidden = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "deathsim3"
+						source_filename = "models/creeps/lane_creeps/creep_bad_siege/deathsim_anim_1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = true
+						hidden = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+					},
+					// Preserve the new-deathsim naming contract for inspection and reuse.
+					{
+						_class = "AnimFile"
+						name = "anim_1"
+						source_filename = "models/creeps/lane_creeps/creep_bad_siege/deathsim_anim_1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = true
+						hidden = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "anim_2"
+						source_filename = "models/creeps/lane_creeps/creep_bad_siege/deathsim_anim_1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = true
+						hidden = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "anim_3"
+						source_filename = "models/creeps/lane_creeps/creep_bad_siege/deathsim_anim_1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = true
+						hidden = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+					},
+					// Each end_* alias is a one-frame sample of anim_1 frame 390.
+					{
+						_class = "AnimFile"
+						name = "end_1"
+						source_filename = "models/creeps/lane_creeps/creep_bad_siege/end_1.dmx"
+						fade_in_time = 0.0
+						fade_out_time = 0.0
+						looping = false
+						delta = false
+						worldSpace = true
+						hidden = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "end_2"
+						source_filename = "models/creeps/lane_creeps/creep_bad_siege/end_1.dmx"
+						fade_in_time = 0.0
+						fade_out_time = 0.0
+						looping = false
+						delta = false
+						worldSpace = true
+						hidden = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "end_3"
+						source_filename = "models/creeps/lane_creeps/creep_bad_siege/end_1.dmx"
+						fade_in_time = 0.0
+						fade_out_time = 0.0
+						looping = false
+						delta = false
+						worldSpace = true
+						hidden = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+					},
+				]
+			},
+		]
+	}
+}

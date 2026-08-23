@@ -1,0 +1,223 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			// Uniform model-space correction; KV/Lua ModelScale remains untouched.
+			{
+				_class = "ModelModifierList"
+				children =
+				[
+					{
+						_class = "ModelModifier_ScaleAndMirror"
+						scale = 0.922972018
+						mirror_x = false
+						mirror_y = false
+						mirror_z = false
+						flip_bone_forward = false
+						swap_left_and_right_bones = false
+					},
+				]
+			},			// Reuse the immutable original animation model from a non-conflicting anchor path.
+			{
+				_class = "AnimationList"
+				children =
+				[
+					{
+						_class = "AnimFile"
+						name = "Soldiers_near_green_1_Attack_1"
+						source_filename = "models/anime_scale_candidates/melee/animations/dire_mega/Soldiers_near_green_1_Attack_1.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_ATTACK"
+						activity_weight = 1
+						children =
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = true
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								motion_type = "uniform"
+							},
+						]
+					},
+					{
+						_class = "AnimFile"
+						name = "Soldiers_near_green_1_Attack_2"
+						source_filename = "models/anime_scale_candidates/melee/animations/dire_mega/Soldiers_near_green_1_Attack_2.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_ATTACK2"
+						activity_weight = 1
+						children =
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = true
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								motion_type = "uniform"
+							},
+						]
+					},
+					{
+						_class = "AnimFile"
+						name = "Soldiers_near_green_1_Death"
+						source_filename = "models/anime_scale_candidates/melee/animations/dire_mega/Soldiers_near_green_1_Death.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_DIE"
+						activity_weight = 1
+						children =
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = true
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								motion_type = "uniform"
+							},
+						]
+					},
+					{
+						_class = "AnimFile"
+						name = "Soldiers_near_green_1_Stand"
+						source_filename = "models/anime_scale_candidates/melee/animations/dire_mega/Soldiers_near_green_1_Stand.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+						children =
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = true
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								motion_type = "uniform"
+							},
+						]
+					},
+					{
+						_class = "AnimFile"
+						name = "Soldiers_near_green_1_Walk"
+						source_filename = "models/anime_scale_candidates/melee/animations/dire_mega/Soldiers_near_green_1_Walk.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_RUN"
+						activity_weight = 1
+						children =
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = true
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								motion_type = "uniform"
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "BoneMarkupList"
+				children = [  ]
+				bone_cull_type = "None"
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "soldiers_near_green_1"
+						filename = "models/anime_scale_candidates/melee/dire_mega_mesh.dmx"
+					},
+				]
+			},
+			// Keep mouse picking independent from fingers, flags and weapon bones.
+			// These compact body hitboxes provide one stable default selection volume.
+			{
+				_class = "HitboxSetList"
+				children =
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children =
+						[
+							{
+								_class = "Hitbox"
+								hitbox_mins = [ -28.0, -28.0, -28.0 ]
+								hitbox_maxs = [ 28.0, 28.0, 28.0 ]
+								name = "selection_hips"
+								parent_bone = "bone20"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+							},
+							{
+								_class = "Hitbox"
+								hitbox_mins = [ -30.0, -30.0, -30.0 ]
+								hitbox_maxs = [ 30.0, 30.0, 30.0 ]
+								name = "selection_torso"
+								parent_bone = "bone14"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+							},
+							{
+								_class = "Hitbox"
+								hitbox_mins = [ -22.0, -22.0, -22.0 ]
+								hitbox_maxs = [ 22.0, 22.0, 22.0 ]
+								name = "selection_head"
+								parent_bone = "bone15"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+							},
+						]
+					},
+				]
+			},
+		]
+	}
+}

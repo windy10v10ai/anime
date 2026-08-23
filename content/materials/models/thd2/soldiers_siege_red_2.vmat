@@ -1,0 +1,11 @@
+Layer0
+{
+	shader "global_lit_simple.vfx"
+
+	F_RENDER_BACKFACES 1
+
+	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
+	g_vTexCoordOffset "[0.000000 0.000000 0.000000 0.000000]"
+	g_vTexCoordScale "[1.000000 1.000000 0.000000 0.000000]"
+	TextureColor "materials/models/thd2/soldiers_siege_red_2_tga_c13d9023.png"
+}

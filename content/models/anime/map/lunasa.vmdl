@@ -1,0 +1,325 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode =
+	{
+		_class = "RootNode"
+		children =
+		[
+			// Preserve the seven recovered DMX material slots while moving every
+			// model-owned material into the map-local material namespace.
+			{
+				_class = "MaterialGroupList"
+				children =
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps =
+						[
+							{
+								from = "models/lunasa/lunasa.fbm/body.vmat"
+								to = "materials/anime/map/lunasa_body.vmat"
+							},
+							{
+								from = "models/lunasa/lunasa.fbm/bow.vmat"
+								to = "materials/anime/map/lunasa_bow.vmat"
+							},
+							{
+								from = "models/lunasa/lunasa.fbm/cloth.vmat"
+								to = "materials/anime/map/lunasa_cloth.vmat"
+							},
+							{
+								from = "models/lunasa/lunasa.fbm/face.vmat"
+								to = "materials/anime/map/lunasa_face.vmat"
+							},
+							{
+								from = "models/lunasa/lunasa.fbm/hair.vmat"
+								to = "materials/anime/map/lunasa_hair.vmat"
+							},
+							{
+								from = "models/lunasa/lunasa.fbm/underwear.vmat"
+								to = "materials/anime/map/lunasa_underwear.vmat"
+							},
+							{
+								from = "models/lunasa/lunasa.fbm/violent.vmat"
+								to = "materials/anime/map/lunasa_violent.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "BoneMarkupList"
+				children = [  ]
+				bone_cull_type = "None"
+			},
+			// The recovered DMX is the single authoritative source for mesh and skeleton.
+			{
+				_class = "RenderMeshList"
+				children =
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "lunasa"
+						filename = "models/anime/map/lunasa/lunasa.dmx"
+					},
+				]
+			},
+			// Attachments retain the exact source parent bones, transforms and weights.
+			{
+				_class = "AttachmentList"
+				children =
+				[
+					{
+						_class = "Attachment"
+						name = "attach_hitloc"
+						ignore_rotation = false
+						parent_bone = "7_joint_Torso2"
+						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+					},
+					{
+						_class = "Attachment"
+						name = "attach_weapon"
+						ignore_rotation = false
+						parent_bone = "72_joint_RightWrist"
+						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+					},
+				]
+			},
+			// Restore the exact activities, loop flags and motion-extraction flags
+			// recovered from the source model\'s external animation group.
+			{
+				_class = "AnimationList"
+				children =
+				[
+					{
+						_class = "AnimFile"
+						name = "attack1"
+						source_filename = "models/anime/map/lunasa/lunasa_attack1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_ATTACK"
+						activity_weight = 1
+						children =
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = true
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								motion_type = "uniform"
+							},
+						]
+					},
+					{
+						_class = "AnimFile"
+						name = "capture1"
+						source_filename = "models/anime/map/lunasa/lunasa_capture1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_CAPTURE"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "cast1"
+						source_filename = "models/anime/map/lunasa/lunasa_cast1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_CAST_ABILITY_1"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "cast2"
+						source_filename = "models/anime/map/lunasa/lunasa_cast2.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_CAST_ABILITY_4"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "cast3"
+						source_filename = "models/anime/map/lunasa/lunasa_cast3.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_CAST_ABILITY_5"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "death1"
+						source_filename = "models/anime/map/lunasa/lunasa_death1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_DIE"
+						activity_weight = 1
+						children =
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = true
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								motion_type = "uniform"
+							},
+						]
+					},
+					{
+						_class = "AnimFile"
+						name = "idie1"
+						source_filename = "models/anime/map/lunasa/lunasa_idie1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+						children =
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = true
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								motion_type = "uniform"
+							},
+						]
+					},
+					{
+						_class = "AnimFile"
+						name = "loadout1"
+						source_filename = "models/anime/map/lunasa/lunasa_loadout1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_LOADOUT"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "run1"
+						source_filename = "models/anime/map/lunasa/lunasa_run1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_RUN"
+						activity_weight = 1
+						children =
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = true
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								motion_type = "uniform"
+							},
+						]
+					},
+					{
+						_class = "AnimFile"
+						name = "stun1"
+						source_filename = "models/anime/map/lunasa/lunasa_stun1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_FLAIL"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "stun2"
+						source_filename = "models/anime/map/lunasa/lunasa_stun2.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_DISABLED"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "tp1"
+						source_filename = "models/anime/map/lunasa/lunasa_tp1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_TELEPORT"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "tpend1"
+						source_filename = "models/anime/map/lunasa/lunasa_tpend1.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_TELEPORT_END"
+						activity_weight = 1
+					},
+				]
+			},
+		]
+	}
+}

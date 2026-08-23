@@ -1,0 +1,364 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "BoneMarkupList"
+				children = [  ]
+				bone_cull_type = "None"
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "soldiers_siege_red_2_selectable_mesh"
+						filename = "models/thd2/soldiers_siege_red/soldiers_siege_red_2_selectable_mesh.dmx"
+					},
+				]
+			},
+			// bone_16 rigidly drives the cannon; follow the Dire contract by placing the origin
+			// 10 Source units inside the target-facing planar muzzle, not the closed conical rear end.
+			{
+				_class = "AttachmentList"
+				children =
+				[
+					{
+						_class = "Attachment"
+						name = "attach_attack1"
+						ignore_rotation = false
+						parent_bone = "bone_16"
+						relative_origin = [ -159.964661, -224.925995, 48.318890 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+					},
+				]
+			},
+			// Keep the four gameplay sequences local so the attack can be redrawn without
+			// inheriting a second ACT_DOTA_ATTACK from the external compiled base model.
+			{
+				_class = "AnimationList"
+				children =
+				[
+					{
+						_class = "AnimFile"
+						name = "Soldiers_Siege_red_1_Attack_1"
+						source_filename = "models/thd2/soldiers_siege_red/animations/soldiers_siege_red_2_attack_once.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						disable_compression = true
+						start_frame = 0
+						end_frame = 30
+						framerate = 30.0
+						activity_name = "ACT_DOTA_ATTACK"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "Soldiers_Siege_red_1_Death"
+						source_filename = "models/thd2/soldiers_siege_red/animations/soldiers_siege_red_2_death.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						disable_compression = true
+						start_frame = 0
+						end_frame = 30
+						framerate = 30.0
+						activity_name = "ACT_DOTA_DIE"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "Soldiers_Siege_red_1_Stand"
+						source_filename = "models/thd2/soldiers_siege_red/animations/soldiers_siege_red_2_stand.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						disable_compression = true
+						start_frame = 0
+						end_frame = 35
+						framerate = 30.0
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "Soldiers_Siege_red_1_Walk"
+						source_filename = "models/thd2/soldiers_siege_red/animations/soldiers_siege_red_2_walk.dmx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						disable_compression = true
+						start_frame = 0
+						end_frame = 35
+						framerate = 30.0
+						activity_name = "ACT_DOTA_RUN"
+						activity_weight = 1
+					},
+				]
+			},
+			// A single root-bound box restores mouse ray and selection-rectangle picking.
+			{
+				_class = "HitboxSetList"
+				children =
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children =
+						[
+							{
+								_class = "Hitbox"
+								hitbox_mins = [ -220.0, -210.0, -310.0 ]
+								hitbox_maxs = [ 198.0, 175.0, 140.0 ]
+								name = "selection_root"
+								parent_bone = "bone_27"
+								surface_property = "default"
+								translation_only = false
+								group_id = 0
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "Skeleton"
+				children = 
+				[
+					{
+						_class = "Bone"
+						name = "bone_27"
+						origin = [ 0.017416, 2.65086, 127.640564 ]
+						angles = [ 0.0, 99.000015, 0.0 ]
+						do_not_discard = true
+						children = 
+						[
+							{
+								_class = "Bone"
+								name = "bone_29"
+								origin = [ -0.877499, -4.349591, -1.425583 ]
+								angles = [ 0.0, -9.000022, 0.0 ]
+								do_not_discard = true
+								children = 
+								[
+									{
+										_class = "Bone"
+										name = "bone_30"
+										origin = [ 0.923381, -2.004173, -52.426407 ]
+										angles = [ 0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+								]
+							},
+							{
+								_class = "Bone"
+								name = "bone_26"
+								origin = [ -0.486182, -4.411569, 1.789505 ]
+								angles = [ 0.0, -9.000022, 0.0 ]
+								do_not_discard = true
+								children = 
+								[
+									{
+										_class = "Bone"
+										name = "bone_3"
+										origin = [ -0.58507, 76.941719, 3.144211 ]
+										angles = [ 0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+									{
+										_class = "Bone"
+										name = "bone_28"
+										origin = [ -0.737603, -0.548837, 40.203674 ]
+										angles = [ 0.0, 0.0, 0.0 ]
+										do_not_discard = true
+										children = 
+										[
+											{
+												_class = "Bone"
+												name = "bone_7"
+												origin = [ 2.553307, 6.731492, 96.225998 ]
+												angles = [ 0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "bone_10"
+												origin = [ 25.337765, -9.646727, 2.086914 ]
+												angles = [ 0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "bone_11"
+												origin = [ -23.810322, -7.093717, 2.086914 ]
+												angles = [ 0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "bone_12"
+												origin = [ -7.352504, 52.00547, -48.397385 ]
+												angles = [ 0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "bone_13"
+												origin = [ -0.68417, -0.27603, 30.967392 ]
+												angles = [ 0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+										]
+									},
+									{
+										_class = "Bone"
+										name = "bone_0"
+										origin = [ -13.534452, -1.160921, 22.015198 ]
+										angles = [ 0.0, 0.0, 0.0 ]
+										do_not_discard = true
+										children = 
+										[
+											{
+												_class = "Bone"
+												name = "bone_14"
+												origin = [ -20.97282, -0.005866, -27.595078 ]
+												angles = [ 0.0, 0.0, 0.0 ]
+												do_not_discard = true
+												children = 
+												[
+													{
+														_class = "Bone"
+														name = "bone_1"
+														origin = [ -18.070217, -6.045793, -20.586182 ]
+														angles = [ 0.0, 0.0, 0.0 ]
+														do_not_discard = true
+														children = 
+														[
+															{
+																_class = "Bone"
+																name = "bone_5"
+																origin = [ 5.932728, -5.752609, 0.181686 ]
+																angles = [ 55.82959, 0.959647, 4.676826 ]
+																do_not_discard = true
+																children = 
+																[
+																	{
+																		_class = "Bone"
+																		name = "bone_16"
+																		origin = [ 90.468765, 34.894203, -14.969629 ]
+																		angles = [ -54.32885, 15.880231, 46.082703 ]
+																		do_not_discard = true
+																	},
+																]
+															},
+															{
+																_class = "Bone"
+																name = "bone_18"
+																origin = [ 0.671974, 2.506058, -6.693916 ]
+																angles = [ 0.0, 0.0, 0.0 ]
+																do_not_discard = true
+															},
+															{
+																_class = "Bone"
+																name = "bone_15"
+																origin = [ 18.407452, -176.793915, 8.075188 ]
+																angles = [ 55.373276, 0.611518, -0.541159 ]
+																do_not_discard = true
+															},
+														]
+													},
+												]
+											},
+										]
+									},
+									{
+										_class = "Bone"
+										name = "bone_23"
+										origin = [ 12.176288, -0.829268, 23.085022 ]
+										angles = [ 0.0, 0.0, 0.0 ]
+										do_not_discard = true
+										children = 
+										[
+											{
+												_class = "Bone"
+												name = "bone_24"
+												origin = [ 23.438745, 1.362875, -28.210831 ]
+												angles = [ 0.0, 0.0, 0.0 ]
+												do_not_discard = true
+												children = 
+												[
+													{
+														_class = "Bone"
+														name = "bone_2"
+														origin = [ 17.520031, -4.855556, -21.387665 ]
+														angles = [ 0.0, 0.0, 0.0 ]
+														do_not_discard = true
+														children = 
+														[
+															{
+																_class = "Bone"
+																name = "bone_19"
+																origin = [ 6.597046, 5.855804, -9.931351 ]
+																angles = [ 0.0, 0.0, 0.0 ]
+																do_not_discard = true
+															},
+														]
+													},
+												]
+											},
+										]
+									},
+									{
+										_class = "Bone"
+										name = "bone_20"
+										origin = [ -0.07289, -1.214047, 9.388046 ]
+										angles = [ 0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+								]
+							},
+							{
+								_class = "Bone"
+								name = "bone_34"
+								origin = [ 0.00001, -5.38166, -154.110336 ]
+								angles = [ -0.289802, -8.328342, -1.978881 ]
+								do_not_discard = true
+							},
+							{
+								_class = "Bone"
+								name = "bone_33"
+								origin = [ 0.00001, -5.38166, -154.110336 ]
+								angles = [ -0.289802, -8.328342, -1.978881 ]
+								do_not_discard = true
+							},
+						]
+					},
+					{
+						_class = "Bone"
+						name = "bone_21"
+						origin = [ 0.017416, 2.65086, 279.065491 ]
+						angles = [ 0.0, 89.999992, 0.0 ]
+						do_not_discard = true
+					},
+				]
+			},
+		]
+	}
+}

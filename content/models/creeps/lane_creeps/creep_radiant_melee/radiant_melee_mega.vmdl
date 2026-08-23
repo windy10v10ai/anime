@@ -1,0 +1,278 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			// Uniform model-space correction; KV/Lua ModelScale remains untouched.
+			{
+				_class = "ModelModifierList"
+				children =
+				[
+					{
+						_class = "ModelModifier_ScaleAndMirror"
+						scale = 1.011784173
+						mirror_x = false
+						mirror_y = false
+						mirror_z = false
+						flip_bone_forward = false
+						swap_left_and_right_bones = false
+					},
+				]
+			},			// Reuse the immutable original animation model from a non-conflicting anchor path.
+			{
+				_class = "AnimationList"
+				children =
+				[
+					{
+						_class = "AnimFile"
+						name = "flandre_scarlet_skin4_attack1"
+						source_filename = "models/anime_scale_candidates/melee/animations/radiant_mega/flandre_scarlet_skin4_attack1.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_ATTACK"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "flandre_scarlet_skin4_attack2"
+						source_filename = "models/anime_scale_candidates/melee/animations/radiant_mega/flandre_scarlet_skin4_attack2.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_ATTACK"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "flandre_scarlet_skin4_attack3"
+						source_filename = "models/anime_scale_candidates/melee/animations/radiant_mega/flandre_scarlet_skin4_attack3.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_ATTACK"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "flandre_scarlet_skin4_capture"
+						source_filename = "models/anime_scale_candidates/melee/animations/radiant_mega/flandre_scarlet_skin4_capture.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_CAPTURE"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "flandre_scarlet_skin4_cast1"
+						source_filename = "models/anime_scale_candidates/melee/animations/radiant_mega/flandre_scarlet_skin4_cast1.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_CAST_ABILITY_1"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "flandre_scarlet_skin4_cast4"
+						source_filename = "models/anime_scale_candidates/melee/animations/radiant_mega/flandre_scarlet_skin4_cast4.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_CAST_ABILITY_4"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "flandre_scarlet_skin4_die"
+						source_filename = "models/anime_scale_candidates/melee/animations/radiant_mega/flandre_scarlet_skin4_die.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_DIE"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "flandre_scarlet_skin4_generic"
+						source_filename = "models/anime_scale_candidates/melee/animations/radiant_mega/flandre_scarlet_skin4_generic.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_GENERIC_CHANNEL_1"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "flandre_scarlet_skin4_idle"
+						source_filename = "models/anime_scale_candidates/melee/animations/radiant_mega/flandre_scarlet_skin4_idle.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "flandre_scarlet_skin4_run"
+						source_filename = "models/anime_scale_candidates/melee/animations/radiant_mega/flandre_scarlet_skin4_run.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_RUN"
+						activity_weight = 1
+					},
+					{
+						_class = "AnimFile"
+						name = "flandre_scarlet_skin4_tp"
+						source_filename = "models/anime_scale_candidates/melee/animations/radiant_mega/flandre_scarlet_skin4_tp.fbx"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						activity_name = "ACT_DOTA_TELEPORT"
+						activity_weight = 1
+					},
+				]
+			},
+			{
+				_class = "BoneMarkupList"
+				children = [  ]
+				bone_cull_type = "None"
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "flandre_scarlet_skin4"
+						filename = "models/anime_scale_candidates/melee/radiant_mega_mesh.dmx"
+					},
+				]
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "attach_hitloc"
+						ignore_rotation = false
+						parent_bone = "Bip001_Spine1"
+						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+					},
+					{
+						_class = "Attachment"
+						name = "attach_attack1"
+						ignore_rotation = false
+						parent_bone = "Bip001_R_Hand"
+						relative_origin = [ -1.20784, -3.478691, 48.587616 ]
+						relative_angles = [ 0.000005, 0.000002, -0.000002 ]
+						weight = 1.0
+					},
+					{
+						_class = "Attachment"
+						name = "attach_sk1_fx"
+						ignore_rotation = false
+						parent_bone = "Bip001_R_Hand"
+						relative_origin = [ 11.645325, 1.053602, 5.852936 ]
+						relative_angles = [ -15.000002, 0.000002, 6.499998 ]
+						weight = 1.0
+					},
+					{
+						_class = "Attachment"
+						name = "attach_sk2_fx"
+						ignore_rotation = false
+						parent_bone = "Bip001_R_Hand"
+						relative_origin = [ 11.645325, 1.053602, 5.852936 ]
+						relative_angles = [ -15.000002, 0.000002, 6.499998 ]
+						weight = 1.0
+					},
+				]
+			},
+			// Keep mouse picking independent from fingers, flags and weapon bones.
+			// These compact body hitboxes provide one stable default selection volume.
+			{
+				_class = "HitboxSetList"
+				children =
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children =
+						[
+							{
+								_class = "Hitbox"
+								hitbox_mins = [ -28.0, -28.0, -28.0 ]
+								hitbox_maxs = [ 28.0, 28.0, 28.0 ]
+								name = "selection_hips"
+								parent_bone = "Bip001_Pelvis"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+							},
+							{
+								_class = "Hitbox"
+								hitbox_mins = [ -30.0, -30.0, -30.0 ]
+								hitbox_maxs = [ 30.0, 30.0, 30.0 ]
+								name = "selection_torso"
+								parent_bone = "Bip001_Spine2"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+							},
+							{
+								_class = "Hitbox"
+								hitbox_mins = [ -22.0, -22.0, -22.0 ]
+								hitbox_maxs = [ 22.0, 22.0, 22.0 ]
+								name = "selection_head"
+								parent_bone = "Bip001_Head"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+							},
+						]
+					},
+				]
+			},
+		]
+	}
+}

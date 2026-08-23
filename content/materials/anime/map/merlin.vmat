@@ -1,0 +1,58 @@
+Layer0
+{
+	shader "hero.vfx"
+
+	F_RENDER_BACKFACES 1
+	F_MASKS_1 1
+	F_MASKS_2 1
+	F_ALPHA_TEST 1
+
+	g_flEnvMapBlendToFull "0.000"
+	g_flMetalnessBlendToFull "0.000"
+	g_flReflectionsTintByBaseBlendToNone "0.000"
+	g_flSelfIllumBlendToFull "0.000"
+	g_flSpecularBlendToFull "0.000"
+	g_flSpecularExponentBlendToFull "0.000"
+
+	g_flCloakBlurAmount "0.005"
+	g_flCloakIntensity "0.850"
+	g_flCloakRefractAmount "0.100"
+	g_flMaterialCloakFactor "0.000"
+	g_vCloakColorTint "[1.000000 1.000000 1.000000 0.000000]"
+
+	g_flDiffuseModulationAmount "1.000"
+	g_flTexCoordRotation "0.000"
+	g_vTexCoordOffset "[0.000000 0.000000 0.000000 0.000000]"
+	g_vTexCoordScale "[1.000000 1.000000 0.000000 0.000000]"
+	TextureColor "materials/anime/map/merlin_color.png"
+	TextureTranslucency "materials/anime/map/merlin_alpha.png"
+
+	g_flFresnelModulatesAlpha "0.000"
+	TextureFresnelWarpColor "materials/default/default_fresnelwarpcolor.tga"
+	TextureFresnelWarpRim "materials/default/default_fresnelwarprim.tga"
+	TextureFresnelWarpSpec "materials/default/default_fresnelwarpspec.tga"
+
+	g_flAmbientScale "0.500"
+	g_flBloomScale "0.000"
+	g_flBloomShift "0.000"
+	g_vBloomColor "[1.000000 1.000000 1.000000 0.000000]"
+
+	TextureDetailMask "materials/default/default_detailmask.tga"
+	TextureDiffuseWarpMask "materials/default/default_diffusemask.tga"
+	TextureMetalnessMask "[0.300000 0.300000 0.300000 0.000000]"
+	TextureSelfIllumMask "[0.500000 0.500000 0.500000 0.000000]"
+	TextureRimMask "materials/default/default_rimmask.tga"
+	TextureSpecularExponent "materials/default/default_specexp.tga"
+	TextureSpecularMask "materials/default/default_specmask.tga"
+	TextureTintByBaseMask "materials/default/default_basetintmask.tga"
+
+	TextureNormal "materials/default/default_normal.tga"
+
+	g_flRimLightScale "1.000"
+	g_vRimLightColor "[0.937255 0.486275 0.062745 0.000000]"
+	g_flSpecularExponent "32.000"
+	g_flSpecularScale "1.000"
+	g_vSpecularColor "[1.000000 1.000000 1.000000 0.000000]"
+
+	g_flAlphaTestReference "0.700"
+}

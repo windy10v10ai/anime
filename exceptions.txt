@@ -1,0 +1,744 @@
+---------------
+File: D:\Anime MoD - 副本\白替换EnchAntress魅惑魔女\game\models\heroes\enchantress\enchantress\enchantress_model_vmorf.vtex
+Exception: System.InvalidCastException: Specified cast is not valid.
+   at ValveResourceFormat.IO.TextureExtract..ctor(Resource resource) in /_/ValveResourceFormat/IO/TextureExtract.cs:line 123
+   at CLI.Decompiler.DecompileResource(Resource resource, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 767
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 667
+
+---------------
+File: D:\Anime MoD - 副本\和泉十七夜替换nevermore影魔\game\models\items\nevermore\sf_immortal_flame_head\sf_immortal_flame_head\sf_immortal_flame_head_vmorf.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\kez_base\kez_base_lod0_vmorf.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\kez_base\kez_base_lod1_vmorf.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\kez_head\kez_head_lod0_vmorf.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\kez_head\kez_head_lod1_vmorf.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\kez_sfm\unnamed_1_vmorf.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_awning_litter_psd_4d36009c.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_awning_start_baked_color_png_c2561598.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_awning_start_baked_metalnessmask_png_59ae6065.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_awning_start_baked.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_awning_littler.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_awning_start_baked_specmask_png_954c57e4.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_awning_start_baked_normal_png_9d2bc447.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_banner_simple_vmat_g_tmasks1_a57d02bf.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_banner.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_banner_simple.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_banner_vmat_g_tmasks1_a57d02bf.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_layer_1_extension_png_c82a5db7.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_layer_1_extension.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_png_c52ff23a.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_top_png_19d1ea8e.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_building_card_png_810c3339.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_building_card.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_top.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_card_tmp2_psd_a90483a1.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_bg_bottom.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_bg_bottom_color_png_1148aa82.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_end_pole_animated.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_tmp3.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_end_pole_animated_color_png_647b7ed5.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_end_pole_animated_vmat_g_tmasks2_c1772ea5.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_fog_city.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_background_baked.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_background_png_2182c95b.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_01_png_9e72d4c2.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_01_baked.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_01_rebake_baked.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_01_rebake_png_9ccc9ad.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_02_baked.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_02_png_38be5e94.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_03_baked.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_03_png_40e65122.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_04_baked.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_05_baked.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_04_png_3bf4b6f1.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_05_png_141b07c1.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_06_png_e714f668.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_foliage_baked.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_06_baked.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_foliage_grass.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_foliage_grass_png_e91256c8.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_runway_baked.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_foliage_png_b367b044.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_static_group_runway_png_46bdec3a.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_top_plane.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_env_top_plane_png_e736e35d.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_ribbon_mat_tmp.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_sideshop_tmp.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\two_channel_noise_png_5be4d4de.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\oven_awning_kez_debut_tmp.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_ribbon_tmp_png_dbf30862.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\props\kez_defeat_head\kez_defeat_head_vmorf.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\props\materials\kez_defeat_head_red.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\props\materials\kez_defeat_head_red_vmat_g_tcolor_b40a47d2.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_awning\kez_debut_awning.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_awning\kez_debut_awning_color_psd_4009ad19.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_awning\kez_debut_awning_normal_png_ecdecb5a.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_awning\kez_debut_awning_specmask_png_d3261486.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_banner\kez_debut_banner_color_png_76636535.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_banner\kez_debut_banner_normal_png_7e9dfabe.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_banner\kez_debut_banner_specmask_png_7f121500.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_layers\kez_debut_bg_art_layer_0_psd_fce4392a.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_layers\kez_debut_bg_art_layer_1.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_layers\kez_debut_bg_art_layer_0.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_layers\kez_debut_bg_art_layer_1_psd_4d605a1d.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_layers\kez_debut_bg_art_layer_1_windmask_png_84c027da.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_layers\kez_debut_bg_art_layer_1_wind.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_layers\kez_debut_bg_art_layer_2_psd_97cb76dc.vtex_c
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unknown vtex version for variable 'Version': 264 (0x108)
+   at ValveResourceFormat.ResourceTypes.Texture.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Texture.cs:line 298
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Anime MoD - 副本\七海八千代替换kez凯\game\models\heroes\kez\debut\materials\kez_debut_bg_art_layers\kez_debut_bg_art_layer_2.vmat_c
+Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at ValveResourceFormat.ResourceTypes.Material.Read(BinaryReader reader) in /_/ValveResourceFormat/Resource/ResourceTypes/Material.cs:line 98
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 298
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Game\Steam\steamapps\common\dota 2 beta\game\dota_addons\thd_amethyst\models\miyoi\miyoi.fbm\body.vmat
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Only VCS file versions 59 through 70 are supported for variable 'vcsFileVersion': 71 (0x47)
+   at ValveResourceFormat.CompiledShader.VfxProgramData.ThrowIfNotSupported(Int32 vcsFileVersion) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 580
+   at ValveResourceFormat.CompiledShader.VfxProgramData.VfxCreateFromResource(Resource resource) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 466
+   at ValveResourceFormat.IO.GameFileLoader.<LoadShaderFromDisk>g__TryLoadShader|22_0(VcsProgramType programType, VcsPlatformType platformType, VcsShaderModelType modelType, <>c__DisplayClass22_0&) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 283
+   at ValveResourceFormat.IO.GameFileLoader.LoadShaderFromDisk(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 308
+   at ValveResourceFormat.IO.GameFileLoader.LoadShader(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 342
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture_Internal(String textureType, Material material)
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture(String textureType, Material material) in /_/ValveResourceFormat/IO/ShaderDataProvider.cs:line 59
+   at ValveResourceFormat.IO.MaterialExtract.GetTextureUnpackInfos(String textureType, String texturePath, Texture texture, Boolean omitDefaults, Boolean omitUniforms)+MoveNext() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 162
+   at ValveResourceFormat.IO.MaterialExtract.ToValveMaterial() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 229
+   at ValveResourceFormat.IO.MaterialExtract.ToContentFile() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 66
+   at ValveResourceFormat.IO.FileExtract.Extract(Resource resource, IFileLoader fileLoader, IProgress`1 progress) in /_/ValveResourceFormat/IO/FileExtract.cs:line 241
+   at CLI.Decompiler.DecompileResource(Resource resource, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 771
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 667
+
+---------------
+File: D:\Game\Steam\steamapps\common\dota 2 beta\game\dota_addons\thd_amethyst\models\miyoi\miyoi.fbm\cloth.vmat
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Only VCS file versions 59 through 70 are supported for variable 'vcsFileVersion': 71 (0x47)
+   at ValveResourceFormat.CompiledShader.VfxProgramData.ThrowIfNotSupported(Int32 vcsFileVersion) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 580
+   at ValveResourceFormat.CompiledShader.VfxProgramData.VfxCreateFromResource(Resource resource) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 466
+   at ValveResourceFormat.IO.GameFileLoader.<LoadShaderFromDisk>g__TryLoadShader|22_0(VcsProgramType programType, VcsPlatformType platformType, VcsShaderModelType modelType, <>c__DisplayClass22_0&) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 283
+   at ValveResourceFormat.IO.GameFileLoader.LoadShaderFromDisk(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 308
+   at ValveResourceFormat.IO.GameFileLoader.LoadShader(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 342
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture_Internal(String textureType, Material material)
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture(String textureType, Material material) in /_/ValveResourceFormat/IO/ShaderDataProvider.cs:line 59
+   at ValveResourceFormat.IO.MaterialExtract.GetTextureUnpackInfos(String textureType, String texturePath, Texture texture, Boolean omitDefaults, Boolean omitUniforms)+MoveNext() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 162
+   at ValveResourceFormat.IO.MaterialExtract.ToValveMaterial() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 229
+   at ValveResourceFormat.IO.MaterialExtract.ToContentFile() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 66
+   at ValveResourceFormat.IO.FileExtract.Extract(Resource resource, IFileLoader fileLoader, IProgress`1 progress) in /_/ValveResourceFormat/IO/FileExtract.cs:line 241
+   at CLI.Decompiler.DecompileResource(Resource resource, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 771
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 667
+
+---------------
+File: D:\Game\Steam\steamapps\common\dota 2 beta\game\dota_addons\thd_amethyst\models\miyoi\miyoi.fbm\eyeleft.vmat
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Only VCS file versions 59 through 70 are supported for variable 'vcsFileVersion': 71 (0x47)
+   at ValveResourceFormat.CompiledShader.VfxProgramData.ThrowIfNotSupported(Int32 vcsFileVersion) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 580
+   at ValveResourceFormat.CompiledShader.VfxProgramData.VfxCreateFromResource(Resource resource) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 466
+   at ValveResourceFormat.IO.GameFileLoader.<LoadShaderFromDisk>g__TryLoadShader|22_0(VcsProgramType programType, VcsPlatformType platformType, VcsShaderModelType modelType, <>c__DisplayClass22_0&) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 283
+   at ValveResourceFormat.IO.GameFileLoader.LoadShaderFromDisk(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 308
+   at ValveResourceFormat.IO.GameFileLoader.LoadShader(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 342
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture_Internal(String textureType, Material material)
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture(String textureType, Material material) in /_/ValveResourceFormat/IO/ShaderDataProvider.cs:line 59
+   at ValveResourceFormat.IO.MaterialExtract.GetTextureUnpackInfos(String textureType, String texturePath, Texture texture, Boolean omitDefaults, Boolean omitUniforms)+MoveNext() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 162
+   at ValveResourceFormat.IO.MaterialExtract.ToValveMaterial() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 229
+   at ValveResourceFormat.IO.MaterialExtract.ToContentFile() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 66
+   at ValveResourceFormat.IO.FileExtract.Extract(Resource resource, IFileLoader fileLoader, IProgress`1 progress) in /_/ValveResourceFormat/IO/FileExtract.cs:line 241
+   at CLI.Decompiler.DecompileResource(Resource resource, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 771
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 667
+
+---------------
+File: D:\Game\Steam\steamapps\common\dota 2 beta\game\dota_addons\thd_amethyst\models\miyoi\miyoi.fbm\eyeright.vmat
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Only VCS file versions 59 through 70 are supported for variable 'vcsFileVersion': 71 (0x47)
+   at ValveResourceFormat.CompiledShader.VfxProgramData.ThrowIfNotSupported(Int32 vcsFileVersion) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 580
+   at ValveResourceFormat.CompiledShader.VfxProgramData.VfxCreateFromResource(Resource resource) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 466
+   at ValveResourceFormat.IO.GameFileLoader.<LoadShaderFromDisk>g__TryLoadShader|22_0(VcsProgramType programType, VcsPlatformType platformType, VcsShaderModelType modelType, <>c__DisplayClass22_0&) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 283
+   at ValveResourceFormat.IO.GameFileLoader.LoadShaderFromDisk(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 308
+   at ValveResourceFormat.IO.GameFileLoader.LoadShader(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 342
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture_Internal(String textureType, Material material)
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture(String textureType, Material material) in /_/ValveResourceFormat/IO/ShaderDataProvider.cs:line 59
+   at ValveResourceFormat.IO.MaterialExtract.GetTextureUnpackInfos(String textureType, String texturePath, Texture texture, Boolean omitDefaults, Boolean omitUniforms)+MoveNext() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 162
+   at ValveResourceFormat.IO.MaterialExtract.ToValveMaterial() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 229
+   at ValveResourceFormat.IO.MaterialExtract.ToContentFile() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 66
+   at ValveResourceFormat.IO.FileExtract.Extract(Resource resource, IFileLoader fileLoader, IProgress`1 progress) in /_/ValveResourceFormat/IO/FileExtract.cs:line 241
+   at CLI.Decompiler.DecompileResource(Resource resource, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 771
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 667
+
+---------------
+File: D:\Game\Steam\steamapps\common\dota 2 beta\game\dota_addons\thd_amethyst\models\miyoi\miyoi.fbm\hair.vmat
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Only VCS file versions 59 through 70 are supported for variable 'vcsFileVersion': 71 (0x47)
+   at ValveResourceFormat.CompiledShader.VfxProgramData.ThrowIfNotSupported(Int32 vcsFileVersion) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 580
+   at ValveResourceFormat.CompiledShader.VfxProgramData.VfxCreateFromResource(Resource resource) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 466
+   at ValveResourceFormat.IO.GameFileLoader.<LoadShaderFromDisk>g__TryLoadShader|22_0(VcsProgramType programType, VcsPlatformType platformType, VcsShaderModelType modelType, <>c__DisplayClass22_0&) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 283
+   at ValveResourceFormat.IO.GameFileLoader.LoadShaderFromDisk(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 308
+   at ValveResourceFormat.IO.GameFileLoader.LoadShader(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 342
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture_Internal(String textureType, Material material)
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture(String textureType, Material material) in /_/ValveResourceFormat/IO/ShaderDataProvider.cs:line 59
+   at ValveResourceFormat.IO.MaterialExtract.GetTextureUnpackInfos(String textureType, String texturePath, Texture texture, Boolean omitDefaults, Boolean omitUniforms)+MoveNext() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 162
+   at ValveResourceFormat.IO.MaterialExtract.ToValveMaterial() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 229
+   at ValveResourceFormat.IO.MaterialExtract.ToContentFile() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 66
+   at ValveResourceFormat.IO.FileExtract.Extract(Resource resource, IFileLoader fileLoader, IProgress`1 progress) in /_/ValveResourceFormat/IO/FileExtract.cs:line 241
+   at CLI.Decompiler.DecompileResource(Resource resource, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 771
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 667
+
+---------------
+File: D:\Game\Steam\steamapps\common\dota 2 beta\game\dota_addons\thd_amethyst\models\miyoi\miyoi.fbm\under.vmat
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Only VCS file versions 59 through 70 are supported for variable 'vcsFileVersion': 71 (0x47)
+   at ValveResourceFormat.CompiledShader.VfxProgramData.ThrowIfNotSupported(Int32 vcsFileVersion) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 580
+   at ValveResourceFormat.CompiledShader.VfxProgramData.VfxCreateFromResource(Resource resource) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 466
+   at ValveResourceFormat.IO.GameFileLoader.<LoadShaderFromDisk>g__TryLoadShader|22_0(VcsProgramType programType, VcsPlatformType platformType, VcsShaderModelType modelType, <>c__DisplayClass22_0&) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 283
+   at ValveResourceFormat.IO.GameFileLoader.LoadShaderFromDisk(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 308
+   at ValveResourceFormat.IO.GameFileLoader.LoadShader(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 342
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture_Internal(String textureType, Material material)
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture(String textureType, Material material) in /_/ValveResourceFormat/IO/ShaderDataProvider.cs:line 59
+   at ValveResourceFormat.IO.MaterialExtract.GetTextureUnpackInfos(String textureType, String texturePath, Texture texture, Boolean omitDefaults, Boolean omitUniforms)+MoveNext() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 162
+   at ValveResourceFormat.IO.MaterialExtract.ToValveMaterial() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 229
+   at ValveResourceFormat.IO.MaterialExtract.ToContentFile() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 66
+   at ValveResourceFormat.IO.FileExtract.Extract(Resource resource, IFileLoader fileLoader, IProgress`1 progress) in /_/ValveResourceFormat/IO/FileExtract.cs:line 241
+   at CLI.Decompiler.DecompileResource(Resource resource, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 771
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 667
+
+---------------
+File: D:\Game\Steam\steamapps\common\dota 2 beta\game\dota_addons\thd_amethyst\materials\thd_hero\saoling\saoling.vmat
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Only VCS file versions 59 through 70 are supported for variable 'vcsFileVersion': 71 (0x47)
+   at ValveResourceFormat.CompiledShader.VfxProgramData.ThrowIfNotSupported(Int32 vcsFileVersion) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 580
+   at ValveResourceFormat.CompiledShader.VfxProgramData.VfxCreateFromResource(Resource resource) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 466
+   at ValveResourceFormat.IO.GameFileLoader.<LoadShaderFromDisk>g__TryLoadShader|22_0(VcsProgramType programType, VcsPlatformType platformType, VcsShaderModelType modelType, <>c__DisplayClass22_0&) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 283
+   at ValveResourceFormat.IO.GameFileLoader.LoadShaderFromDisk(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 308
+   at ValveResourceFormat.IO.GameFileLoader.LoadShader(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 342
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture_Internal(String textureType, Material material)
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture(String textureType, Material material) in /_/ValveResourceFormat/IO/ShaderDataProvider.cs:line 59
+   at ValveResourceFormat.IO.MaterialExtract.GetTextureUnpackInfos(String textureType, String texturePath, Texture texture, Boolean omitDefaults, Boolean omitUniforms)+MoveNext() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 162
+   at ValveResourceFormat.IO.MaterialExtract.ToValveMaterial() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 229
+   at ValveResourceFormat.IO.MaterialExtract.ToContentFile() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 66
+   at ValveResourceFormat.IO.FileExtract.Extract(Resource resource, IFileLoader fileLoader, IProgress`1 progress) in /_/ValveResourceFormat/IO/FileExtract.cs:line 241
+   at CLI.Decompiler.DecompileResource(Resource resource, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 771
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 667
+
+---------------
+Parent file: D:\Game\Steam\steamapps\common\dota 2 beta\game\dota\pak01_dir.vpk
+File: scripts/npc/npc_units.txt
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Unexpected header. You likely tried to read a file that is not actually a resource (usually ends in '_c'). for variable 'HeaderVersion': 29807 (0x746F)
+   at ValveResourceFormat.Resource.Read(Stream input, Boolean verifyFileSize, Boolean leaveOpen) in /_/ValveResourceFormat/Resource/Resource.cs:line 198
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 632
+
+---------------
+File: D:\Game\Steam\steamapps\common\dota 2 beta\game\dota_addons\anime_test2\materials\models\thd2\soldiers_siege_red_1.vmat
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Only VCS file versions 59 through 70 are supported for variable 'vcsFileVersion': 71 (0x47)
+   at ValveResourceFormat.CompiledShader.VfxProgramData.ThrowIfNotSupported(Int32 vcsFileVersion) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 580
+   at ValveResourceFormat.CompiledShader.VfxProgramData.VfxCreateFromResource(Resource resource) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 466
+   at ValveResourceFormat.IO.GameFileLoader.<LoadShaderFromDisk>g__TryLoadShader|22_0(VcsProgramType programType, VcsPlatformType platformType, VcsShaderModelType modelType, <>c__DisplayClass22_0&) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 283
+   at ValveResourceFormat.IO.GameFileLoader.LoadShaderFromDisk(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 308
+   at ValveResourceFormat.IO.GameFileLoader.LoadShader(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 342
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture_Internal(String textureType, Material material)
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture(String textureType, Material material) in /_/ValveResourceFormat/IO/ShaderDataProvider.cs:line 59
+   at ValveResourceFormat.IO.MaterialExtract.GetTextureUnpackInfos(String textureType, String texturePath, Texture texture, Boolean omitDefaults, Boolean omitUniforms)+MoveNext() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 162
+   at ValveResourceFormat.IO.MaterialExtract.ToValveMaterial() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 229
+   at ValveResourceFormat.IO.MaterialExtract.ToContentFile() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 66
+   at ValveResourceFormat.IO.FileExtract.Extract(Resource resource, IFileLoader fileLoader, IProgress`1 progress) in /_/ValveResourceFormat/IO/FileExtract.cs:line 241
+   at CLI.Decompiler.DecompileResource(Resource resource, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 771
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 667
+
+---------------
+File: D:\Game\Steam\steamapps\common\dota 2 beta\game\dota_addons\anime_test2\models\creeps\lane_creeps\creep_bad_melee\creep_bad_flagbearer.fbm\yatiangou.vmat
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Only VCS file versions 59 through 70 are supported for variable 'vcsFileVersion': 71 (0x47)
+   at ValveResourceFormat.CompiledShader.VfxProgramData.ThrowIfNotSupported(Int32 vcsFileVersion) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 580
+   at ValveResourceFormat.CompiledShader.VfxProgramData.VfxCreateFromResource(Resource resource) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 466
+   at ValveResourceFormat.IO.GameFileLoader.<LoadShaderFromDisk>g__TryLoadShader|22_0(VcsProgramType programType, VcsPlatformType platformType, VcsShaderModelType modelType, <>c__DisplayClass22_0&) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 283
+   at ValveResourceFormat.IO.GameFileLoader.LoadShaderFromDisk(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 308
+   at ValveResourceFormat.IO.GameFileLoader.LoadShader(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 342
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture_Internal(String textureType, Material material)
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture(String textureType, Material material) in /_/ValveResourceFormat/IO/ShaderDataProvider.cs:line 59
+   at ValveResourceFormat.IO.MaterialExtract.GetTextureUnpackInfos(String textureType, String texturePath, Texture texture, Boolean omitDefaults, Boolean omitUniforms)+MoveNext() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 162
+   at ValveResourceFormat.IO.MaterialExtract.ToValveMaterial() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 229
+   at ValveResourceFormat.IO.MaterialExtract.ToContentFile() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 66
+   at ValveResourceFormat.IO.FileExtract.Extract(Resource resource, IFileLoader fileLoader, IProgress`1 progress) in /_/ValveResourceFormat/IO/FileExtract.cs:line 241
+   at CLI.Decompiler.DecompileResource(Resource resource, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 771
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 667
+
+---------------
+File: D:\Game\Steam\steamapps\common\dota 2 beta\game\dota_addons\touhou_td\models\bilibilitv\mask\bilibili.vmat
+Exception: ValveResourceFormat.Utils.UnexpectedMagicException: Only VCS file versions 59 through 70 are supported for variable 'vcsFileVersion': 71 (0x47)
+   at ValveResourceFormat.CompiledShader.VfxProgramData.ThrowIfNotSupported(Int32 vcsFileVersion) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 580
+   at ValveResourceFormat.CompiledShader.VfxProgramData.VfxCreateFromResource(Resource resource) in /_/ValveResourceFormat/CompiledShader/VfxProgramData.cs:line 466
+   at ValveResourceFormat.IO.GameFileLoader.<LoadShaderFromDisk>g__TryLoadShader|22_0(VcsProgramType programType, VcsPlatformType platformType, VcsShaderModelType modelType, <>c__DisplayClass22_0&) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 283
+   at ValveResourceFormat.IO.GameFileLoader.LoadShaderFromDisk(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 308
+   at ValveResourceFormat.IO.GameFileLoader.LoadShader(String shaderName) in /_/ValveResourceFormat/IO/GameFileLoader.cs:line 342
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture_Internal(String textureType, Material material)
+   at ValveResourceFormat.IO.ShaderDataProvider.GetInputsForTexture(String textureType, Material material) in /_/ValveResourceFormat/IO/ShaderDataProvider.cs:line 59
+   at ValveResourceFormat.IO.MaterialExtract.GetTextureUnpackInfos(String textureType, String texturePath, Texture texture, Boolean omitDefaults, Boolean omitUniforms)+MoveNext() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 162
+   at ValveResourceFormat.IO.MaterialExtract.ToValveMaterial() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 229
+   at ValveResourceFormat.IO.MaterialExtract.ToContentFile() in /_/ValveResourceFormat/IO/MaterialExtract.cs:line 66
+   at ValveResourceFormat.IO.FileExtract.Extract(Resource resource, IFileLoader fileLoader, IProgress`1 progress) in /_/ValveResourceFormat/IO/FileExtract.cs:line 241
+   at CLI.Decompiler.DecompileResource(Resource resource, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 771
+   at CLI.Decompiler.ProcessFile(String path, Stream stream, String originalPath, IFileLoader fileLoader) in /_/CLI/Decompiler.cs:line 667
+
