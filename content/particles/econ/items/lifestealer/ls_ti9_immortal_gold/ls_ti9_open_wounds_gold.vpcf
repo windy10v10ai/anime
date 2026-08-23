@@ -1,0 +1,36 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf27:version{36c3961f-02a4-4c52-bf8f-6e3147d7d142} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 0
+	m_bShouldSort = false
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti9_immortal_gold/ls_ti9_open_wounds_gold_ground.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti9_immortal_gold/ls_ti9_open_wounds_gold_core.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti9_immortal_gold/ls_ti9_open_wounds_gold_wisp.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti9_immortal_gold/ls_ti9_open_wounds_gold_swoop_parent.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti9_immortal_gold/ls_ti9_open_wounds_gold_flash.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti9_immortal_gold/ls_ti9_open_wounds_gold_smoke.vpcf"
+			m_bEndCap = true
+		},
+	]
+	m_nBehaviorVersion = 10
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+		},
+	]
+}

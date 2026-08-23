@@ -1,0 +1,30 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 12
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_previewState = 
+			{
+				m_previewModel = "models/items/spectre/spectre_arcana/spectre_arcana_head.vmdl"
+				m_nModSpecificData = 9662
+				m_sequenceName = "spct_arc_idle"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/spectre/spectre_arcana/spectre_arcana_ambient_cloud_body.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/spectre/spectre_arcana/spectre_arcana_ambient_cloud.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

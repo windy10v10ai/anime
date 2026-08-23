@@ -1,0 +1,129 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 20
+	m_flConstantRadius = 1.0
+	m_ConstantColor = [ 214, 220, 248, 25 ]
+	m_nConstantSequenceNumber1 = 1
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderBlobs"
+			m_nScaleCP = 1
+			m_renderRadius = 24.0
+			m_cutoffRadius = 28.0
+			m_cubeWidth = 21.0
+			m_hMaterial = resource:"materials/particle/blob_ice_surface_4.vmat"
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_EndCapTimedDecay"
+			m_flDecayTime = 1.0
+		},
+		{
+			_class = "C_OP_LerpVector"
+			m_vecOutput = [ 1.0, 1.0, 1.0 ]
+			m_nFieldOutput = 17
+			m_flEndTime = 0.15
+		},
+		{
+			_class = "C_OP_RemapVectortoCP"
+			m_nFieldInput = 17
+			m_nOutControlPointNumber = 1
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
+		},
+		{
+			_class = "C_OP_LerpEndCapVector"
+			m_vecOutput = [ 1.0, 0.75, 0.0 ]
+			m_nFieldOutput = 22
+			m_flLerpTime = 0.25
+		},
+		{
+			_class = "C_OP_RemapVectortoCP"
+			m_nFieldInput = 22
+			m_nOutControlPointNumber = 1
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.01
+			m_Gravity = [ 0.0, 0.0, -160.0 ]
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateOnModel"
+			m_vecDirectionBias = [ 0.0, 0.0, -1.0 ]
+			m_HitboxSetName = "feet"
+			m_vecHitBoxScale = 
+			{
+				m_nType = "PVEC_TYPE_LITERAL"
+				m_vLiteralValue = [ 0.6, 0.6, 0.6 ]
+			}
+		},
+		{
+			_class = "C_INIT_RandomVector"
+			m_nFieldOutput = 17
+			m_vecMax = [ 1.0, 0.0, 0.0 ]
+			m_vecMin = [ 1.0, 0.0, 0.0 ]
+		},
+		{
+			_class = "C_INIT_RandomVector"
+			m_nFieldOutput = 22
+			m_vecMax = [ 1.0, 1.0, 1.0 ]
+			m_vecMin = [ 1.0, 1.0, 1.0 ]
+		},
+		{
+			_class = "C_INIT_PositionPlaceOnGround"
+			m_CollisionGroupName = "DEBRIS"
+			m_flMaxTraceLength = 512.0
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 4.0
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_ice_wall_debuff_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_ice_wall_debuff_frost.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_ice_wall_debuff_ice.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_ice_wall_debuff_snow_ground.vpcf"
+		},
+	]
+	m_nBehaviorVersion = 11
+	m_nFirstMultipleOverride_BackwardCompat = 3
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+}

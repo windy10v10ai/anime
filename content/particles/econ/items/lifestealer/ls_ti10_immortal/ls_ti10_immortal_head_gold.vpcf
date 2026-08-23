@@ -1,0 +1,61 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf27:version{36c3961f-02a4-4c52-bf8f-6e3147d7d142} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 10
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_previewState = 
+			{
+				m_previewModel = "models/items/lifestealer/ls_ti10_immortal_head/ls_ti10_immortal_head_gold.vmdl"
+				m_nModSpecificData = 13818
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+				m_flPlaybackSpeed = 0.0
+			}
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetParentControlPointsToChildCP"
+			m_nNumControlPoints = 2
+			m_nFirstSourcePoint = 1
+			m_bSetOrientation = true
+			m_bDisableOperator = true
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti10_immortal/ls_ti10_immortal_head_gold_eyes.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti10_immortal/ls_ti10_immortal_head_gold_eyes.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti10_immortal/ls_ti10_immortal_head_gold_mandible_l.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti10_immortal/ls_ti10_immortal_head_gold_mandible_r.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti10_immortal/ls_ti10_immortal_head_gold_trace.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti10_immortal/ls_ti10_immortal_head_gold_smoke.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti10_immortal/ls_ti10_immortal_head_gold_sparkles.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

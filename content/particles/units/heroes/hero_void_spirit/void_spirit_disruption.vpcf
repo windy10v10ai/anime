@@ -1,0 +1,49 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 4
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/void_spirit_disruption_refract.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/void_spirit_disruption_clouds_red.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/void_spirit_disruption_flash.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/void_spirit_disruption_cast_cloud.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/void_spirit_disruption_cast_dots.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/void_spirit_disruption_cast_flash.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/void_spirit_disruption_cast_center.vpcf"
+		},
+	]
+	m_nBehaviorVersion = 12
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 4
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+}

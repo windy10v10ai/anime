@@ -1,0 +1,63 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf31:version{593cd181-a1d6-4c6f-9a8c-0534e8d44db0} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_flConstantRadius = 1.0
+	m_flConstantLifespan = 2.0
+	m_flNoDrawTimeToGoToSleep = 6.0
+	m_nBehaviorVersion = 10
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/lion/lion.vmdl"
+				m_nModSpecificData = 365
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_spell_finger_death_arcana_ground.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_spell_finger_death_arcana_body.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_spell_finger_death_arcana_crystal_ground.vpcf"
+			m_flDelay = 0.4
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_spell_finger_death_arcana_core.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_spell_finger_death_arcana_mist.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_spell_finger_death_arcana_crystal.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_spell_finger_death_arcana_crystal_model.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_spell_finger_death_arcana_magic.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_spell_finger_death_arcana_beam.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

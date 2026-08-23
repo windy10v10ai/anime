@@ -1,0 +1,113 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 12
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_snake_left"
+					m_vecOffset = [ 5.0, -10.0, 0.0 ]
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_snake_left"
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_snake_right"
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_snake_right"
+					m_vecOffset = [ -5.0, 0.0, 0.0 ]
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 4
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_snake_left"
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 5
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_snake_right"
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 6
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_snake_left"
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 7
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_snake_right"
+					m_entityName = "self_with_wearables"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/items/venomancer/ti8_venomancer_chomper_arms/ti8_venomancer_chomper_arms.vmdl"
+				m_nModSpecificData = 12505
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+				m_materialGroupName = "0"
+			}
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetParentControlPointsToChildCP"
+			m_nNumControlPoints = 8
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/veno_chomper/veno_chomper_head_mouth_strands_left_ambient.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/veno_chomper/veno_chomper_head_mouth_strands_ambient.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/veno_chomper/veno_chomper_head_mouth_strands_right_ambient.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/veno_chomper/veno_chomper_head_mouth_strands_ambient.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/veno_chomper/veno_chomper_spitter_mouth_poison_ambient.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/veno_chomper/veno_chomper_spitter_mouth_poison_ambient.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/veno_chomper/veno_chomper_spitter_mouth_drips_ambient.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/veno_chomper/veno_chomper_spitter_mouth_drips_ambient.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

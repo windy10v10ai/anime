@@ -1,0 +1,28 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 32
+	m_hSnapshot = resource:"particles/models/items/phantom_assassin/toll_of_the_fearful_aria_shoulder/pa_aria_shoulder_l.vsnap"
+	m_nSnapshotControlPoint = 7
+	m_flConstantRadius = 18.0
+	m_flConstantLifespan = 0.25
+	m_ConstantColor = [ 255, 255, 255, 100 ]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/phantom_assassin/phantom_assassin_echoes_aria/pa_echoes_aria_dark_l.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/phantom_assassin/phantom_assassin_echoes_aria/pa_echoes_aria_glow_l.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/phantom_assassin/phantom_assassin_echoes_aria/pa_echoes_aria_ember_l.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/phantom_assassin/phantom_assassin_echoes_aria/pa_echoes_aria_glint_l.vpcf"
+			m_bDisableChild = true
+		},
+	]
+	m_nBehaviorVersion = 4
+}

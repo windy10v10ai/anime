@@ -1,0 +1,206 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf23:version{636cefcd-6551-40ad-801c-6085f7e67e27} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 3
+	m_flConstantRadius = 15.0
+	m_ConstantColor = [ 213, 250, 247, 255 ]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/custom/saber_ti8_sword_sakura_around.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_blade_fury_abyssal_trail_sakura.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_blade_fury_abyssal_light_sakura.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_blade_fury_abyssal_streaks_sakura.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_blade_fury_abyssal_flash_sakura.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_blade_fury_abyssal_hotspot_sakura.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_blade_fury_abyssal_core_sakura.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_blade_fury_abyssal_trail_b_sakura.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/sabersakura_blade_fury_abyssal_cyclone.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_blade_fury_dragon.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_blade_fury_disk.vpcf"
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_ABSORIGIN_FOLLOW"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "parent"
+				},
+				{
+					m_iControlPoint = 5
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 250.0, 1.0, 1.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/items/juggernaut/jugg_ti8/jugg_ti8_sword.vmdl"
+				m_nModSpecificData = 9984
+				m_sequenceName = "saber stand1"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, 15.0 ]
+			m_fDrag = 0.05
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 2.0
+			m_flEndScale = 5.0
+			m_flBias = 0.35
+			m_flOpEndFadeInTime = 0.3
+			m_nOpEndCapState = 0
+		},
+		{
+			_class = "C_OP_RampScalarLinearSimple"
+			m_Rate = -25.0
+			m_nField = "4"
+			m_nOpEndCapState = 0
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.5
+		},
+		{
+			_class = "C_OP_RampScalarLinearSimple"
+			m_Rate = -10.0
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_RampScalarLinearSimple"
+			m_Rate = -2.0
+			m_nField = "16"
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_RampScalarSplineSimple"
+			m_Rate = 25.0
+			m_nField = "4"
+			m_bEaseOut = true
+			m_nOpEndCapState = 1
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nOrientationType = 2
+			m_bGammaCorrectVertexColors = false
+			m_bLightenMode = true
+			m_bRefract = true
+			m_flRefractAmount = 0.01
+			m_nRefractBlurRadius = 3
+			m_nRefractBlurType = "BLURFILTER_GAUSSIAN"
+			m_hTexture = resource:"materials/particle/warp_ripple3_normal.vtex"
+			m_ColorScale = [ 255, 255, 255 ]
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomAlpha"
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 1.2
+			m_fLifetimeMax = 1.3
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 64.0
+			m_flRadiusMax = 64.0
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMax = 32.0
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_vecAbsVal = [ 1.0, 1.0, 1.0 ]
+			m_vecOutputMin = [ -46.0, -46.0, 112.0 ]
+			m_vecOutputMax = [ 46.0, 46.0, 120.0 ]
+			m_flNoiseScale = 0.7
+		},
+		{
+			_class = "C_INIT_RemapCPtoScalar"
+			m_nCPInput = 5
+			m_flInputMax = 1000.0
+			m_flOutputMax = 5.0
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 92.0
+			}
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_nCP1 = 2
+			m_vecCP1Pos = [ 0.0, 0.0, 0.0 ]
+		},
+	]
+	m_nBehaviorVersion = 10
+	m_nFirstMultipleOverride_BackwardCompat = 5
+}

@@ -1,0 +1,83 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf21:version{7a150ecc-d865-438f-ad53-5963fe1a2720} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 4
+	m_flConstantRadius = 26.0
+	m_flConstantLifespan = 2.0
+	m_ConstantColor = [ 150, 126, 61, 255 ]
+	m_nConstantSequenceNumber = 6
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			VisibilityInputs = 
+			{
+				m_flProxyRadius = 3.0
+				m_flAlphaScaleMax = 2.0
+				m_flRadiusScaleMin = 0.0
+				m_flCameraBias = -8.0
+			}
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_bAdditive = true
+			m_flOverbrightFactor = 5.0
+			m_hTexture = resource:"materials/particle/particle_glow_05.vtex"
+			m_ColorScale = [ 255, 255, 255 ]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_FadeIn"
+			m_flFadeInTimeMin = 1.5
+			m_flFadeInTimeMax = 1.5
+			m_bProportional = false
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_bLockRot = true
+		},
+		{
+			_class = "C_OP_RampScalarLinear"
+			m_flEndTime_max = 10000000272564224.0
+			m_flEndTime_min = 10000000272564224.0
+			m_RateMax = 1.0
+			m_RateMin = -1.0
+			m_nField = "4"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_nControlPointNumber = 8
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_bRandomlyFlipDirection = false
+		},
+		{
+			_class = "C_INIT_RandomYawFlip"
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+		},
+	]
+	m_nBehaviorVersion = 5
+	m_nFirstMultipleOverride_BackwardCompat = 2
+}

@@ -1,0 +1,123 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf24:version{c9a29215-bb77-47b2-af5d-67eb30ba6578} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 8
+	m_flConstantRadius = 1.0
+	m_ConstantColor = [ 0, 22, 157, 195 ]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_nModelCP = 2
+			m_flAnimationRate = 25.0
+			m_ActivityName = "ACT_DOTA_CAST_ABILITY_1"
+			m_bOrientZ = true
+			m_nSkin = 1
+			m_bScaleAnimationRate = true
+			m_nAnimationScaleField = "18"
+			m_bForceLoopingAnimation = true
+			m_nLOD = 1
+			m_hOverrideMaterial = resource:"materials/models/heroes/faceless_void/faceless_void_particle.vmat"
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_FrequencyMax = [ 0.5, 0.5, 0.5 ]
+			m_FrequencyMin = [ 0.5, 0.5, 0.5 ]
+			m_RateMax = [ 2.0, 2.0, 5.0 ]
+			m_RateMin = [ 1.5, 1.5, 3.0 ]
+			m_nField = "6"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RemapInitialCPDirectionToRotation"
+			m_flOffsetRot = 90.0
+			m_nCP = 2
+		},
+		{
+			_class = "C_INIT_RandomModelSequence"
+			m_hModel = resource:"models/heroes/faceless_void/faceless_void.vmdl"
+			m_ActivityName = "ACT_DOTA_CAST_ABILITY_1"
+		},
+		{
+			_class = "C_INIT_CreateSequentialPath"
+			m_flNumToAssign = 8.0
+			m_PathParams = 
+			{
+				m_nEndControlPointNumber = 1
+			}
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nInputMax = 7
+			m_nFieldOutput = "1"
+			m_flOutputMin = 0.35
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_flOutputMax = 0.25
+			m_nInputMax = 7
+			m_nFieldOutput = "18"
+			m_flOutputMin = 1.5
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 8.0
+			}
+		},
+	]
+	m_nBehaviorVersion = 3
+	m_nFirstMultipleOverride_BackwardCompat = 3
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+}

@@ -1,0 +1,159 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf21:version{7a150ecc-d865-438f-ad53-5963fe1a2720} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_VectorNoise"
+			m_nFieldOutput = "0"
+			m_vecOutputMin = [ -2.0, -2.0, -2.0 ]
+			m_vecOutputMax = [ 2.0, 2.0, 2.0 ]
+			m_fl4NoiseScale = 0.15
+			m_bAdditive = true
+			m_bOffset = true
+		},
+		{
+			_class = "C_OP_FadeAndKill"
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 1.0
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 193, 161, 193, 255 ]
+			m_flFadeEndTime = 0.65
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 0.5
+			m_flBias = 0.75
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_flStartTime_min = 0.25
+			m_flStartTime_max = 0.25
+			m_flEndTime_min = 0.45
+			m_flEndTime_max = 0.45
+			m_bLockRot = true
+		},
+		{
+			_class = "C_OP_DistanceToCP"
+			m_nFieldOutput = "16"
+			m_flInputMin = 50.0
+			m_flOutputMin = 1.0
+			m_flOutputMax = 0.0
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_flRadiusScale = 2.0
+			m_flOverbrightFactor = 0.5
+			m_ColorScale = [ 255, 255, 255 ]
+		},
+		{
+			_class = "C_OP_RenderRopes"
+			m_nMaxTesselation = 3
+			m_flTextureVWorldSize = 900.0
+			m_flTextureVScrollRate = 50.0
+			m_hTexture = resource:"materials/particle/beam_crack_04.vtex"
+			m_nFeatheringMode = "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL"
+			m_ColorScale = [ 255, 255, 255 ]
+		},
+		{
+			_class = "C_OP_RenderRopes"
+			m_nMaxTesselation = 3
+			m_flTextureVWorldSize = 500.0
+			m_flTextureVScrollRate = 50.0
+			m_flRadiusScale = 0.85
+			m_bSaturateColorPreAlphaBlend = false
+			m_bAdditive = true
+			m_flOverbrightFactor = 10.0
+			m_hTexture = resource:"materials/particle/beam_turb_noise.vtex"
+			m_nFeatheringMode = "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL"
+			m_ColorScale = [ 255, 255, 255 ]
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.6
+			m_fLifetimeMax = 0.6
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_bLocalCoords = true
+			m_LocalCoordinateSystemSpeedMin = [ 100.0, 0.0, 0.0 ]
+			m_LocalCoordinateSystemSpeedMax = [ 100.0, 0.0, 0.0 ]
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_vecOutputMin = [ 0.0, 0.0, -40.0 ]
+			m_vecOutputMax = [ 0.0, 0.0, 40.0 ]
+			m_flNoiseScale = 4.0
+			m_bLocalSpace = true
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 20.0
+			m_flRadiusMax = 20.0
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 106, 62, 106, 255 ]
+			m_ColorMax = [ 163, 101, 162, 255 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 20.0
+			}
+			m_bDisableOperator = true
+		},
+	]
+	m_nMaxParticles = 16
+	m_nBehaviorVersion = 9
+	m_nFirstMultipleOverride_BackwardCompat = 5
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/leshrac/leshrac_ti9_immortal_head/leshrac_ti9_immortal_ambient_void_ember.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/leshrac/leshrac_ti9_immortal_head/leshrac_ti9_immortal_ambient_void_flare.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/leshrac/leshrac_ti9_immortal_head/leshrac_ti9_immortal_ambient_model.vpcf"
+		},
+	]
+}

@@ -1,0 +1,174 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf19:version{aafc65d8-7a5a-4e01-bd8d-3ac118422503} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_flNoDrawTimeToGoToSleep = 0.1
+	m_nMaxParticles = 32
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, 200.0 ]
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_DampenToCP"
+			m_flRange = 16.0
+			m_flScale = 0.5
+		},
+		{
+			_class = "C_OP_FadeOut"
+			m_flFadeOutTimeMin = 0.7
+			m_flFadeOutTimeMax = 0.8
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 0.5
+		},
+		{
+			_class = "C_OP_FadeIn"
+			m_flFadeInTimeMin = 0.1
+			m_flFadeInTimeMax = 0.1
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_flRange = 500.0
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin = [ -2.0, -2.0, -2.0 ]
+			m_RateMax = [ 2.0, 2.0, 2.0 ]
+			m_FrequencyMin = [ 0.3, 0.3, 0.3 ]
+			m_FrequencyMax = [ 3.0, 3.0, 3.0 ]
+			m_flStartTime_min = 0.15
+			m_flStartTime_max = 0.2
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 2, 52, 95, 255 ]
+		},
+		{
+			_class = "C_OP_PercentageBetweenCPs"
+			m_flOutputMin = 1.0
+			m_bScaleInitialRange = true
+		},
+		{
+			_class = "C_OP_DistanceBetweenCPs"
+			m_nFieldOutput = "16"
+			m_flInputMin = 319.0
+			m_flInputMax = 320.0
+			m_flOutputMin = 1.0
+			m_flOutputMax = 0.0
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderRopes"
+			m_nMinTesselation = 2
+			m_nMaxTesselation = 2
+			m_flTextureVWorldSize = 200.0
+			m_flTextureVScrollRate = -10000.0
+			m_flFinalTextureScaleU = -1.0
+			m_flFinalTextureScaleV = -1.0
+			m_flFinalTextureOffsetU = 1.0
+			m_flFinalTextureOffsetV = 1.0
+			m_flRadiusScale = 0.5
+			m_nSequenceCombineMode = "2"
+			m_bAdditive = true
+			m_nRefractBlurType = "2"
+			m_hTexture = resource:"materials/particle/ribbon_electric.vtex"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.27
+			m_fLifetimeMax = 0.6
+		},
+		{
+			_class = "C_INIT_CreateSequentialPath"
+			m_fMaxDistance = 3.0
+			m_flNumToAssign = 9.0
+			m_bLoop = false
+			m_PathParams = 
+			{
+				m_nEndControlPointNumber = 1
+				m_nBulgeControl = 2
+				m_flBulge = 1.0
+				m_flMidPoint = 0.15
+			}
+		},
+		{
+			_class = "C_INIT_CreationNoise"
+			m_flOutputMin = 3.0
+			m_flOutputMax = 16.0
+			m_flNoiseScale = 5.0
+			m_flNoiseScaleLoc = 10.0
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 210, 138, 225, 255 ]
+			m_ColorMax = [ 237, 236, 112, 255 ]
+			m_nTintBlendMode = "2"
+			m_flLightAmplification = 3.0
+		},
+		{
+			_class = "C_INIT_CreationNoise"
+			m_nFieldOutput = "16"
+			m_flNoiseScaleLoc = 0.00001
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flOpEndFadeInTime = 0.1
+			m_flOpStartFadeOutTime = 0.2
+			m_flOpEndFadeOutTime = 0.25
+			m_flOpFadeOscillatePeriod = 8.0
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 300.0
+			}
+		},
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flOpStartFadeInTime = 0.8
+			m_flOpEndFadeInTime = 0.81
+			m_flOpStartFadeOutTime = 0.9
+			m_flOpEndFadeOutTime = 1.0
+			m_flOpFadeOscillatePeriod = 9.0
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 300.0
+			}
+		},
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flOpStartFadeInTime = 0.4
+			m_flOpEndFadeInTime = 0.41
+			m_flOpStartFadeOutTime = 0.49
+			m_flOpEndFadeOutTime = 0.5
+			m_flOpFadeOscillatePeriod = 11.0
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 300.0
+			}
+		},
+	]
+	m_ForceGenerators = 
+	[
+		{
+			_class = "C_OP_RandomForce"
+			m_MinForce = [ -500.0, -500.0, -500.0 ]
+			m_MaxForce = [ 500.0, 500.0, 500.0 ]
+		},
+	]
+	m_nBehaviorVersion = 5
+}

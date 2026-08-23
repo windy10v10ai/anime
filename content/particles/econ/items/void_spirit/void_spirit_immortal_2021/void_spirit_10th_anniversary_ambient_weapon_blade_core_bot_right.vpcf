@@ -1,0 +1,20 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 12
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_immortal_2021/void_spirit_10th_anniversary_ambient_weapon_blade_core_trace.vpcf"
+		},
+	]
+	m_nMaxParticles = 0
+	m_nSnapshotControlPoint = 6
+	m_hSnapshot = resource:"particles/models/items/void_spirit/void_spirit_fall20_immortal/void_spirit_fall20_immortal_weapon/void_spirit_2021_blade_bot_core_fx_02.vsnap"
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+		},
+	]
+}

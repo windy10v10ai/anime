@@ -1,0 +1,31 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 4
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_medusa/medusa_stone_gaze_impact.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_medusa/medusa_stone_gaze_debuff_stoned_streak.vpcf"
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_nCP1 = 6
+			m_vecCP1Pos = [ 0.0, 0.0, 280.0 ]
+			m_transformInput = 
+			{
+				m_nControlPoint = 1
+			}
+		},
+		{
+			_class = "C_OP_SetCPOrientationToPointAtCP"
+		},
+	]
+	m_nBehaviorVersion = 12
+}

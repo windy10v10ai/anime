@@ -1,0 +1,128 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 8
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_flStartFadeSize = 2.0
+			m_flEndFadeSize = 3.0
+			m_bDisableZBuffering = true
+			m_flOverbrightFactor = 8.5
+			m_flAddSelfAmount = 2.25
+			m_bSaturateColorPreAlphaBlend = false
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/particle_flares/particle_flare_001.vtex"
+				},
+			]
+			m_nOutputBlendMode = "PARTICLE_OUTPUT_BLEND_MODE_ADD"
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.08
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 4.0
+			m_flEndTime = 0.7
+			m_flStartScale = 0.0
+			m_flBias = 0.25
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_flStartTime_max = 0.25
+			m_flStartTime_min = 0.25
+			m_FrequencyMax = [ 3.0, 3.0, 3.0 ]
+			m_RateMax = [ 4.0, 4.0, 4.0 ]
+			m_RateMin = [ -4.0, -4.0, -4.0 ]
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 4.0
+			m_flBias = 0.85
+			m_flEndScale = 0.0
+			m_flStartTime = 0.7
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.15
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.15
+			m_fLifetimeMax = 0.3
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_flDegreesMin = -10.0
+			m_flDegreesMax = 10.0
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 128.0
+			m_flRadiusMax = 128.0
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMax = 155
+			m_nAlphaMin = 155
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMax = [ 112, 200, 187, 255 ]
+			m_ColorMin = [ 144, 110, 233, 255 ]
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMax = [ 0.0, 0.0, 64.0 ]
+			m_OffsetMin = [ 0.0, 0.0, 64.0 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_flStartTime = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 0.2
+			}
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+		},
+	]
+	m_nBehaviorVersion = 5
+	m_nFirstMultipleOverride_BackwardCompat = 6
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+}

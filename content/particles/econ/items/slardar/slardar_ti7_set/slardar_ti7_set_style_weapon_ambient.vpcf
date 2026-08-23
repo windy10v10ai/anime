@@ -1,0 +1,48 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nSnapshotControlPoint = 2
+	m_hSnapshot = resource:"particles/models/items/luna/luna_set_head/luna_ti7_set_head_fxmesh.vsnap"
+	m_nMaxParticles = 0
+	m_nBehaviorVersion = 11
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_previewState = 
+			{
+				m_previewModel = "models/items/slardar/slardar_set_weapon/slardar_set_weapon.vmdl"
+				m_nModSpecificData = 9223
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_ti7_set/slardar_ti7_set_style_weapon_eyes.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_ti7_set/slardar_ti7_set_style_weapon_embers.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_ti7_set/slardar_ti7_set_style_weapon_glow.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_ti7_set/slardar_ti7_set_weapon_drips.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_ti7_set/slardar_ti7_set_style_weapon_eyes_rope_r.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_ti7_set/slardar_ti7_set_style_weapon_eyes_rope_l.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

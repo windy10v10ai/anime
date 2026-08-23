@@ -1,0 +1,109 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf26:version{26288658-411e-4f14-b698-2e1e5d00dec6} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor = [ 235, 133, 65, 255 ]
+	m_flConstantLifespan = 0.5
+	m_nMaxParticles = 64
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 0.1
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, -600.0 ]
+			m_fDrag = 0.05
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_nControlPointNumber = 1
+			m_flRange = 100.0
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderTrails"
+			m_flMaxLength = 200.0
+			m_flMinLength = 10.0
+			m_flFinalTextureScaleV = -1.0
+			m_flFinalTextureOffsetV = 1.0
+			m_nSequenceCombineMode = "2"
+			m_flAddSelfAmount = 2.0
+			m_nRefractBlurType = "2"
+			m_flOverbrightFactor = 6.0
+			m_hTexture = resource:"materials/particle/sparks/sparks.vtex"
+			m_flRadiusScale = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 0.5
+			}
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 55
+			m_nAlphaMax = 55
+		},
+		{
+			_class = "C_INIT_CreateOnModel"
+			m_nForceInModel = 1
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 5.0
+			m_flRadiusMax = 10.0
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.25
+			m_fLifetimeMax = 0.5
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_vecOutputMin = [ -124.0, -124.0, -132.0 ]
+			m_vecOutputMax = [ 134.0, 144.0, 186.0 ]
+			m_flNoiseScaleLoc = 0.5
+			m_bLocalSpace = true
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ -15.0, -15.0, 0.0 ]
+			m_OffsetMax = [ 15.0, 15.0, 0.0 ]
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, -50.0 ]
+			m_OffsetMax = [ 0.0, 0.0, -100.0 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+				m_nControlPoint = 11
+				m_nVectorComponent = 0
+				m_nMapType = "PF_MAP_TYPE_MULT"
+				m_flMultFactor = 200.0
+			}
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_vecCP1Pos = [ 0.0, 0.0, 300.0 ]
+		},
+	]
+	m_nBehaviorVersion = 5
+	m_nFirstMultipleOverride_BackwardCompat = 4
+}

@@ -1,0 +1,33 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_hSnapshot = resource:"particles/models/items/venomancer/poison_touch_shoulder/poison_touch_model_fx.vsnap"
+	m_nSnapshotControlPoint = 6
+	m_nMaxParticles = 0
+	m_nBehaviorVersion = 12
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_previewState = 
+			{
+				m_previewModel = "models/items/venomancer/poison_touch_shoulder/poison_touch_shoulder.vmdl"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/poison_touch_shoulder/venon_ambient_poison_touch_shoulder_outline.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/poison_touch_shoulder/venon_ambient_poison_touch_shoulder_wings.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/poison_touch_shoulder/venon_ambient_poison_touch_shoulder_sparks.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

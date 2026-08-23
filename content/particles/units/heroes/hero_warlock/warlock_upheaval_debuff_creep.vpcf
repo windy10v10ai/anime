@@ -1,0 +1,15 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf19:version{aafc65d8-7a5a-4e01-bd8d-3ac118422503} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nInitialParticles = 1
+	m_BoundingBoxMax = [ 10.0, 10.0, 210.0 ]
+	m_nMaxParticles = 8
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_warlock/warlock_upheaval_debuff_b.vpcf"
+		},
+	]
+	m_bShouldSort = false
+	m_nBehaviorVersion = 9
+}

@@ -1,0 +1,75 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 12
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetControlPointOrientation"
+			m_nCP = 2
+		},
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_nCP1 = 2
+			m_vecCP1Pos = [ 25.0, 0.0, 0.0 ]
+			m_transformInput = 
+			{
+				m_nControlPoint = 1
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/debut/void_spirit_channel_dark_core.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/debut/void_spirit_channel_pull_streak.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/debut/void_spirit_channel_light.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/debut/void_spirit_channel_flares.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/debut/void_spirit_channel_elec.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/debut/void_spirit_channel_burst_ember.vpcf"
+			m_flDelay = 2.43
+		},
+	]
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_hand_r"
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 204.250092, -6.85813, 116.536171 ]
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/void_spirit/void_spirit.vmdl"
+				m_sequenceName = "ar_vs_sequence_spin_end"
+				m_flPlaybackSpeed = 0.0
+			}
+		},
+	]
+}

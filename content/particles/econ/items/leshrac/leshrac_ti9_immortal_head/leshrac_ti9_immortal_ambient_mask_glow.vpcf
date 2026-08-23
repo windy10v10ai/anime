@@ -1,0 +1,141 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf21:version{7a150ecc-d865-438f-ad53-5963fe1a2720} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 25
+	m_flConstantRadius = 2.0
+	m_flConstantLifespan = 0.0
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_flDepthBias = -1.0
+			m_flRadiusScale = 6.0
+			m_flDiffuseAmount = 0.698
+			m_bSaturateColorPreAlphaBlend = false
+			m_bAdditive = true
+			m_nFeatheringMode = "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL"
+			m_flFeatheringMaxDist = 5.0
+			m_flOverbrightFactor = 0.25
+			m_hTexture = resource:"materials/particle/particle_flares/aircraft_blue.vtex"
+			m_ColorScale = [ 255, 255, 255 ]
+		},
+		{
+			_class = "C_OP_RenderRopes"
+			m_nMaxTesselation = 3
+			m_flTextureVWorldSize = 100.0
+			m_flTextureVScrollRate = -35.0
+			m_bSaturateColorPreAlphaBlend = false
+			m_flOverbrightFactor = 1.5
+			m_hTexture = resource:"materials/particle/beam_plasma_02.vtex"
+			m_bGammaCorrectVertexColors = false
+			m_flAddSelfAmount = 1.0
+			m_ColorScale = [ 255, 255, 255 ]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_SnapshotRigidSkinToBones"
+			m_nControlPointNumber = 10
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_InitSkinnedPositionFromCPSnapshot"
+			m_nSnapshotControlPointNumber = 6
+			m_bRigid = true
+			m_nControlPointNumber = 10
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMax = 1.5
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nFieldOutput = "7"
+			m_nInputMax = 2
+			m_flOutputMin = 0.5
+			m_flOutputMax = 0.0
+			m_bActiveRange = true
+			m_bInvert = true
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nInputMax = 3
+			m_flOutputMin = 1.0
+			m_flOutputMax = 0.5
+			m_bActiveRange = true
+			m_bInvert = true
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nInputMax = 2
+			m_bActiveRange = true
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 67, 251, 255, 255 ]
+			m_ColorMax = [ 84, 226, 255, 255 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nSnapshotControlPoint = 6
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_nMapType = "PF_MAP_TYPE_DIRECT"
+				m_flLiteralValue = 25.0
+				m_nControlPoint = 0
+				m_nScalarAttribute = 3
+				m_nVectorAttribute = 6
+				m_nVectorComponent = 0
+				m_flRandomMin = 0.0
+				m_flRandomMax = 1.0
+				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+				m_flMultFactor = 1.0
+				m_flInput0 = 0.0
+				m_flInput1 = 1.0
+				m_flOutput0 = 0.0
+				m_flOutput1 = 1.0
+				m_nBiasType = "PF_BIAS_TYPE_STANDARD"
+				m_flBiasParameter = 0.0
+				m_Curve = 
+				{
+					m_spline = [  ]
+					m_tangents = [  ]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.0, 0.0 ]
+				}
+			}
+			m_bDisableOperator = true
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+		},
+	]
+	m_nBehaviorVersion = 9
+	m_nFirstMultipleOverride_BackwardCompat = 2
+	m_nSnapshotControlPoint = 6
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/leshrac/leshrac_ti9_immortal_head/leshrac_ti9_immortal_ambient_mask_flare.vpcf"
+		},
+	]
+}

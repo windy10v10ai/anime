@@ -1,0 +1,68 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 12
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 20
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "spine1"
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 21
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "right_arm"
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 22
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "left_arm"
+					m_entityName = "self_with_wearables"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/items/void_spirit/void_spirit_taiji_koi_armor/void_spirit_taiji_koi_armor.vmdl"
+				m_nModSpecificData = 26661
+				m_sequenceName = "vs_idle_leg"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_cache_2022/void_spirit_cache_2022_armor_ambient_shoulder_trace.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_cache_2022/void_spirit_cache_2022_armor_ambient_shoulder_trace_bot.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_cache_2022/void_spirit_cache_2022_armor_ambient_shoulder_trace_right.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_cache_2022/void_spirit_cache_2022_armor_ambient_shoulder_trace_right_bot.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_cache_2022/void_spirit_cache_2022_armor_ambient_smoke.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_cache_2022/void_spirit_cache_2022_armor_ambient_left_arm.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_cache_2022/void_spirit_cache_2022_armor_ambient_right_arm.vpcf"
+		},
+	]
+}

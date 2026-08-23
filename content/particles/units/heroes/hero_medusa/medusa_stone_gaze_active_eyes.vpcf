@@ -1,0 +1,40 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 32
+	m_flConstantRadius = 10.0
+	m_flConstantLifespan = 5.1
+	m_bShouldSort = false
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_medusa/medusa_stone_gaze_active_eyes_r02.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_medusa/medusa_stone_gaze_active_eyes_l02.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_medusa/medusa_stone_gaze_active_eyes_third.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_medusa/medusa_stone_gaze_active_eyesc_l02.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_medusa/medusa_stone_gaze_active_eyesc_l03.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_medusa/medusa_stone_gaze_active_eyesc_l04.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_medusa/medusa_stone_gaze_active_eyesc_l05.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_medusa/medusa_stone_gaze_active_eyes_light.vpcf"
+		},
+	]
+	m_nBehaviorVersion = 4
+}

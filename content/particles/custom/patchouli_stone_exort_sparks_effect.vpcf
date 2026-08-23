@@ -1,0 +1,117 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 8
+	m_flConstantRadius = 2.0
+	m_flMaxDrawDistance = 1500.0
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderTrails"
+			m_flAddSelfAmount = 2.0
+			m_bSaturateColorPreAlphaBlend = false
+			m_flLengthFadeInTime = 0.1
+			m_flMaxLength = 25.0
+			m_flRadiusScale = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 0.5
+			}
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/sparks/sparks.vtex"
+					m_TextureControls = 
+					{
+						m_flFinalTextureScaleV = 
+						{
+							m_nType = "PF_TYPE_LITERAL"
+							m_flLiteralValue = -1.0
+						}
+						m_flFinalTextureOffsetV = 
+						{
+							m_nType = "PF_TYPE_LITERAL"
+							m_flLiteralValue = 1.0
+						}
+					}
+				},
+			]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, -600.0 ]
+			m_fDrag = 0.5
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 255, 78, 0, 255 ]
+			m_flFadeStartTime = 0.5
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_nControlPointNumber = 5
+			m_flStartTime_min = 0.25
+			m_flStartTime_max = 0.5
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.05
+			m_fLifetimeMax = 0.25
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMin = 15.0
+			m_fRadiusMax = 15.0
+			m_nControlPointNumber = 5
+			m_fSpeedMin = 150.0
+			m_fSpeedMax = 300.0
+			m_LocalCoordinateSystemSpeedMin = [ -400.0, -400.0, 250.0 ]
+			m_LocalCoordinateSystemSpeedMax = [ 400.0, 400.0, 950.0 ]
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 255, 230, 89, 255 ]
+			m_ColorMax = [ 255, 184, 103, 255 ]
+			m_flUpdateThreshold = 128.0
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 2.0
+			m_flRadiusMax = 3.0
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 128
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 4
+			m_nSequenceMin = 4
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_NoiseEmitter"
+			m_flOutputMax = 18.0
+		},
+	]
+	m_nBehaviorVersion = 11
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+		},
+	]
+}

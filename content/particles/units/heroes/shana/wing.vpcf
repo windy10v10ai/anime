@@ -1,0 +1,115 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf16:version{261b3cba-02c7-424f-854b-c432c6f018d1} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 16
+	m_flConstantRadius = 92.0205
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_ActivityName = "ACT_DOTA_"
+			m_bIgnoreNormal = true
+			m_nModelCP = 1
+			m_bSuppressTint = true
+			m_ModelList = 
+			[
+				{
+					m_model = resource:"models/heroes/ember_spirit/wings.vmdl"
+				},
+			]
+			m_bAnimated = true
+			m_nLOD = 1
+			m_nBodyGroupField = "3"
+			m_nAnimationField = "10"
+			m_nManualFrameField = "5"
+			m_flAnimationRate = 18.0
+			m_bForceLoopingAnimation = true
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_SetControlPointsToParticle"
+			m_nFirstControlPoint = 3
+			m_bSetOrientation = true
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 0.0
+			m_flEndTime = 0.5
+			m_flBias = 0.75
+			m_flEndScale = 0.7
+		},
+		{
+			_class = "C_OP_MovementPlaceOnGround"
+			m_flTolerance = 0.0
+			m_flMaxTraceLength = 1024.0
+			m_flTraceOffset = 256.0
+			m_CollisionGroupName = "DEBRIS"
+		},
+		{
+			_class = "C_OP_OrientTo2dDirection"
+			m_flRotOffset = 180.0
+			m_nFieldOutput = "12"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 0.2
+			m_fLifetimeMin = 0.2
+		},
+		{
+			_class = "C_INIT_RadiusFromCPObject"
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 187.885
+			m_flRadiusMax = 291.848
+			m_flRadiusRandExponent = 1.524
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_flDegreesMax = 0.0
+			m_nFieldOutput = "12"
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_flDegreesMax = 1780.0
+			m_nFieldOutput = "20"
+		},
+		{
+			_class = "C_INIT_VelocityFromCP"
+			m_nControlPoint = 1
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 17900.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 17900.0 ]
+			m_bLocalCoords = true
+			m_nControlPointNumber = 10
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 1
+		},
+	]
+	m_nBehaviorVersion = 5
+	m_nFirstMultipleOverride_BackwardCompat = 6
+}

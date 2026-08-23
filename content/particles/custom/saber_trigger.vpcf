@@ -1,0 +1,110 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf23:version{636cefcd-6551-40ad-801c-6085f7e67e27} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nMaxParticles = 0
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/custom/saber_trigger_ground.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_trigger_ground_mod.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_trigger_ground_symbol.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_trigger_dark.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_trigger_body_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_trigger_body_glow_detail.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_trigger_beams.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_trigger_elec.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_trigger_sphere.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_trigger_sphere_burst.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_trigger_head.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/saber_trigger_radiance.vpcf"
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_ABSORIGIN_FOLLOW"
+					m_entityName = "parent"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_entityName = "parent"
+					m_attachmentName = "attach_hitloc"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_entityName = "parent"
+					m_attachmentName = "attach_head"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 4
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 6
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/items/juggernaut/arcana/juggernaut_arcana_mask.vmdl"
+				m_nModSpecificData = 9059
+				m_sequenceName = "saber stand1"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_nBehaviorVersion = 10
+	m_ForceGenerators = 
+	[
+		{
+			_class = "C_OP_WindForce"
+		},
+	]
+}

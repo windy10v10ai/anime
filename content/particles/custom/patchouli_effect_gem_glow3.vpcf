@@ -1,0 +1,61 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 0
+	m_nSnapshotControlPoint = -1
+	m_flConstantRadius = 32.0
+	m_ConstantColor = [ 244, 240, 191, 155 ]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_flakes_b_effect.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_flakes_c_effect.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_flakes_effect.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_glow_effect.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_ice_effect.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_light_effect.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_mist_effect.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_runes_effect.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_shimmer_effect.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_spawn_effect.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_effect_gem_model3.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_spawn_embers_effect.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_steam_effect.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/patchouli_stone_quas_trail_effect.vpcf"
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+		},
+	]
+	m_nBehaviorVersion = 11
+}

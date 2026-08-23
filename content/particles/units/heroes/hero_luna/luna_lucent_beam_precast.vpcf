@@ -1,0 +1,13 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf25:version{7bca2d8d-3a14-4a76-bd41-f483fdf78d50} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 10
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_luna/luna_lucent_beam_cast_glow.vpcf"
+		},
+	]
+	m_nBehaviorVersion = 10
+}

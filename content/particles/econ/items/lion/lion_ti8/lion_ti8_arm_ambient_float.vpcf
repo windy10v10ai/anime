@@ -1,0 +1,198 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf31:version{593cd181-a1d6-4c6f-9a8c-0534e8d44db0} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 5
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_float_model.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_float_model.vpcf"
+			m_flDelay = 0.2
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_float_model.vpcf"
+			m_flDelay = 0.1
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_float_model.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_float_model.vpcf"
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.1
+		},
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_nControlPointNumber = 1
+			m_bLockRot = true
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin = [ -0.2, -0.2, -0.2 ]
+			m_RateMax = [ 0.2, 0.2, 0.2 ]
+			m_FrequencyMin = [ 0.25, 0.125, 0.1 ]
+			m_flEndTime_min = 999999999999.0
+			m_flEndTime_max = 199999999999.0
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_DampenToCP"
+			m_nControlPointNumber = 1
+			m_flScale = 0.1
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_SetPerChildControlPoint"
+			m_nFirstControlPoint = 4
+			m_nNumControlPoints = 5
+			m_bSetOrientation = true
+		},
+		{
+			_class = "C_OP_DampenToCP"
+			m_nControlPointNumber = 6
+			m_flRange = 2.0
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_MovementRotateParticleAroundAxis"
+			m_vecRotAxis = [ 0.0, 1.0, 0.0 ]
+			m_flRotRate = 40.0
+			m_nCP = 6
+			m_bLocalSpace = true
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_bDisableOperator = true
+			m_vecTexturesInput = 
+			[
+				{
+				},
+			]
+			m_OutlineColor = [ 255, 255, 255 ]
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMin = 30.0
+			m_fRadiusMax = 30.0
+			m_vecDistanceBiasAbs = [ 0.0, 0.0, 1.0 ]
+			m_nControlPointNumber = 1
+			m_bLocalCoords = true
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RingWave"
+			m_nControlPointNumber = 6
+			m_bXYVelocityOnly = false
+			m_flInitialRadius = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 35.0
+			}
+			m_flThickness = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 5.0
+			}
+			m_flRoll = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 90.0
+			}
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 0.3
+			m_flRadiusMax = 0.65
+			m_flRadiusRandExponent = 2.0
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, -8.0, 0.0 ]
+			m_OffsetMax = [ 0.0, 8.0, 0.0 ]
+			m_nControlPointNumber = 1
+			m_bLocalCoords = true
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 5.0
+			}
+		},
+	]
+	m_Constraints = 
+	[
+		{
+			_class = "C_OP_ConstrainDistance"
+			m_fMaxDistance = 30.0
+			m_nControlPointNumber = 6
+			m_bDisableOperator = true
+		},
+	]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
+	m_flConstantRadius = 10.0
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_nCP1 = 6
+			m_vecCP1Pos = [ -15.0, 20.0, 0.0 ]
+			m_nHeadLocation = 1
+		},
+		{
+			_class = "C_OP_SetControlPointOrientation"
+			m_nCP = 6
+			m_nHeadLocation = 1
+		},
+		{
+			_class = "C_OP_SetControlPointToCenter"
+			m_nCP1 = 10
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_SetControlPointOrientation"
+			m_nCP = 10
+			m_nHeadLocation = 1
+			m_bDisableOperator = true
+		},
+	]
+	m_nBehaviorVersion = 4
+	m_nFirstMultipleOverride_BackwardCompat = 3
+}

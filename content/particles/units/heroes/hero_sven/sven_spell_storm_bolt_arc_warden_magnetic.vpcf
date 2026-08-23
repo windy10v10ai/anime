@@ -1,0 +1,42 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_spell_storm_bolt_arc_warden_magnetic_ground.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_spell_storm_bolt_arc_warden_magnetic_ring.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_spell_storm_bolt_arc_warden_magnetic_warp.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_spell_storm_bolt_arc_warden_magnetic_light.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_spell_storm_bolt_arc_warden_magnetic_warp_sprite.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_spell_storm_bolt_arc_warden_magnetic_start.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_spell_storm_bolt_arc_warden_magnetic_warp_b.vpcf"
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_bSetOnce = true
+			m_nCP1 = 4
+			m_vecCP1Pos = [ 255.0, 0.0, 0.0 ]
+			m_nHeadLocation = -1
+			m_bUseWorldLocation = true
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+	]
+}

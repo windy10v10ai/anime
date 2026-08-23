@@ -1,0 +1,83 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf21:version{7a150ecc-d865-438f-ad53-5963fe1a2720} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_nControlPointNumber = 1
+			m_bLockRot = true
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderRopes"
+			m_hTexture = resource:"materials/particle/beam_jagged_02.vtex"
+			m_nMaxTesselation = 3
+			m_flTextureVWorldSize = 50.0
+			m_bAdditive = true
+			VisibilityInputs = 
+			{
+				m_flCameraBias = 50.0
+			}
+			m_flTextureVScrollRate = 75.0
+			m_flOverbrightFactor = 3.0
+			m_ColorScale = [ 255, 255, 255 ]
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_InitSkinnedPositionFromCPSnapshot"
+			m_nSnapshotControlPointNumber = 6
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 5.0
+			m_flRadiusMax = 5.0
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 135
+			m_nAlphaMax = 135
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 113, 4, 255, 255 ]
+			m_ColorMax = [ 113, 4, 255, 255 ]
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nInputMax = 3
+			m_flOutputMax = 4.0
+			m_bActiveRange = true
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nInputMin = 14
+			m_nInputMax = 17
+			m_flOutputMin = 5.0
+			m_flOutputMax = 0.0
+			m_bActiveRange = true
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 18.0
+			}
+		},
+	]
+	m_nMaxParticles = 20
+	m_nBehaviorVersion = 5
+	m_nFirstMultipleOverride_BackwardCompat = 4
+}

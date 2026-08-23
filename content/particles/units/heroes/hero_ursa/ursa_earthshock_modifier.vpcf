@@ -1,0 +1,119 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf19:version{aafc65d8-7a5a-4e01-bd8d-3ac118422503} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor = [ 254, 182, 112, 255 ]
+	m_nMaxParticles = 24
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flEndFadeInTime = 0.4
+			m_flStartFadeOutTime = 0.6
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_LerpScalar"
+			m_nFieldOutput = "10"
+			m_flOutput = 0.0
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_LockToBone"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderTrails"
+			m_flMaxLength = 500.0
+			m_bIgnoreDT = true
+			m_flLengthFadeInTime = 0.25
+			m_vEndTrailTintFactor = [ 10.0, 0.0, 0.0, 0.0 ]
+			m_flRadiusScale = 0.5
+			m_flFinalTextureScaleV = -1.0
+			m_flFinalTextureOffsetV = 1.0
+			m_nSequenceCombineMode = "2"
+			m_bAdditive = true
+			m_nRefractBlurType = "2"
+			m_flOverbrightFactor = 2.0
+			m_hTexture = resource:"materials/particle/beam_hotwhite.vtex"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomAlpha"
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 10.0
+			m_flRadiusMax = 20.0
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 1.0
+			m_fLifetimeMax = 1.0
+		},
+		{
+			_class = "C_INIT_CreateOnModel"
+			m_flHitBoxScale = 1.1
+			m_vecDirectionBias = [ 0.0, 0.0, -2.0 ]
+		},
+		{
+			_class = "C_INIT_RandomTrailLength"
+			m_flMinLength = 1.0
+			m_flMaxLength = 1.0
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_vecOutputMin = [ -50.0, -50.0, -50.0 ]
+			m_vecOutputMax = [ 50.0, 50.0, 50.0 ]
+			m_flNoiseScaleLoc = 0.3
+		},
+		{
+			_class = "C_INIT_OffsetVectorToVector"
+			m_nFieldOutput = "17"
+			m_vecOutputMax = [ 0.0, 0.0, 0.0 ]
+		},
+		{
+			_class = "C_INIT_PositionPlaceOnGround"
+			m_flOffset = 1.0
+			m_flMaxTraceLength = 512.0
+			m_CollisionGroupName = "DEBRIS"
+			m_bIncludeWater = true
+			m_bSetNormal = true
+		},
+		{
+			_class = "C_INIT_OffsetVectorToVector"
+			m_nFieldInput = "17"
+			m_vecOutputMax = [ 0.0, 0.0, 0.0 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 25.0
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_ursa/ursa_earthshock_modifier_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_ursa/ursa_earthshock_modifier_c.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_ursa/ursa_earthshock_modifier_d.vpcf"
+		},
+	]
+	m_nBehaviorVersion = 4
+	m_nFirstMultipleOverride_BackwardCompat = 5
+}

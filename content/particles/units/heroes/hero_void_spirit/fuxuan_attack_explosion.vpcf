@@ -1,0 +1,127 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 0
+	m_nBehaviorVersion = 12
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "absorigin"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_ABSORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 16.700001, 12.799999, 115.845238 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 19.700001, 8.799999, 108.91703 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 18.700001, 4.799999, 101.988831 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 4
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 15.700001, 0.799999, 95.060623 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 5
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 6
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 7
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 8
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/pudge/pudge.vmdl"
+				m_nModSpecificData = 3020
+				m_sequenceName = "attack3"
+				m_nFireParticleOnSequenceFrame = 11
+				m_hitboxSetName = "default"
+				m_bAnimationNonLooping = true
+			}
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetRandomControlPointPosition"
+			m_vecCPMaxPos = [ -70.0, 60.0, 24.0 ]
+			m_vecCPMinPos = [ -70.0, 60.0, 24.0 ]
+			m_nCP1 = 7
+		},
+		{
+			_class = "C_OP_SetControlPointOrientation"
+			m_vecRotation = [ 0.0, 0.0, 40.0 ]
+			m_nCP = 7
+		},
+		{
+			_class = "C_OP_SetControlPointPositions"
+			m_bOrient = true
+			m_nHeadLocation = 7
+			m_vecCP1Pos = [ 2.0, 0.0, 100.0 ]
+			m_vecCP2Pos = [ 5.0, 0.0, 100.0 ]
+			m_vecCP3Pos = [ 4.0, 0.0, 100.0 ]
+			m_vecCP4Pos = [ 1.0, 0.0, 100.0 ]
+		},
+		{
+			_class = "C_OP_SetParentControlPointsToChildCP"
+			m_nNumControlPoints = 8
+			m_nFirstSourcePoint = 1
+			m_bSetOrientation = true
+		},
+		{
+			_class = "C_OP_SetControlPointPositions"
+			m_bOrient = true
+			m_nCP1 = 5
+			m_nCP2 = 6
+			m_nCP3 = 7
+			m_nCP4 = 8
+			m_vecCP1Pos = [ 5.0, 0.0, 100.0 ]
+			m_vecCP2Pos = [ 5.0, 0.0, 100.0 ]
+			m_vecCP3Pos = [ 5.0, 0.0, 100.0 ]
+			m_vecCP4Pos = [ 5.0, 0.0, 100.0 ]
+			m_nHeadLocation = 7
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/fuxuanattack.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/fuxuanattack2.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/fuxuanattack.vpcf"
+		},
+	]
+}

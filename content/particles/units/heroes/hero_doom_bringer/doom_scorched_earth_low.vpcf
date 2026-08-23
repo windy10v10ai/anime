@@ -1,0 +1,189 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 512
+	m_flNoDrawTimeToGoToSleep = 2.0
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nOrientationType = "PARTICLE_ORIENTATION_ALIGN_TO_PARTICLE_NORMAL"
+			m_flStartFadeSize = 0.575
+			m_flEndFadeSize = 0.65
+			m_flMaxSize = 0.75
+			m_flOverbrightFactor = 5.0
+			m_flAddSelfAmount = 2.5
+			m_bSaturateColorPreAlphaBlend = false
+			m_bAnimateInFPS = true
+			m_flAnimationRate = 11.0
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/fire_particle_10/fire_particle_10_low.vtex"
+				},
+			]
+		},
+		{
+			_class = "C_OP_RenderDeferredLight"
+			m_flRadiusScale = 2.0
+			m_flAlphaScale = 15.0
+			m_hTexture = resource:"materials/particle/fire_particle_10/fire_particle_10_low.vtex"
+			m_vecColorScale = 
+			{
+				m_nType = "PVEC_TYPE_LITERAL_COLOR"
+				m_LiteralColor = [ 255, 201, 56 ]
+			}
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_FadeIn"
+			m_flFadeInTimeMin = 0.3
+			m_flFadeInTimeMax = 0.2
+		},
+		{
+			_class = "C_OP_FadeOut"
+			m_flFadeOutTimeMin = 0.4
+			m_flFadeOutTimeMax = 0.6
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 1.15
+			m_flBias = 0.75
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 0, 0, 0, 255 ]
+			m_flFadeStartTime = 0.25
+			m_flFadeEndTime = 2.0
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_nType = "PF_TYPE_RANDOM_UNIFORM"
+				m_flRandomMin = 104.0
+				m_flRandomMax = 140.0
+				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+			}
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_nType = "PF_TYPE_RANDOM_UNIFORM"
+				m_flRandomMin = 0.003922
+				m_flRandomMax = 0.011765
+				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+			}
+			m_nOutputField = 7
+		},
+		{
+			_class = "C_INIT_CreateWithinSphereTransform"
+			m_flEndCPGrowthTime = 1.0
+			m_fRadiusMax = 64.0
+			m_vecDistanceBias = [ 1.0, 1.0, 0.0 ]
+			m_bLocalCoords = true
+			m_TransformInput = 
+			{
+				m_nType = "PT_TYPE_CONTROL_POINT_RANGE"
+				m_nControlPointRangeMax = 63
+			}
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMax = [ 145, 145, 145, 255 ]
+			m_ColorMin = [ 163, 162, 162, 255 ]
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 10
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_nType = "PF_TYPE_RANDOM_UNIFORM"
+				m_flRandomMin = 96.0
+				m_flRandomMax = 84.0
+				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+				m_bHasRandomSignFlip = true
+			}
+			m_nOutputField = 4
+		},
+		{
+			_class = "C_INIT_SequenceLifeTime"
+			m_flFramerate = 11.0
+		},
+		{
+			_class = "C_INIT_RandomYawFlip"
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_vecOutputMax = [ 64.0, 64.0, 6.0 ]
+			m_vecOutputMin = [ -64.0, -64.0, 2.0 ]
+			m_flNoiseScaleLoc = 0.0
+			m_flNoiseScale = 0.1
+			m_TransformInput = 
+			{
+				m_nType = "PT_TYPE_INVALID"
+			}
+		},
+		{
+			_class = "C_INIT_RemapScalarToVector"
+			m_bLocalCoords = false
+			m_vecOutputMin = [ 0.0, 0.0, 2.0 ]
+			m_nFieldOutput = 6
+			m_flInputMax = 0.5
+			m_flEndTime = 1.0
+			m_flStartTime = 0.0
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 256.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 256.0 ]
+		},
+		{
+			_class = "C_INIT_PositionPlaceOnGround"
+			m_flOffset = 8.0
+			m_bIncludeWater = true
+			m_bSetNormal = true
+			m_flMaxTraceLength = 512.0
+			m_CollisionGroupName = "DEBRIS"
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMax = [ 0.0, 0.0, 16.0 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_bDisableOperator = true
+			m_flEmissionScale = 1.0
+			m_flOpEndFadeInTime = 1.0
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+		},
+	]
+	m_nBehaviorVersion = 1
+	m_nFirstMultipleOverride_BackwardCompat = 6
+}

@@ -1,0 +1,163 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 6
+	m_bShouldSort = false
+	m_nBehaviorVersion = 12
+	m_nFirstMultipleOverride_BackwardCompat = 7
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_nMapType = "PF_MAP_TYPE_DIRECT"
+				m_flLiteralValue = 2.0
+				m_nControlPoint = 0
+				m_nScalarAttribute = 3
+				m_nVectorAttribute = 6
+				m_nVectorComponent = 0
+				m_flRandomMin = 0.0
+				m_flRandomMax = 1.0
+				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+				m_flMultFactor = 1.0
+				m_flInput0 = 0.0
+				m_flInput1 = 1.0
+				m_flOutput0 = 0.0
+				m_flOutput1 = 1.0
+				m_nBiasType = "PF_BIAS_TYPE_STANDARD"
+				m_flBiasParameter = 0.0
+				m_Curve = 
+				{
+					m_spline = [  ]
+					m_tangents = [  ]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.0, 0.0 ]
+				}
+			}
+			m_bDisableOperator = true
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 2.0
+			m_fLifetimeMax = 2.0
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMin = 30.0
+			m_fRadiusMax = 30.0
+			m_vecDistanceBias = [ -1.0, 1.0, 0.0 ]
+			m_vecDistanceBiasAbs = [ -1.0, 0.0, 0.0 ]
+			m_bLocalCoords = true
+			m_LocalCoordinateSystemSpeedMin = [ -10.0, 0.0, 0.0 ]
+			m_LocalCoordinateSystemSpeedMax = [ -75.0, 0.0, 0.0 ]
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ -40.0, 0.0, 512.0 ]
+			m_OffsetMax = [ -50.0, 0.0, 512.0 ]
+			m_bLocalCoords = true
+		},
+		{
+			_class = "C_INIT_PositionPlaceOnGround"
+			m_flMaxTraceLength = 2048.0
+			m_CollisionGroupName = "DEBRIS"
+			m_bIncludeWater = true
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 0.9
+		},
+		{
+			_class = "C_INIT_RandomTrailLength"
+			m_flMinLength = 0.95
+			m_flMaxLength = 1.0
+		},
+		{
+			_class = "C_INIT_Orient2DRelToCP"
+			m_nFieldOutput = 12
+			m_flRotOffset = 90.0
+		},
+		{
+			_class = "C_INIT_RandomNamedModelSequence"
+			m_names = 
+			[
+				"ghost_grab",
+				"ghost_crawl",
+				"ghost_breach",
+				"ghost_leap",
+			]
+			m_bShuffle = true
+			m_bModelFromRenderer = true
+			m_nFieldOutput = 13
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 49, 255, 179, 255 ]
+			m_ColorMax = [ 74, 255, 234, 255 ]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.05
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, -800.0 ]
+			m_fDrag = 0.05
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_flStartTime_min = 0.5
+			m_flStartTime_max = 0.5
+			m_flEndTime_min = 0.75
+			m_flEndTime_max = 0.75
+			m_bLockRot = true
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_ModelList = 
+			[
+				{
+					m_model = resource:"models/items/necrolyte/necro_ti9_immortal_skirt/necro_ti9_immortal_ghost.vmdl"
+				},
+			]
+			m_bOrientZ = true
+			m_bScaleAnimationRate = true
+			m_nLOD = 1
+			m_bAnimated = true
+			m_bDisableOperator = true
+		},
+	]
+}

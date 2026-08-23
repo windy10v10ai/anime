@@ -1,0 +1,42 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf19:version{aafc65d8-7a5a-4e01-bd8d-3ac118422503} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_hFallback = resource:"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue_low.vpcf"
+	m_nFallbackMaxCount = 4
+	m_ConstantColor = [ 255, 255, 255, 175 ]
+	m_nMaxParticles = 4
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue_smoke04.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue_smoke02.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue_smoke01.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue_snow03.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue_snow02.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue_snow01.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue_icebits.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue_icechunks.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue_coreglow02.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue_flash.vpcf"
+		},
+	]
+	m_nBehaviorVersion = 9
+}

@@ -1,0 +1,36 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf23:version{636cefcd-6551-40ad-801c-6085f7e67e27} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_ABSORIGIN_FOLLOW"
+					m_entityName = "self"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/items/juggernaut/arcana/juggernaut_arcana_mask.vmdl"
+				m_nModSpecificData = 9059
+				m_sequenceName = "saber stand1"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_flCullRadius = 150.0
+	m_nBehaviorVersion = 10
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti7/ti7_hero_effect.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

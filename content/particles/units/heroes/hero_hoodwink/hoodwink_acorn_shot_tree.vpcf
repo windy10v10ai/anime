@@ -1,0 +1,58 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 32
+	m_nBehaviorVersion = 12
+	m_ConstantColor = [ 199, 21, 133, 255 ]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree_ground_dark.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree_grass.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree_flora.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree_petals.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree_leaves.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree_flowers.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree_flora.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree_burst.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree_leaf_burst.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_hoodwink/hoodwink_acorn_shot_tree_dust.vpcf"
+		},
+	]
+}

@@ -1,0 +1,22 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 0
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash_bonus_pool.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash_bonus_splash_water_edge.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash_bonus_splash_water.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash_bonus_ring_drops.vpcf"
+		},
+	]
+	m_nBehaviorVersion = 12
+}

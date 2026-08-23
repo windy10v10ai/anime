@@ -1,0 +1,62 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf19:version{aafc65d8-7a5a-4e01-bd8d-3ac118422503} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor = [ 255, 114, 0, 164 ]
+	m_flConstantRadius = 80.0
+	m_nConstantSequenceNumber = 1
+	m_nConstantSequenceNumber1 = 1
+	m_nMaxParticles = 20
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_nOpEndCapState = 0
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+		{
+			_class = "C_OP_RampScalarLinear"
+			m_RateMin = -2.0
+			m_RateMax = 2.0
+			m_flEndTime_min = 10000000000.0
+			m_flEndTime_max = 10000000000.0
+			m_nField = "4"
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+		},
+		{
+			_class = "C_OP_OscillateScalarSimple"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderDeferredLight"
+			m_flAlphaScale = 4.0
+			m_flStartFalloff = 0.1
+			m_flSpotFoV = 5.0
+			m_ColorScale = [ 255, 255, 255 ]
+			m_hTexture = resource:"materials/particle/particle_flares/aircraft_blue.vtex"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+		},
+	]
+	m_nBehaviorVersion = 5
+}

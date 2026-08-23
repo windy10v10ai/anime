@@ -1,0 +1,57 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_nInitialParticles = 1
+	m_flConstantRadius = 0.0
+	m_ConstantColor = [ 0, 0, 0, 255 ]
+	m_nConstantSequenceNumber = 1
+	m_nBehaviorVersion = 12
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_StatusEffect"
+			m_flColorWarpIntensity = 0.5
+			m_flAmbientScale = 8.0
+			m_flRimLightScale = 140.0
+			m_flSpecularScale = 25.0
+			m_flSpecularExponent = 0.15
+			m_flSpecularExponentBlendToFull = 1.0
+			m_flSpecularBlendToFull = 0.5
+			m_specularColor = [ 55, 255, 0 ]
+			m_rimLightColor = [ 178, 64, 64 ]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_nFieldOutput = 22
+			m_ColorFade = [ 0, 72, 255, 0 ]
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 31, 102, 255, 255 ]
+			m_bDisableOperator = true
+			m_flFadeStartTime = 0.999
+		},
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderStatusEffect"
+			m_pTextureColorWarp = resource:"materials/models/heroes/statuseffects/colorwarp_morphling1.vtex"
+		},
+	]
+}

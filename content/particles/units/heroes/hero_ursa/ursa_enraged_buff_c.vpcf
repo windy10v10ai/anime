@@ -1,0 +1,99 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf19:version{aafc65d8-7a5a-4e01-bd8d-3ac118422503} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_BoundingBoxMin = [ -100.0, -300.0, -10.0 ]
+	m_BoundingBoxMax = [ 100.0, 100.0, 410.0 ]
+	m_ConstantColor = [ 67, 46, 24, 205 ]
+	m_flConstantRadius = 24.0
+	m_flConstantLifespan = 0.5
+	m_nConstantSequenceNumber = 7
+	m_nMaxParticles = 120
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 0.0
+			m_flBias = 0.92
+			m_nOpEndCapState = 0
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+			m_flDecayTime = 0.5
+		},
+		{
+			_class = "C_OP_LerpEndCapScalar"
+			m_nFieldOutput = "7"
+			m_flOutput = 0.0
+			m_flLerpTime = 0.5
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_nControlPointNumber = 1
+			m_bLockRot = true
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderTrails"
+			m_flMaxLength = 100.0
+			m_bIgnoreDT = true
+			m_flLengthFadeInTime = 0.3
+			m_vEndTrailTintFactor = [ 1.0, 1.0, 0.0, 0.0 ]
+			m_flRadiusScale = 0.5
+			m_flFinalTextureScaleV = -1.0
+			m_flFinalTextureOffsetV = 1.0
+			m_nSequenceCombineMode = "2"
+			m_flAddSelfAmount = 2.0
+			m_nRefractBlurType = "2"
+			m_flOverbrightFactor = 6.0
+			m_hTexture = resource:"materials/particle/sparks/sparks.vtex"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMin = -4.0
+			m_fRadiusMax = -16.0
+			m_nControlPointNumber = 1
+			m_fSpeedMin = 3000.0
+			m_fSpeedMax = 3000.0
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 45, 43, 66, 255 ]
+			m_ColorMax = [ 22, 18, 36, 255 ]
+			m_nTintBlendMode = "2"
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMax = [ 0.0, 0.0, 30.0 ]
+			m_bLocalCoords = true
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_vecOutputMin = [ 14500.0, 0.0, -10550.0 ]
+			m_vecOutputMax = [ 14500.0, 0.0, 9550.0 ]
+			m_flNoiseScaleLoc = 555.0
+			m_bLocalSpace = true
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 120.0
+			}
+		},
+	]
+	m_nBehaviorVersion = 4
+	m_nFirstMultipleOverride_BackwardCompat = 3
+}

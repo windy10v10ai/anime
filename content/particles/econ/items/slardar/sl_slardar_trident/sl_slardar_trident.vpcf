@@ -1,0 +1,43 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 2400
+	m_flConstantRadius = 14.0
+	m_flConstantLifespan = 1.4
+	m_ConstantColor = [ 101, 166, 227, 255 ]
+	m_nBehaviorVersion = 11
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_previewState = 
+			{
+				m_previewModel = "models/items/slardar/sea_devil/slardar_sea_devil_weapon.vmdl"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/sl_slardar_trident/sl_slardar_trident_b.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/sl_slardar_trident/sl_slardar_trident_e.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/sl_slardar_trident/sl_slardar_trident_a.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/sl_slardar_trident/sl_slardar_trident_c.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/sl_slardar_trident/sl_slardar_trident_d.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

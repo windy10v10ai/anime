@@ -1,0 +1,43 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 0
+	m_nBehaviorVersion = 11
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "loadout"
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/slardar/slardar.vmdl"
+				m_bAnimationNonLooping = true
+			}
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_bUseWorldLocation = true
+			m_vecCP1Pos = [ 150.0, 150.0, 150.0 ]
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_flDelay = 0.1
+			m_ChildRef = resource:"particles/units/heroes/hero_slardar/slardar_ti9_taunt_crush_foam.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_slardar/slardar_ti9_taunt_loadout_water.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_flDelay = 0.25
+			m_ChildRef = resource:"particles/units/heroes/hero_slardar/slardar_ti9_taunt_crush_foam.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

@@ -1,0 +1,77 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/dark_willow/dark_willow.vmdl"
+				m_nModSpecificData = 640
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_nMaxParticles = 0
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable_ground.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable_smoke.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable_ember.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable_light.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable_under_light.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable_start_ember.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable_start_smoke.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable_wisp_pnt.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable_start_flash.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable_embers.vpcf"
+		},
+	]
+	m_nBehaviorVersion = 12
+}

@@ -1,0 +1,101 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf23:version{636cefcd-6551-40ad-801c-6085f7e67e27} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_ABSORIGIN_FOLLOW"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "parent"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 6
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/juggernaut/juggernaut.vmdl"
+				m_nModSpecificData = 6
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+				m_materialGroupName = "okita"
+			}
+		},
+	]
+	m_nMaxParticles = 0
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_gems.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_ground_dark.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_ground_detail.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_light.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_ring_darken.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_light_aura.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_aegis_back.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_aegis_top.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_magic.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_core.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_flower.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_ground_flower_base.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_smoke.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_detail.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/okita/ti9/ti9_emblem_effect_base_detail.vpcf"
+		},
+	]
+	m_nBehaviorVersion = 10
+}

@@ -1,0 +1,118 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf19:version{aafc65d8-7a5a-4e01-bd8d-3ac118422503} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_flConstantRadius = 1.0
+	m_nConstantSequenceNumber1 = 2
+	m_nMaxParticles = 128
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, -100.0 ]
+			m_fDrag = 0.1
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartTime = 0.85
+			m_flEndScale = 0.1
+			m_bEaseInAndOut = true
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_ModelList = 
+			[
+				{
+					m_model = resource:"models/particle/tiny_simrocks.vmdl"
+				},
+			]
+			m_bOrientZ = true
+			m_flAnimationRate = 80.0
+			m_bAnimated = true
+			m_bForceLoopingAnimation = true
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 0.05
+			m_flRadiusMax = 0.5
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.4
+			m_fLifetimeMax = 0.75
+		},
+		{
+			_class = "C_INIT_RandomTrailLength"
+			m_flMinLength = 5.0
+			m_flMaxLength = 5.0
+		},
+		{
+			_class = "C_INIT_RingWave"
+			m_flParticlesPerOrbit = 15.0
+			m_flInitialRadius = 100.0
+			m_flInitialSpeedMin = 50.0
+			m_flInitialSpeedMax = 150.0
+		},
+		{
+			_class = "C_INIT_RandomSecondSequence"
+			m_nSequenceMax = 3
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 5
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_nFieldOutput = "12"
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 81, 70, 60, 255 ]
+			m_ColorMax = [ 80, 67, 61, 255 ]
+			m_nTintBlendMode = "2"
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMax = [ 0.0, 0.0, 10.0 ]
+		},
+		{
+			_class = "C_INIT_PositionWarp"
+			m_vecWarpMin = [ 0.0, 0.0, 0.0 ]
+			m_vecWarpMax = [ 10.0, 10.0, 0.0 ]
+			m_flWarpTime = 1.5
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nInputMax = 128
+			m_flOutputMin = 2.0
+			m_bScaleInitialRange = true
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmissionDuration = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 0.4
+			}
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 120.0
+			}
+		},
+	]
+	m_bShouldSort = false
+	m_nBehaviorVersion = 5
+	m_nFirstMultipleOverride_BackwardCompat = 8
+}

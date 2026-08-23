@@ -1,0 +1,134 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf16:version{261b3cba-02c7-424f-854b-c432c6f018d1} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 7
+	m_flConstantRadius = 1.0
+	m_nConstantSequenceNumber1 = 1
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_bOrientZ = true
+			m_flAnimationRate = 70.0
+			m_ModelList = 
+			[
+				{
+					m_model = resource:"models/particle/soil_rupture.vmdl"
+				},
+			]
+			m_bAnimated = true
+			m_nLOD = 1
+			m_bForceLoopingAnimation = true
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, -200.0 ]
+			m_flOpStartFadeInTime = 1.0
+			m_fDrag = 0.05
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flBias = 0.6
+			m_flEndScale = 0.5
+			m_flStartTime = 0.6
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 1.5
+			m_fLifetimeMin = 1.5
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomYaw"
+			m_flDegreesMax = 0.0
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_nFieldOutput = "12"
+			m_flDegreesMax = 0.0
+		},
+		{
+			_class = "C_INIT_RandomTrailLength"
+			m_flMinLength = 70.0
+			m_flMaxLength = 70.0
+		},
+		{
+			_class = "C_INIT_PositionWarp"
+			m_vecWarpMin = [ 0.65, 0.65, 0.65 ]
+			m_flWarpTime = 3.0
+			m_bUseCount = true
+			m_nControlPointNumber = 1
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMax = [ 0.0, 0.0, 500.0 ]
+			m_OffsetMin = [ 0.0, 0.0, 500.0 ]
+		},
+		{
+			_class = "C_INIT_PositionPlaceOnGround"
+			m_CollisionGroupName = "DEBRIS"
+			m_flMaxTraceLength = 2048.0
+			m_bSetNormal = true
+			m_flOffset = -0.25
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nInputMax = 2
+			m_nFieldOutput = "13"
+			m_bActiveRange = true
+			m_flOutputMin = 4.0
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nInputMin = 5
+			m_nInputMax = 8
+			m_flOutputMin = 1.0
+			m_flOutputMax = 0.5
+			m_bScaleInitialRange = true
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMax = [ 0.0, 0.0, 5.0 ]
+			m_OffsetMin = [ 0.0, 0.0, 5.0 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 1
+			m_flInitFromKilledParentParticles = 1.0
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/leloch/techies_stasis_plant_elec_rad.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/leloch/techies_stasis_plant_elec_radwall.vpcf"
+		},
+	]
+	m_nBehaviorVersion = 4
+	m_nFirstMultipleOverride_BackwardCompat = 6
+}

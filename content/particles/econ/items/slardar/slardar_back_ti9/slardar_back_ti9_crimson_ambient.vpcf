@@ -1,0 +1,104 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 11
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_prop_l"
+					m_vecOffset = [ 1.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_prop_l"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 4
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_prop_r"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/items/slardar/slardar_ti9_immortal_back/slardar_ti9_immortal_back.vmdl"
+				m_nModSpecificData = 13531
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_ForceControlPointStub"
+			m_ControlPoint = 2
+		},
+		{
+			_class = "C_OP_ForceControlPointStub"
+			m_ControlPoint = 3
+		},
+		{
+			_class = "C_OP_ForceControlPointStub"
+			m_ControlPoint = 4
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_back_ti9/slardar_back_ti9_crimson_ambient_window_trace.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_back_ti9/slardar_back_ti9_crimson_ambient_window_trace_r.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_back_ti9/slardar_back_ti9_crimson_ambient_drip_trace_r.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_back_ti9/slardar_back_ti9_crimson_ambient_drip_trace.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_back_ti9/slardar_back_ti9_crimson_ambient_chest_trace.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_back_ti9/slardar_back_ti9_crimson_ambient_prop_pnt.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_back_ti9/slardar_back_ti9_crimson_ambient_under_trace.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_back_ti9/slardar_back_ti9_crimson_ambient_under_trace_r.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_back_ti9/slardar_back_ti9_crimson_ambient_under_trace_r_b.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/slardar_back_ti9/slardar_back_ti9_crimson_ambient_under_trace_b.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

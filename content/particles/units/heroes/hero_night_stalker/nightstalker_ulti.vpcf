@@ -1,0 +1,124 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_flConstantRadius = 128.0
+	m_ConstantColor = [ 0, 0, 0, 255 ]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderProjected"
+			m_hProjectedMaterial = resource:"materials/particle/particle_modulate_05_projected.vmat"
+			m_bFlipHorizontal = true
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.75
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 2.0
+		},
+		{
+			_class = "C_OP_SetToCP"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_bRandomlyFlipDirection = false
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 0.5
+			m_fLifetimeMin = 0.5
+		},
+		{
+			_class = "C_INIT_RandomScalar"
+			m_flMin = 0.5
+			m_flMax = 0.5
+			m_nFieldOutput = 13
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_ulti/nightstalker_ulti_a.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_ulti/nightstalker_ulti_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_ulti/nightstalker_ulti_c.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_ulti/nightstalker_ulti_d.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_ulti/nightstalker_ulti_e.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_ulti/nightstalker_ulti_f.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_ulti/nightstalker_ulti_g.vpcf"
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_HSVShiftToCP"
+			m_DefaultHSVColor = [ 38, 2, 123, 255 ]
+		},
+	]
+	m_nBehaviorVersion = 12
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 60
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 255.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 61
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+}

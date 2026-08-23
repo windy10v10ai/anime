@@ -1,0 +1,51 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 11
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_previewState = 
+			{
+				m_previewModel = "models/items/slardar/dota_plus_slardar_head/dota_plus_slardar_head.vmdl"
+				m_nModSpecificData = 12941
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+				m_materialGroupName = "0"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/dota_plus_slardar/dota_plus_slardar_head_glow.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/dota_plus_slardar/dota_plus_slardar_head_glow_l.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/dota_plus_slardar/dota_plus_slardar_head_glow_bot_l.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/dota_plus_slardar/dota_plus_slardar_head_glow_bot_r.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/dota_plus_slardar/dota_plus_slardar_antenna_01.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/dota_plus_slardar/dota_plus_slardar_antenna_02.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/slardar/dota_plus_slardar/dota_plus_slardar_head_motes.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

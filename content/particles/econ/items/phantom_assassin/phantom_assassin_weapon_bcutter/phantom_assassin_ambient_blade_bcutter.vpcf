@@ -1,0 +1,152 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 60
+	m_hSnapshot = resource:"particles/econ/items/phantom_assassin/bcutter.vsnap"
+	m_nSnapshotControlPoint = 1
+	m_flConstantRadius = 2.0
+	m_ConstantColor = [ 160, 255, 207, 255 ]
+	m_flNoDrawTimeToGoToSleep = 2.0
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderRopes"
+			m_flOverbrightFactor = 8.0
+			m_flRadiusScale = 0.5
+			m_flTextureVWorldSize = 20.0
+			m_flTextureVScrollRate = 20.0
+			m_nMaxTesselation = 4
+			m_nMinTesselation = 4
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/beam_hotwhite.vtex"
+					m_TextureControls = 
+					{
+						m_flFinalTextureScaleU = 
+						{
+							m_nType = "PF_TYPE_LITERAL"
+							m_flLiteralValue = -1.0
+						}
+					}
+				},
+			]
+			m_nOutputBlendMode = "PARTICLE_OUTPUT_BLEND_MODE_ADD"
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_MovementRigidAttachToCP"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+			m_nOutputField = 1
+		},
+		{
+			_class = "C_INIT_InitFromCPSnapshot"
+			m_nAttributeToRead = 0
+			m_nControlPointNumber = 1
+			m_nLocalSpaceCP = 2
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_flOutputMin = 1.0
+			m_flOutputMax = 0.0
+			m_bActiveRange = true
+			m_bDisableOperator = true
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_bActiveRange = true
+			m_nInputMax = 59
+			m_nInputMin = 50
+			m_bDisableOperator = true
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_bActiveRange = true
+			m_flOutputMax = 0.0
+			m_flOutputMin = 1.0
+			m_nInputMin = 54
+			m_nInputMax = 59
+			m_nFieldOutput = 7
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nInputMax = 3
+			m_bActiveRange = true
+			m_nFieldOutput = 7
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
+		{
+			_class = "C_INIT_PositionWarp"
+			m_vecWarpMax = [ 0.85, 0.85, 0.85 ]
+			m_vecWarpMin = [ 0.85, 0.85, 0.85 ]
+			m_nControlPointNumber = 2
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 80.0
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/phantom_assassin/phantom_assassin_weapon_bcutter/phantom_assassin_ambient_blade_bcutter_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/phantom_assassin/phantom_assassin_weapon_bcutter/phantom_assassin_ambient_blade_bcutter_c.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/phantom_assassin/phantom_assassin_weapon_bcutter/phantom_assassin_ambient_blade_bcutter_d.vpcf"
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_vecCP1Pos = [ 0.0, 0.0, 0.0 ]
+			m_nCP1 = 2
+			m_bSetOnce = true
+			m_transformInput = 
+			{
+				m_nType = "PT_TYPE_INVALID"
+			}
+		},
+		{
+			_class = "C_OP_SetControlPointOrientation"
+			m_bUseWorldLocation = true
+			m_nCP = 2
+		},
+	]
+	m_nBehaviorVersion = 4
+	m_nFirstMultipleOverride_BackwardCompat = 2
+}

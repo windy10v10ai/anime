@@ -1,0 +1,39 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 12
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_previewState = 
+			{
+				m_previewModel = "models/items/venomancer/ti8_venomancer_chomper_shoulder/ti8_venomancer_chomper_shoulder.vmdl"
+				m_nModSpecificData = 12506
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+				m_materialGroupName = "0"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/veno_ti8_chomper/veno_ti8_chomper_shoulder_blobs.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/veno_ti8_chomper/veno_ti8_chomper_shoulder_trap.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/veno_ti8_chomper/veno_ti8_chomper_shoulder_trap_seam.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/venomancer/veno_ti8_chomper/veno_ti8_chomper_shoulder_eyes_glow_ambient.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

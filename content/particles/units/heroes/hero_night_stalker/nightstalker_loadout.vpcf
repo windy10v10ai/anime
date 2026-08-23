@@ -1,0 +1,44 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 0
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_loadout/nightstalker_loadout_a.vpcf"
+			m_flDelay = 0.12
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_loadout/nightstalker_loadout_b.vpcf"
+			m_flDelay = 0.12
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_loadout/nightstalker_loadout_c.vpcf"
+			m_flDelay = 0.12
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_loadout/nightstalker_loadout_d.vpcf"
+			m_flDelay = 0.36
+		},
+	]
+	m_nBehaviorVersion = 12
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "loadout"
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/nightstalker/nightstalker.vmdl"
+				m_bAnimationNonLooping = true
+			}
+			m_drivers = 
+			[
+				{
+					m_entityName = "self"
+					m_attachmentName = "attach_hitloc"
+				},
+			]
+		},
+	]
+}

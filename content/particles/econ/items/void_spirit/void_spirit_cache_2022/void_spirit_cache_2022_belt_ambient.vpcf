@@ -1,0 +1,70 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 12
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "gem_front"
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 4
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "gem_a"
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 5
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "gem_b"
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 6
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "gem_c"
+					m_entityName = "self_with_wearables"
+				},
+				{
+					m_iControlPoint = 7
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "bottle"
+					m_entityName = "self_with_wearables"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/items/void_spirit/void_spirit_taiji_koi_belt/void_spirit_taiji_koi_belt.vmdl"
+				m_nModSpecificData = 26659
+				m_sequenceName = "vs_idle_leg"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_cache_2022/void_spirit_cache_2022_belt_ambient_gem_front_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_cache_2022/void_spirit_cache_2022_belt_ambient_gem_a_twinkle.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_cache_2022/void_spirit_cache_2022_belt_ambient_gem_b_twinkle.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_cache_2022/void_spirit_cache_2022_belt_ambient_gem_c_twinkle.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/void_spirit/void_spirit_cache_2022/void_spirit_cache_2022_belt_ambient_bottle_glow.vpcf"
+		},
+	]
+}

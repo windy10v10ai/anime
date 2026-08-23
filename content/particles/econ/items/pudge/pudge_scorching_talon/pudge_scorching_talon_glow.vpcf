@@ -1,0 +1,101 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 32
+	m_flConstantRadius = 70.0
+	m_flConstantLifespan = 0.1
+	m_ConstantColor = [ 41, 124, 167, 155 ]
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			VisibilityInputs = 
+			{
+				m_flCameraBias = 22.0
+			}
+			m_flOverbrightFactor = 5.0
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/particle_glow_05.vtex"
+				},
+			]
+			m_nOutputBlendMode = "PARTICLE_OUTPUT_BLEND_MODE_ADD"
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_MovementRigidAttachToCP"
+			m_nControlPointNumber = 1
+		},
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_bProportionalOp = false
+			m_flEndTime_max = 100000002004087734272.0
+			m_flEndTime_min = 100000002004087734272.0
+			m_bProportional = false
+			m_FrequencyMin = 0.5
+			m_RateMax = 60.0
+			m_RateMin = -60.0
+			m_nField = 3
+		},
+		{
+			_class = "C_OP_ClampScalar"
+			m_flOutputMax = 50.0
+			m_flOutputMin = 10.0
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_InitFromCPSnapshot"
+			m_nLocalSpaceCP = 4
+			m_nAttributeToRead = 0
+			m_nControlPointNumber = 6
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMax = [ 200, 56, 0, 255 ]
+			m_ColorMin = [ 254, 120, 61, 255 ]
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_nType = "PF_TYPE_RANDOM_UNIFORM"
+				m_flRandomMin = 0.392157
+				m_flRandomMax = 0.588235
+				m_nRandomMode = "PF_RANDOM_MODE_CONSTANT"
+			}
+			m_nOutputField = 7
+		},
+		{
+			_class = "C_INIT_PositionWarp"
+			m_vecWarpMax = [ 0.9, 0.9, 0.9 ]
+			m_vecWarpMin = [ 0.9, 0.9, 0.9 ]
+			m_nScaleControlPointNumber = 3
+			m_nControlPointNumber = 4
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nSnapshotControlPoint = 6
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 32.0
+			}
+		},
+	]
+	m_nBehaviorVersion = 5
+	m_nFirstMultipleOverride_BackwardCompat = 3
+}

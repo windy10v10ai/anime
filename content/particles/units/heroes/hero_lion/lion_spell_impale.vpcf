@@ -1,0 +1,212 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf31:version{593cd181-a1d6-4c6f-9a8c-0534e8d44db0} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_flConstantRadius = 1.25
+	m_bShouldSort = false
+	m_nBehaviorVersion = 10
+	m_nFirstMultipleOverride_BackwardCompat = 2
+	m_ConstantColor = [ 249, 135, 30, 255 ]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 900.0, 1.0, 1.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1240.411499, 1.378234, 4.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 10
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 62
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 0.2
+			m_fLifetimeMin = 0.2
+		},
+		{
+			_class = "C_INIT_VelocityFromCP"
+			m_nControlPoint = 1
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 90.0
+			m_flRadiusMax = 110.0
+		},
+		{
+			_class = "C_INIT_RandomRotationSpeed"
+			m_flDegreesMin = 180.0
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+		},
+		{
+			_class = "C_OP_SetControlPointsToParticle"
+			m_nFirstControlPoint = 3
+			m_bSetOrientation = true
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 1.0
+		},
+		{
+			_class = "C_OP_MovementPlaceOnGround"
+			m_nLerpCP = 3
+			m_flTolerance = 74.0
+			m_flOffset = 4.0
+			m_bIncludeWater = true
+			m_flMaxTraceLength = 1024.0
+			m_flTraceOffset = 256.0
+			m_CollisionGroupName = "DEBRIS"
+			m_nRefCP1 = 3
+			m_flLerpRate = 0.1
+		},
+		{
+			_class = "C_OP_LagCompensation"
+			m_nDesiredVelocityCP = 1
+			m_nLatencyCP = 10
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_RateMin = 400.0
+			m_RateMax = 1000.0
+			m_FrequencyMin = 0.5
+			m_FrequencyMax = 2.0
+			m_nField = "3"
+			m_flEndTime_min = 99999.0
+			m_flEndTime_max = 999999.0
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_RateMax = 180.0
+			m_FrequencyMax = 2.0
+			m_nField = "4"
+			m_flEndTime_min = 99999.0
+			m_flEndTime_max = 999999.0
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_SpinUpdate"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_bSaturateColorPreAlphaBlend = false
+			m_flOverbrightFactor = 2.0
+			m_vecColorScale = 
+			{
+				m_nType = "PVEC_TYPE_LITERAL_COLOR"
+				m_LiteralColor = [ 255, 255, 255 ]
+			}
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/burst01.vtex"
+				},
+			]
+			m_nOutputBlendMode = "PARTICLE_OUTPUT_BLEND_MODE_ADD"
+			m_OutlineColor = [ 255, 255, 255 ]
+			m_bDisableOperator = true
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_spell_impale_ti9_ground_dark.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_spell_impale_ti9_ground_hot.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_spell_impale_ti9_smoke.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_spell_impale_ti9_crack_rope_base.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_spell_impale_ti9_crack_rope_detail.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_spell_impale_ti9_crack_rope_hot.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_spell_impale_ti9_ground_bright.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_spell_impale_ti9_ground_bright_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_spell_impale_ti9_debris.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_spell_impale_ti9_flek_burst.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_spell_impale_ti9_rocks.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_spell_impale_ti9_lava.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_lion/lion_spell_impale_spikes.vpcf"
+		},
+	]
+}

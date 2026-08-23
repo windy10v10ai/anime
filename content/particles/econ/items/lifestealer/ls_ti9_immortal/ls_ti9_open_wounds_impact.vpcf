@@ -1,0 +1,50 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nBehaviorVersion = 11
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "absorigin"
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/life_stealer/life_stealer.vmdl"
+				m_nModSpecificData = 443
+				m_sequenceName = "cast3_open_wounds"
+				m_nFireParticleOnSequenceFrame = 11
+				m_hitboxSetName = "default"
+				m_materialGroupName = "0"
+				m_bAnimationNonLooping = true
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti9_immortal/ls_ti9_open_wounds_blood_ground.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti9_immortal/ls_ti9_open_wounds_blood_soft.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti9_immortal/ls_ti9_open_wounds_blood_bulk.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti9_immortal/ls_ti9_open_wounds_blood_spray.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti9_immortal/ls_ti9_open_wounds_right.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lifestealer/ls_ti9_immortal/ls_ti9_open_wounds_left.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

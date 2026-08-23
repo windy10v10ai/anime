@@ -1,0 +1,134 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf19:version{aafc65d8-7a5a-4e01-bd8d-3ac118422503} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_hReferenceReplacement = resource:"particles/units/heroes/hero_rubick/rubick_staff_center.vpcf"
+	m_flConstantRadius = 1.0
+	m_flConstantLifespan = 10.0
+	m_nMaxParticles = 4
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_RemapVectortoCP"
+			m_nOutControlPointNumber = 5
+			m_nFieldInput = "17"
+			m_flOpStartFadeInTime = 0.125
+			m_flOpEndFadeInTime = 0.125
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin = [ -1.0, -1.0, -1.0 ]
+			m_RateMax = [ 1.0, 1.0, 1.0 ]
+			m_FrequencyMin = [ 0.5, 0.5, 0.5 ]
+			m_FrequencyMax = [ 3.0, 3.0, 3.0 ]
+			m_flEndTime_min = 999999.0
+			m_flEndTime_max = 999999.0
+			m_flOscMult = 1.0
+			m_flOscAdd = 0.8
+		},
+		{
+			_class = "C_OP_MaxVelocity"
+			m_flMaxVelocity = 16.0
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin = [ -1.0, -1.0, -1.0 ]
+			m_RateMax = [ 2.0, 2.0, 2.0 ]
+			m_FrequencyMin = [ 0.2, 0.2, 0.2 ]
+			m_flEndTime_min = 999999.0
+			m_flEndTime_max = 999999.0
+			m_flOscMult = 1.0
+		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_bLockRot = true
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartTime = 10.0
+			m_flEndTime = 20.0
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderBlobs"
+			m_cubeWidth = 4.0
+			m_cutoffRadius = 8.0
+			m_renderRadius = 4.0
+			m_nScaleCP = 5
+			m_hMaterial = resource:"materials/particle/blob_ice_statue.vmat"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.75
+			m_fLifetimeMax = 3.0
+		},
+		{
+			_class = "C_INIT_RandomVector"
+			m_vecMin = [ 1.0, 1.0, 1.0 ]
+			m_vecMax = [ 1.0, 1.0, 1.0 ]
+			m_nFieldOutput = "17"
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 47.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 47.0 ]
+			m_bLocalCoords = true
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 4.0
+			}
+		},
+	]
+	m_Constraints = 
+	[
+		{
+			_class = "C_OP_WorldTraceConstraint"
+			m_vecCpOffset = [ 0.0, 0.0, 47.0 ]
+			m_flRadiusScale = 5.0
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_ConstrainDistance"
+			m_fMaxDistance = 8.0
+			m_CenterOffset = [ 0.0, 0.0, 47.0 ]
+		},
+	]
+	m_bShouldSort = false
+	m_nBehaviorVersion = 4
+	m_nFirstMultipleOverride_BackwardCompat = 3
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+}

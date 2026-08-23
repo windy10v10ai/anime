@@ -1,0 +1,70 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf31:version{593cd181-a1d6-4c6f-9a8c-0534e8d44db0} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nMaxParticles = 0
+	m_nBehaviorVersion = 10
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_previewState = 
+			{
+				m_previewModel = "models/items/lion/lion_ti8_arm/lion_ti8_arm.vmdl"
+				m_nModSpecificData = 9746
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_drop.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_gem_glow.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_gem_magic.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_gem_twinkle.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_gem_flare.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_trace.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_gem_ring.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_trace_line.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_trace_spike_a_ray.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_trace_spike_b_ray.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_palm_light.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti8/lion_ti8_arm_ambient_sparkle.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

@@ -1,0 +1,203 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_flConstantRadius = 2.0
+	m_ConstantColor = [ 139, 166, 255, 255 ]
+	m_flMaxDrawDistance = 1500.0
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderTrails"
+			VisibilityInputs = 
+			{
+				m_flCameraBias = 50.0
+			}
+			m_flOverbrightFactor = 6.0
+			m_flAddSelfAmount = 2.0
+			m_bSaturateColorPreAlphaBlend = false
+			m_flMinLength = 24.0
+			m_flMaxLength = 256.0
+			m_flRadiusScale = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 0.5
+			}
+			m_bDisableOperator = true
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/sparks/sparks.vtex"
+					m_TextureControls = 
+					{
+						m_flFinalTextureScaleV = 
+						{
+							m_nType = "PF_TYPE_LITERAL"
+							m_flLiteralValue = -1.0
+						}
+						m_flFinalTextureOffsetV = 
+						{
+							m_nType = "PF_TYPE_LITERAL"
+							m_flLiteralValue = 1.0
+						}
+					}
+				},
+			]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
+		},
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_DampenToCP"
+			m_flRange = 8.0
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+			m_fDrag = 0.25
+		},
+		{
+			_class = "C_OP_SetControlPointsToParticle"
+			m_nFirstControlPoint = 3
+			m_bSetOrientation = true
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.7
+			m_fLifetimeMax = 1.2
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMax = 40.0
+			m_flRadiusMin = 30.0
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMin = 4
+			m_nSequenceMax = 4
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fSpeedMax = 100.0
+			m_nControlPointNumber = 1
+			m_fRadiusMax = 100.0
+		},
+		{
+			_class = "C_INIT_VelocityRandom"
+			m_LocalCoordinateSystemSpeedMin = [ 512.0, 512.0, 512.0 ]
+			m_LocalCoordinateSystemSpeedMax = [ -512.0, -512.0, -512.0 ]
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+		},
+	]
+	m_ForceGenerators = 
+	[
+		{
+			_class = "C_OP_AttractToControlPoint"
+			m_vecComponentScale = [ 1.0, 1.0, 0.5 ]
+			m_nControlPointNumber = 1
+			m_fFalloffPower = -0.5
+			m_fForceAmount = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 150.0
+			}
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
+		},
+		{
+			_class = "C_OP_TwistAroundAxis"
+			m_fForceAmount = 150.0
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
+		},
+	]
+	m_Constraints = 
+	[
+		{
+			_class = "C_OP_ConstrainDistance"
+			m_fMinDistance = 25.0
+			m_nControlPointNumber = 1
+			m_fMaxDistance = 125.0
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_void/nightstalker_void_b_a_a.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_void/nightstalker_void_b_a_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_void/nightstalker_void_b_a_c.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_void/nightstalker_void_b_a_d.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_void/nightstalker_void_b_a_e.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_void/nightstalker_void_b_a_f.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_night_stalker/nightstalker_void/nightstalker_void_b_a_g.vpcf"
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_vecCP1Pos = [ 0.0, 0.0, 100.0 ]
+		},
+	]
+	m_nBehaviorVersion = 12
+	m_nFirstMultipleOverride_BackwardCompat = 6
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+}

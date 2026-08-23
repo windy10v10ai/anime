@@ -1,0 +1,20 @@
+lich_ability_ritual_05.mp3: 
+lich_ability_ritual_14.mp3: 
+lich_attack_01.mp3: 雪憩medim
+lich_attack_02.mp3: コンドは苦さないから
+lich_attack_04.mp3: バック、まだ行けない?
+lich_attack_05.mp3: 村の人たちを、危険な目に合わせたくないものは
+lich_laugh_01.mp3: Hahaha
+lich_move_01.mp3: それより、スタカチモノの続き、始めなきゃ
+lich_move_02.mp3: どうしたの?
+lich_move_03.mp3: 何があったの?
+lich_move_04.mp3: あなたに 精レへの仕服がありますように
+lich_move_05.mp3: お願いよ!
+lich_move_06.mp3: 私だけじゃなくて、みんなのことももっとちゃんとするには
+lich_move_07.mp3: 森の近くに、反対処段が
+lich_move_08.mp3: そういうことのね
+lich_move_09.mp3: それを理由にするな、ずるい
+lich_move_10.mp3: えっと、これって、何かの間違いじゃない?
+lich_move_11.mp3: お果たせどうしたらいいの?
+lich_spawn_01.mp3: エミリア私の名前はエミリア
+lich_spawn_03.mp3: 今日は早いのね

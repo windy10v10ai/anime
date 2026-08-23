@@ -1,0 +1,47 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 12
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_previewState = 
+			{
+				m_previewModel = "models/items/spectre/spectre_arcana/spectre_arcana_weapon.vmdl"
+				m_nModSpecificData = 12312
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+				m_flPlaybackSpeed = 0.0
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/spectre/spectre_arcana/spectre_arcana_ambient_weapon_flames.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/spectre/spectre_arcana/spectre_arcana_weapon_ambient_particulate.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/spectre/spectre_arcana/spectre_arcana_weapon_ambient_edge_flek.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/spectre/spectre_arcana/spectre_arcana_weapon_ambient_blade_trace_core.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/spectre/spectre_arcana/spectre_arcana_weapon_ambient_glyph_01.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/spectre/spectre_arcana/spectre_arcana_weapon_ambient_glyph_02.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

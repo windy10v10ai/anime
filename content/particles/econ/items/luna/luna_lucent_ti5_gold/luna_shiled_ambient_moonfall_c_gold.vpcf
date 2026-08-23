@@ -1,0 +1,122 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf21:version{7a150ecc-d865-438f-ad53-5963fe1a2720} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 4
+	m_flConstantRadius = 22.0
+	m_flConstantLifespan = 2.0
+	m_ConstantColor = [ 132, 112, 60, 255 ]
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			VisibilityInputs = 
+			{
+				m_flInputMax = 0.2
+				m_flCameraBias = 10.0
+				m_flRadiusScaleMin = 0.0
+				m_flAlphaScaleMax = 44.0
+				m_nCPin = 8
+				m_flProxyRadius = 3.0
+			}
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_bMod2X = true
+			m_flStartFadeSize = 7.0
+			m_flEndFadeSize = 8.0
+			m_bDisableZBuffering = true
+			m_flOverbrightFactor = 10.0
+			m_hTexture = resource:"materials/particle/particle_flares/particle_flare_004b_mod.vtex"
+			m_ColorScale = [ 255, 255, 255 ]
+		},
+		{
+			_class = "C_OP_RenderDeferredLight"
+			m_flRadiusScale = 2.0
+			m_flAlphaScale = 8.0
+			m_flStartFalloff = 0.1
+			m_ColorScale = [ 252, 206, 106 ]
+			m_hTexture = resource:"materials/particle/particle_flares/particle_flare_004b_mod.vtex"
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_FadeIn"
+			m_bProportional = false
+			m_flFadeInTimeMax = 1.5
+			m_flFadeInTimeMin = 1.5
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_bLockRot = true
+		},
+		{
+			_class = "C_OP_RampScalarLinear"
+			m_nField = "4"
+			m_RateMin = -1.0
+			m_RateMax = 1.0
+			m_flEndTime_min = 10000000272564224.0
+			m_flEndTime_max = 10000000272564224.0
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_bRandomlyFlipDirection = false
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 12.0
+			m_flRadiusMax = 24.0
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 8.0, -10.0, 7.0 ]
+			m_OffsetMax = [ 8.0, -10.0, 7.0 ]
+			m_bLocalCoords = true
+		},
+		{
+			_class = "C_INIT_RandomYawFlip"
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 3.0
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/luna/luna_lucent_ti5_gold/luna_shiled_ambient_moonfall_e_gold.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/luna/luna_lucent_ti5_gold/luna_shiled_ambient_moonfall_g_gold.vpcf"
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_nCP1 = 8
+			m_vecCP1Pos = [ 9.5, -10.0, 7.0 ]
+		},
+	]
+	m_nBehaviorVersion = 5
+	m_nFirstMultipleOverride_BackwardCompat = 3
+}

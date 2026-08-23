@@ -1,0 +1,128 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 128
+	m_ConstantColor = [ 0, 0, 0, 255 ]
+	m_nConstantSequenceNumber = 8
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderTrails"
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_flOverbrightFactor = 6.0
+			m_flAddSelfAmount = 2.0
+			m_bSaturateColorPreAlphaBlend = false
+			m_hTexture = resource:"materials/particle/electrical_arc2/electrical_arc_white_2_05.vtex"
+			m_bIgnoreDT = true
+			m_flRadiusScale = 0.5
+			m_flFinalTextureScaleV = -1.0
+			m_flFinalTextureOffsetV = 1.0
+			m_vEndTrailTintFactor = [ 1.0, 0.5, 0.5, 0.5 ]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 0.0
+			m_flEndScale = 8.0
+			m_flBias = 0.25
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.65
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_flFadeStartTime = 0.5
+			m_ColorFade = [ 94, 0, 45, 255 ]
+		},
+		{
+			_class = "C_OP_RampScalarLinearSimple"
+			m_Rate = -3.0
+			m_nField = 10
+		},
+		{
+			_class = "C_OP_LockToBone"
+		},
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_nCP1 = 0
+			m_vecCP1Pos = [ 0.0, 0.0, 0.0 ]
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 0.3
+			m_fLifetimeMin = 0.2
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMax = 10.0
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 32
+			m_nAlphaMax = 32
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_vecOutputMin = [ 0.0, 0.0, -5000.0 ]
+			m_vecOutputMax = [ 0.0, 0.0, -5000.0 ]
+		},
+		{
+			_class = "C_INIT_RandomTrailLength"
+			m_flMinLength = 3.0
+			m_flMaxLength = 7.0
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_clinkz/clinkz_death_pact_a.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_clinkz/clinkz_death_pact_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_clinkz/clinkz_death_pact_c.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_clinkz/clinkz_death_pact_glow.vpcf"
+		},
+		{
+			m_flDelay = 0.25
+			m_ChildRef = resource:"particles/units/heroes/hero_clinkz/clinkz_death_pact_glow_hero.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_clinkz/feathers.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_clinkz/featherglow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_clinkz/purify.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_clinkz/despair.vpcf"
+		},
+	]
+}

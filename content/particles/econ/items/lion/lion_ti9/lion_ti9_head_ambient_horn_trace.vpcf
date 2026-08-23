@@ -1,0 +1,40 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf31:version{593cd181-a1d6-4c6f-9a8c-0534e8d44db0} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 0
+	m_hSnapshot = resource:"particles/models/items/lion/lion_ti9_immortal_head/lion_ti9_immortal_head_horn_l_fx.vsnap"
+	m_nSnapshotControlPoint = 6
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_ti9_head_ambient_horn_trace_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_ti9_head_ambient_horn_trace_ember.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_ti9_head_ambient_horn_trace_detail.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/lion/lion_ti9/lion_ti9_head_ambient_horn_trace_glow_hot.vpcf"
+			m_bDisableChild = true
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_nBehaviorVersion = 10
+}

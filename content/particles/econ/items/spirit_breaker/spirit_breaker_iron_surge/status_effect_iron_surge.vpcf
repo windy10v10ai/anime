@@ -1,0 +1,103 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf25:version{7bca2d8d-3a14-4a76-bd41-f483fdf78d50} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_nInitialParticles = 1
+	m_flConstantRadius = 0.0
+	m_ConstantColor = [ 0, 0, 0, 255 ]
+	m_nConstantSequenceNumber = 1
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderStatusEffect"
+			m_pTextureColorWarp = resource:"materials/models/heroes/statuseffects/colorwarp_iron_surge.vtex"
+			m_bDisableOperator = true
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_OscillateVectorSimple"
+			m_flOpStartFadeOutTime = 0.2
+			m_flOpEndFadeOutTime = 0.2
+			m_nOpEndCapState = 1
+			m_nField = "15"
+			m_Rate = [ 0.0, -8.0, 0.0 ]
+			m_Frequency = [ 0.0, 0.25, 0.0 ]
+			m_flOscAdd = 0.75
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_RampScalarSplineSimple"
+			m_nField = "4"
+			m_Rate = 4.0
+			m_flEndTime = 0.25
+			m_bEaseOut = true
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_nFieldOutput = "22"
+			m_flFadeEndTime = 0.25
+			m_ColorFade = [ 19, 22, 41, 0 ]
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_flFadeEndTime = 0.5
+			m_ColorFade = [ 19, 22, 41, 0 ]
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_RampScalarLinearSimple"
+			m_nOpEndCapState = 1
+			m_nField = "4"
+			m_Rate = -4.0
+			m_flEndTime = 999999.0
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_ClampScalar"
+			m_nFieldOutput = "4"
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = 1
+			m_bDisableOperator = true
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_StatusEffect"
+			m_flDetail2Scale = 1.0
+			m_flColorWarpIntensity = 1.0
+			m_flAmbientScale = 1.0
+			m_flRimLightScale = 25.0
+			m_flSpecularScale = 2.0
+			m_flSpecularExponent = 100.0
+			m_flSpecularExponentBlendToFull = 1.0
+			m_flSpecularBlendToFull = 1.0
+			m_flReflectionsTintByBaseBlendToNone = 1.0
+			m_flMetalnessBlendToFull = 0.05
+			m_rimLightColor = [ 10, 10, 10, 0 ]
+			m_bDisableOperator = true
+			m_specularColor = [ 0, 0, 0, null ]
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMax = [ 8, 8, 8, 255 ]
+			m_ColorMin = [ 10, 10, 10, 255 ]
+			m_bDisableOperator = true
+		},
+	]
+	m_nBehaviorVersion = 10
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+		},
+	]
+}

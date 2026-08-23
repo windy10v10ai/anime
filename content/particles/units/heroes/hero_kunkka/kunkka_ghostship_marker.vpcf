@@ -1,0 +1,84 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf61:version{39d3ce1d-9442-4407-9b78-8317145b1732} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 2
+	m_flCullRadius = -1.0
+	m_flConstantLifespan = 0.5
+	m_ConstantColor = [ 92, 143, 151, 155 ]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_puddle.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_wake.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_splash.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_ripple.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_splash_ring.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_flDelay = 0.4
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_ring_small.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_air.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_x.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_wake_center.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_bubbles.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_ripple_alt.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_kunkka/kunkka_ghostship_marker_warp.vpcf"
+			m_bDisableChild = true
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 1.0, 1.0 ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_nBehaviorVersion = 4
+}
