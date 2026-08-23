@@ -44,8 +44,12 @@ game/.idea/
 .claude/settings.local.json
 /.superpowers
 /docs/superpowers
+<<<<<<< HEAD
 *.vpcf_c
 *.vpcf_c
 *.vpcf_c
 game/particles/units/heroes/hero_void_spirit/fuxuanattack3.vpcf_c
 *.vpcf_c
+=======
+/docs/review
+>>>>>>> upstream/main

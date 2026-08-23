@@ -86,7 +86,7 @@
 
 		// FAQ
 		"loading_faq_players_instant_revive_question"	"什么情况容易导致游戏卡顿？"
-		"loading_faq_players_instant_revive_answer"		"玩家数超过 6 名，或在自定义模式中选择秒活，都会明显增加服务器负担并导致卡顿。"
+		"loading_faq_players_instant_revive_answer"		"玩家数超过 6 名，场上幻象或召唤单位过多，或在自定义模式中选择秒活等极端设置，都会明显增加服务器负担并导致卡顿。"
 		"loading_faq_illusions_summons_question"		"部分幻象和召唤技能已削弱或移除"
 		"loading_faq_illusions_summons_answer"			"幻象和大量召唤单位会明显增加卡顿，因此相关技能已削弱或移除。"
 		"loading_faq_local_host_question"			"本地主机可以进行游戏吗？"
@@ -353,7 +353,7 @@
 		"awaken_intro_title"				"觉醒石"
 		"awaken_intro_desc"				"开启藏宝箱有几率获得<font color='#FFD24A'>觉醒石</font>，使用后将英雄的一个技能蜕变为觉醒形态，仅本局对局内生效。<br>击杀肉山、或开启更多藏宝箱时，获得觉醒石的几率更高。"
 		"awaken_unlock_intro_title"			"永久觉醒"
-		"awaken_unlock_intro_desc"			"<font color='#FFD24A'>指定英雄</font>：消耗 <font color='#FFFFFF'><b>10000</b></font> <font color='#9B5DE0'>可用勇士积分</font>，或 <font color='#FFFFFF'><b>4000</b></font> <font color='#FFD700'>可用会员积分</font>，永久觉醒指定英雄。<br><font color='#FFD24A'>随机抽选</font>：积分减半，消耗 <font color='#FFFFFF'><b>5000</b></font> <font color='#9B5DE0'>可用勇士积分</font>，或 <font color='#FFFFFF'><b>2000</b></font> <font color='#FFD700'>可用会员积分</font>，从随机 3 个候选英雄中选 1 个觉醒。<br>消耗的只是可用积分：可用积分会减少，但累计积分只增不减，勇士/会员等级与属性点不受影响。永久觉醒不可撤销，技能即使随版本更新增强、削弱甚至重做，英雄的觉醒状态依然生效。"
+		"awaken_unlock_intro_desc"			"<font color='#FFD24A'>指定英雄</font>：消耗 <font color='#FFFFFF'><b>8000</b></font> <font color='#9B5DE0'>可用勇士积分</font>，或 <font color='#FFFFFF'><b>4000</b></font> <font color='#FFD700'>可用会员积分</font>，永久觉醒指定英雄。<br><font color='#FFD24A'>随机抽选</font>：积分减半，消耗 <font color='#FFFFFF'><b>4000</b></font> <font color='#9B5DE0'>可用勇士积分</font>，或 <font color='#FFFFFF'><b>2000</b></font> <font color='#FFD700'>可用会员积分</font>，从随机 3 个候选英雄中选 1 个觉醒。<br>消耗的只是可用积分：可用积分会减少，但累计积分只增不减，勇士/会员等级与属性点不受影响。永久觉醒不可撤销，技能即使随版本更新增强、削弱甚至重做，英雄的觉醒状态依然生效。"
 		"awaken_unlock_button"				"觉醒"
 		"awaken_unlocked_label"				"已觉醒"
 		"awaken_free_trial_badge"			"限免"
@@ -371,7 +371,7 @@
 		"awaken_random_tooltip_insufficient_point"	"可用积分不足"
 		"awaken_random_tooltip_insufficient_pool"	"可觉醒英雄不足 3 个"
 		"awaken_random_card_desc"			"消耗积分减半<br>随机3选1"
-		"awaken_random_candidates_desc"		"消耗 <font color='#FFFFFF'><b>5000</b></font> <font color='#9B5DE0'>可用勇士积分</font>，或 <font color='#FFFFFF'><b>2000</b></font> <font color='#FFD700'>可用会员积分</font>。<br>从随机 3 个候选英雄中选 1 个永久觉醒。"
+		"awaken_random_candidates_desc"		"消耗 <font color='#FFFFFF'><b>4000</b></font> <font color='#9B5DE0'>可用勇士积分</font>，或 <font color='#FFFFFF'><b>2000</b></font> <font color='#FFD700'>可用会员积分</font>。<br>从随机 3 个候选英雄中选 1 个永久觉醒。"
 
 		// Stat Tab UI
 		"profile_stat_games"			"游戏场次"
@@ -468,10 +468,13 @@
 		"profile_tab_dailytask"			"每日任务"
 		"dailytask_header_title"			"我的每日任务"
 		"dailytask_header_subtitle"			"请选择第 {round}/{total} 轮任务"
+		"dailytask_header_desc"			"每天最多可完成 3 轮任务，每轮从 3 个随机候选（含通用任务与英雄专属任务）中选一个完成，每轮可以刷新一次，游戏胜利才算完成任务，结算时获得任务奖励勇士积分"
 		"dailytask_reward_hint"			"+{n} 勇士积分"
 		"dailytask_settlement_tooltip_prefix"		"完成每日任务："
 		"dailytask_select_button"			"领取任务"
 		"dailytask_selected_label"			"已领取"
+		"dailytask_refresh_button"			"刷新任务"
+		"dailytask_refresh_used_label"			"已刷新"
 		"dailytask_disabled_hint"			"作弊模式，或自定义难度选择秒活、综合积分倍率低于1倍时，无法参与每日任务"
 		"dailytask_empty_hint"			"暂无可选的每日任务，下一局再来看看"
 		"dailytask_all_done_hint"			"今日 {total} 轮任务已全部完成"
@@ -3577,6 +3580,13 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_dazzle_upgrade_Description"	"对自己或队友施放薄葬后，目标在薄葬持续期间获得<font color='#FFCC66'>黑皇杖</font>效果。"
 		"DOTA_Tooltip_modifier_special_bonus_unique_dazzle_upgrade"				"<font color='#d000ff'>薄葬 觉醒</font>"
 		"DOTA_Tooltip_modifier_special_bonus_unique_dazzle_upgrade_Description"	"对自己或队友施放薄葬后，目标在薄葬持续期间获得<font color='#FFCC66'>黑皇杖</font>效果。"
+
+		// 斯拉克 精华侵蚀觉醒
+		"DOTA_Tooltip_ability_special_bonus_unique_slark_permanent_essence_awaken"					"<font color='#d000ff'>精华侵蚀 觉醒</font>"
+		"DOTA_Tooltip_ability_special_bonus_unique_slark_permanent_essence_awaken_Description"		"斯拉克击杀敌人时，将能量转移偷取属性总量的%permanent_steal_pct%%%永久偷走该英雄的全属性。<br>敌方英雄的基础属性最低保留<font color='#FFFFFF'><b>1</b></font>点。"
+		"DOTA_Tooltip_ability_special_bonus_unique_slark_permanent_essence_awaken_SummaryDescription"	"斯拉克击杀敌人时，将能量转移偷取属性总量的一部分永久偷走该英雄的全属性。"
+		"DOTA_Tooltip_modifier_special_bonus_unique_slark_permanent_essence_awaken"				"<font color='#d000ff'>精华侵蚀 觉醒</font>"
+		"DOTA_Tooltip_modifier_special_bonus_unique_slark_permanent_essence_awaken_Description"		"斯拉克击杀敌人时，将能量转移偷取属性总量的<font color='#FFFFFF'><b>10%%</b></font>永久偷走该英雄的全属性。<br>已永久获得 <font color='#FFFFFF'><b>%dMODIFIER_PROPERTY_TOOLTIP%</b></font> 点全属性。"
 
 		// 亚巴顿 畅快淋漓觉醒
 		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_quickening_awaken"					"<font color='#d000ff'>畅快淋漓 觉醒</font>"
