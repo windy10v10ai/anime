@@ -38,6 +38,7 @@ game/scripts/vscripts/modifiers/register-modifiers.lua
 game/scripts/vscripts/modules/
 game/scripts/vscripts/server/
 game/scripts/vscripts/utils/
+game/particles
 
 #忽略
 game/.idea/
@@ -45,10 +46,6 @@ game/.idea/
 /.superpowers
 /docs/superpowers
 <<<<<<< HEAD
-*.vpcf_c
-*.vpcf_c
-*.vpcf_c
-game/particles/units/heroes/hero_void_spirit/fuxuanattack3.vpcf_c
 *.vpcf_c
 =======
 /docs/review
