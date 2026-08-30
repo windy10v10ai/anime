@@ -34,6 +34,7 @@
 	// TK 热导飞弹
 	"tinker_heat_seeking_missile"
 	{
+		"AbilityTextureName"			"custom/windyanime/tinker_heat_seeking_missile"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"12"			// 18
@@ -311,6 +312,7 @@
 	// 迷雾缠绕 死亡缠绕
 	"abaddon_death_coil"
 	{
+		"AbilityTextureName"			"custom/windyanime/abaddon_death_coil"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"7.0 6.5 6.0 5.5 5.0"	// 8 7 6 5
 		"AbilityManaCost"				"50 55 60 65 70"	// 50 55 60 65
@@ -331,6 +333,7 @@
 	// 无光之盾
 	"abaddon_aphotic_shield"
 	{
+		"AbilityTextureName"			"custom/windyanime/abaddon_aphotic_shield"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"95 110 125 140 155"	// 110 120 130 140
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
@@ -356,6 +359,7 @@
 	// 魔霭诅咒
 	"abaddon_frostmourne"
 	{
+		"AbilityTextureName"			"custom/windyanime/abaddon_frostmourne"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -386,6 +390,7 @@
 	// 回光返照
 	"abaddon_borrowed_time"
 	{
+		"AbilityTextureName"			"custom/windyanime/abaddon_borrowed_time"
 		"MaxLevel" "4"
 		"AbilityValues"
 		{
@@ -515,6 +520,7 @@
 	// 狂战士之吼
 	"axe_berserkers_call"
 	{
+		"AbilityTextureName"			"custom/windyanime/axe_berserkers_call"
 		"MaxLevel"						"5"
 		"AbilityCastPoint"				"0.1"					// 0.3
 		"AbilityCooldown"				"19 17 15 13 11"
@@ -543,6 +549,7 @@
 	// 战斗饥渴
 	"axe_battle_hunger"
 	{
+		"AbilityTextureName"			"custom/windyanime/axe_battle_hunger"
 		"MaxLevel"						"5"
 		"AbilityCastPoint"				"0.1"					// 0.3
 		"AbilityCooldown"				"20 16 12 8 4"
@@ -567,6 +574,7 @@
 	// 反击螺旋
 	"axe_counter_helix"
 	{
+		"AbilityTextureName"			"custom/windyanime/axe_counter_helix"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -583,6 +591,7 @@
 	// 淘汰之刃：击杀敌方英雄永久叠层，每层额外护甲随大招等级，见 armor_per_stack
 	"axe_culling_blade"
 	{
+		"AbilityTextureName"			"custom/windyanime/axe_culling_blade"
 		"MaxLevel" "4"
 		"LinkedAbility"					"axe_auto_culling_blade"	// 原版不存在，手动修改：与自动淘汰之刃觉醒双向联动同步升级
 		"AbilityCooldown"				"90 80 70 60"
@@ -770,6 +779,7 @@
 	// 野性之斧
 	"beastmaster_wild_axes"
 	{
+		"AbilityTextureName"			"custom/windyanime/beastmaster_wild_axes"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"50 55 60 65 70"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -793,6 +803,7 @@
 	// 召唤野猪
 	"beastmaster_summon_razorback"
 	{
+		"AbilityTextureName"			"custom/windyanime/beastmaster_summon_razorback"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -825,6 +836,7 @@
 	// 召唤战鹰
 	"beastmaster_summon_raptor"
 	{
+		"AbilityTextureName"			"custom/windyanime/beastmaster_summon_raptor"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -859,6 +871,7 @@
 	// 野性之心（先天技能）
 	"beastmaster_inner_beast"
 	{
+		"AbilityTextureName"			"custom/windyanime/beastmaster_inner_beast"
 		"AbilityValues"
 		{
 			"bonus_damage"
@@ -875,6 +888,7 @@
 	// 战鼓
 	"beastmaster_drums_of_slom"
 	{
+		"AbilityTextureName"			"custom/windyanime/beastmaster_drums_of_slom"
 		"AbilityValues"
 		{
 			"base_damage"
@@ -886,6 +900,7 @@
 	// 原始咆哮
 	"beastmaster_primal_roar"
 	{
+		"AbilityTextureName"			"custom/windyanime/beastmaster_primal_roar"
 		"MaxLevel"						"4"
 		"AbilityManaCost"				"100 125 150 175"
 		"AbilityValues"
@@ -1082,6 +1097,7 @@
 	// 混乱之箭
 	"chaos_knight_chaos_bolt"
 	{
+		"AbilityTextureName"			"custom/windyanime/chaos_knight_chaos_bolt"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -1114,6 +1130,7 @@
 	// 实相裂隙
 	"chaos_knight_reality_rift"
 	{
+		"AbilityTextureName"			"custom/windyanime/chaos_knight_reality_rift"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"15 12 9 6 3"
 		"AbilityValues"
@@ -1129,6 +1146,7 @@
 	// 混沌一击
 	"chaos_knight_chaos_strike"
 	{
+		"AbilityTextureName"			"custom/windyanime/chaos_knight_chaos_strike"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -1275,6 +1293,7 @@
 	// 吞噬
 	"doom_bringer_devour"
 	{
+		"AbilityTextureName"			"custom/windyanime/doom_bringer_devour"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"40 50 60 70 80"
 		"AbilityValues"
@@ -1288,6 +1307,7 @@
 	// 焦土
 	"doom_bringer_scorched_earth"
 	{
+		"AbilityTextureName"			"custom/windyanime/doom_bringer_scorched_earth"
 		"MaxLevel" "5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityValues"
@@ -1314,6 +1334,7 @@
 	// 阎刃
 	"doom_bringer_infernal_blade"
 	{
+		"AbilityTextureName"			"custom/windyanime/doom_bringer_infernal_blade"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"13 10 7 4 1"
 		"AbilityValues"
@@ -1331,6 +1352,7 @@
 	// 末日
 	"doom_bringer_doom"
 	{
+		"AbilityTextureName"			"custom/windyanime/doom_bringer_doom"
 		"MaxLevel"						"4"
 		"AbilityManaCost"				"150 200 250 300"
 		"AbilityValues"
@@ -1355,6 +1377,7 @@
 	// 火焰吐息
 	"dragon_knight_breathe_fire"
 	{
+		"AbilityTextureName"			"custom/windyanime/dragon_knight_breathe_fire"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"14 13 12 11 10"
 		"AbilityManaCost"				"90 95 100 105 110"
@@ -1374,6 +1397,7 @@
 	// 神龙摆尾 duang
 	"dragon_knight_dragon_tail"
 	{
+		"AbilityTextureName"			"custom/windyanime/dragon_knight_dragon_tail"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"300"	// 150
 		"AbilityCooldown"				"16 14 12 10 8"
@@ -1391,6 +1415,7 @@
 	// 飞龙之怒
 	"dragon_knight_wyrms_wrath"
 	{
+		"AbilityTextureName"			"custom/windyanime/dragon_knight_wyrms_wrath"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -1407,6 +1432,7 @@
 	// 龙族血统
 	"dragon_knight_dragon_blood"
 	{
+		"AbilityTextureName"			"custom/windyanime/dragon_knight_dragon_blood"
 		"AbilityValues"
 		{
 			"health_regen"
@@ -1425,6 +1451,7 @@
 	// 变龙 各级形态效果不同(非线性数值缩放)，不能改变最大等级，与原版一致维持3级
 	"dragon_knight_elder_dragon_form"
 	{
+		"AbilityTextureName"			"custom/windyanime/dragon_knight_elder_dragon_form"
 		"AbilityCooldown"				"90"	// 100
 		"AbilityManaCost"				"50 100 150"	// 50
 		"AbilityValues"
@@ -1438,6 +1465,7 @@
 	// 沟壑
 	"earthshaker_fissure"
 	{
+		"AbilityTextureName"			"custom/windyanime/earthshaker_fissure"
 		"MaxLevel"						"5"
 		"AbilityCastPoint"				"0.3"	// 0.69
 		"AbilityManaCost"				"115 120 125 130 135"
@@ -1459,6 +1487,7 @@
 	// 强化图腾
 	"earthshaker_enchant_totem"
 	{
+		"AbilityTextureName"			"custom/windyanime/earthshaker_enchant_totem"
 		"MaxLevel"						"5"
 		"AbilityCastPoint"				"0.3"	// 0.5
 		"AbilityManaCost"				"45 50 55 60 65"
@@ -1486,6 +1515,7 @@
 	// 余震
 	"earthshaker_aftershock"
 	{
+		"AbilityTextureName"			"custom/windyanime/earthshaker_aftershock"
 		"MaxLevel"						"5"
 		"AbilityDuration"				"0.9 1 1.1 1.2 1.3"
 		"AbilityValues"
@@ -1500,6 +1530,7 @@
 	// 回音击
 	"earthshaker_echo_slam"
 	{
+		"AbilityTextureName"			"custom/windyanime/earthshaker_echo_slam"
 		"MaxLevel" "4"
 		"AbilityCooldown"				"90.0 80.0 70.0 60.0"
 		"AbilityManaCost"				"150 200 250 300"
@@ -1944,6 +1975,7 @@
 	// 潮汐波 魔晶
 	"kunkka_tidal_wave"
 	{
+		"AbilityTextureName"			"custom/windyanime/kunkka_tidal_wave"
 		"AbilityValues"
 		{
 				"speed"		"900"	// 700
@@ -1958,6 +1990,7 @@
 	// 洪流
 	"kunkka_torrent"
 	{
+		"AbilityTextureName"			"custom/windyanime/kunkka_torrent"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -1979,6 +2012,7 @@
 	// 潮汐使者 水刀
 	"kunkka_tidebringer"
 	{
+		"AbilityTextureName"			"custom/windyanime/kunkka_tidebringer"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -2008,6 +2042,7 @@
 	// 标记
 	"kunkka_x_marks_the_spot"
 	{
+		"AbilityTextureName"			"custom/windyanime/kunkka_x_marks_the_spot"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"800 950 1100 1250 1400"	// 550 700 850 1000 +250
 		"AbilityCooldown"				"20 18 16 14 12"	// 24 20 16 12 5级12秒, 前期适当减少CD
@@ -2066,6 +2101,7 @@
 	// 幽灵船
 	"kunkka_ghostship"
 	{
+		"AbilityTextureName"			"custom/windyanime/kunkka_ghostship"
 		// "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// 原版 SPELL_IMMUNITY_ENEMIES_NO 限时加强
 		"MaxLevel" "4"
 		"AbilityDamage"					"350 475 600 725"
@@ -2182,6 +2218,7 @@
 	// 狂暴
 	"life_stealer_rage"
 	{
+		"AbilityTextureName"			"custom/windyanime/life_stealer_rage"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"20 19 18 17 16"
 		"AbilityManaCost"				"80 100 120 140 160"
@@ -2200,6 +2237,7 @@
 	// 盛宴 life_stealer_feast
 	"life_stealer_feast"
 	{
+		"AbilityTextureName"			"custom/windyanime/life_stealer_feast"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -2218,6 +2256,7 @@
 	// 撕裂伤口
 	"life_stealer_open_wounds"
 	{
+		"AbilityTextureName"			"custom/windyanime/life_stealer_open_wounds"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"		// SPELL_IMMUNITY_ENEMIES_NO 无视魔免
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"300 400 500 600 700"
@@ -2234,6 +2273,7 @@
 	// 尸鬼狂怒 先天
 	"life_stealer_ghoul_frenzy"
 	{
+		"AbilityTextureName"			"custom/windyanime/life_stealer_ghoul_frenzy"
 		"AbilityValues"
 		{
 			"attack_speed_bonus"
@@ -2246,6 +2286,7 @@
 	// 感染
 	"life_stealer_infest"
 	{
+		"AbilityTextureName"			"custom/windyanime/life_stealer_infest"
 		"RequiredLevel"					"18"		// 原版不存在，手动修改 防止前期挂机
 		"AbilityValues"
 		{
@@ -2351,6 +2392,7 @@
 	// 震荡波
 	"magnataur_shockwave"
 	{
+		"AbilityTextureName"			"custom/windyanime/magnataur_shockwave"
 		"AbilityCooldown"				"14 13 12 11 10"
 		"AbilityManaCost"				"80 90 100 110 120"	// 85 90 95 100 增加耗蓝
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
@@ -2373,6 +2415,7 @@
 	// 授予力量
 	"magnataur_empower"
 	{
+		"AbilityTextureName"			"custom/windyanime/magnataur_empower"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"45 55 65 75 85"
 		"AbilityValues"
@@ -2397,6 +2440,7 @@
 	// 巨角冲撞
 	"magnataur_skewer"
 	{
+		"AbilityTextureName"			"custom/windyanime/magnataur_skewer"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -2422,6 +2466,7 @@
 	// 两极反转
 	"magnataur_reverse_polarity"
 	{
+		"AbilityTextureName"			"custom/windyanime/magnataur_reverse_polarity"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"150 225 300 375"
 		"AbilityValues"
@@ -2451,6 +2496,7 @@
 	// 过肩摔
 	"marci_grapple"
 	{
+		"AbilityTextureName"			"custom/windyanime/marci_grapple"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"14 13 12 11 10"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
@@ -2467,6 +2513,7 @@
 	// 回身踢
 	"marci_companion_run"
 	{
+		"AbilityTextureName"			"custom/windyanime/marci_companion_run"
 		"AbilityManaCost"				"70 80 90 100 110"
 		"AbilityValues"
 		{
@@ -2506,7 +2553,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityManaCost"				"45 40 35 30 25"
 		"DependentOnAbility"			"marci_unleash"
-		"AbilityTextureName"			"player/nemesis"	// Placeholder texture for now, otherwise Sidekick and Bodyguard would have the exact same texture
+		"AbilityTextureName"			"custom/windyanime/marci_guardian"	
 		"AbilityValues"
 		{
 			"lifesteal_pct"
@@ -2527,6 +2574,7 @@
 	// 护卫术
 	"marci_bodyguard"
 	{
+		"AbilityTextureName"			"custom/windyanime/marci_bodyguard"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"60 65 70 75 80"
 		"AbilityValues"
@@ -2549,6 +2597,7 @@
 	// 怒拳破
 	"marci_unleash"
 	{
+		"AbilityTextureName"			"custom/windyanime/marci_unleash"
 		"MaxLevel" "4"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -2657,6 +2706,7 @@
 	// 虚空
 	"night_stalker_void"
 	{
+		"AbilityTextureName"			"custom/windyanime/night_stalker_void"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"90 95 100 105 110"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -2683,6 +2733,7 @@
 	// 伤残恐惧
 	"night_stalker_crippling_fear"
 	{
+		"AbilityTextureName"			"custom/windyanime/night_stalker_crippling_fear"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -2719,6 +2770,7 @@
 	// 暗夜猎影
 	"night_stalker_hunter_in_the_night"
 	{
+		"AbilityTextureName"			"custom/windyanime/night_stalker_hunter_in_the_night"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 		"AbilityValues"
 		{
@@ -2731,6 +2783,7 @@
 	// 黑暗飞升
 	"night_stalker_darkness"
 	{
+		"AbilityTextureName"			"custom/windyanime/night_stalker_darkness"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"125 175 225 275"
 		"AbilityValues"
@@ -2770,6 +2823,7 @@
 	// 洗礼
 	"omniknight_purification"
 	{
+		"AbilityTextureName"			"custom/windyanime/omniknight_purification"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"90 105 120 135 150"	// 90 105 120 135
 		"AbilityCastRange"				"1200"
@@ -2799,6 +2853,7 @@
 	// 守护天使
 	"omniknight_guardian_angel"
 	{
+		"AbilityTextureName"			"custom/windyanime/omniknight_guardian_angel"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"125 175 225 275"	// 125 175 225
@@ -2837,6 +2892,7 @@
 	// 退化光环 先天技能
 	"omniknight_degen_aura"
 	{
+		"AbilityTextureName"			"custom/windyanime/omniknight_degen_aura"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 		"MaxLevel"						"1"
 	}
@@ -2846,6 +2902,7 @@
 	// 凤凰冲击
 	"phoenix_icarus_dive"
 	{
+		"AbilityTextureName"			"custom/windyanime/phoenix_icarus_dive"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"36 32 28 24 20"	// 40 35 30 25
@@ -2869,6 +2926,7 @@
 	// 烈火精灵
 	"phoenix_fire_spirits"
 	{
+		"AbilityTextureName"			"custom/windyanime/phoenix_fire_spirits"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"25 20 15 10 5"	// 50 40 30 20
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
@@ -2886,6 +2944,7 @@
 	// 释放烈火精灵
 	"phoenix_launch_fire_spirit"
 	{
+		"AbilityTextureName"			"custom/windyanime/phoenix_launch_fire_spirit"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 		"AbilityValues"
@@ -2902,6 +2961,7 @@
 	// 烈日炙烤
 	"phoenix_sun_ray"
 	{
+		"AbilityTextureName"			"custom/windyanime/phoenix_sun_ray"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 		"AbilityManaCost"				"100 110 120 130 140"
@@ -2944,6 +3004,7 @@
 	// 超新星
 	"phoenix_supernova"
 	{
+		"AbilityTextureName"			"custom/windyanime/phoenix_supernova"
 		"MaxLevel" "4"
 		"AbilityCooldown"				"60"	// 120
 		"AbilityManaCost"				"150 200 250 300"
@@ -3072,6 +3133,7 @@
 	// 肉盾
 	"pudge_flesh_heap"
 	{
+		"AbilityTextureName"			"custom/windyanime/pudge_flesh_heap"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"20 19 18 17 16"
 		"AbilityManaCost"				"65 70 75 80 85"
@@ -3087,6 +3149,7 @@
 	// 肉钩
 	"pudge_meat_hook"
 	{
+		"AbilityTextureName"			"custom/windyanime/pudge_meat_hook"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -3117,6 +3180,7 @@
 	// 腐烂
 	"pudge_rot"
 	{
+		"AbilityTextureName"			"custom/windyanime/pudge_rot"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 		"AbilityValues"
@@ -3135,6 +3199,7 @@
 	// 肢解
 	"pudge_dismember"
 	{
+		"AbilityTextureName"			"custom/windyanime/pudge_dismember"
 		"MaxLevel"						"4"
 		"AbilityManaCost"				"100 130 170 210"
 		"AbilityValues"
@@ -3379,6 +3444,7 @@
 	// 死亡旋风
 	"shredder_whirling_death"
 	{
+		"AbilityTextureName"			"custom/windyanime/shredder_whirling_death"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"7.5 7 6.5 6 5.5"
 		"AbilityValues"
@@ -3405,6 +3471,7 @@
 	// 伐木链锯
 	"shredder_timber_chain"
 	{
+		"AbilityTextureName"			"custom/windyanime/shredder_timber_chain"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"60 70 80 90 100"
 		"AbilityValues"
@@ -3425,6 +3492,7 @@
 	// 活性活甲
 	"shredder_reactive_armor"
 	{
+		"AbilityTextureName"			"custom/windyanime/shredder_reactive_armor"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -3478,6 +3546,7 @@
 	// 锯齿飞轮
 	"shredder_chakram"
 	{
+		"AbilityTextureName"			"custom/windyanime/shredder_chakram"
 		// "MaxLevel" "4" 4级有贴图bug，不扩展
 		"AbilityValues"
 		{
@@ -3640,6 +3709,7 @@
 	// 守卫冲刺
 	"slardar_sprint"
 	{
+		"AbilityTextureName"			"custom/windyanime/slardar_sprint"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -3653,6 +3723,7 @@
 	// 鱼人碎击
 	"slardar_slithereen_crush"
 	{
+		"AbilityTextureName"			"custom/windyanime/slardar_slithereen_crush"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -3675,6 +3746,7 @@
 	// 深海重击
 	"slardar_bash"
 	{
+		"AbilityTextureName"			"custom/windyanime/slardar_bash"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -3688,6 +3760,7 @@
 	// 侵蚀雾霭 点灯
 	"slardar_amplify_damage"
 	{
+		"AbilityTextureName"			"custom/windyanime/slardar_amplify_damage"
 		"MaxLevel" "4"
 		"AbilityValues"
 		{
@@ -3800,6 +3873,7 @@
 	// 暗影冲刺
 	"spirit_breaker_charge_of_darkness"
 	{
+		"AbilityTextureName"			"custom/windyanime/spirit_breaker_charge_of_darkness"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"90 100 110 120 130"	// 90 100 110 120
 		"AbilityValues"
@@ -3818,6 +3892,7 @@
 	// 威吓
 	"spirit_breaker_bulldoze"
 	{
+		"AbilityTextureName"			"custom/windyanime/spirit_breaker_bulldoze"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"30 40 50 60 70"	// 30 40 50 60
 		"AbilityValues"
@@ -3837,6 +3912,7 @@
 	// 巨力重击
 	"spirit_breaker_greater_bash"
 	{
+		"AbilityTextureName"			"custom/windyanime/spirit_breaker_greater_bash"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -3851,6 +3927,7 @@
 	// 幽冥一击
 	"spirit_breaker_nether_strike"
 	{
+		"AbilityTextureName"			"custom/windyanime/spirit_breaker_nether_strike"
 		"MaxLevel" "4"
 		"AbilityCooldown"				"60 50 40 30"	// 75 55 35
 		"AbilityManaCost"				"125 150 175 200"	// 125 150 175
@@ -3885,6 +3962,7 @@
 	// 风暴之拳
 	"sven_storm_bolt"
 	{
+		"AbilityTextureName"			"custom/windyanime/sven_storm_bolt"
 		"MaxLevel"						"5"
 		"AbilityDamage"					"80 160 240 320 400"
 		"LinkedAbility"					"special_bonus_unique_sven_upgrade"	// 双向联动同步升级
@@ -3911,6 +3989,7 @@
 	// 巨力挥舞
 	"sven_great_cleave"
 	{
+		"AbilityTextureName"			"custom/windyanime/sven_great_cleave"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -3931,6 +4010,7 @@
 	// 战吼
 	"sven_warcry"
 	{
+		"AbilityTextureName"			"custom/windyanime/sven_warcry"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"36 32 28 24 20"		// 36 32 28 24
 		"AbilityManaCost"				"30 35 40 45 50"
@@ -3959,6 +4039,7 @@
 	// 神之力量
 	"sven_gods_strength"
 	{
+		"AbilityTextureName"			"custom/windyanime/sven_gods_strength"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"100 125 150 175"
 		"AbilityValues"
@@ -4186,6 +4267,7 @@
 	// 山崩
 	"tiny_avalanche"
 	{
+		"AbilityTextureName"			"custom/windyanime/tiny_avalanche"
 		// 最大4级，之后技能特效无法正常显示
 		"AbilityValues"
 		{
@@ -4203,6 +4285,7 @@
 	// 投掷
 	"tiny_toss"
 	{
+		"AbilityTextureName"			"custom/windyanime/tiny_toss"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"800 900 1000 1100 1200"
 		"AbilityCooldown"				"18 16 14 12 10"
@@ -4219,6 +4302,7 @@
 	// 抓树
 	"tiny_tree_grab"
 	{
+		"AbilityTextureName"			"custom/windyanime/tiny_tree_grab"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"16 14 12 10 8"	// 16 13 10 7
 		"AbilityValues"
@@ -4244,6 +4328,7 @@
 	// 扔树
 	"tiny_toss_tree"
 	{
+		"AbilityTextureName"			"custom/windyanime/tiny_toss_tree"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -4257,6 +4342,7 @@
 	// 树木连掷
 	"tiny_tree_channel"
 	{
+		"AbilityTextureName"			"custom/windyanime/tiny_tree_channel"
 		"AbilityCastRange"				"1500"		// 1200 +300
 		"AbilityValues"
 		{
@@ -4267,6 +4353,7 @@
 	// 长大
 	"tiny_grow"
 	{
+		"AbilityTextureName"			"custom/windyanime/tiny_grow"
 		"MaxLevel" "4"
 		"AbilityValues"
 		{
@@ -4417,6 +4504,7 @@
 	// 腐朽 抽力量
 	"undying_decay"
 	{
+		"AbilityTextureName"			"custom/windyanime/undying_decay"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"900"		// 650
@@ -4444,6 +4532,7 @@
 	// 噬魂
 	"undying_soul_rip"
 	{
+		"AbilityTextureName"			"custom/windyanime/undying_soul_rip"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"900"		// 750
 		"AbilityCooldown"				"6"	// 15 12 9 6 加强固定CD
@@ -4466,6 +4555,7 @@
 	// 墓碑
 	"undying_tombstone"
 	{
+		"AbilityTextureName"			"custom/windyanime/undying_tombstone"
 		"AbilityValues"
 		{
 			"zombie_interval"
@@ -4491,6 +4581,7 @@
 	// 血肉傀儡
 	"undying_flesh_golem"
 	{
+		"AbilityTextureName"			"custom/windyanime/undying_flesh_golem"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"100 125 150 175"
 		"AbilityValues"
@@ -4861,6 +4952,7 @@
 	// 血怒
 	"bloodseeker_bloodrage"
 	{
+		"AbilityTextureName"			"custom/windyanime/bloodseeker_bloodrage"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"14 13 12 11 10"
 		"AbilityValues"
@@ -4878,6 +4970,7 @@
 	// 血祭
 	"bloodseeker_blood_bath"
 	{
+		"AbilityTextureName"			"custom/windyanime/bloodseeker_blood_bath"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"90 100 110 120 130"
 		"AbilityValues"
@@ -4897,6 +4990,7 @@
 	// 焦渴
 	"bloodseeker_thirst"
 	{
+		"AbilityTextureName"			"custom/windyanime/bloodseeker_thirst"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -4909,6 +5003,7 @@
 	// 割裂 大姨妈
 	"bloodseeker_rupture"
 	{
+		"AbilityTextureName"			"custom/windyanime/bloodseeker_rupture"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"125 175 225 275"
 		"AbilityValues"
@@ -4935,6 +5030,7 @@
 	// 投掷飞镖
 	"bounty_hunter_shuriken_toss"
 	{
+		"AbilityTextureName"			"custom/windyanime/bounty_hunter_shuriken_toss"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityCastPoint"				"0.1"	// 0.3
@@ -4956,6 +5052,7 @@
 	// 忍术
 	"bounty_hunter_jinada"
 	{
+		"AbilityTextureName"			"custom/windyanime/bounty_hunter_jinada"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -4978,6 +5075,7 @@
 	// 暗影步
 	"bounty_hunter_wind_walk"
 	{
+		"AbilityTextureName"			"custom/windyanime/bounty_hunter_wind_walk"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -5005,11 +5103,13 @@
 	// 友军暗影步
 	"bounty_hunter_wind_walk_ally"
 	{
+		"AbilityTextureName"			"custom/windyanime/bounty_hunter_wind_walk_ally"
 		"AbilityCastRange"				"1800"	// 650
 	}
 	// 追踪术
 	"bounty_hunter_track"
 	{
+		"AbilityTextureName"			"custom/windyanime/bounty_hunter_track"
 		"MaxLevel" "4"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCooldown"				"6 5 4 3"
@@ -5046,6 +5146,7 @@
 	// 扫射
 	"clinkz_strafe"
 	{
+		"AbilityTextureName"			"custom/windyanime/clinkz_strafe"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"60 70 80 90 100"
 		"AbilityValues"
@@ -5067,6 +5168,7 @@
 	// 灼热之箭 火箭
 	"clinkz_searing_arrows"
 	{
+		"AbilityTextureName"			"custom/windyanime/clinkz_searing_arrows"
 		"MaxLevel"						"5"
 
 		"AbilityValues"
@@ -5080,6 +5182,7 @@
 	// 死亡契约
 	"clinkz_death_pact"
 	{
+		"AbilityTextureName"			"custom/windyanime/clinkz_death_pact"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -5097,6 +5200,7 @@
 	// 骨隐步
 	"clinkz_wind_walk"
 	{
+		"AbilityTextureName"			"custom/windyanime/clinkz_wind_walk"
 		// 不额外升级
 		"HasScepterUpgrade"			"0"	// 去除A杖效果
 		"AbilityValues"
@@ -5128,6 +5232,7 @@
 	// 炽烈火雨
 	"clinkz_burning_barrage"
 	{
+		"AbilityTextureName"			"custom/windyanime/clinkz_burning_barrage"
 		"AbilityCooldown"				"9"		// 17
 		"AbilityManaCost"				"90"	// 40
 		"AbilityValues"
@@ -5155,6 +5260,7 @@
 	// 霜冻之箭
 	"drow_ranger_frost_arrows"
 	{
+		"AbilityTextureName"			"custom/windyanime/drow_ranger_frost_arrows"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -5173,6 +5279,7 @@
 	// 狂风
 	"drow_ranger_wave_of_silence"
 	{
+		"AbilityTextureName"			"custom/windyanime/drow_ranger_wave_of_silence"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -5187,6 +5294,7 @@
 	// 数箭齐发
 	"drow_ranger_multishot"
 	{
+		"AbilityTextureName"			"custom/windyanime/drow_ranger_multishot"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"70 85 100 115 130"	// 70 85 100 115
 		"AbilityValues"
@@ -5206,6 +5314,7 @@
 	// 射手天赋
 	"drow_ranger_marksmanship"
 	{
+		"AbilityTextureName"			"custom/windyanime/drow_ranger_marksmanship"
 		"MaxLevel" "4"
 		"AbilityValues"
 		{
@@ -5221,6 +5330,7 @@
 	// 精准光环（先天 随大招等级）
 	"drow_ranger_trueshot"
 	{
+		"AbilityTextureName"			"custom/windyanime/drow_ranger_trueshot"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
 		"AbilityValues"
 		{
@@ -5341,6 +5451,7 @@
 	// 时间漫游
 	"faceless_void_time_walk"
 	{
+		"AbilityTextureName"			"custom/windyanime/faceless_void_time_walk"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -5357,6 +5468,7 @@
 	// 时间锁定
 	"faceless_void_time_lock"
 	{
+		"AbilityTextureName"			"custom/windyanime/faceless_void_time_lock"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -5371,6 +5483,7 @@
 	// 时间膨胀
 	"faceless_void_time_dilation"
 	{
+		"AbilityTextureName"			"custom/windyanime/faceless_void_time_dilation"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"28 24 20 16 12"
@@ -5412,6 +5525,7 @@
 	// 时间结界
 	"faceless_void_chronosphere"
 	{
+		"AbilityTextureName"			"custom/windyanime/faceless_void_chronosphere"
 		"MaxLevel" "4"
 		"AbilityCooldown"				"120"	// 155 145 135 固定 120
 		"AbilityManaCost"				"125 200 275 350"
@@ -5579,6 +5693,7 @@
 	// 爆栗出击 大头爆栗子
 	"hoodwink_acorn_shot"
 	{
+		"AbilityTextureName"			"custom/windyanime/hoodwink_acorn_shot"
 		"MaxLevel" "5"
 		"AbilityCooldown"				"14 13 12 11 10"
 		"AbilityValues"
@@ -5601,6 +5716,7 @@
 	// 野地奇袭
 	"hoodwink_bushwhack"
 	{
+		"AbilityTextureName"			"custom/windyanime/hoodwink_bushwhack"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -5624,6 +5740,7 @@
 	// 密林奔走
 	"hoodwink_scurry"
 	{
+		"AbilityTextureName"			"custom/windyanime/hoodwink_scurry"
 		"MaxLevel"						"5"
 		"AbilityChargeRestoreTime"		"30 24 18 12 6"
 		"AbilityValues"
@@ -5638,6 +5755,7 @@
 	// 一箭穿心
 	"hoodwink_sharpshooter"
 	{
+		"AbilityTextureName"			"custom/windyanime/hoodwink_sharpshooter"
 		"MaxLevel"						"4"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 		"AbilityManaCost"				"150 200 250 300"
@@ -5674,6 +5792,7 @@
 	// 剑刃风暴
 	"juggernaut_blade_fury"
 	{
+		"AbilityTextureName"			"custom/windyanime/juggernaut_blade_fury"
 		"MaxLevel"					"5"
 		"AbilityValues"
 		{
@@ -5699,6 +5818,7 @@
 	// 治疗守卫
 	"juggernaut_healing_ward"
 	{
+		"AbilityTextureName"			"custom/windyanime/juggernaut_healing_ward"
 		"MaxLevel"						"5"
 		"AbilityDuration"				"18 20 22 24 26"
 		"AbilityValues"
@@ -5729,6 +5849,7 @@
 	// 剑舞
 	"juggernaut_blade_dance"
 	{
+		"AbilityTextureName"			"custom/windyanime/juggernaut_blade_dance"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -5742,6 +5863,7 @@
 	// 无敌斩
 	"juggernaut_omni_slash"
 	{
+		"AbilityTextureName"			"custom/windyanime/juggernaut_omni_slash"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"200 275 350 425"
 		"AbilityValues"
@@ -5770,6 +5892,7 @@
 	// 迅风斩
 	"juggernaut_swift_slash"
 	{
+		"AbilityTextureName"			"custom/windyanime/juggernaut_swift_slash"
 		"AbilityCastRange"				"600"		// 450
 		"AbilityCooldown"				"15"		// 25
 	}
@@ -5940,6 +6063,7 @@
 	// 月光
 	"luna_lucent_beam"
 	{
+		"AbilityTextureName"			"custom/windyanime/luna_lucent_beam"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -5962,6 +6086,7 @@
 	// 月刃
 	"luna_moon_glaive"
 	{
+		"AbilityTextureName"			"custom/windyanime/luna_moon_glaive"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -5976,6 +6101,7 @@
 	// 环月
 	"luna_lunar_orbit"
 	{
+		"AbilityTextureName"			"custom/windyanime/luna_lunar_orbit"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -6009,6 +6135,7 @@
 	// 月之祝福（先天）
 	"luna_lunar_blessing"
 	{
+		"AbilityTextureName"			"custom/windyanime/luna_lunar_blessing"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 		"AbilityValues"
 		{
@@ -6027,6 +6154,7 @@
 	// 月蚀
 	"luna_eclipse"
 	{
+		"AbilityTextureName"			"custom/windyanime/luna_eclipse"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"150 200 250 300"
 		"AbilityValues"
@@ -6062,11 +6190,13 @@
 	// 冷血动物
 	"medusa_cold_blooded"
 	{
+		"AbilityTextureName"			"custom/windyanime/medusa_cold_blooded"
 		"AbilityCooldown"				"8"	// 12
 	}
 	// 分裂箭
 	"medusa_split_shot"
 	{
+		"AbilityTextureName"			"custom/windyanime/medusa_split_shot"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -6085,6 +6215,7 @@
 	// 秘术异蛇
 	"medusa_mystic_snake"
 	{
+		"AbilityTextureName"			"custom/windyanime/medusa_mystic_snake"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -6108,6 +6239,7 @@
 	// 罗网箭阵
 	"medusa_gorgon_grasp"
 	{
+		"AbilityTextureName"			"custom/windyanime/medusa_gorgon_grasp"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"65 85 105 125 145"	// 65 85 105 125
 		"AbilityCooldown"				"30 26 22 18 14"	// 30 26 22 18
@@ -6121,6 +6253,7 @@
 	// 石化凝视
 	"medusa_stone_gaze"
 	{
+		"AbilityTextureName"			"custom/windyanime/medusa_stone_gaze"
 		"MaxLevel" "4"
 		"AbilityValues"
 		{
@@ -6138,6 +6271,7 @@
 	// 魔法盾 先天
 	"medusa_mana_shield"
 	{
+		"AbilityTextureName"			"custom/windyanime/medusa_mana_shield"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 		"AbilityValues"
 		{
@@ -6176,6 +6310,7 @@
 	// 月神之箭 射箭
 	"mirana_arrow"
 	{
+		"AbilityTextureName"			"custom/windyanime/mirana_arrow"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"4500"
 		"AbilityCastPoint"				"0.1"	// 0.5
@@ -6198,6 +6333,7 @@
 	// 月之暗面
 	"mirana_invis"
 	{
+		"AbilityTextureName"			"custom/windyanime/mirana_invis"
 		"MaxLevel" "4"
 		"AbilityValues"
 		{
@@ -6213,6 +6349,7 @@
 	// 跳跃
 	"mirana_leap"
 	{
+		"AbilityTextureName"			"custom/windyanime/mirana_leap"
 		"MaxLevel"						"5"
 		"AbilityChargeRestoreTime"		"30 25 20 15 10"	// 45 35 25 15 差值-5
 		"AbilityValues"
@@ -6228,6 +6365,7 @@
 	// 群星风暴 星落
 	"mirana_starfall"
 	{
+		"AbilityTextureName"			"custom/windyanime/mirana_starfall"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityCastPoint"				"0.1"		// 0.4
@@ -6497,6 +6635,7 @@
 	// 镜像
 	"naga_siren_mirror_image"
 	{
+		"AbilityTextureName"			"custom/windyanime/naga_siren_mirror_image"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"75 90 105 120 135"
 		"AbilityValues"
@@ -6523,6 +6662,7 @@
 	// 诱捕 网
 	"naga_siren_ensnare"
 	{
+		"AbilityTextureName"			"custom/windyanime/naga_siren_ensnare"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"70 80 90 100 110"
 		"AbilityValues"
@@ -6542,6 +6682,7 @@
 	// 激流
 	"naga_siren_rip_tide"
 	{
+		"AbilityTextureName"			"custom/windyanime/naga_siren_rip_tide"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -6597,6 +6738,7 @@
 	// 海妖之歌
 	"naga_siren_song_of_the_siren"
 	{
+		"AbilityTextureName"			"custom/windyanime/naga_siren_song_of_the_siren"
 		"MaxLevel"						"4"
 		"AbilityManaCost"				"150 250 350 450"
 		"AbilityCastRange"				"900 1150 1400 1650"
@@ -6624,6 +6766,7 @@
 	// 捕捞
 	"naga_siren_reel_in"
 	{
+		"AbilityTextureName"			"custom/windyanime/naga_siren_reel_in"
 		"AbilityValues"
 		{
 			"pull_strength"
@@ -6638,6 +6781,7 @@
 	// z炮
 	"nevermore_shadowraze1"
 	{
+		"AbilityTextureName"			"custom/windyanime/nevermore_shadowraze1"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -6659,6 +6803,7 @@
 	// x炮
 	"nevermore_shadowraze2"
 	{
+		"AbilityTextureName"			"custom/windyanime/nevermore_shadowraze2"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -6680,6 +6825,7 @@
 	// c炮
 	"nevermore_shadowraze3"
 	{
+		"AbilityTextureName"			"custom/windyanime/nevermore_shadowraze3"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -6724,6 +6870,7 @@
 	// 魔王降临
 	"nevermore_dark_lord"
 	{
+		"AbilityTextureName"			"custom/windyanime/nevermore_dark_lord"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -6736,6 +6883,7 @@
 	// 灵魂盛宴
 	"nevermore_frenzy"
 	{
+		"AbilityTextureName"			"custom/windyanime/nevermore_frenzy"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"60 65 70 75 80"
 		"AbilityValues"
@@ -6753,6 +6901,7 @@
 	// 魂之挽歌
 	"nevermore_requiem"
 	{
+		"AbilityTextureName"			"custom/windyanime/nevermore_requiem"
 		"MaxLevel" "4"
 		"AbilityDamage"					"80 120 160 200"
 		"AbilityManaCost"				"150 175 200 225"
@@ -6975,10 +7124,12 @@
 	// 刀扇
 	"phantom_assassin_fan_of_knives"
 	{
+		"AbilityTextureName"			"custom/windyanime/phantom_assassin_fan_of_knives"
 	}
 	// 窒碍短匕
 	"phantom_assassin_stifling_dagger"
 	{
+		"AbilityTextureName"			"custom/windyanime/phantom_assassin_stifling_dagger"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"700 850 1000 1150 1300"		// 700 850 1000 1150
 		"AbilityValues"
@@ -7003,6 +7154,7 @@
 	// 幻影突袭
 	"phantom_assassin_phantom_strike"
 	{
+		"AbilityTextureName"			"custom/windyanime/phantom_assassin_phantom_strike"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"35 40 45 50 55"
 		"AbilityChargeRestoreTime"		"21 18 15 12 9"
@@ -7022,10 +7174,12 @@
 	// 魅影无形
 	"phantom_assassin_blur"
 	{
+		"AbilityTextureName"			"custom/windyanime/phantom_assassin_blur"
 	}
 	// 飘忽不定
 	"phantom_assassin_immaterial"
 	{
+		"AbilityTextureName"			"custom/windyanime/phantom_assassin_immaterial"
 		"MaxLevel"						"5"
 
 		"AbilityValues"
@@ -7039,6 +7193,7 @@
 	// 恩赐解脱
 	"phantom_assassin_coup_de_grace"
 	{
+		"AbilityTextureName"			"custom/windyanime/phantom_assassin_coup_de_grace"
 		"MaxLevel" "4"
 		"AbilityValues"
 		{
@@ -7375,6 +7530,7 @@
 	// 霰弹雨
 	"sniper_shrapnel"
 	{
+		"AbilityTextureName"			"custom/windyanime/sniper_shrapnel"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -7396,6 +7552,7 @@
 	// 爆头
 	"sniper_headshot"
 	{
+		"AbilityTextureName"			"custom/windyanime/sniper_headshot"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -7410,6 +7567,7 @@
 	// 瞄准
 	"sniper_take_aim"
 	{
+		"AbilityTextureName"			"custom/windyanime/sniper_take_aim"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"20 18 16 14 12"
 		"AbilityValues"
@@ -7432,6 +7590,7 @@
 	// 暗杀
 	"sniper_assassinate"
 	{
+		"AbilityTextureName"			"custom/windyanime/sniper_assassinate"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel" "4"
 		"AbilityCooldown"				"16 14 12 10"	// 20 15 10
@@ -7467,6 +7626,7 @@
 	// 幽鬼之刃
 	"spectre_spectral_dagger"
 	{
+		"AbilityTextureName"			"custom/windyanime/spectre_spectral_dagger"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"100 110 120 130 140"
 		"AbilityValues"
@@ -7488,6 +7648,7 @@
 	// 荒芜 先天
 	"spectre_desolate"
 	{
+		"AbilityTextureName"			"custom/windyanime/spectre_desolate"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
 		"AbilityValues"
 		{
@@ -7523,6 +7684,7 @@
 	// 折射
 	"spectre_dispersion"
 	{
+		"AbilityTextureName"			"custom/windyanime/spectre_dispersion"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -7548,6 +7710,7 @@
 	// 鬼影重重 卡顿 不扩展4级
 	"spectre_haunt"
 	{
+		"AbilityTextureName"			"custom/windyanime/spectre_haunt"
 		"AbilityManaCost"				"600"	// 卡顿 削弱
 		"AbilityValues"
 		{
@@ -7564,6 +7727,7 @@
 	// 折光
 	"templar_assassin_refraction"
 	{
+		"AbilityTextureName"			"custom/windyanime/templar_assassin_refraction"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -7585,6 +7749,7 @@
 	// 隐匿
 	"templar_assassin_meld"
 	{
+		"AbilityTextureName"			"custom/windyanime/templar_assassin_meld"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"11 9 7 5 3"
 		"AbilityManaCost"				"35 40 45 50 55"
@@ -7607,6 +7772,7 @@
 	// 灵能之刃
 	"templar_assassin_psi_blades"
 	{
+		"AbilityTextureName"			"custom/windyanime/templar_assassin_psi_blades"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -7624,6 +7790,7 @@
 	// 灵能陷阱
 	"templar_assassin_psionic_trap"
 	{
+		"AbilityTextureName"			"custom/windyanime/templar_assassin_psionic_trap"
 		"MaxLevel" "4"
 		"AbilityCooldown"				"11.0 9.0 7.0 5.0"		// 11.0 8.0 5.0 末档封底5.0差值-2
 		"AbilityValues"
@@ -7641,11 +7808,13 @@
 	// 触发陷阱
 	"templar_assassin_trap"
 	{
+		"AbilityTextureName"			"custom/windyanime/templar_assassin_trap"
 		"MaxLevel" "4" //保持和灵能陷阱一致
 	}
 	// 灵能投射
 	"templar_assassin_trap_teleport"
 	{
+		"AbilityTextureName"			"custom/windyanime/templar_assassin_trap_teleport"
 		"MaxLevel" "4" // 保持和灵能陷阱一致
 	}
 	// 内心平静 先天技能
@@ -7761,6 +7930,7 @@
 	// 切换姿态（先天）
 	"troll_warlord_switch_stance"
 	{
+		"AbilityTextureName"			"custom/windyanime/troll_warlord_switch_stance"
 		"AbilityValues"
 		{
 			"armor_per_interval"		"3.0"	// 1.0 x3
@@ -7769,6 +7939,7 @@
 	// 狂战士之怒
 	"troll_warlord_berserkers_rage"
 	{
+		"AbilityTextureName"			"custom/windyanime/troll_warlord_berserkers_rage"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -7790,6 +7961,7 @@
 	// 旋风飞斧远程
 	"troll_warlord_whirling_axes_ranged"
 	{
+		"AbilityTextureName"			"custom/windyanime/troll_warlord_whirling_axes_ranged"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -7807,6 +7979,7 @@
 	// 旋风飞斧近战
 	"troll_warlord_whirling_axes_melee"
 	{
+		"AbilityTextureName"			"custom/windyanime/troll_warlord_whirling_axes_melee"
 		"MaxLevel"	"5"
 		"AbilityValues"
 		{
@@ -7819,6 +7992,7 @@
 	// 热血战魂
 	"troll_warlord_fervor"
 	{
+		"AbilityTextureName"			"custom/windyanime/troll_warlord_fervor"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -7831,6 +8005,7 @@
 	// 战斗专注
 	"troll_warlord_battle_trance"
 	{
+		"AbilityTextureName"			"custom/windyanime/troll_warlord_battle_trance"
 		"MaxLevel" "4"
 		"AbilityValues"
 		{
@@ -7852,6 +8027,7 @@
 	// 震撼大地
 	"ursa_earthshock"
 	{
+		"AbilityTextureName"			"custom/windyanime/ursa_earthshock"
 		"MaxLevel"						"5"
 		"AbilityDamage"					"75 125 175 225 275"
 		"AbilityValues"
@@ -7874,6 +8050,7 @@
 	// 超强力量
 	"ursa_overpower"
 	{
+		"AbilityTextureName"			"custom/windyanime/ursa_overpower"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"12 11 10 9 8"
 		"AbilityManaCost"				"45 50 55 60 65"
@@ -7889,6 +8066,7 @@
 	// 怒意狂击
 	"ursa_fury_swipes"
 	{
+		"AbilityTextureName"			"custom/windyanime/ursa_fury_swipes"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -7906,6 +8084,7 @@
 	// 激怒
 	"ursa_enrage"
 	{
+		"AbilityTextureName"			"custom/windyanime/ursa_enrage"
 		"MaxLevel" "4"
 		"AbilityValues"
 		{
@@ -7927,6 +8106,7 @@
 	// 魔法箭
 	"vengefulspirit_magic_missile"
 	{
+		"AbilityTextureName"			"custom/windyanime/vengefulspirit_magic_missile"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"90 95 100 105 110"
 		"AbilityValues"
@@ -7948,6 +8128,7 @@
 	// 复仇光环
 	"vengefulspirit_command_aura"
 	{
+		"AbilityTextureName"			"custom/windyanime/vengefulspirit_command_aura"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -7960,6 +8141,7 @@
 	// 恐怖波动
 	"vengefulspirit_wave_of_terror"
 	{
+		"AbilityTextureName"			"custom/windyanime/vengefulspirit_wave_of_terror"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"14 13 12 11 10"
 		"AbilityValues"
@@ -7978,6 +8160,7 @@
 	// 移形换位
 	"vengefulspirit_nether_swap"
 	{
+		"AbilityTextureName"			"custom/windyanime/vengefulspirit_nether_swap"
 		"MaxLevel" "4"
 		"AbilityCastRange"				"850 975 1100 1250"
 		"AbilityManaCost"				"100 150 200 250"
@@ -7999,6 +8182,7 @@
 	// 瘴气
 	"venomancer_venomous_gale"
 	{
+		"AbilityTextureName"			"custom/windyanime/venomancer_venomous_gale"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"95 105 115 125 135"
 		"AbilityValues"
@@ -8036,6 +8220,7 @@
 	// 毒蛇撕咬 蛇咬
 	"venomancer_snakebite"
 	{
+		"AbilityTextureName"			"custom/windyanime/venomancer_snakebite"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"18 16 14 12 10"	// 20 18 16 14
 		"AbilityManaCost"				"70 80 90 100 110"
@@ -8054,6 +8239,7 @@
 	// 毒刺 先天
 	"venomancer_poison_sting"
 	{
+		"AbilityTextureName"			"custom/windyanime/venomancer_poison_sting"
 		"AbilityValues"
 		{
 			"damage"
@@ -8072,6 +8258,7 @@
 	// 瘟疫守卫 剧毒蛇棒
 	"venomancer_plague_ward"
 	{
+		"AbilityTextureName"			"custom/windyanime/venomancer_plague_ward"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"24 26 28 30 32"
 		"LevelsBetweenUpgrades"			"4"	// 额外添加
@@ -8098,6 +8285,7 @@
 	// 恶性瘟疫
 	"venomancer_noxious_plague"
 	{
+		"AbilityTextureName"			"custom/windyanime/venomancer_noxious_plague"
 		"MaxLevel"						"4"
 		"AbilityManaCost"				"200 250 300 350"
 		"AbilityValues"
@@ -8122,9 +8310,11 @@
 	//=================================================================================================================
 	// Ability: Viper 冥界亚龙/毒龙
 	//=================================================================================================================
+	// 技能图标使用独立命名空间，避免线上客户端解析到同名资源。
 	// 毒性攻击
 	"viper_poison_attack"
 	{
+		"AbilityTextureName"			"custom/windyanime/viper_poison_attack"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -8148,6 +8338,7 @@
 	// 幽冥剧毒
 	"viper_nethertoxin"
 	{
+		"AbilityTextureName"			"custom/windyanime/viper_nethertoxin"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -8168,6 +8359,7 @@
 	// 腐蚀皮肤
 	"viper_corrosive_skin"
 	{
+		"AbilityTextureName"			"custom/windyanime/viper_corrosive_skin"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -8189,6 +8381,7 @@
 	// 蝮蛇突袭
 	"viper_viper_strike"
 	{
+		"AbilityTextureName"			"custom/windyanime/viper_viper_strike"
 		"MaxLevel" "4"
 		"AbilityValues"
 		{
@@ -8219,6 +8412,7 @@
 	// 极恶俯冲
 	"viper_nose_dive"
 	{
+		"AbilityTextureName"			"custom/windyanime/viper_nose_dive"
 		"AbilityValues"
 		{
 			"corrosive_radius"
@@ -8250,6 +8444,7 @@
 	// 虫群
 	"weaver_the_swarm"
 	{
+		"AbilityTextureName"			"custom/windyanime/weaver_the_swarm"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"44 38 32 26 20"
 		"AbilityValues"
@@ -8270,6 +8465,7 @@
 	// 缩地
 	"weaver_shukuchi"
 	{
+		"AbilityTextureName"			"custom/windyanime/weaver_shukuchi"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -8303,6 +8499,7 @@
 	// 连击
 	"weaver_geminate_attack"
 	{
+		"AbilityTextureName"			"custom/windyanime/weaver_geminate_attack"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"7 6 5 4 3"
 		"AbilityValues"
@@ -8322,6 +8519,7 @@
 	// 时光倒流
 	"weaver_time_lapse"
 	{
+		"AbilityTextureName"			"custom/windyanime/weaver_time_lapse"
 		"MaxLevel" "4"
 		"AbilityCastPoint"				"0.1"	// 0.3
 		"AbilityValues"
@@ -8587,6 +8785,7 @@
 	// 燃烧弹
 	"batrider_flamebreak"
 	{
+		"AbilityTextureName"			"custom/windyanime/batrider_flamebreak"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -8616,6 +8815,7 @@
 	// 火焰飞行
 	"batrider_firefly"
 	{
+		"AbilityTextureName"			"custom/windyanime/batrider_firefly"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"24"	// 48 42 36 30 固定最小冷却
 		"AbilityValues"
@@ -8630,6 +8830,7 @@
 	// 燃烧枷锁
 	"batrider_flaming_lasso"
 	{
+		"AbilityTextureName"			"custom/windyanime/batrider_flaming_lasso"
 		"MaxLevel"						"4"
 		"AbilityCastRange"				"600"	// 200	+400
 		"AbilityManaCost"				"125 150 175 200"
@@ -8652,6 +8853,7 @@
 	// 冰霜新星
 	"crystal_maiden_crystal_nova"
 	{
+		"AbilityTextureName"			"custom/windyanime/crystal_maiden_crystal_nova"
 		"MaxLevel"							"5"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 		"AbilityValues"
@@ -8672,6 +8874,7 @@
 	// 冰封禁制
 	"crystal_maiden_frostbite"
 	{
+		"AbilityTextureName"			"custom/windyanime/crystal_maiden_frostbite"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -8691,6 +8894,7 @@
 	// 奥术光环
 	"crystal_maiden_brilliance_aura"
 	{
+		"AbilityTextureName"			"custom/windyanime/crystal_maiden_brilliance_aura"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -8712,6 +8916,7 @@
 	// 冰晶克隆
 	"crystal_maiden_crystal_clone"
 	{
+		"AbilityTextureName"			"custom/windyanime/crystal_maiden_crystal_clone"
 		"AbilityCooldown"				"10"	// 12
 		"AbilityValues"
 		{
@@ -8726,6 +8931,7 @@
 	// 极寒领域
 	"crystal_maiden_freezing_field"
 	{
+		"AbilityTextureName"			"custom/windyanime/crystal_maiden_freezing_field"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 		"MaxLevel" "4"
 		"AbilityValues"
@@ -8991,6 +9197,7 @@
 	// 地穴虫群
 	"death_prophet_carrion_swarm"
 	{
+		"AbilityTextureName"			"custom/windyanime/death_prophet_carrion_swarm"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"80 90 100 110 120"	// 80 90 100 110
@@ -9011,6 +9218,7 @@
 	// 沉默魔法
 	"death_prophet_silence"
 	{
+		"AbilityTextureName"			"custom/windyanime/death_prophet_silence"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"15 14 13 12 11"	// 15 14 13 12
 		"AbilityDuration"				"3.0 3.5 4.0 4.5 5.0"	// 3.5 4.0 4.5 5.0
@@ -9036,6 +9244,7 @@
 	// 吸魂巫术
 	"death_prophet_spirit_siphon"
 	{
+		"AbilityTextureName"			"custom/windyanime/death_prophet_spirit_siphon"
 		"MaxLevel"						"5"
 		"AbilityCharges"				"1 2 3 4 5"	// 1 2 3 4
 		"AbilityValues"
@@ -9059,6 +9268,7 @@
 	// 驱使恶灵
 	"death_prophet_exorcism"
 	{
+		"AbilityTextureName"			"custom/windyanime/death_prophet_exorcism"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"200 300 400 500"	// 200 300 400
 		"AbilityValues"
@@ -9080,6 +9290,7 @@
 	// 风雷之击
 	"disruptor_thunder_strike"
 	{
+		"AbilityTextureName"			"custom/windyanime/disruptor_thunder_strike"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 		"AbilityCooldown"				"16 14 12 10 8"	// 18 15 12 9
@@ -9092,6 +9303,7 @@
 	// 恶念瞥视
 	"disruptor_glimpse"
 	{
+		"AbilityTextureName"			"custom/windyanime/disruptor_glimpse"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"70 85 100 115 130"	// 70 85 100 115
 		"AbilityCastRange"				"600 1000 1400 1800 2000"	// 600 1000 1400 1800
@@ -9116,6 +9328,7 @@
 	// 动能立场
 	"disruptor_kinetic_field"
 	{
+		"AbilityTextureName"			"custom/windyanime/disruptor_kinetic_field"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -9134,11 +9347,13 @@
 	// 动能栅栏
 	"disruptor_kinetic_fence"
 	{
+		"AbilityTextureName"			"custom/windyanime/disruptor_kinetic_fence"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 	}
 	// 静态风暴
 	"disruptor_static_storm"
 	{
+		"AbilityTextureName"			"custom/windyanime/disruptor_static_storm"
 		"MaxLevel" "4"
 		"AbilityCooldown"				"90 80 70 60"	// 100 85 70
 		"AbilityManaCost"				"100 200 300 400"	// 125 175 225
@@ -9153,6 +9368,7 @@
 	// 不可侵犯
 	"enchantress_untouchable"
 	{
+		"AbilityTextureName"			"custom/windyanime/enchantress_untouchable"
 		"IsBreakable"					"0"//**1**
 		"MaxLevel" "4"
 		"AbilityValues"
@@ -9167,6 +9383,7 @@
 	// 跃动 后撤步
 	"enchantress_bunny_hop"
 	{
+		"AbilityTextureName"			"custom/windyanime/enchantress_bunny_hop"
 		"AbilityCooldown"				"7.5"// 10x0.75
 		"AbilityValues"
 		{
@@ -9177,6 +9394,7 @@
 	// 自然之助
 	"enchantress_natures_attendants"
 	{
+		"AbilityTextureName"			"custom/windyanime/enchantress_natures_attendants"
 		"AbilityCooldown"				"30"// 35
 		"MaxLevel"						"5"
 		"AbilityValues"
@@ -9201,6 +9419,7 @@
 	// a杖密友 小冰龙大
 	"enchantress_little_friends"
 	{
+		"AbilityTextureName"			"custom/windyanime/enchantress_little_friends"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityCooldown"				"15"
@@ -9222,6 +9441,7 @@
 	// 魅惑
 	"enchantress_enchant"
 	{
+		"AbilityTextureName"			"custom/windyanime/enchantress_enchant"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityCastRange"				"800 900 1000 1100"//**500 600 700 800**
 		"AbilityValues"
@@ -9245,6 +9465,7 @@
 	// 推进
 	"enchantress_impetus"
 	{
+		"AbilityTextureName"			"custom/windyanime/enchantress_impetus"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"4 3 2 1 0"
@@ -9365,6 +9586,7 @@
 	// 框
 	"furion_sprout"
 	{
+		"AbilityTextureName"			"custom/windyanime/furion_sprout"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"625 700 775 850 925"
 		"AbilityCooldown"				"12 11 10 9 8"
@@ -9381,6 +9603,7 @@
 	// 传送
 	"furion_teleportation"
 	{
+		"AbilityTextureName"			"custom/windyanime/furion_teleportation"
 		"MaxLevel"						"5"
 		"AbilityCastPoint"				"3 2.5 2 1.5 1"	// 3 3 3 3 3
 		"AbilityManaCost"				"50 60 70 80 90"
@@ -9400,6 +9623,7 @@
 	// 自然的呼唤
 	"furion_force_of_nature"
 	{
+		"AbilityTextureName"			"custom/windyanime/furion_force_of_nature"
 		"AbilityManaCost"				"100 140 180 220"	// 100
 		"AbilityValues"
 		{
@@ -9426,6 +9650,7 @@
 	// 青森诅咒
 	"furion_curse_of_the_forest"
 	{
+		"AbilityTextureName"			"custom/windyanime/furion_curse_of_the_forest"
 		"AbilityValues"
 		{
 			"damage_per_tree"		"30"	// 15 x2
@@ -9442,6 +9667,7 @@
 	// 自然之怒
 	"furion_wrath_of_nature"
 	{
+		"AbilityTextureName"			"custom/windyanime/furion_wrath_of_nature"
 		"MaxLevel"						"4"
 		"AbilityManaCost"				"130 160 190 220"
 		"AbilityValues"
@@ -9478,6 +9704,7 @@
 	// 命运之笔
 	"grimstroke_dark_artistry"
 	{
+		"AbilityTextureName"			"custom/windyanime/grimstroke_dark_artistry"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 		"AbilityCooldown"				"9 8 7 6 5"
@@ -9510,6 +9737,7 @@
 	// 幻影之拥
 	"grimstroke_ink_creature"
 	{
+		"AbilityTextureName"			"custom/windyanime/grimstroke_ink_creature"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO
 		"AbilityCooldown"				"30 26 22 18 14"
@@ -9530,6 +9758,7 @@
 	// 墨涌
 	"grimstroke_spirit_walk"
 	{
+		"AbilityTextureName"			"custom/windyanime/grimstroke_spirit_walk"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"650 700 750 800 900"
 		"AbilityManaCost"				"120 130 140 150 160"
@@ -9551,6 +9780,7 @@
 	// 暗绘
 	"grimstroke_dark_portrait"
 	{
+		"AbilityTextureName"			"custom/windyanime/grimstroke_dark_portrait"
 		"AbilityCooldown"				"60"		// 35 幻象卡顿，增加CD
 		"AbilityValues"
 		{
@@ -9571,6 +9801,7 @@
 	// 缚魂
 	"grimstroke_soul_chain"
 	{
+		"AbilityTextureName"			"custom/windyanime/grimstroke_soul_chain"
 		"MaxLevel"						"4"
 		"AbilityCooldown"				"60"	// 70 65 60
 		"AbilityCastRange"				"700 800 900 1000"
@@ -9601,6 +9832,7 @@
 	// 急速冷却
 	"invoker_cold_snap"
 	{
+		"AbilityTextureName"			"custom/windyanime/invoker_cold_snap"
 		"AbilityValues"
 		{
 			"AbilityCooldown"
@@ -9616,6 +9848,7 @@
 	// 幽灵漫步
 	"invoker_ghost_walk"
 	{
+		"AbilityTextureName"			"custom/windyanime/invoker_ghost_walk"
 		"AbilityValues"
 		{
 			"AbilityCooldown"
@@ -9642,6 +9875,7 @@
 	// 强袭飓风
 	"invoker_tornado"
 	{
+		"AbilityTextureName"			"custom/windyanime/invoker_tornado"
 		"AbilityValues"
 		{
 			"AbilityCooldown"
@@ -9666,6 +9900,7 @@
 	// 磁暴
 	"invoker_emp"
 	{
+		"AbilityTextureName"			"custom/windyanime/invoker_emp"
 		"AbilityCooldown"				"10"	// 27
 		"AbilityValues"
 		{
@@ -9679,6 +9914,7 @@
 	// 灵动迅捷
 	"invoker_alacrity"
 	{
+		"AbilityTextureName"			"custom/windyanime/invoker_alacrity"
 		"AbilityCooldown"				"8"	// 15
 		"AbilityValues"
 		{
@@ -9699,6 +9935,7 @@
 	// 混沌陨石
 	"invoker_chaos_meteor"
 	{
+		"AbilityTextureName"			"custom/windyanime/invoker_chaos_meteor"
 		"AbilityValues"
 		{
 			"AbilityCooldown"
@@ -9719,6 +9956,7 @@
 	// 阳炎冲击
 	"invoker_sun_strike"
 	{
+		"AbilityTextureName"			"custom/windyanime/invoker_sun_strike"
 		"AbilityValues"
 		{
 			"delay"
@@ -9748,6 +9986,7 @@
 	// 熔炉精灵
 	"invoker_forge_spirit"
 	{
+		"AbilityTextureName"			"custom/windyanime/invoker_forge_spirit"
 		"AbilityValues"
 		{
 			"spirit_damage"
@@ -9775,6 +10014,7 @@
 	// 寒冰之墙 冰墙
 	"invoker_ice_wall"
 	{
+		"AbilityTextureName"			"custom/windyanime/invoker_ice_wall"
 		"AbilityCooldown"				"13"	// 23
 		"AbilityValues"
 		{
@@ -9787,6 +10027,7 @@
 	// 超震声波
 	"invoker_deafening_blast"
 	{
+		"AbilityTextureName"			"custom/windyanime/invoker_deafening_blast"
 		"AbilityCooldown"				"12"	// 36
 		"AbilityValues"
 		{
@@ -9799,6 +10040,7 @@
 	// 元素祈唤
 	"invoker_invoke"
 	{
+		"AbilityTextureName"			"custom/windyanime/invoker_invoke"
 		"AbilityCooldown"				"1.7"	// 7
 	}
 	//=================================================================================================================
@@ -9914,7 +10156,7 @@
 	"keeper_of_the_light_illuminate"
 	{
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO 无视魔免
-		"AbilityTextureName"			"keeper_of_the_light/kotl_ti7_immortal/keeper_of_the_light_illuminate_alt"
+		"AbilityTextureName"			"custom/windyanime/keeper_of_the_light_illuminate"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"100 125 150 175 200"
 		"AbilityValues"
@@ -9951,6 +10193,7 @@
 	// 法力流失
 	"keeper_of_the_light_mana_leak"
 	{
+		"AbilityTextureName"			"custom/windyanime/keeper_of_the_light_mana_leak"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"// 无视魔免
 		"AbilityCooldown"				"16 14 12 10 8"
@@ -9970,6 +10213,7 @@
 	// 查克拉魔法
 	"keeper_of_the_light_chakra_magic"
 	{
+		"AbilityTextureName"			"custom/windyanime/keeper_of_the_light_chakra_magic"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -9988,6 +10232,7 @@
 	// 灵魂形态
 	"keeper_of_the_light_spirit_form"
 	{
+		"AbilityTextureName"			"custom/windyanime/keeper_of_the_light_spirit_form"
 		"MaxLevel"						"4"
 		"AbilityCooldown"				"85 80 75 70"
 		"AbilityManaCost"				"75 125 175 225"
@@ -10003,6 +10248,7 @@
 	// 召回
 	"keeper_of_the_light_recall"
 	{
+		"AbilityTextureName"			"custom/windyanime/keeper_of_the_light_recall"
 		"MaxLevel"								"4"
 		"AbilityValues"
 		{
@@ -10029,6 +10275,7 @@
 	// 致盲之光
 	"keeper_of_the_light_blinding_light"
 	{
+		"AbilityTextureName"			"custom/windyanime/keeper_of_the_light_blinding_light"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	// SPELL_IMMUNITY_ENEMIES_NO 无视魔免
 		"AbilityCastRange"				"500 575 650 725 800"
@@ -10085,6 +10332,7 @@
 	// 撕裂大地
 	"leshrac_split_earth"
 	{
+		"AbilityTextureName"			"custom/windyanime/leshrac_split_earth"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"80 100 120 140 160"
 		"AbilityDamage"					"115 170 225 280 335"
@@ -10099,6 +10347,7 @@
 	// 恶魔敕令
 	"leshrac_diabolic_edict"
 	{
+		"AbilityTextureName"			"custom/windyanime/leshrac_diabolic_edict"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"22 21 20 19 18"
 		"AbilityManaCost"				"90 120 150 180 210"
@@ -10113,6 +10362,7 @@
 	// 闪电风暴
 	"leshrac_lightning_storm"
 	{
+		"AbilityTextureName"			"custom/windyanime/leshrac_lightning_storm"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"80 100 120 140 160"
 		"AbilityValues"
@@ -10143,6 +10393,7 @@
 	// 脉冲新星
 	"leshrac_pulse_nova"
 	{
+		"AbilityTextureName"			"custom/windyanime/leshrac_pulse_nova"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"50 60 70 80"
 		"AbilityValues"
@@ -10328,6 +10579,7 @@
 	// 龙破斩
 	"lina_dragon_slave"
 	{
+		"AbilityTextureName"			"custom/windyanime/lina_dragon_slave"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"100 110 120 130 140"
 		"AbilityValues"
@@ -10354,6 +10606,7 @@
 	// 光击阵
 	"lina_light_strike_array"
 	{
+		"AbilityTextureName"			"custom/windyanime/lina_light_strike_array"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"11 10 9 8 7"
 		"AbilityManaCost"				"100 110 120 130 140"
@@ -10373,6 +10626,7 @@
 	// 炽魂
 	"lina_fiery_soul"
 	{
+		"AbilityTextureName"			"custom/windyanime/lina_fiery_soul"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -10389,6 +10643,7 @@
 	// 腾焰斗篷
 	"lina_flame_cloak"
 	{
+		"AbilityTextureName"			"custom/windyanime/lina_flame_cloak"
 		"AbilityValues"
 		{
 			"magic_resistance"					"50"	// 35
@@ -10398,6 +10653,7 @@
 	// 神灭斩
 	"lina_laguna_blade"
 	{
+		"AbilityTextureName"			"custom/windyanime/lina_laguna_blade"
 		"MaxLevel" "4"
 		// 觉醒附加纯粹伤害须对魔免单位生效
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -10431,6 +10687,7 @@
 	// 裂地尖刺
 	"lion_impale"
 	{
+		"AbilityTextureName"			"custom/windyanime/lion_impale"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"90 110 130 150 170"
 		"AbilityValues"
@@ -10450,6 +10707,7 @@
 	// 变羊
 	"lion_voodoo"
 	{
+		"AbilityTextureName"			"custom/windyanime/lion_voodoo"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"750"	// 575 600 625 650 加强
 		"AbilityManaCost"				"110 140 170 200 230"
@@ -10465,6 +10723,7 @@
 	// 法力吸取
 	"lion_mana_drain"
 	{
+		"AbilityTextureName"			"custom/windyanime/lion_mana_drain"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"14 12 10 8 6"
 		"AbilityValues"
@@ -10482,6 +10741,7 @@
 	// 死亡一指
 	"lion_finger_of_death"
 	{
+		"AbilityTextureName"			"custom/windyanime/lion_finger_of_death"
 		"MaxLevel"						"4"
 		"AbilityCooldown"				"90 70 50 30"
 		"AbilityManaCost"				"200 400 600 800"
@@ -10522,6 +10782,7 @@
 	// 死亡脉冲
 	"necrolyte_death_pulse"
 	{
+		"AbilityTextureName"			"custom/windyanime/necrolyte_death_pulse"
 		"MaxLevel"						"5"
 		"AbilityDamage"					"100 160 220 280 340"
 		"AbilityManaCost"				"115 130 145 160 175"
@@ -10540,6 +10801,7 @@
 	// 竭心光环 胜利光环
 	"necrolyte_heartstopper_aura"
 	{
+		"AbilityTextureName"			"custom/windyanime/necrolyte_heartstopper_aura"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -10552,6 +10814,7 @@
 	// 幽魂护罩
 	"necrolyte_ghost_shroud"
 	{
+		"AbilityTextureName"			"custom/windyanime/necrolyte_ghost_shroud"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -10574,6 +10837,7 @@
 	// 死神镰刀
 	"necrolyte_reapers_scythe"
 	{
+		"AbilityTextureName"			"custom/windyanime/necrolyte_reapers_scythe"
 		"MaxLevel" "4"
 		"AbilityCooldown"				"90"				// 100
 		"AbilityManaCost"				"250 375 500 625"
@@ -10695,6 +10959,7 @@
 	// 火焰爆轰
 	"ogre_magi_fireblast"
 	{
+		"AbilityTextureName"			"custom/windyanime/ogre_magi_fireblast"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"70 85 100 115 130"
 		"AbilityValues"
@@ -10712,6 +10977,7 @@
 	// 未精通的火焰爆轰
 	"ogre_magi_unrefined_fireblast"
 	{
+		"AbilityTextureName"			"custom/windyanime/ogre_magi_unrefined_fireblast"
 		"AbilityValues"
 		{
 			"scepter_mana"		"15"	// 35
@@ -10721,6 +10987,7 @@
 	// 引燃
 	"ogre_magi_ignite"
 	{
+		"AbilityTextureName"			"custom/windyanime/ogre_magi_ignite"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"700 800 900 1000 1100"
 		"AbilityManaCost"				"80 90 100 110 120"
@@ -10737,6 +11004,7 @@
 	// 嗜血术
 	"ogre_magi_bloodlust"
 	{
+		"AbilityTextureName"			"custom/windyanime/ogre_magi_bloodlust"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"20 18 16 14 12"
 		"AbilityManaCost"				"40 50 60 70 80"
@@ -10758,6 +11026,7 @@
 	// 多重施法
 	"ogre_magi_multicast"
 	{
+		"AbilityTextureName"			"custom/windyanime/ogre_magi_multicast"
 		"MaxLevel" "4"
 		"LinkedAbility"	"ogre_magi_multicast_lua"	// 与觉醒多重施法 MK2 双向联动同步升级
 		"AbilityValues"
@@ -10788,6 +11057,7 @@
 	// 气运之末
 	"oracle_fortunes_end"
 	{
+		"AbilityTextureName"			"custom/windyanime/oracle_fortunes_end"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"18 15 12 9 6"	// 18 14 10 6 差值-3
 		"AbilityValues"
@@ -10801,6 +11071,7 @@
 	// 命运之令
 	"oracle_fates_edict"
 	{
+		"AbilityTextureName"			"custom/windyanime/oracle_fates_edict"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"16 14 12 10 8"	// 17 14 11 8 差值-2
 		"AbilityValues"
@@ -10814,6 +11085,7 @@
 	// 涤罪之焰
 	"oracle_purifying_flames"
 	{
+		"AbilityTextureName"			"custom/windyanime/oracle_purifying_flames"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -10825,6 +11097,7 @@
 	// 虚妄之诺
 	"oracle_false_promise"
 	{
+		"AbilityTextureName"			"custom/windyanime/oracle_false_promise"
 		"MaxLevel" "4"
 		"AbilityCastRange"				"800 850 900 950"
 		"AbilityManaCost"				"100 150 200 250"
@@ -10894,6 +11167,7 @@
 	// 幻象法球
 	"puck_illusory_orb"
 	{
+		"AbilityTextureName"			"custom/windyanime/puck_illusory_orb"
 		"MaxLevel"						"5"
 		"AbilityCastPoint"				"0.0"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -10919,6 +11193,7 @@
 	// 新月之痕
 	"puck_waning_rift"
 	{
+		"AbilityTextureName"			"custom/windyanime/puck_waning_rift"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityManaCost"				"100 110 120 130 140"
@@ -10943,6 +11218,7 @@
 	// 相位转移
 	"puck_phase_shift"
 	{
+		"AbilityTextureName"			"custom/windyanime/puck_phase_shift"
 		"MaxLevel"						"5"
 		"AbilityChannelTime"			"1 1.5 2.0 2.5 3.0"
 		"AbilityValues"
@@ -10957,6 +11233,7 @@
 	// 梦境缠绕
 	"puck_dream_coil"
 	{
+		"AbilityTextureName"			"custom/windyanime/puck_dream_coil"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"100 150 200 250"
 		"AbilityValues"
@@ -11065,6 +11342,7 @@
 	// 暗影突袭
 	"queenofpain_shadow_strike"
 	{
+		"AbilityTextureName"			"custom/windyanime/queenofpain_shadow_strike"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"450 500 550 600 650"
 		"AbilityCooldown"				"16 13 10 7 4"
@@ -11082,6 +11360,7 @@
 	// 闪烁
 	"queenofpain_blink"
 	{
+		"AbilityTextureName"			"custom/windyanime/queenofpain_blink"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"1075 1150 1225 1300 1375"
 		"AbilityValues"
@@ -11099,6 +11378,7 @@
 	// 痛苦尖叫
 	"queenofpain_scream_of_pain"
 	{
+		"AbilityTextureName"			"custom/windyanime/queenofpain_scream_of_pain"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES" // 给一条大招流以外的路
 		"AbilityValues"
@@ -11116,6 +11396,7 @@
 	// 超声冲击波
 	"queenofpain_sonic_wave"
 	{
+		"AbilityTextureName"			"custom/windyanime/queenofpain_sonic_wave"
 		"AbilityCastRange"				"900"	// 700
 		"MaxLevel" "4"
 		"AbilityManaCost"				"250 400 550 700"
@@ -11567,6 +11848,7 @@
 	// 奥术鹰隼
 	"skywrath_mage_arcane_bolt"
 	{
+		"AbilityTextureName"			"custom/windyanime/skywrath_mage_arcane_bolt"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"4.0 3.5 3.0 2.5 2.0"
 		"AbilityValues"
@@ -11582,6 +11864,7 @@
 	// 震荡光弹
 	"skywrath_mage_concussive_shot"
 	{
+		"AbilityTextureName"			"custom/windyanime/skywrath_mage_concussive_shot"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"15 14 13 12 11"
 		"AbilityManaCost"				"80 85 90 95 100"
@@ -11593,6 +11876,7 @@
 	// 上古封印
 	"skywrath_mage_ancient_seal"
 	{
+		"AbilityTextureName"			"custom/windyanime/skywrath_mage_ancient_seal"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"700 750 800 850 900"
 		"AbilityManaCost"				"80 90 100 110 120"
@@ -11608,6 +11892,7 @@
 	// 神秘之耀
 	"skywrath_mage_mystic_flare"
 	{
+		"AbilityTextureName"			"custom/windyanime/skywrath_mage_mystic_flare"
 		"MaxLevel" "4"
 		"AbilityCooldown"				"50.0 40.0 30.0 20.0"	// 60.0 40.0 20.0
 		"AbilityManaCost"				"300 550 800 1050"
@@ -11648,6 +11933,7 @@
 	// 残影
 	"storm_spirit_static_remnant"
 	{
+		"AbilityTextureName"			"custom/windyanime/storm_spirit_static_remnant"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"70 80 90 100 110"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -11663,6 +11949,7 @@
 	// 电子涡流
 	"storm_spirit_electric_vortex"
 	{
+		"AbilityTextureName"			"custom/windyanime/storm_spirit_electric_vortex"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"20 18 16 14 12"
 		"AbilityManaCost"				"60 70 80 90 100"
@@ -11684,6 +11971,7 @@
 	// 超负荷
 	"storm_spirit_overload"
 	{
+		"AbilityTextureName"			"custom/windyanime/storm_spirit_overload"
 		"MaxLevel"						"5"
 		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityValues"
@@ -11713,6 +12001,7 @@
 	// 球状闪电
 	"storm_spirit_ball_lightning"
 	{
+		"AbilityTextureName"			"custom/windyanime/storm_spirit_ball_lightning"
 		"MaxLevel" "4"
 		"AbilityDamage"					"6 10 14 18"
 		"AbilityValues"
@@ -11831,6 +12120,7 @@
 	// 激光
 	"tinker_laser"
 	{
+		"AbilityTextureName"			"custom/windyanime/tinker_laser"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"1200"	// 600
 		"AbilityCooldown"				"19 18 17 16 15"	// 19 18 17 16
@@ -11863,6 +12153,7 @@
 	// 机械行军
 	"tinker_march_of_the_machines"
 	{
+		"AbilityTextureName"			"custom/windyanime/tinker_march_of_the_machines"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"35.0 33.0 31.0 29.0 27.0"	// 35.0 33.0 31.0 29.0
 		"AbilityManaCost"				"90 110 130 150 170"	// 100 120 140 160 -10
@@ -11874,6 +12165,7 @@
 	// 部署炮台
 	"tinker_deploy_turrets"
 	{
+		"AbilityTextureName"			"custom/windyanime/tinker_deploy_turrets"
 		"AbilityCastRange"				"900"	// 600
 		"AbilityValues"
 		{
@@ -11936,6 +12228,7 @@
 	// 折跃光束
 	"tinker_warp_grenade"
 	{
+		"AbilityTextureName"			"custom/windyanime/tinker_warp_grenade"
 		"AbilityValues"
 		{
 			"damage"					"300"		// 150
@@ -11947,6 +12240,7 @@
 	// 残阴
 	"void_spirit_aether_remnant"
 	{
+		"AbilityTextureName"			"custom/windyanime/void_spirit_aether_remnant"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"75 80 85 90 95"
@@ -11968,6 +12262,7 @@
 	// 异化
 	"void_spirit_dissimilate"
 	{
+		"AbilityTextureName"			"custom/windyanime/void_spirit_dissimilate"
 		"MaxLevel"						"5"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityCooldown"				"12 11 10 9 8"
@@ -11983,6 +12278,7 @@
 	// 共鸣脉冲
 	"void_spirit_resonant_pulse"
 	{
+		"AbilityTextureName"			"custom/windyanime/void_spirit_resonant_pulse"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"115 120 125 130 135"
@@ -12029,6 +12325,7 @@
 	// 太虚之径
 	"void_spirit_astral_step"
 	{
+		"AbilityTextureName"			"custom/windyanime/void_spirit_astral_step"
 		"AbilityCastPoint"				"0"
 		"AbilityCharges"		"3"// 2
 		"MaxLevel" "4"
@@ -12070,6 +12367,7 @@
 	// 致命连接
 	"warlock_fatal_bonds"
 	{
+		"AbilityTextureName"			"custom/windyanime/warlock_fatal_bonds"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"40 35 30 25 20"	// 42 34 26 18 差值-5 末档≥20
 		"AbilityManaCost"				"120 130 140 150 160"
@@ -12085,6 +12383,7 @@
 	// 暗言术
 	"warlock_shadow_word"
 	{
+		"AbilityTextureName"			"custom/windyanime/warlock_shadow_word"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"110 120 130 140 150"
 		"AbilityCastRange"				"650 700 750 800 850"
@@ -12107,6 +12406,7 @@
 	// 剧变
 	"warlock_upheaval"
 	{
+		"AbilityTextureName"			"custom/windyanime/warlock_upheaval"
 		"MaxLevel" "5"
 		"AbilityChannelTime"			"10 12 14 16 18"
 		"AbilityValues"
@@ -12136,6 +12436,7 @@
 	// 混乱之雨 地狱火
 	"warlock_rain_of_chaos"
 	{
+		"AbilityTextureName"			"custom/windyanime/warlock_rain_of_chaos"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"400 800 1200 1600"	// 200 400 600 x2
 		"AbilityValues"
@@ -12210,6 +12511,7 @@
 	// 束缚击
 	"windrunner_shackleshot"
 	{
+		"AbilityTextureName"			"custom/windyanime/windrunner_shackleshot"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"70 80 90 100 110"	// 70 80 90 100
 		"AbilityValues"
@@ -12232,6 +12534,7 @@
 	// 强力击
 	"windrunner_powershot"
 	{
+		"AbilityTextureName"			"custom/windyanime/windrunner_powershot"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"12 11 10 9 8"	// 12 11 10 9
 		"AbilityManaCost"				"90 100 110 120 130"	// 90 100 110 120
@@ -12255,6 +12558,7 @@
 	// 风行
 	"windrunner_windrun"
 	{
+		"AbilityTextureName"			"custom/windyanime/windrunner_windrun"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -12272,6 +12576,7 @@
 	// 集中火力
 	"windrunner_focusfire"
 	{
+		"AbilityTextureName"			"custom/windyanime/windrunner_focusfire"
 		"MaxLevel" "4"
 		"AbilityManaCost"				"75 150 225 300"	// 75 100 125
 		"AbilityValues"
@@ -12313,6 +12618,7 @@
 	// 狂风之力
 	"windrunner_gale_force"
 	{
+		"AbilityTextureName"			"custom/windyanime/windrunner_gale_force"
 		"AbilityCooldown"				"20"					// 30
 		"AbilityValues"
 		{
@@ -12447,6 +12753,7 @@
 	// 麻痹药剂
 	"witch_doctor_paralyzing_cask"
 	{
+		"AbilityTextureName"			"custom/windyanime/witch_doctor_paralyzing_cask"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"900"						// 600
 		"AbilityManaCost"				"80 100 120 140 160"
@@ -12473,6 +12780,7 @@
 	// 巫毒疗法
 	"witch_doctor_voodoo_restoration"
 	{
+		"AbilityTextureName"			"custom/windyanime/witch_doctor_voodoo_restoration"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -12499,6 +12807,7 @@
 	// 诅咒
 	"witch_doctor_maledict"
 	{
+		"AbilityTextureName"			"custom/windyanime/witch_doctor_maledict"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"900"				// 600 +300
 		"AbilityCooldown"				"30 26 22 18 14"
@@ -12519,6 +12828,7 @@
 	// 死亡守卫
 	"witch_doctor_death_ward"
 	{
+		"AbilityTextureName"			"custom/windyanime/witch_doctor_death_ward"
 		"MaxLevel" "4"
 		"AbilityCastRange"				"900"						// 500
 		"AbilityCooldown"				"60"	// 100 90 80 固定最小冷却
@@ -12542,6 +12852,7 @@
 	// 魔晶变身
 	"witch_doctor_voodoo_switcheroo"
 	{
+		"AbilityTextureName"			"custom/windyanime/witch_doctor_voodoo_switcheroo"
 		"AbilityCooldown"				"30" // 50
 		"AbilityValues"
 		{
@@ -12566,6 +12877,7 @@
 	{
 		"MaxLevel"						"5"
 		"AbilityManaCost"					"50 60 70 80 90"
+		"AbilityTextureName"                "custom/windyanime/zuus_heavenly_jump"
 		"AbilityValues"
 		{
 			"damage"
@@ -12592,6 +12904,7 @@
 	{
 		"MaxLevel"						"5"
 		"AbilityValues"
+		"AbilityTextureName"            "custom/windyanime/zuus_arc_lightning1"
 		{
 			"AbilityManaCost"
 			{
@@ -12611,6 +12924,7 @@
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"700 750 800 850 900"
 		"AbilityManaCost"				"120 125 130 135 140"
+		"AbilityTextureName"            "custom/windyanime/zuus_lightning_bolt"
 		"AbilityValues"
 		{
 			"damage"
@@ -12626,6 +12940,7 @@
 		"MaxLevel" "4"
 		"AbilityCooldown"				"90"	// 130
 		"AbilityManaCost"				"250 375 500 625"
+		"AbilityTextureName"            "custom/windyanime/zuus_thundergods_wrath"
 		"AbilityValues"
 		{
 			"damage"
@@ -12635,10 +12950,21 @@
 			}
 		}
 	}
+	// 雷云
+	"zuus_cloud"
+	{
+       "AbilityTextureName"            "custom/windyanime/zuus_cloud"
+	}
+	// 霹雳之手
+	"zuus_lightning_hands"
+	{
+       "AbilityTextureName"            "custom/windyanime/zuus_lightning_hands"
+	}
 	// 静电场 先天技能
 	"zuus_static_field"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+		"AbilityTextureName"            "custom/windyanime/zuus_static_field"
 	}
 	//=================================================================================================================
 	// MUERTA: 琼英碧灵/奶绿
@@ -12646,6 +12972,7 @@
 	// 弹无虚发
 	"muerta_dead_shot"
 	{
+		"AbilityTextureName"			"custom/windyanime/muerta_dead_shot"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"16 14 12 10 8"
 		"AbilityManaCost"				"100 120 140 160 180"
@@ -12661,6 +12988,7 @@
 	// 唤魂
 	"muerta_the_calling"
 	{
+		"AbilityTextureName"			"custom/windyanime/muerta_the_calling"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"135 150 165 180 195"
 		"AbilityValues"
@@ -12673,6 +13001,7 @@
 	// 神枪在手
 	"muerta_gunslinger"
 	{
+		"AbilityTextureName"			"custom/windyanime/muerta_gunslinger"
 		"MaxLevel"						"5"
 		"AbilityValues"
 		{
@@ -12685,6 +13014,7 @@
 	// 越界
 	"muerta_pierce_the_veil"
 	{
+		"AbilityTextureName"			"custom/windyanime/muerta_pierce_the_veil"
 		"MaxLevel" "4"
 		"AbilityCooldown"				"75 65 55 45"
 		"AbilityManaCost"				"150 250 350 450"
@@ -12886,6 +13216,7 @@
 	// 回音重斩
 	"kez_echo_slash"
 	{
+		"AbilityTextureName"			"custom/windyanime/kez_echo_slash"
 		"MaxLevel"	"5"
 		"AbilityCooldown"				"22 19 16 13 10"	// 21 18 15 12
 		"AbilityManaCost"				"75 90 105 120 135"
@@ -12914,6 +13245,7 @@
 	// 制敌爪钩
 	"kez_grappling_claw"
 	{
+		"AbilityTextureName"			"custom/windyanime/kez_grappling_claw"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"	"5"
 		"AbilityCooldown"				"11 10 9 8 7"
@@ -12926,6 +13258,7 @@
 	// 影武长刀
 	"kez_kazurai_katana"
 	{
+		"AbilityTextureName"			"custom/windyanime/kez_kazurai_katana"
 		"MaxLevel"	"5"
 		"AbilityCooldown"				"20 16 12 8 4"	// 20 15 10 5
 		"AbilityValues"
@@ -12955,6 +13288,7 @@
 	// 猛禽之舞
 	"kez_raptor_dance"
 	{
+		"AbilityTextureName"			"custom/windyanime/kez_raptor_dance"
 		"MaxLevel"	"4"
 		"AbilityManaCost"				"100 125 150 175"
 		"AbilityValues"
@@ -12987,6 +13321,7 @@
 	// 天隼冲击
 	"kez_falcon_rush"
 	{
+		"AbilityTextureName"			"custom/windyanime/kez_falcon_rush"
 		"MaxLevel"	"5"
 		"AbilityCooldown"				"22 19 16 13 10"	// 21 18 15 12 +1
 		"AbilityManaCost"				"85 90 95 100 105"
@@ -13008,6 +13343,7 @@
 	// 利爪飞掷
 	"kez_talon_toss"
 	{
+		"AbilityTextureName"			"custom/windyanime/kez_talon_toss"
 		"MaxLevel"	"5"
 		"AbilityCooldown"				"13 11 9 7 5"
 		"AbilityValues"
@@ -13022,6 +13358,7 @@
 	// 翔影之钗
 	"kez_shodo_sai"
 	{
+		"AbilityTextureName"			"custom/windyanime/kez_shodo_sai"
 		"MaxLevel"	"5"
 		"AbilityCooldown"				"17 14 11 8 5"
 		"AbilityValues"
@@ -13039,6 +13376,7 @@
 	// 渡鸦之纱
 	"kez_ravens_veil"
 	{
+		"AbilityTextureName"			"custom/windyanime/kez_ravens_veil"
 		"AbilityCastPoint"				"0.1"//0.3
 		"MaxLevel"	"4"
 		"AbilityManaCost"				"100 125 150 175"
@@ -13298,6 +13636,179 @@
 	"pangolier_fortune_favors_the_bold"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+	}
+
+	//=================================================================================================================
+	// 外部动漫英雄技能图标覆盖（独立纹理名）
+	//=================================================================================================================
+	"chaos_knight_phantasm"
+	{
+		"AbilityTextureName"			"custom/windyanime/chaos_knight_phantasm"
+	}
+
+	"clinkz_burning_army"
+	{
+		"AbilityTextureName"			"custom/windyanime/clinkz_burning_army"
+	}
+
+	"disruptor_electromagnetic_repulsion"
+	{
+		"AbilityTextureName"			"custom/windyanime/disruptor_electromagnetic_repulsion"
+	}
+
+	"doom_bringer_lvl_pain"
+	{
+		"AbilityTextureName"			"custom/windyanime/doom_bringer_lvl_pain"
+	}
+
+	"dragon_knight_fireball"
+	{
+		"AbilityTextureName"			"custom/windyanime/dragon_knight_fireball"
+	}
+
+	"drow_ranger_glacier"
+	{
+		"AbilityTextureName"			"custom/windyanime/drow_ranger_glacier"
+	}
+
+	"faceless_void_time_walk_reverse"
+	{
+		"AbilityTextureName"			"custom/windyanime/faceless_void_time_walk_reverse"
+	}
+
+	"hoodwink_decoy"
+	{
+		"AbilityTextureName"			"custom/windyanime/hoodwink_decoy"
+	}
+
+	"hoodwink_hunters_boomerang"
+	{
+		"AbilityTextureName"			"custom/windyanime/hoodwink_hunters_boomerang"
+	}
+
+	"hoodwink_sharpshooter_release"
+	{
+		"AbilityTextureName"			"custom/windyanime/hoodwink_sharpshooter_release"
+	}
+
+	"invoker_empty1"
+	{
+		"AbilityTextureName"			"custom/windyanime/invoker_empty1"
+	}
+
+	"invoker_empty2"
+	{
+		"AbilityTextureName"			"custom/windyanime/invoker_empty2"
+	}
+
+	"invoker_exort"
+	{
+		"AbilityTextureName"			"custom/windyanime/invoker_exort"
+	}
+
+	"invoker_quas"
+	{
+		"AbilityTextureName"			"custom/windyanime/invoker_quas"
+	}
+
+	"invoker_wex"
+	{
+		"AbilityTextureName"			"custom/windyanime/invoker_wex"
+	}
+
+	"keeper_of_the_light_illuminate_end"
+	{
+		"AbilityTextureName"			"custom/windyanime/keeper_of_the_light_illuminate_end"
+	}
+
+	"kez_shodo_sai_parry_cancel"
+	{
+		"AbilityTextureName"			"custom/windyanime/kez_shodo_sai_parry_cancel"
+	}
+
+	"kunkka_return"
+	{
+		"AbilityTextureName"			"custom/windyanime/kunkka_return"
+	}
+
+	"life_stealer_consume"
+	{
+		"AbilityTextureName"			"custom/windyanime/life_stealer_consume"
+	}
+
+	"magnataur_horn_toss"
+	{
+		"AbilityTextureName"			"custom/windyanime/magnataur_horn_toss"
+	}
+
+	"muerta_spectral_slug"
+	{
+		"AbilityTextureName"			"custom/windyanime/muerta_spectral_slug"
+	}
+
+	"naga_siren_song_of_the_siren_cancel"
+	{
+		"AbilityTextureName"			"custom/windyanime/naga_siren_song_of_the_siren_cancel"
+	}
+
+	"necrolyte_death_seeker"
+	{
+		"AbilityTextureName"			"custom/windyanime/necrolyte_death_seeker"
+	}
+
+	"necrolyte_sadist"
+	{
+		"AbilityTextureName"			"custom/windyanime/necrolyte_sadist"
+	}
+
+	"omniknight_repel"
+	{
+		"AbilityTextureName"			"custom/windyanime/omniknight_repel"
+	}
+
+	"phoenix_icarus_dive_stop"
+	{
+		"AbilityTextureName"			"custom/windyanime/phoenix_icarus_dive_stop"
+	}
+
+	"phoenix_sun_ray_stop"
+	{
+		"AbilityTextureName"			"custom/windyanime/phoenix_sun_ray_stop"
+	}
+
+	"phoenix_sun_ray_toggle_move"
+	{
+		"AbilityTextureName"			"custom/windyanime/phoenix_sun_ray_toggle_move"
+	}
+
+	"puck_ethereal_jaunt"
+	{
+		"AbilityTextureName"			"custom/windyanime/puck_ethereal_jaunt"
+	}
+
+	"shredder_return_chakram"
+	{
+		"AbilityTextureName"			"custom/windyanime/shredder_return_chakram"
+	}
+
+	"sniper_concussive_grenade"
+	{
+		"AbilityTextureName"			"custom/windyanime/sniper_concussive_grenade"
+	}
+
+	"spectre_reality"
+	{
+		"AbilityTextureName"			"custom/windyanime/spectre_reality"
+	}
+
+	"spirit_breaker_planar_pocket"
+	{
+		"AbilityTextureName"			"custom/windyanime/spirit_breaker_planar_pocket"
+	}
+
+	"tinker_rearm"
+	{
+		"AbilityTextureName"			"custom/windyanime/tinker_rearm"
 	}
 
 }

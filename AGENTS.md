@@ -42,6 +42,7 @@
 - 抽奖池 Tier 调整：`.claude/skills/adjust-lottery-tier/SKILL.md`
 - 技能 override 维护：`.claude/skills/update-abilities-override/SKILL.md`
 - 英雄 custom 校验：`.claude/skills/update-heroes-custom/SKILL.md`
+- 线上环境英雄头像/技能图标配置：`.claude/skills/online-hero-assets/SKILL.md`
 - 本地化格式与同步：`.claude/skills/localization-format-guide/SKILL.md`
 - 外部 API 调用：`.claude/skills/api-usage/SKILL.md`
 - Dota 文档/API 查询：`.claude/skills/dota-docs-lookup/SKILL.md`

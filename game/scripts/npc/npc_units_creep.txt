@@ -8,24 +8,32 @@
 	// 近战远程 1.5x
 	"npc_dota_creep_badguys_ranged"
 	{
+		"ModelScale"				"1.1718"
+
 		"BountyXP"					"104"		// 69
 		"BountyGoldMin"				"65"		// 43
 		"BountyGoldMax"				"78"		// 52
 	}
 	"npc_dota_creep_goodguys_ranged"
 	{
+		"ModelScale"				"1.1088"
+
 		"BountyXP"					"104"		// 69
 		"BountyGoldMin"				"65"		// 43
 		"BountyGoldMax"				"78"		// 52
 	}
 	"npc_dota_creep_badguys_melee"
 	{
+		"ModelScale"				"1.1718"
+
 		"BountyXP"					"86"		// 57
 		"BountyGoldMin"				"51"		// 34
 		"BountyGoldMax"				"59"		// 39
 	}
 	"npc_dota_creep_goodguys_melee"
 	{
+		"ModelScale"				"1.1718"
+
 		"BountyXP"					"86"		// 57
 		"BountyGoldMin"				"51"		// 34
 		"BountyGoldMax"				"59"		// 39
@@ -33,6 +41,8 @@
 	// 旗手 1.5x
 	"npc_dota_creep_badguys_flagbearer"
 	{
+		"ModelScale"				"1.1718"
+
 		"BountyXP"					"86"		// 57
 		"BountyGoldMin"				"51"		// 34
 		"BountyGoldMax"				"59"		// 39
@@ -41,6 +51,8 @@
 	}
 	"npc_dota_creep_goodguys_flagbearer"
 	{
+		"ModelScale"				"1.1718"
+
 		"BountyXP"					"86"		// 57
 		"BountyGoldMin"				"51"		// 34
 		"BountyGoldMax"				"59"		// 39
@@ -50,6 +62,8 @@
 	// 投石车 1.5x
 	"npc_dota_goodguys_siege"
 	{
+		"ModelScale"				"0.819"
+
 		"BaseAttackSpeed"			"130"		// 100
 		"AttackRange"				"800"		// 690
 
@@ -59,6 +73,8 @@
 	}
 	"npc_dota_badguys_siege"
 	{
+		"ModelScale"				"1.008"
+
 		"BaseAttackSpeed"			"130"		// 100
 		"AttackRange"				"800"		// 690
 
@@ -72,7 +88,7 @@
 	"npc_dota_creep_badguys_ranged_upgraded"
 	{
 		// General
-		"ModelScale"				"1.2"		// 1.12
+		"ModelScale"				"1.512"		// 1.12
 
 		// Armor
 		//----------------------------------------------------------------
@@ -104,7 +120,7 @@
 	"npc_dota_creep_goodguys_ranged_upgraded"
 	{
 		// General
-		"ModelScale"				"1.2"		// 1.12
+		"ModelScale"				"1.512"		// 1.12
 
 		// Armor
 		//----------------------------------------------------------------
@@ -136,7 +152,7 @@
 	"npc_dota_creep_badguys_melee_upgraded"
 	{
 		// General
-		"ModelScale"				"1.2"		// 1.12
+		"ModelScale"				"1.512"		// 1.12
 
 		// Armor
 		//----------------------------------------------------------------
@@ -167,7 +183,7 @@
 	"npc_dota_creep_goodguys_melee_upgraded"
 	{
 		// General
-		"ModelScale"				"1.2"		// 1.12
+		"ModelScale"				"1.512"		// 1.12
 
 		// Armor
 		//----------------------------------------------------------------
@@ -200,7 +216,7 @@
 	"npc_dota_creep_badguys_flagbearer_upgraded"
 	{
 		// General
-		"ModelScale"				"1.2"		// 1.12
+		"ModelScale"				"1.512"		// 1.12
 
 		// Armor
 		//----------------------------------------------------------------
@@ -230,7 +246,7 @@
 	"npc_dota_creep_goodguys_flagbearer_upgraded"
 	{
 		// General
-		"ModelScale"				"1.2"		// 1.12
+		"ModelScale"				"1.512"		// 1.12
 
 		// Armor
 		//----------------------------------------------------------------
@@ -262,7 +278,7 @@
 	"npc_dota_goodguys_siege_upgraded"
 	{
 		// General
-		"ModelScale"				"0.85"		// .65
+		"ModelScale"				"1.071"		// .65
 
 		// Armor
 		//----------------------------------------------------------------
@@ -293,7 +309,7 @@
 	"npc_dota_badguys_siege_upgraded"
 	{
 		// General
-		"ModelScale"				"0.85"		// .65
+		"ModelScale"				"1.071"		// .65
 
 		// Armor
 		//----------------------------------------------------------------
