@@ -1,0 +1,93 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 40
+	m_flConstantRadius = 32.0
+	m_flConstantLifespan = 1.25
+	m_ConstantColor = [ 115, 171, 191, 255 ]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			VisibilityInputs = 
+			{
+				m_flCameraBias = -10.0
+			}
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_bAdditive = true
+			m_flOverbrightFactor = 2.0
+			m_hTexture = resource:"materials/particle/lens_flare/lens_flare.vtex"
+			m_flDepthBias = 10.0
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flBias = 0.75
+			m_flEndScale = 3.0
+			m_flStartScale = 0.25
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 0.125
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.65
+		},
+		{
+			_class = "C_OP_SnapshotSkinToBones"
+			m_flLifeTimeFadeEnd = 5.0
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 3.0
+			m_fLifetimeMin = 1.0
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMax = 50.0
+			m_flRadiusMin = 40.0
+			m_flRadiusRandExponent = 2.0
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_InitSkinnedPositionFromCPSnapshot"
+			m_nSnapshotControlPointNumber = 7
+			m_bRandom = true
+		},
+		{
+			_class = "C_INIT_RemapScalar"
+			m_nFieldInput = 3
+			m_nFieldOutput = 1
+			m_flInputMin = 5.0
+			m_flInputMax = 20.0
+			m_flOutputMin = 1.0
+			m_flOutputMax = 3.0
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 0, 85, 255, 255 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 10.0
+		},
+	]
+	m_nConstantSequenceNumber = 1
+	m_nConstantSequenceNumber1 = 2
+}

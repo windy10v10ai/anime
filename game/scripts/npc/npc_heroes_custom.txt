@@ -1351,6 +1351,11 @@
 	}
 	"npc_dota_hero_lich"
 	{
+		"override_hero"    "npc_dota_hero_lich"
+		"DisableWearables" "1"
+		"ItemSlots"        {}
+		"ModelScale"       "1"
+		"LoadoutScale"     "1.2"
 		"Bot"
 		{
 			"Build"

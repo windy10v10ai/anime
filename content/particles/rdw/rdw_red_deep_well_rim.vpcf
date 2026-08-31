@@ -1,0 +1,84 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf36:version{d15c9157-10e0-47bc-9333-1ac81da07b8d} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nMaxParticles = 48
+	m_flConstantRadius = 24.0
+	m_flConstantLifespan = 9999.0
+	m_ConstantColor = [ 255, 42, 58, 245 ]
+	m_nBehaviorVersion = 12
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 48
+		}
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RingWave"
+			m_bEvenDistribution = true
+			m_flParticlesPerOrbit = 48.0
+			m_flInitialRadius =
+			{
+				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+				m_nControlPoint = 1
+				m_nVectorComponent = 0
+				m_nMapType = "PF_MAP_TYPE_MULT"
+				m_flMultFactor = 1.02
+			}
+			m_flThickness =
+			{
+				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+				m_nControlPoint = 1
+				m_nVectorComponent = 1
+				m_nMapType = "PF_MAP_TYPE_MULT"
+				m_flMultFactor = 0.35
+			}
+			m_flInitialSpeedMin = 0.0
+			m_flInitialSpeedMax = 0.0
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 9999.0
+			m_fLifetimeMax = 9999.0
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 10.0
+			m_flRadiusMax = 18.0
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		}
+	]
+	m_Operators =
+	[
+		{
+			_class = "C_OP_SpinUpdate"
+		},
+		{
+			_class = "C_OP_Decay"
+		}
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderRopes"
+			m_flOverbrightFactor = 5.0
+			m_flAddSelfAmount = 1.5
+			m_flRadiusScale = 0.62
+			m_flTextureVWorldSize = 460.0
+			m_flTextureVScrollRate = -260.0
+			m_nMaxTesselation = 6
+			m_nMinTesselation = 4
+			m_vecTexturesInput =
+			[
+				{
+					m_hTexture = resource:"materials/particle/beam_hotwhite.vtex"
+				}
+			]
+			m_nOutputBlendMode = "PARTICLE_OUTPUT_BLEND_MODE_ADD"
+		}
+	]
+}

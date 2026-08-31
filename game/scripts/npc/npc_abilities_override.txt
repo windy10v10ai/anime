@@ -9117,6 +9117,7 @@
 	// 剧毒之触
 	"dazzle_poison_touch"
 	{
+		"AbilityTextureName"			"custom/windyanime/dazzle_poison_touch"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"500 600 700 800 900"
 		"AbilityCooldown"				"23 21 19 17 15"	// 24 21 18 15 减少CD
@@ -9144,6 +9145,7 @@
 	// 薄葬
 	"dazzle_shallow_grave"
 	{
+		"AbilityTextureName"			"custom/windyanime/dazzle_shallow_grave"
 		"MaxLevel"						"5"
 		"AbilityManaCost"				"90 100 110 120 130"
 		"AbilityValues"
@@ -9169,6 +9171,7 @@
 	// 暗影波
 	"dazzle_shadow_wave"
 	{
+		"AbilityTextureName"			"custom/windyanime/dazzle_shadow_wave"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"10 9 8 7 6"
 		"AbilityValues"
@@ -10452,6 +10455,7 @@
 	// 寒霜爆发
 	"lich_frost_nova"
 	{
+		"AbilityTextureName"			"custom/windyanime/lich_frost_nova"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"575 600 625 650 675"
 		"AbilityManaCost"				"110 120 130 140 150"
@@ -10468,6 +10472,7 @@
 	// 阴邪凝视
 	"lich_sinister_gaze"
 	{
+		"AbilityTextureName"			"custom/windyanime/lich_sinister_gaze"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"24 22 20 18 16"
 		"AbilityCastRange"				"700"
@@ -10493,6 +10498,7 @@
 	// 冰霜魔盾
 	"lich_frost_shield"
 	{
+		"AbilityTextureName"			"custom/windyanime/lich_frost_shield"
 		"MaxLevel"						"5"
 		"AbilityCooldown"				"35 30 25 20 15"
 		"AbilityManaCost"				"100 110 120 130 140"
@@ -10577,6 +10583,11 @@
 				"value"					"2"	// 0
 			}
 		}
+	}
+	// 寒冰尖柱
+	"lich_ice_spire"
+	{
+		"AbilityTextureName"			"custom/windyanime/lich_ice_spire"
 	}
 	"special_bonus_unique_lich_5"
 	{
