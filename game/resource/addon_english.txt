@@ -68,6 +68,7 @@
 		"fixed_ability_ability_charge_damage_name"			"Butterfly Effect - Cyan"
 
 		// link面板
+		"anime_version_button"			"Anime Version"
 		"dota_survivor_button"			"Also check out: Dota Survivor"
 		"join_qq"						"Click to join the QQ"
 		"join_discord"					"Click to join the Discord"
@@ -83,6 +84,12 @@
 		"loading_status_1"				"Player data is loading. Please wait for loading to complete before starting."
 		"loading_status_2"				"Player data loaded successfully!"
 		"loading_status_3"				"Player data loading failed! This could be for a number of reasons, such as the game not hosted on a dedicated server, the data servers not being available, or if you are spectating a game."
+		"local_host_feature_unsupported_hint"		"To keep account data safe, this action is not available on a local host. Click to do it on the website."
+		"website_local_host_notice"		"Attributes and awakening cannot be upgraded on a local host. Sign in with Steam on the windy10v10ai website to do it, then click the in-game Refresh button to sync."
+		"website_open_button"				"Open Website"
+		"website_open_property_button"		"Level Up on Website"
+		"website_open_awaken_button"		"Awaken on Website"
+		"player_info_refresh"				"Refresh"
 
 		// FAQ
 		"loading_faq_players_instant_revive_question"	"What tends to cause the game to lag?"
@@ -90,7 +97,7 @@
 		"loading_faq_illusions_summons_question"		"Some illusion and summon abilities have been weakened or removed."
 		"loading_faq_illusions_summons_answer"			"Illusions and large numbers of summons can cause noticeable lag."
 		"loading_faq_local_host_question"			"Can I play on a local host?"
-		"loading_faq_local_host_answer"				"Yes, but some features are limited. A local host supports data loading, member check-in, and Warrior Point settlement. Spend attribute points on a dedicated server. Local games can earn up to 1,000 Warrior Points per day."
+		"loading_faq_local_host_answer"				"Yes. Local-host games work normally. Settings, key bindings, the leaderboard, and paid lottery refreshes are available, while local settlement still has a daily limit. To keep account data safe, spend or reset attribute points and awaken heroes at windy10v10ai.com after signing in with Steam, then click Refresh in game to sync."
 		"loading_faq_pause_question"				"Can pause time be extended?"
 		"loading_faq_pause_answer"				"Dedicated-server pause time is limited by Dota 2. Use a local host if you need more flexible pauses."
 		"loading_faq_attributes_question"			"When do attribute points take effect?"
@@ -107,6 +114,8 @@
 		"loading_faq_treasure_rewards_answer"			"Treasure Chests appear in forests and map corners. Opening one starts an item lottery the whole team shares, and whoever opens it first gets an even better reward. Open more chests, or kill Roshan, to raise the reward pool tier."
 		"loading_faq_dragon_balls_question"		"What if I can't combine all 7 Dragon Balls?"
 		"loading_faq_dragon_balls_answer"			"Dragon Balls and equipment dropped by neutral creeps must be in your main inventory to be used in combinations. Move them from your backpack or stash, or drop and pick them up again."
+		"loading_faq_dota_hotkeys_question"		"How do I use traditional Dota hotkeys?"
+		"loading_faq_dota_hotkeys_answer"		"Change the “Disable per unit hotkeys during Custom Games” option in the Dota 2 settings."
 
 		// /////////////////////////////////////////////////////////////////////////////
 		//
@@ -200,7 +209,7 @@
 		"data_panel_link_rule"			"Points and Attribute Rule"
 		"data_panel_member_point_rule_url"		"https://ko-fi.com/post/Points-and-Attribute-Rules-S6S01CTP83"
 
-		"reset_property_use_season_point"		"Reset for {seasonPoint} usable Battle Points<br>(level unaffected)"
+		"reset_property_use_season_point"		"Reset for 2000 usable Battle Points<br>(level unaffected)"
 		"reset_property_use_member_point"		"Reset for 1000 usable Member Points<br>(level unaffected)"
 
 		"data_panel_player_property_label"		"Spend Attribute Points to upgrade your hero. Upgrades are permanent and persist between games."
@@ -565,6 +574,10 @@
 		"DOTA_Tooltip_ability_fountain_armor_aura_Description"				"Provides %bonus_armor% armor to nearby allies."
 		"DOTA_Tooltip_ability_fountain_magical_armor_aura"				"Fountain Magical Resistance Aura"
 		"DOTA_Tooltip_ability_fountain_magical_armor_aura_Description"			"Provides %bonus_magical_armor%%% magical resistance to nearby allies."
+
+
+		// 藏宝箱
+		"npc_treasure_chest"											"Treasure Chest"
 		///////////////////////////////////////////////////
 		//
 		//            itembuilds
@@ -1131,7 +1144,7 @@
 		// 蝴蝶效应·红魔 (施法触发)
 		"DOTA_Tooltip_ability_ability_trigger_on_cast"									"<font color='#FF0000'>Butterfly Effect: Red</font>"
 		"DOTA_Tooltip_ability_ability_trigger_on_cast_Description"						"<h1><font color='#FF0000'>Passive: Spell Echo</font></h1>When you cast an ability, there is a chance to trigger a random learned active ability. Basic abilities and ultimate abilities trigger independently with pseudo-random distribution. Mutually exclusive with multiple cast. Monkey King model cannot trigger.<br><br>Basic Ability Trigger Chance: %basic_trigger_chance%%%<br>Ultimate Ability Trigger Chance: %ultimate_trigger_chance%%%<br>"
-		"DOTA_Tooltip_ability_ability_trigger_on_cast_Lore"								"RN: Chewing gum, right? Little colorful flag, right? Can't stop, right?"
+		"DOTA_Tooltip_ability_ability_trigger_on_cast_Lore"								"Chewing gum, right? Little colorful flag, right? Can't stop, right?"
 
 		"DOTA_Tooltip_modifier_trigger_on_cast"							"Butterfly Effect: Red"
 		"DOTA_Tooltip_modifier_trigger_on_cast_Description"				"Casting abilities has a chance to trigger learned abilities."
@@ -1139,7 +1152,7 @@
 		// 蝴蝶效应·金身 (被攻击触发)
 		"DOTA_Tooltip_ability_ability_trigger_on_attacked"								"<font color='#FFFF00'>Butterfly Effect: Gold</font>"
 		"DOTA_Tooltip_ability_ability_trigger_on_attacked_Description"					"<h1><font color='#FFFF00'>Passive: Golden Body</font></h1>When attacked, has a chance to trigger learned abilities. Basic abilities and ultimate abilities trigger independently with pseudo-random distribution."
-		"DOTA_Tooltip_ability_ability_trigger_on_attacked_Lore"							"RN: You definitely have some strange fetish, windy has that whip ready, you buy the candles yourself"
+		"DOTA_Tooltip_ability_ability_trigger_on_attacked_Lore"							"You're definitely itching for a beating, the harder they hit, the more fired up you get."
 		"DOTA_Tooltip_ability_ability_trigger_on_attacked_basic_trigger_chance"			"%Basic Ability Trigger Chance:"
 		"DOTA_Tooltip_ability_ability_trigger_on_attacked_ultimate_trigger_chance"		"%Ultimate Ability Trigger Chance:"
 		"DOTA_Tooltip_ability_ability_trigger_on_attacked_cooldown_duration"			"Internal Cooldown:"
@@ -1150,7 +1163,7 @@
 		// 蝴蝶效应·橙影（移动触发）
 		"DOTA_Tooltip_ability_ability_trigger_on_move"									"<font color='#FFCC66'>Butterfly Effect: Orange</font>"
 		"DOTA_Tooltip_ability_ability_trigger_on_move_Description"						"<h1><font color='#FFCC66'>Passive: Shadow Step</font></h1>Triggers learned abilities based on the distance moved within a certain time period. The faster you move, the higher the trigger chance."
-		"DOTA_Tooltip_ability_ability_trigger_on_move_Lore"								"RN: I was just out for a run, why did you all start fighting?"
+		"DOTA_Tooltip_ability_ability_trigger_on_move_Lore"								"I was just out for a run, why did you all start fighting?"
 		"DOTA_Tooltip_ability_ability_trigger_on_move_basic_trigger_chance"				"%Base Basic Ability Trigger Chance (at speed 500):"
 		"DOTA_Tooltip_ability_ability_trigger_on_move_ultimate_trigger_chance"			"%Base Ultimate Ability Trigger Chance (at speed 500):"
 		"DOTA_Tooltip_ability_ability_trigger_on_move_check_interval"					"Trigger Interval:"
@@ -1160,7 +1173,7 @@
 		// 蝴蝶效应·绿莲（指向技能反弹触发）
 		"DOTA_Tooltip_ability_ability_trigger_on_spell_reflect"							"<font color='#90EE90'>Butterfly Effect: Green</font>"
 		"DOTA_Tooltip_ability_ability_trigger_on_spell_reflect_Description"				"<h1><font color='#90EE90'>Passive: Lotus</font></h1>When taking damage from targeted spells, has a chance to reflect the damage. Upon successful reflection, has a chance to trigger learned abilities."
-		"DOTA_Tooltip_ability_ability_trigger_on_spell_reflect_Lore"					"RN: Can't even look at you without wanting to fight?"
+		"DOTA_Tooltip_ability_ability_trigger_on_spell_reflect_Lore"					"Can't even look at you without wanting to fight?"
 		"DOTA_Tooltip_ability_ability_trigger_on_spell_reflect_reflect_chance"			"%Reflection Chance:"
 		"DOTA_Tooltip_ability_ability_trigger_on_spell_reflect_reflect_damage_pct"		"%Reflected Damage Percentage:"
 		"DOTA_Tooltip_ability_ability_trigger_on_spell_reflect_basic_trigger_chance"	"%Basic Ability Trigger Chance after reflection:"
@@ -1175,7 +1188,7 @@
 		// 蝴蝶效应·紫啸（主动释放）
 		"DOTA_Tooltip_ability_ability_trigger_on_active"								"<font color='#A74ABD'>Butterfly Effect: Purple</font>"
 		"DOTA_Tooltip_ability_ability_trigger_on_active_Description"					"<h1><font color='#A74ABD'>Active: Frenzy</font></h1>Unleash a barrage of spells at unprecedented speed on enemies within range at the target location, including all available abilities and items. During the effect, all cooldowns are reduced to 1/5, cast points are removed, channeling states cannot be interrupted, until mana is exhausted, but you cannot move.<br><br>Duration: %duration% seconds"
-		"DOTA_Tooltip_ability_ability_trigger_on_active_Lore"							"RN: Hey, I'm telling you, this patient should take it easy next time, it's all chafed, definitely not a drop left"
+		"DOTA_Tooltip_ability_ability_trigger_on_active_Lore"							"Hey, I'm telling you, this patient should take it easy next time. Mashed the buttons till they smoked, not a drop of mana left."
 		"DOTA_Tooltip_ability_ability_trigger_on_active_duration"						"Duration:"
 		"DOTA_Tooltip_ability_ability_trigger_on_active_search_radius"					"Search Radius:"
 		"DOTA_Tooltip_ability_ability_trigger_on_active_auto_cast_interval"				"Cast Interval:"
@@ -1186,7 +1199,7 @@
 		// 蝴蝶效应·青凝（积蓄能量）
 		"DOTA_Tooltip_ability_ability_charge_damage"									"<font color='#87CEEB'>Butterfly Effect: Cyan</font>"
 		"DOTA_Tooltip_ability_ability_charge_damage_Description"						"<h1><font color='#87CEEB'>Passive: Focus</font></h1>Focus and calm, accumulating energy when abilities are off cooldown but not cast, amplifying the first damage dealt by the next cast.<br><br>Ultimate abilities start counting after %ultimate_ready_delay% seconds of charging, normal abilities after %normal_ready_delay% seconds of charging.<br>Upon reaching the threshold, gain an additional %base_amplify%x base amplification.<br>Damage amplification effect lasts %amplify_duration% seconds.<br>Maximum amplification multiplier: %max_times%x."
-		"DOTA_Tooltip_ability_ability_charge_damage_Lore"								"RN: You, holding back this... one ability for how long?"
+		"DOTA_Tooltip_ability_ability_charge_damage_Lore"								"You, holding back this... one ability for how long?"
 		"DOTA_Tooltip_modifier_ability_charge_damage_display"							"Focus"
 		"DOTA_Tooltip_modifier_ability_charge_damage_display_Description"				"Next cast will deal %dMODIFIER_PROPERTY_TOOLTIP2%%% damage."
 
@@ -1260,6 +1273,61 @@
 		///////////////////////////////////////////////////
 // 					Awaken Abilities 觉醒技能
 
+		// 司夜刺客 钻地觉醒
+		"DOTA_Tooltip_ability_special_bonus_unique_nyx_assassin_mobile_burrow_awaken"					"<font color='#d000ff'>Burrow Awakened</font>"
+		"DOTA_Tooltip_ability_special_bonus_unique_nyx_assassin_mobile_burrow_awaken_Description"		"Nyx Assassin can move freely at his normal movement speed while Burrowed, while retaining all other Burrow effects."
+		"DOTA_Tooltip_ability_special_bonus_unique_nyx_assassin_mobile_burrow_awaken_SummaryDescription"	"Allows Nyx Assassin to move normally while Burrowed without losing its other effects."
+		"DOTA_Tooltip_modifier_special_bonus_unique_nyx_assassin_mobile_burrow_awaken"				"<font color='#d000ff'>Burrow Awakened</font>"
+		"DOTA_Tooltip_modifier_special_bonus_unique_nyx_assassin_mobile_burrow_awaken_Description"		"Nyx Assassin can move freely at his normal movement speed while Burrowed, while retaining all other Burrow effects."
+
+		// 巫妖 寒灾轮回觉醒
+		"DOTA_Tooltip_ability_special_bonus_unique_lich_upgrade"		"<font color='#d000ff'>Frost Calamity Cycle</font>"
+		"DOTA_Tooltip_ability_special_bonus_unique_lich_upgrade_Description"		"Increases Chain Frost's projectile speed and bounce range, and extends the duration of its slow and Frostbound.<br><br>Hits on a hero or Roshan deal bonus magical damage equal to %intelligence_damage_multiplier%x Intelligence and apply a stack of Frost Calamity lasting %mark_duration% seconds, detonating automatically at %mark_max_stacks% stacks; casting Frost Blast on a marked enemy also detonates it early. Detonation deals magical damage in a %detonation_radius% radius equal to %nova_detonation_multiplier_per_stack%x Intelligence per stack consumed and <font color='#2DD5E4'>Stuns</font> enemies for %freeze_duration% seconds.<br><br>If Ice Spire is already learned, hitting the only enemy hero nearby with Chain Frost casts Ice Spire at that hero automatically."
+		"DOTA_Tooltip_ability_special_bonus_unique_lich_upgrade_Note0"		"Illusions do not count as real heroes. Roshan is treated as a regular unit."
+		"DOTA_Tooltip_ability_special_bonus_unique_lich_upgrade_Note1"		"Frost Calamity marks only stack on real heroes and Roshan. Roshan takes the detonation damage but is not frozen."
+		"DOTA_Tooltip_ability_special_bonus_unique_lich_upgrade_Note2"		"Frost Blast can detonate Frost Calamity early, dealing damage based on its current stacks."
+		"DOTA_Tooltip_modifier_special_bonus_unique_lich_upgrade"		"<font color='#d000ff'>Frost Calamity Cycle</font>"
+		"DOTA_Tooltip_modifier_special_bonus_unique_lich_upgrade_Description"		"Increases Chain Frost's projectile speed and bounce range, and extends the duration of its slow and Frostbound.<br><br>Hits on a hero or Roshan deal bonus magical damage equal to <font color='#FFFFFF'><b>0.75x</b></font> Intelligence and apply a stack of Frost Calamity lasting <font color='#FFFFFF'><b>8</b></font> seconds, detonating automatically at <font color='#FFFFFF'><b>3</b></font> stacks; casting Frost Blast on a marked enemy also detonates it early. Detonation deals magical damage in a <font color='#FFFFFF'><b>350</b></font> radius equal to <font color='#FFFFFF'><b>0.75x</b></font> Intelligence per stack consumed and <font color='#2DD5E4'>Stuns</font> enemies for <font color='#FFFFFF'><b>0.6</b></font> seconds.<br><br>If Ice Spire is already learned, hitting the only enemy hero nearby with Chain Frost casts Ice Spire at that hero automatically."
+		"DOTA_Tooltip_modifier_special_bonus_unique_lich_upgrade_mark"		"Frost Calamity"
+		"DOTA_Tooltip_modifier_special_bonus_unique_lich_upgrade_mark_Description"		"At 3 stacks, triggers a Frost Calamity detonation. Lich can also detonate it early with Frost Blast."
+
+		// 戴泽 薄葬觉醒
+		"DOTA_Tooltip_ability_special_bonus_unique_dazzle_upgrade"					"<font color='#d000ff'>Shallow Grave Awakened</font>"
+		"DOTA_Tooltip_ability_special_bonus_unique_dazzle_upgrade_Description"	"After casting Shallow Grave on yourself or an ally, the target gains the <font color='#FFCC66'>Black King Bar</font> effect for the duration of Shallow Grave."
+		"DOTA_Tooltip_modifier_special_bonus_unique_dazzle_upgrade"				"<font color='#d000ff'>Shallow Grave Awakened</font>"
+		"DOTA_Tooltip_modifier_special_bonus_unique_dazzle_upgrade_Description"	"After casting Shallow Grave on yourself or an ally, the target gains the <font color='#FFCC66'>Black King Bar</font> effect for the duration of Shallow Grave."
+
+		// 孽主 恶魔之势觉醒
+		"DOTA_Tooltip_ability_special_bonus_unique_underlord_demons_reach_awaken"					"<font color='#d000ff'>Demon's Reach Awakened</font>"
+		"DOTA_Tooltip_ability_special_bonus_unique_underlord_demons_reach_awaken_Description"		"Underlord's attacks cleave while he has bonus damage from Atrophy Aura. Cleave distance increases with each point of bonus damage."
+		"DOTA_Tooltip_ability_special_bonus_unique_underlord_demons_reach_awaken_SummaryDescription"	"Underlord's attacks cleave while he has bonus damage from Atrophy Aura."
+		"DOTA_Tooltip_ability_special_bonus_unique_underlord_demons_reach_awaken_cleave_damage_pct"		"%CLEAVE DAMAGE:"
+		"DOTA_Tooltip_ability_special_bonus_unique_underlord_demons_reach_awaken_cleave_distance_base"		"CLEAVE DISTANCE (BASE):"
+		"DOTA_Tooltip_ability_special_bonus_unique_underlord_demons_reach_awaken_cleave_distance_per_stack"	"CLEAVE DISTANCE (PER STACK):"
+		"DOTA_Tooltip_modifier_special_bonus_unique_underlord_demons_reach_awaken"				"<font color='#d000ff'>Demon's Reach Awakened</font>"
+		"DOTA_Tooltip_modifier_special_bonus_unique_underlord_demons_reach_awaken_Description"		"While Atrophy Aura grants bonus attack damage, attacks deal <font color='#FFFFFF'><b>100%%</b></font> cleave damage, with cleave distance increasing for each point of bonus damage. Current cleave distance: <font color='#FFFFFF'><b>%dMODIFIER_PROPERTY_TOOLTIP%</b></font>."
+
+		// 斯拉克 精华侵蚀觉醒
+		"DOTA_Tooltip_ability_special_bonus_unique_slark_permanent_essence_awaken"					"<font color='#d000ff'>Essence Erosion Awakened</font>"
+		"DOTA_Tooltip_ability_special_bonus_unique_slark_permanent_essence_awaken_Description"		"When Slark kills an enemy hero, he permanently steals %permanent_steal_pct%%% of the total attributes his Essence Shift has taken from that hero.<br>An enemy hero's base attributes never fall below <font color='#FFFFFF'><b>1</b></font>."
+		"DOTA_Tooltip_ability_special_bonus_unique_slark_permanent_essence_awaken_SummaryDescription"	"When Slark kills an enemy hero, he permanently steals part of the attributes his Essence Shift has taken from that hero."
+		"DOTA_Tooltip_modifier_special_bonus_unique_slark_permanent_essence_awaken"				"<font color='#d000ff'>Essence Erosion Awakened</font>"
+		"DOTA_Tooltip_modifier_special_bonus_unique_slark_permanent_essence_awaken_Description"		"When Slark kills an enemy hero, he permanently steals <font color='#FFFFFF'><b>10%%</b></font> of the total attributes his Essence Shift has taken from that hero.<br>Permanently gained <font color='#FFFFFF'><b>%dMODIFIER_PROPERTY_TOOLTIP%</b></font> to all attributes."
+
+		// 亚巴顿 畅快淋漓觉醒
+		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_quickening_awaken"					"<font color='#d000ff'>The Quickening Awakened</font>"
+		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_quickening_awaken_Description"		"Whenever a unit dies within %radius% range of Abaddon, all his cooldowns are reduced. Non-hero deaths reduce them by %cooldown_reduction_creeps%s; hero deaths reduce them by %cooldown_reduction_heroes%s."
+		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_quickening_awaken_SummaryDescription"		"Nearby deaths reduce the current cooldowns of all abilities and items."
+		"DOTA_Tooltip_modifier_special_bonus_unique_abaddon_quickening_awaken"				"<font color='#d000ff'>The Quickening Awakened</font>"
+		"DOTA_Tooltip_modifier_special_bonus_unique_abaddon_quickening_awaken_Description"		"Whenever a unit dies within <font color='#FFFFFF'><b>900</b></font> range, the current cooldowns of all Abaddon's abilities and items are reduced. Non-hero deaths reduce them by <font color='#FFFFFF'><b>0.2</b></font>s; hero deaths reduce them by <font color='#FFFFFF'><b>3</b></font>s."
+
+		// 兽王 野性之斧-觉醒
+		"DOTA_Tooltip_ability_beastmaster_wild_axes_awaken"							"<font color='#d000ff'>Wild Axes Awakened</font>"
+		"DOTA_Tooltip_ability_beastmaster_wild_axes_awaken_Description"				"Beastmaster sends his axes flying and calls them home again, slicing through enemy units and trees along their path. Each axe can hit an enemy once, and amplifies subsequent damage from Beastmaster and his units. Debuff duration is affected by Status Resistance.<br><br><font color='#00CED1'>AUTOCAST:</font> When enabled, throws the axes toward the farthest enemy hero whenever an enemy unit is within cast range.<br><font color='#d000ff'>AWAKENED:</font> Axe damage is increased, damage amplification lasts longer, the axes travel out and back at extreme speed, and Drums of Slom gains increased damage, healing, and drum stacks from Primal Roar."
+		"DOTA_Tooltip_ability_beastmaster_wild_axes_awaken_axe_damage"				"DAMAGE PER AXE:"
+		"DOTA_Tooltip_ability_beastmaster_wild_axes_awaken_damage_amp"				"%DAMAGE AMP PER STACK:"
+		"DOTA_Tooltip_ability_beastmaster_wild_axes_awaken_duration"					"DEBUFF DURATION:"
+		"DOTA_Tooltip_ability_beastmaster_wild_axes_awaken_min_throw_duration"		"AXE TRAVEL TIME:"
 		// 撼地者 余震觉醒
 		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_upgrade"						"<font color='#d000ff'>Aftershock Awakened</font>"
 		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_upgrade_Description"		"Each unit hit by Aftershock creates a small Aftershock at its position, dealing separate magical damage to nearby enemies. Multiple small Aftershocks can hit the same unit, but each batch stuns a unit only once. Small Aftershocks cannot trigger this effect again."
@@ -3278,11 +3346,6 @@
 		"DOTA_Tooltip_ability_item_fusion_agile"										"Agile Rune"
 		"DOTA_Tooltip_ability_item_fusion_agile_Description"							"A mysterious fusion rune containing agile power. Can be obtained by killing neutral creeps. Currently available for limited-time purchase.\n\n<font color='#FFCC66'>Can craft:</font> Swift Glove"
 
-		// item_universal_rune 通用符文
-		"DOTA_Tooltip_Ability_item_universal_rune"										"Universal Rune"
-		"DOTA_Tooltip_ability_item_universal_rune_Description"							"<h1>Active: Craft</h1>Detects all components in the inventory. If any artifact crafting conditions are met (except runes), it will craft directly. Universal Rune can replace any fusion material (Hawkeye, Forbidden, Brutal, Life, Shadow, Agile, Beast, or Magic)."
-		"DOTA_Tooltip_ability_item_universal_rune_Lore"									"RN: 'The worst thing is having money but not being able to buy equipment'? Then you're still not rich enough"
-
 		// Hawkeye Turret
 		"DOTA_Tooltip_Ability_item_hawkeye_turret"										"Hawkeye Turret"
 		"DOTA_Tooltip_ability_item_hawkeye_turret_Description"							"<h1><font color='#FFFF00'>Active: Humanoid Turret (Ranged Only)</font></h1>Transform into a flying turret, gaining high ground vision. Lasts %active_duration% seconds, rooted and unable to move, gains bonus attack range of %active_attack_range%, vision range equals attack range + %active_bonus_vision%.<br><br><font color='#FF6B6B'>Has no effect when used by melee heroes.</font>\n<h1>Passive: Buckshot (Ranged Only)</h1>Your attacks deal %attack_percent%%% splash damage to enemies in a %attack_radius% radius around the attack target.<br/>Buckshot does not stack with itself, and has a %internal_cooldown% second internal cooldown.\n<h1>Passive: Absolute Corruption</h1>Physical attacks reduce the target's armor by %corruption_armor% for %corruption_duration% seconds.<br><br>Gains +%bonus_damage_per_kill% damage every time an enemy hero dies while affected by Corruption, to a maximum of %max_damage%."
@@ -3550,9 +3613,6 @@
 		"DOTA_Tooltip_ability_trigger_learned_skills_Note6"    "• Two-stage skills and cancel skills"
 		"DOTA_Tooltip_ability_trigger_learned_skills_Note7"    "• Elemental balls and fusion skills of Kael"
 
-		// 藏宝箱
-		"npc_treasure_chest"											"Treasure Chest"
-
 		// item_six_paths_reincarnation_gun
 		"DOTA_Tooltip_Ability_item_six_paths_reincarnation_gun"                                  "Six Paths Reincarnation Gun"
 		"DOTA_Tooltip_Ability_item_six_paths_reincarnation_gun_Description"                       "<h1>Active: Six Paths Rotation</h1>For %active_duration% seconds, each attack is independently converted into one of the following damage types:<br>- Physical damage<br>- Magical damage<br>- Pure damage<br>Critical strike damage is also converted. Split arrows and similar additional attacks roll their damage type separately. Converted damage is not affected by spell amplification.\n<h1>Passive: Samsara Scatter</h1>Each attack deals bonus damage to other enemies within %attack_radius% of the target equal to %attack_percent%%% of that attack's damage. The bonus damage is calculated after critical strikes, but before the target's armor, magic resistance, and other damage reductions.<br>Each proc randomly deals one of the following:<br>- Physical damage<br>- Magical damage<br>- Pure damage<br>Samsara Scatter bonus damage is not affected by spell amplification.<br>All shotgun effects share a %internal_cooldown% second attacker-wide internal cooldown, preventing simultaneous split arrows from producing many splash procs from a single attack.\n<h1>Passive: Mage Slayer</h1>Attacks reduce the target's ability and item damage by %mage_slayer_spell_damage_reduction%%% for %mage_slayer_duration% seconds. While affected, the target takes the following each second:<br>- %mage_slayer_damage_per_type% physical damage<br>- %mage_slayer_damage_per_type% magical damage<br>- %mage_slayer_damage_per_type% pure damage<br>The damage over time is not affected by spell amplification."
@@ -3565,45 +3625,5 @@
 		"DOTA_Tooltip_modifier_item_six_paths_reincarnation_gun_active_Description"              "Each attack is independently converted to physical, magical, or pure damage. Converted damage is not affected by spell amplification."
 		"DOTA_Tooltip_modifier_item_six_paths_reincarnation_gun_debuff"                          "Mage Slayer"
 		"DOTA_Tooltip_modifier_item_six_paths_reincarnation_gun_debuff_Description"              "Ability and item damage dealt is reduced by 30%, while taking physical, magical, and pure damage over time. The damage over time is not affected by spell amplification."
-		// 巫妖 寒灾轮回
-		"DOTA_Tooltip_ability_special_bonus_unique_lich_upgrade"		"<font color='#d000ff'>Frost Calamity Cycle</font>"
-		"DOTA_Tooltip_ability_special_bonus_unique_lich_upgrade_Description"		"Increases Chain Frost's projectile speed and bounce range, and extends the duration of its slow and Frostbound.<br><br>Hits on a hero or Roshan deal bonus magical damage equal to %intelligence_damage_multiplier%x Intelligence and apply a stack of Frost Calamity lasting %mark_duration% seconds, detonating automatically at %mark_max_stacks% stacks; casting Frost Blast on a marked enemy also detonates it early. Detonation deals magical damage in a %detonation_radius% radius equal to %nova_detonation_multiplier_per_stack%x Intelligence per stack consumed and <font color='#2DD5E4'>Stuns</font> enemies for %freeze_duration% seconds.<br><br>If Ice Spire is already learned, hitting the only enemy hero nearby with Chain Frost casts Ice Spire at that hero automatically."
-		"DOTA_Tooltip_ability_special_bonus_unique_lich_upgrade_Note0"		"Illusions do not count as real heroes. Roshan is treated as a regular unit."
-		"DOTA_Tooltip_ability_special_bonus_unique_lich_upgrade_Note1"		"Frost Calamity marks only stack on real heroes and Roshan. Roshan takes the detonation damage but is not frozen."
-		"DOTA_Tooltip_ability_special_bonus_unique_lich_upgrade_Note2"		"Frost Blast can detonate Frost Calamity early, dealing damage based on its current stacks."
-		"DOTA_Tooltip_modifier_special_bonus_unique_lich_upgrade"		"<font color='#d000ff'>Frost Calamity Cycle</font>"
-		"DOTA_Tooltip_modifier_special_bonus_unique_lich_upgrade_Description"		"Increases Chain Frost's projectile speed and bounce range, and extends the duration of its slow and Frostbound.<br><br>Hits on a hero or Roshan deal bonus magical damage equal to <font color='#FFFFFF'><b>0.75x</b></font> Intelligence and apply a stack of Frost Calamity lasting <font color='#FFFFFF'><b>8</b></font> seconds, detonating automatically at <font color='#FFFFFF'><b>3</b></font> stacks; casting Frost Blast on a marked enemy also detonates it early. Detonation deals magical damage in a <font color='#FFFFFF'><b>350</b></font> radius equal to <font color='#FFFFFF'><b>0.75x</b></font> Intelligence per stack consumed and <font color='#2DD5E4'>Stuns</font> enemies for <font color='#FFFFFF'><b>0.6</b></font> seconds.<br><br>If Ice Spire is already learned, hitting the only enemy hero nearby with Chain Frost casts Ice Spire at that hero automatically."
-		"DOTA_Tooltip_modifier_special_bonus_unique_lich_upgrade_mark"		"Frost Calamity"
-		"DOTA_Tooltip_modifier_special_bonus_unique_lich_upgrade_mark_Description"		"At 3 stacks, triggers a Frost Calamity detonation. Lich can also detonate it early with Frost Blast."
-		// 戴泽 薄葬觉醒
-		"DOTA_Tooltip_ability_special_bonus_unique_dazzle_upgrade"					"<font color='#d000ff'>Shallow Grave Awakened</font>"
-		"DOTA_Tooltip_ability_special_bonus_unique_dazzle_upgrade_Description"	"After casting Shallow Grave on yourself or an ally, the target gains the <font color='#FFCC66'>Black King Bar</font> effect for the duration of Shallow Grave."
-		"DOTA_Tooltip_modifier_special_bonus_unique_dazzle_upgrade"				"<font color='#d000ff'>Shallow Grave Awakened</font>"
-		"DOTA_Tooltip_modifier_special_bonus_unique_dazzle_upgrade_Description"	"After casting Shallow Grave on yourself or an ally, the target gains the <font color='#FFCC66'>Black King Bar</font> effect for the duration of Shallow Grave."
-
-		// 孽主 恶魔之势觉醒
-		"DOTA_Tooltip_ability_special_bonus_unique_underlord_demons_reach_awaken"					"<font color='#d000ff'>Demon's Reach Awakened</font>"
-		"DOTA_Tooltip_ability_special_bonus_unique_underlord_demons_reach_awaken_Description"		"Underlord's attacks cleave while he has bonus damage from Atrophy Aura. Cleave distance increases with each point of bonus damage."
-		"DOTA_Tooltip_ability_special_bonus_unique_underlord_demons_reach_awaken_SummaryDescription"	"Underlord's attacks cleave while he has bonus damage from Atrophy Aura."
-		"DOTA_Tooltip_ability_special_bonus_unique_underlord_demons_reach_awaken_cleave_damage_pct"		"%CLEAVE DAMAGE:"
-		"DOTA_Tooltip_ability_special_bonus_unique_underlord_demons_reach_awaken_cleave_distance_base"		"CLEAVE DISTANCE (BASE):"
-		"DOTA_Tooltip_ability_special_bonus_unique_underlord_demons_reach_awaken_cleave_distance_per_stack"	"CLEAVE DISTANCE (PER STACK):"
-		"DOTA_Tooltip_modifier_special_bonus_unique_underlord_demons_reach_awaken"				"<font color='#d000ff'>Demon's Reach Awakened</font>"
-		"DOTA_Tooltip_modifier_special_bonus_unique_underlord_demons_reach_awaken_Description"		"While Atrophy Aura grants bonus attack damage, attacks deal <font color='#FFFFFF'><b>100%%</b></font> cleave damage, with cleave distance increasing for each point of bonus damage. Current cleave distance: <font color='#FFFFFF'><b>%dMODIFIER_PROPERTY_TOOLTIP%</b></font>."
-
-		// Slark Essence Erosion - Awakened
-		"DOTA_Tooltip_ability_special_bonus_unique_slark_permanent_essence_awaken"					"<font color='#d000ff'>Essence Erosion Awakened</font>"
-		"DOTA_Tooltip_ability_special_bonus_unique_slark_permanent_essence_awaken_Description"		"When Slark kills an enemy hero, he permanently steals %permanent_steal_pct%%% of the total attributes his Essence Shift has taken from that hero.<br>An enemy hero's base attributes never fall below <font color='#FFFFFF'><b>1</b></font>."
-		"DOTA_Tooltip_ability_special_bonus_unique_slark_permanent_essence_awaken_SummaryDescription"	"When Slark kills an enemy hero, he permanently steals part of the attributes his Essence Shift has taken from that hero."
-		"DOTA_Tooltip_modifier_special_bonus_unique_slark_permanent_essence_awaken"				"<font color='#d000ff'>Essence Erosion Awakened</font>"
-		"DOTA_Tooltip_modifier_special_bonus_unique_slark_permanent_essence_awaken_Description"		"When Slark kills an enemy hero, he permanently steals <font color='#FFFFFF'><b>10%%</b></font> of the total attributes his Essence Shift has taken from that hero.<br>Permanently gained <font color='#FFFFFF'><b>%dMODIFIER_PROPERTY_TOOLTIP%</b></font> to all attributes."
-
-		// Abaddon The Quickening - Awakened
-		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_quickening_awaken"					"<font color='#d000ff'>The Quickening Awakened</font>"
-		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_quickening_awaken_Description"		"Whenever a unit dies within %radius% range of Abaddon, all his cooldowns are reduced. Non-hero deaths reduce them by %cooldown_reduction_creeps%s; hero deaths reduce them by %cooldown_reduction_heroes%s."
-		"DOTA_Tooltip_ability_special_bonus_unique_abaddon_quickening_awaken_SummaryDescription"		"Nearby deaths reduce the current cooldowns of all abilities and items."
-		"DOTA_Tooltip_modifier_special_bonus_unique_abaddon_quickening_awaken"				"<font color='#d000ff'>The Quickening Awakened</font>"
-		"DOTA_Tooltip_modifier_special_bonus_unique_abaddon_quickening_awaken_Description"		"Whenever a unit dies within <font color='#FFFFFF'><b>900</b></font> range, the current cooldowns of all Abaddon's abilities and items are reduced. Non-hero deaths reduce them by <font color='#FFFFFF'><b>0.2</b></font>s; hero deaths reduce them by <font color='#FFFFFF'><b>3</b></font>s."
-
 	}
 }

@@ -37,6 +37,10 @@ export interface CastCoindition {
      */
     rangeFromAttackRange?: boolean;
     /**
+     * 将攻击距离计入搜索半径时额外增加的距离。
+     */
+    attackRangeOffset?: number;
+    /**
      * 决定 POINT 技能的释放位置：
      * - 'targetPosition'（默认）：释放点 = 目标位置
      * - 'projectedOnCastRange'：
@@ -79,7 +83,7 @@ export interface CastCoindition {
     noEnemyBuildingInRange?: number;
     /**
      * 要求 self 周围存在至少指定数量的友方小兵才施法。
-     * range 不填时默认 900。由 dispatcher 在 tryCast 层 inline FindUnitsInRadius 检查。
+     * range 不填时默认取 bot-base 预搜友方小兵的半径。
      */
     friendlyCreepNearby?: {
       count?: NumberRange;
@@ -126,7 +130,7 @@ export interface UnitCondition {
 
   hasScepter?: boolean;
   hasShard?: boolean;
-  noModifier?: string;
+  noModifier?: string[];
   notActionable?: boolean;
   /**
    * 排除远古野（大龙/小龙等）。
@@ -168,52 +172,61 @@ export function FilterTargetWithCondition(
     return undefined;
   }
 
+  const targetCondition = condition?.target;
+  const range = targetCondition?.range;
+  const excludeSelf = targetCondition?.excludeSelf;
+  const unitCondition = targetCondition?.unitCondition;
+  const facing = targetCondition?.facing;
+
+  const selfEntityIndex = excludeSelf ? self.GetEntityIndex() : -1;
+  const healthCondition = ability ? unitCondition?.healthAbilityValue : undefined;
+  let healthThreshold = 0;
+  if (ability && healthCondition) {
+    const baseValue = ability.GetSpecialValueFor(healthCondition.key);
+    // GetSpellAmplification 返回增量（如 0.15 表示 +15%），+1 得完整乘数
+    healthThreshold = healthCondition.includeSpellAmp
+      ? baseValue * (1 + self.GetSpellAmplification(false))
+      : baseValue;
+  }
+
   for (const unit of units) {
+    // 搜索半径远大于施法距离，多数候选都倒在距离上，先筛距离可省掉后面成串的状态查询
+    if (CheckNumberRangeFailure(self.GetRangeToUnit(unit), range)) {
+      continue;
+    }
+
     if (!unit.IsAlive()) {
       continue;
     }
 
-    if (condition?.target?.excludeSelf && unit.GetEntityIndex() === self.GetEntityIndex()) {
+    if (excludeSelf && unit.GetEntityIndex() === selfEntityIndex) {
       continue;
     }
 
     // 魔法免疫过滤：有 ability 时才检查，避免影响非 dispatcher 调用路径
     if (ability && unit.IsMagicImmune()) {
       const canPierce =
-        condition?.target?.ignoresMagicImmune ||
+        targetCondition?.ignoresMagicImmune ||
         (ability.GetAbilityTargetFlags() & UnitTargetFlags.MAGIC_IMMUNE_ENEMIES) !== 0;
       if (!canPierce) {
         continue;
       }
     }
 
-    const unitCondition = condition?.target?.unitCondition;
-
     if (CheckUnitConditionFailure(unit, unitCondition)) {
       continue;
     }
 
     // healthAbilityValue：比较目标绝对 HP 与技能的 special value
-    if (ability && unitCondition?.healthAbilityValue) {
-      const cond = unitCondition.healthAbilityValue;
-      const baseValue = ability.GetSpecialValueFor(cond.key);
-      // GetSpellAmplification 返回增量（如 0.15 表示 +15%），+1 得完整乘数
-      const effectiveValue = cond.includeSpellAmp
-        ? baseValue * (1 + self.GetSpellAmplification(false))
-        : baseValue;
-      if (cond.lte && unit.GetHealth() > effectiveValue) {
+    if (healthCondition) {
+      if (healthCondition.lte && unit.GetHealth() > healthThreshold) {
         continue;
       }
-      if (cond.gte && unit.GetHealth() < effectiveValue) {
+      if (healthCondition.gte && unit.GetHealth() < healthThreshold) {
         continue;
       }
     }
 
-    if (CheckNumberRangeFailure(self.GetRangeToUnit(unit), condition?.target?.range)) {
-      continue;
-    }
-
-    const facing = condition?.target?.facing;
     if (
       facing &&
       CheckFacingFailure(
@@ -304,7 +317,8 @@ export function CheckUnitConditionFailure(
   if (unitCondition.hasShard && !unit.HasModifier('modifier_item_aghanims_shard')) {
     return true;
   }
-  if (unitCondition.noModifier && unit.HasModifier(unitCondition.noModifier)) {
+  const noModifiers = unitCondition.noModifier;
+  if (noModifiers && noModifiers.some((modifier) => unit.HasModifier(modifier))) {
     return true;
   }
   if (unitCondition.notActionable && HeroUtil.NotActionable(unit)) {
@@ -399,7 +413,7 @@ function isNumberRange(item: object): boolean {
  * 自定义 Lua 技能（BaseClass 为 ability_lua）的 behavior 由引擎以 64 位 userdata 返回，
  * 位运算函数只收 number，直接参与按位与会在运行时抛错。
  */
-function GetAbilityBehaviorBits(ability: CDOTABaseAbility): number {
+export function GetAbilityBehaviorBits(ability: CDOTABaseAbility): number {
   const raw = ability.GetBehavior();
   if (type(raw) === 'number') {
     return raw as number;
@@ -407,9 +421,10 @@ function GetAbilityBehaviorBits(ability: CDOTABaseAbility): number {
   return tonumber(tostring(raw)) ?? 0;
 }
 
+export function HasAbilityBehavior(behaviorBits: number, behavior: AbilityBehavior): boolean {
+  return (behaviorBits & behavior) === behavior;
+}
+
 export function IsAbilityBehavior(ability: CDOTABaseAbility, behavior: AbilityBehavior): boolean {
-  const abilityBehavior = GetAbilityBehaviorBits(ability);
-  // check is behavior bit set in abilityBehavior
-  const isBitSet = (abilityBehavior & behavior) === behavior;
-  return !!isBitSet;
+  return HasAbilityBehavior(GetAbilityBehaviorBits(ability), behavior);
 }

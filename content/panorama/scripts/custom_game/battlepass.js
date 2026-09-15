@@ -1,11 +1,24 @@
+const RESET_PROPERTY_SEASON_POINT_COST = 2000;
+const WEBSITE_URL = 'https://windy10v10ai.com';
+// 请求失败时 net table 不会更新，超时后也要恢复刷新按钮
+const PLAYER_INFO_REFRESH_TIMEOUT_S = 5;
+let playerInfoRefreshing = false;
+
 (function () {
   $.Schedule(0.1, PregameSetup);
 })();
 
 function PregameSetup() {
+  $('#PropertyWebsiteButton').SetPanelEvent('onactivate', OpenPropertyWebsite);
+  $('#PropertyRefreshButton').SetPanelEvent('onactivate', OnPlayerInfoRefreshActive);
   const player = GetPlayer();
   PlayerDataLoaded(player);
   SubscribePlayer(PlayerDataLoaded);
+  CustomNetTables.SubscribeNetTableListener('server_env', (_tableName, key) => {
+    if (key !== 'server_env') return;
+    const currentPlayer = GetPlayer();
+    if (currentPlayer) SetPlayerProperty(currentPlayer);
+  });
 
   SetDataSelected();
   if (player) {
@@ -24,6 +37,7 @@ function PregameSetup() {
 function PlayerDataLoaded(player) {
   $.Msg('LocalDataLoaded');
   $.Msg(player);
+  EndPlayerInfoRefresh();
 
   if (player == null) {
     $('#LoadingFail').visible = true;
@@ -155,15 +169,71 @@ function SetPointTooltip(panelId, locKey, total) {
   });
 }
 
+function IsLocalHost() {
+  const serverEnv = CustomNetTables.GetTableValue('server_env', 'server_env');
+  return serverEnv !== undefined && serverEnv !== null && serverEnv.is_local_host === 1;
+}
+
+function SetLocalHostTooltip(panel, isLocalHost) {
+  if (!isLocalHost) {
+    panel.SetPanelEvent('onmouseover', () => {});
+    panel.SetPanelEvent('onmouseout', () => {});
+    return;
+  }
+
+  const text = $.Localize('#local_host_feature_unsupported_hint');
+  panel.SetPanelEvent('onmouseover', () => {
+    $.DispatchEvent('DOTAShowTextTooltip', panel, text);
+  });
+  panel.SetPanelEvent('onmouseout', () => {
+    $.DispatchEvent('DOTAHideTextTooltip');
+  });
+}
+
+// 本地主机下按钮保持置灰外观，但点击跳转网站操作
+function RedirectLocalHostButton(panel) {
+  panel.SetHasClass('deactivated', true);
+  panel.SetHasClass('activated', false);
+  panel.SetHasClass('activated-gold', false);
+  panel.SetPanelEvent('onactivate', OpenPropertyWebsite);
+  SetLocalHostTooltip(panel, true);
+}
+
+function OpenPropertyWebsite() {
+  $.DispatchEvent(
+    'ExternalBrowserGoToURL',
+    `${WEBSITE_URL}/profile/${GetSteamAccountID()}/property`,
+  );
+}
+
+function OnPlayerInfoRefreshActive() {
+  if (playerInfoRefreshing) return;
+  playerInfoRefreshing = true;
+  const button = $('#PropertyRefreshButton');
+  button.SetHasClass('deactivated', true);
+  button.SetHasClass('activated', false);
+  GameEvents.SendCustomGameEventToServer('player_info_refresh', {});
+  $.Schedule(PLAYER_INFO_REFRESH_TIMEOUT_S, EndPlayerInfoRefresh);
+}
+
+function EndPlayerInfoRefresh() {
+  playerInfoRefreshing = false;
+  const button = $('#PropertyRefreshButton');
+  button.SetHasClass('deactivated', false);
+  button.SetHasClass('activated', true);
+}
+
 // 属性
 function SetPlayerProperty(player) {
-  SetResetPropertyButton(player);
+  const isLocalHost = IsLocalHost();
+  $('#PropertyWebsitePanel').visible = isLocalHost;
+  SetResetPropertyButton(player, isLocalHost);
   ClearPlayerProperty();
 
   const panel = $.CreatePanel('Panel', $('#PropertyListContainer'), '');
   panel.BLoadLayoutSnippet('PlayerPropertyTooltip');
   for (const property of Player_Property_List) {
-    AddPlayerProperty(player, property);
+    AddPlayerProperty(player, property, isLocalHost);
   }
 }
 
@@ -172,12 +242,22 @@ function ClearPlayerProperty() {
 }
 
 // 设置重置属性按钮
-function SetResetPropertyButton(player) {
-  // 勇士积分重置
+function SetResetPropertyButton(player, isLocalHost) {
   const resetUseSeasonPointButton = $('#ResetUseSeasonPoint');
-  const text = $.Localize(`#reset_property_use_season_point`);
-  $('#ResetUseSeasonPointText').text = text.replace('{seasonPoint}', player.seasonNextLevelPoint);
-  if (player.useableSeasonPoint >= player.seasonNextLevelPoint) {
+  const resetUseMemberPointButton = $('#ResetUseMemberPoint');
+  $('#ResetUseSeasonPointText').text = $.Localize(`#reset_property_use_season_point`);
+
+  if (isLocalHost) {
+    RedirectLocalHostButton(resetUseSeasonPointButton);
+    RedirectLocalHostButton(resetUseMemberPointButton);
+    return;
+  }
+
+  SetLocalHostTooltip(resetUseSeasonPointButton, false);
+  SetLocalHostTooltip(resetUseMemberPointButton, false);
+
+  // 勇士积分重置
+  if (player.useableSeasonPoint >= RESET_PROPERTY_SEASON_POINT_COST) {
     resetUseSeasonPointButton.SetHasClass('deactivated', false);
     resetUseSeasonPointButton.SetHasClass('activated', true);
     resetUseSeasonPointButton.SetPanelEvent('onactivate', () => {
@@ -190,7 +270,6 @@ function SetResetPropertyButton(player) {
   }
 
   // 会员积分重置
-  const resetUseMemberPointButton = $('#ResetUseMemberPoint');
   if (player.useableMemberPoint >= 1000) {
     resetUseMemberPointButton.SetHasClass('deactivated', false);
     resetUseMemberPointButton.SetHasClass('activated-gold', true);
@@ -205,7 +284,7 @@ function SetResetPropertyButton(player) {
   }
 }
 
-function AddPlayerProperty(player, property) {
+function AddPlayerProperty(player, property, isLocalHost) {
   const propertiesValues = player.properties ? Object.values(player.properties) : [];
   const playerProperty = propertiesValues.find((p) => p.name === property.name);
   if (playerProperty) {
@@ -268,7 +347,9 @@ function AddPlayerProperty(player, property) {
   levelupButton.nextLevel = nextLevel;
   levelupButton.FindChildTraverse('LevelupText').text = levelupText;
 
-  if (property.level < maxLevel && player.useableLevel >= nextLevel - property.level) {
+  if (isLocalHost) {
+    RedirectLocalHostButton(levelupButton);
+  } else if (property.level < maxLevel && player.useableLevel >= nextLevel - property.level) {
     levelupButton.SetHasClass('deactivated', false);
     levelupButton.SetHasClass('activated', true);
     levelupButton.SetPanelEvent('onactivate', () => {
@@ -295,7 +376,9 @@ function AddPlayerProperty(player, property) {
     maxLevelupButton.FindChildTraverse('MaxLevelupText').text = maxLevelText;
 
     // 检查是否可以升级（至少可以升1级）
-    if (property.level < targetLevel && player.useableLevel > 0) {
+    if (isLocalHost) {
+      RedirectLocalHostButton(maxLevelupButton);
+    } else if (property.level < targetLevel && player.useableLevel > 0) {
       maxLevelupButton.SetHasClass('deactivated', false);
       maxLevelupButton.SetHasClass('activated', true);
       maxLevelupButton.SetPanelEvent('onactivate', () => {

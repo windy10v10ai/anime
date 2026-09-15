@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { GetLocalPlayerSteamAccountID } from '@utils/utils';
+import { GetLocalPlayerSteamAccountID, GetWebsiteProfileUrl } from '@utils/utils';
+import { PrimaryButton } from '../../../../shared/components';
 import { useNetTable } from '../../../../shared/hooks/useNetTable';
+import { usePlayerInfoRefresh } from '../../../../shared/hooks/usePlayerInfoRefresh';
 import { AwakenHeroCard } from './AwakenHeroCard';
 import { AwakenRandomCard } from './AwakenRandomCard';
 import { AwakenRandomCandidatesDialog } from './AwakenRandomCandidatesDialog';
@@ -14,6 +16,16 @@ import { AwakenUnlockConfirmDialog } from './AwakenUnlockConfirmDialog';
 // 新加的英雄排在前面，旧的排在后面（随机卡固定第一个，不受此列表顺序影响）
 // freeTrial 与 vscripts awaken-config 的 FREE_TRIAL_HEROES 对应，同样需手动同步
 const AWAKEN_ABILITIES: { heroName: string; abilityName: string; freeTrial?: boolean }[] = [
+  {
+    heroName: 'npc_dota_hero_nyx_assassin',
+    abilityName: 'special_bonus_unique_nyx_assassin_mobile_burrow_awaken',
+    freeTrial: true,
+  },
+  {
+    heroName: 'npc_dota_hero_beastmaster',
+    abilityName: 'beastmaster_wild_axes_awaken',
+    freeTrial: true,
+  },
   {
     heroName: 'npc_dota_hero_earthshaker',
     abilityName: 'special_bonus_unique_earthshaker_upgrade',
@@ -42,12 +54,10 @@ const AWAKEN_ABILITIES: { heroName: string; abilityName: string; freeTrial?: boo
   {
     heroName: 'npc_dota_hero_dazzle',
     abilityName: 'special_bonus_unique_dazzle_upgrade',
-    freeTrial: true,
   },
   {
     heroName: 'npc_dota_hero_elder_titan',
     abilityName: 'elder_titan_ancestral_spirit_awaken',
-    freeTrial: true,
   },
   {
     heroName: 'npc_dota_hero_techies',
@@ -168,6 +178,14 @@ interface ConfirmTarget {
 export function AwakenTab() {
   const steamId = GetLocalPlayerSteamAccountID();
   const player = useNetTable('player_table', steamId);
+  const serverEnv = useNetTable('server_env', 'server_env');
+  const isLocalHost = serverEnv?.is_local_host === 1;
+  const localHostDisabledTooltip = isLocalHost
+    ? $.Localize('#local_host_feature_unsupported_hint')
+    : undefined;
+  const { refreshing, refresh } = usePlayerInfoRefresh();
+  const openAwakenWebsite = () =>
+    $.DispatchEvent('ExternalBrowserGoToURL', GetWebsiteProfileUrl('awaken'));
   const awakenedHeroes = player?.awakenedHeroes ?? [];
   const useableSeasonPoint = player?.useableSeasonPoint ?? 0;
   const useableMemberPoint = player?.useableMemberPoint ?? 0;
@@ -202,29 +220,38 @@ export function AwakenTab() {
   const hasEnoughPool = remainingPool >= AWAKEN_RANDOM_MIN_POOL;
 
   // 点开即显示（先滚动），候选到达后定格；确认弹窗叠在其上，故不因 confirmHero 卸载，避免取消后重新滚动
-  const showCandidates = candidatesOpen;
+  const showCandidates = candidatesOpen && !isLocalHost;
   const candidates = candidateNames.map((heroName) => ({
     heroName,
     abilityName: ABILITY_BY_HERO[heroName] ?? '',
   }));
 
   const handleUnlockClick = (heroName: string, abilityName: string) => {
+    if (isLocalHost) {
+      openAwakenWebsite();
+      return;
+    }
     if (isPending || !canAffordDirect) return;
     setConfirmHero({ heroName, abilityName, isRandom: false });
   };
 
   const handleRandomClick = () => {
+    if (isLocalHost) {
+      openAwakenWebsite();
+      return;
+    }
     if (isPending || !canAffordRandom || !hasEnoughPool) return;
     setCandidatesOpen(true);
     GameEvents.SendCustomGameEventToServer('awaken_random_request', {});
   };
 
   const handleCandidateSelect = (heroName: string, abilityName: string) => {
+    if (isLocalHost) return;
     setConfirmHero({ heroName, abilityName, isRandom: true });
   };
 
   const handleConfirm = (useMemberPoint: boolean) => {
-    if (!confirmHero) return;
+    if (!confirmHero || isLocalHost) return;
     const { heroName, isRandom } = confirmHero;
     setConfirmHero(null);
     setIsPending(true);
@@ -239,9 +266,30 @@ export function AwakenTab() {
     $.Schedule(UNLOCK_PENDING_TIMEOUT_S, () => setIsPending(false));
   };
 
+  // 随机认领半价，直购原价；confirmHero 为 null 时不会渲染确认弹窗，值不会被使用
+  const confirmSeasonCost = confirmHero?.isRandom
+    ? HERO_AWAKEN_RANDOM_COST_SEASON
+    : HERO_AWAKEN_UNLOCK_COST_SEASON;
+  const confirmMemberCost = confirmHero?.isRandom
+    ? HERO_AWAKEN_RANDOM_COST_MEMBER
+    : HERO_AWAKEN_UNLOCK_COST_MEMBER;
+
   return (
-    <Panel className="awaken-root">
+    <Panel className={isLocalHost ? 'awaken-root awaken-root-local-host' : 'awaken-root'}>
       <Panel className="awaken-layout">
+        {isLocalHost && (
+          <Panel className="awaken-website-notice">
+            <Label
+              className="awaken-website-notice-text"
+              text={$.Localize('#website_local_host_notice')}
+            />
+            <PrimaryButton
+              className="awaken-website-btn"
+              label={$.Localize('#website_open_awaken_button')}
+              onClick={openAwakenWebsite}
+            />
+          </Panel>
+        )}
         <Panel className="awaken-intro">
           <Panel className="awaken-intro-col awaken-intro-col-left">
             <Panel className="awaken-intro-col-header">
@@ -268,12 +316,20 @@ export function AwakenTab() {
               text={$.Localize('#awaken_unlock_intro_desc')}
             />
           </Panel>
+          <PrimaryButton
+            className="awaken-refresh-btn"
+            variant="ghost"
+            enabled={!refreshing}
+            label={$.Localize('#player_info_refresh')}
+            onClick={refresh}
+          />
         </Panel>
         <Panel className="awaken-grid">
           <AwakenRandomCard
-            enabled={!isPending && canAffordRandom && hasEnoughPool}
+            enabled={isLocalHost || (!isPending && canAffordRandom && hasEnoughPool)}
             canAfford={canAffordRandom}
             hasEnoughPool={hasEnoughPool}
+            disabledTooltipText={localHostDisabledTooltip}
             onClick={handleRandomClick}
           />
           {AWAKEN_ABILITIES.map(({ heroName, abilityName, freeTrial }) => {
@@ -286,8 +342,9 @@ export function AwakenTab() {
                 isUnlocked={isUnlocked}
                 // 已买断的玩家不需要再看到限免提示
                 isFreeTrial={freeTrial === true && !isUnlocked}
-                enabled={!isPending && canAffordDirect}
+                enabled={isLocalHost || (!isPending && canAffordDirect)}
                 canAfford={canAffordDirect}
+                disabledTooltipText={localHostDisabledTooltip}
                 onUnlockClick={handleUnlockClick}
               />
             );
@@ -302,27 +359,17 @@ export function AwakenTab() {
           onClose={() => setCandidatesOpen(false)}
         />
       )}
-      {confirmHero && (
+      {confirmHero && !isLocalHost && (
         <AwakenUnlockConfirmDialog
           heroName={confirmHero.heroName}
           abilityName={confirmHero.abilityName}
           descKey={
             confirmHero.isRandom ? '#awaken_random_confirm_desc' : '#awaken_unlock_confirm_desc'
           }
-          seasonCost={
-            confirmHero.isRandom ? HERO_AWAKEN_RANDOM_COST_SEASON : HERO_AWAKEN_UNLOCK_COST_SEASON
-          }
-          memberCost={
-            confirmHero.isRandom ? HERO_AWAKEN_RANDOM_COST_MEMBER : HERO_AWAKEN_UNLOCK_COST_MEMBER
-          }
-          canAffordSeason={
-            useableSeasonPoint >=
-            (confirmHero.isRandom ? HERO_AWAKEN_RANDOM_COST_SEASON : HERO_AWAKEN_UNLOCK_COST_SEASON)
-          }
-          canAffordMember={
-            useableMemberPoint >=
-            (confirmHero.isRandom ? HERO_AWAKEN_RANDOM_COST_MEMBER : HERO_AWAKEN_UNLOCK_COST_MEMBER)
-          }
+          seasonCost={confirmSeasonCost}
+          memberCost={confirmMemberCost}
+          canAffordSeason={useableSeasonPoint >= confirmSeasonCost}
+          canAffordMember={useableMemberPoint >= confirmMemberCost}
           onConfirm={handleConfirm}
           onCancel={() => setConfirmHero(null)}
         />

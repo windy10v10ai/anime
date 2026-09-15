@@ -5,6 +5,7 @@ import {
   GetFullCastRange,
 } from '../ability/ability-cast';
 import { TargetSide } from '../ability/ability-spec';
+import { FRIENDLY_CREEP_SEARCH_RADIUS } from './action-find';
 import {
   CastCoindition,
   CheckAbilityConditionFailure,
@@ -47,10 +48,10 @@ export function TryCastBySpec(
   if (CheckNoEnemyBuildingInRangeFailure(ai, condition?.self?.noEnemyBuildingInRange)) {
     return false;
   }
-  if (CheckFriendlyCreepNearbyFailure(hero, condition?.self?.friendlyCreepNearby)) {
+  if (CheckFriendlyCreepNearbyFailure(ai, condition?.self?.friendlyCreepNearby)) {
     return false;
   }
-  if (CheckCooldownTotalFailure(hero, condition?.self?.cooldownTotal)) {
+  if (CheckCooldownTotalFailure(hero, castable, condition?.self?.cooldownTotal)) {
     return false;
   }
 
@@ -129,48 +130,78 @@ function CheckNoEnemyBuildingInRangeFailure(
 }
 
 function CheckFriendlyCreepNearbyFailure(
-  hero: CDOTA_BaseNPC_Hero,
+  ai: BotBaseAIModifier,
   friendlyCreepNearby: NonNullable<CastCoindition['self']>['friendlyCreepNearby'],
 ): boolean {
   if (friendlyCreepNearby === undefined) {
     return false;
   }
-  const range = friendlyCreepNearby.range ?? 900;
-  const creeps = FindUnitsInRadius(
-    hero.GetTeamNumber(),
-    hero.GetAbsOrigin(),
-    undefined,
-    range,
-    UnitTargetTeam.FRIENDLY,
-    UnitTargetType.CREEP,
-    UnitTargetFlags.NONE,
-    FindOrder.ANY,
-    false,
-  );
-  return CheckNumberRangeFailure(creeps.length, friendlyCreepNearby.count);
+  const hero = ai.GetHero();
+  const range = friendlyCreepNearby.range ?? FRIENDLY_CREEP_SEARCH_RADIUS;
+  if (range > FRIENDLY_CREEP_SEARCH_RADIUS) {
+    const creeps = FindUnitsInRadius(
+      hero.GetTeamNumber(),
+      hero.GetAbsOrigin(),
+      undefined,
+      range,
+      UnitTargetTeam.FRIENDLY,
+      UnitTargetType.CREEP,
+      UnitTargetFlags.NONE,
+      FindOrder.ANY,
+      false,
+    );
+    return CheckNumberRangeFailure(creeps.length, friendlyCreepNearby.count);
+  }
+
+  let count = 0;
+  for (const creep of ai.aroundFriendlyCreeps) {
+    if (creep.IsAlive() && hero.GetRangeToUnit(creep) <= range) {
+      count++;
+    }
+  }
+  return CheckNumberRangeFailure(count, friendlyCreepNearby.count);
+}
+
+/**
+ * 技能可以声明哪些技能与物品不受自己影响，例如修补匠的热机重置刷不掉黑皇杖与秘法鞋。
+ */
+interface CooldownExceptionProvider {
+  IsAbitilyException(ability: CDOTABaseAbility): boolean;
+  IsItemException(item: CDOTA_Item): boolean;
 }
 
 /** 刷新类：检查所有技能 + 主栏物品的总冷却时间是否落在阈值区间。 */
 function CheckCooldownTotalFailure(
   hero: CDOTA_BaseNPC_Hero,
+  castable: CDOTABaseAbility,
   cooldownTotal: NumberRange | undefined,
 ): boolean {
   if (!cooldownTotal) {
     return false;
   }
+  // 刷不掉的技能与物品不计入冷却压力，否则总和虚高、阈值形同虚设
+  const exceptions = castable as unknown as Partial<CooldownExceptionProvider>;
   let totalCooldown = 0;
   const abilityCount = hero.GetAbilityCount();
   for (let i = 0; i < abilityCount; i++) {
     const abil = hero.GetAbilityByIndex(i);
-    if (abil) {
-      totalCooldown += abil.GetCooldownTimeRemaining();
+    if (!abil) {
+      continue;
     }
+    if (exceptions.IsAbitilyException && exceptions.IsAbitilyException(abil)) {
+      continue;
+    }
+    totalCooldown += abil.GetCooldownTimeRemaining();
   }
   for (let slot = InventorySlot.SLOT_1; slot <= InventorySlot.SLOT_6; slot++) {
     const item = hero.GetItemInSlot(slot);
-    if (item) {
-      totalCooldown += item.GetCooldownTimeRemaining();
+    if (!item) {
+      continue;
     }
+    if (exceptions.IsItemException && exceptions.IsItemException(item)) {
+      continue;
+    }
+    totalCooldown += item.GetCooldownTimeRemaining();
   }
   return CheckNumberRangeFailure(totalCooldown, cooldownTotal);
 }
@@ -245,6 +276,7 @@ function resolveTargetCondition(
     ignoresMagicImmune: existingTarget?.ignoresMagicImmune,
     rangeFromAbilityValue: existingTarget?.rangeFromAbilityValue,
     rangeFromAttackRange: existingTarget?.rangeFromAttackRange,
+    attackRangeOffset: existingTarget?.attackRangeOffset,
     castMode: existingTarget?.castMode,
     excludeSelf: existingTarget?.excludeSelf,
     facing: existingTarget?.facing,
@@ -281,6 +313,9 @@ function resolveRange(
     : GetFullCastRange(hero, castable);
   if (existingTarget?.rangeFromAttackRange) {
     castRange += hero.Script_GetAttackRange();
+  }
+  if (existingTarget?.attackRangeOffset !== undefined) {
+    castRange += existingTarget.attackRangeOffset;
   }
   const range: NumberRange = { lte: castRange };
   if (existing?.gte !== undefined) {
