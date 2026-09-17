@@ -68,7 +68,7 @@ function ShowLoadingFAQ() {
   $('#LoadingFaqAnswer').text = $.Localize('#' + entryKey + '_answer');
 }
 
-var ADDON_WORKSHOP_ID = 2307479570;
+var ADDON_WORKSHOP_ID = 3788870952;
 // 与 game.ts 中 loading_status 的成功取值一致
 var LOADING_STATUS_LOADED = 2;
 

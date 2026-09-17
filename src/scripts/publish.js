@@ -7,7 +7,7 @@ const { getDotaPath, getAddonName } = require('./utils');
 
 const STEAMCMD = 'C:\\App\\steamcmd\\steamcmd.exe';
 const STEAMCMD_CONFIG = 'C:\\App\\steamcmd\\config\\config.vdf';
-const WORKSHOP_ITEM_ID = '2307479570';
+const WORKSHOP_ITEM_ID = '3788870952';
 const APP_ID = '570';
 
 function getSteamUsername() {
