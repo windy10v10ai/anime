@@ -523,7 +523,7 @@ function OnGameDifficultyChoiceChange(table, key, value) {
 
 // -------- 链接按钮 --------
 function DispatchLinkPanel() {
-  DispatchCustomGameLink('#AnimeVersionButton', 3788870952);
+  DispatchCustomGameLink('#OriginalVersionButton', 2307479570);
   DispatchCustomGameLink('#DotaSurvivorButton', 3359951052);
 }
 

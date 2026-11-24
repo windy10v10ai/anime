@@ -110,7 +110,7 @@
 		"player_info_refresh"				"Обновить"
 
 		// 相关链接
-		"anime_version_button"			"Аниме-версия"
+		"original_version_button"		"10v10AI Оригинал"
 		"dota_survivor_button"			"Также попробуйте: Dota Survivor"
 		"join_qq"						"Вступить в группу QQ"
 		"join_discord"					"Присоединиться к Discord"
