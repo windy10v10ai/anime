@@ -5,6 +5,8 @@ English | [简体中文](docs/README_ZH.md)
 This is a PVE Dota2 custom game project.<br>
 Game is published on Steam workshop: [10v10 AI custom by windy](https://steamcommunity.com/sharedfiles/filedetails/?id=2307479570)
 
+Anime version: merge and sync rules with the original are in [docs/anime-sync.md](docs/anime-sync.md).
+
 ## 📊 Project Status
 
 [![Build Status](https://github.com/windy10v10ai/game/actions/workflows/test.yml/badge.svg)](https://github.com/windy10v10ai/game/actions/workflows/test.yml)
