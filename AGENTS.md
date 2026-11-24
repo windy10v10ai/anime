@@ -86,3 +86,5 @@ Claude Code 直接读 `.claude/skills`；Codex 与 DSH 读仓库下的 `.agents/
 - 「调用 xxx skill」：读 `.claude/skills/xxx/SKILL.md` 并照做
 - 派 SubAgent 并指定档位（最便宜档 / 主力档）：用你自己的子任务机制，没有就直接做，档位忽略
 - `CLAUDE.md` 自动加载：按第 2 节手动读
+
+二次元版与原版的同步规则、以谁为准和差异清单见 docs/anime-sync.md，同步原版或改动差异清单里的内容前先读它。

@@ -126,3 +126,5 @@ brainstorming 的设计稿在 artifact 里和用户讨论，不写 `docs/superpo
 - 留给用户确认的事项：列出来，写进 PR 的 Checklist
 
 用户明确要求「不要停、自主做到最后」时，skill 自带的确认停顿点一律跳过，已有设计文档当作已拍板。不阻塞主线的待判断问题记下来写进 draft PR 的 Checklist；方案自相矛盾、无法安全判断时才停下。
+
+二次元版与原版的同步规则、以谁为准和差异清单见 docs/anime-sync.md，同步原版或改动差异清单里的内容前先读它。

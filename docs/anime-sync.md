@@ -27,7 +27,7 @@
 - 素材：动漫模型、材质、音效、头像视频（`game/panorama/videos/heroes/`）、技能图标（`spellicons/custom/windyanime/`）
 - 加载界面互跳按钮：二次元版显示「10v10AI 原版」，指向 `2307479570`
 - `.gitignore`：粒子编译产物 `*.vpcf_c` 不进仓库，只有没有源文件的几个成品单独放行
-- `AGENTS.md` 多一行 `online-hero-assets`
+- `AGENTS.md` 多一行 `online-hero-assets`；`.claude/CLAUDE.md` 与 `AGENTS.md` 末尾各多一行指向本文件，同步时保留
 
 ## 同步流程
 
