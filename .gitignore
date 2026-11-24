@@ -62,3 +62,12 @@ __pycache__/
 
 # 二次元版不跟踪粒子编译产物（fee1047d1），由 Tools 本地生成
 *.vpcf_c
+# No source files exist for these child particles, so the compiled binaries cannot be rebuilt if lost
+!game/particles/chibi_monster1.vpcf_c
+!game/particles/chibi_monster_aura.vpcf_c
+!game/particles/calne_miku_aura.vpcf_c
+!game/particles/naga_siren_song_aura_b1.vpcf_c
+!game/particles/naga_siren_song_aura_b2.vpcf_c
+!game/particles/naga_siren_song_aura_b3.vpcf_c
+!game/particles/naga_siren_song_aura_b4.vpcf_c
+!game/particles/song_aura3.vpcf_c
