@@ -59,3 +59,6 @@ game/scripts/kv/
 /.agents/
 # Python 缓存
 __pycache__/
+
+# 二次元版不跟踪粒子编译产物（fee1047d1），由 Tools 本地生成
+*.vpcf_c
