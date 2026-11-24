@@ -395,5 +395,8 @@
 	]
 	m_Children = 
 	[
+		{
+			m_ChildRef = resource:"particles/calne_miku_aura.vpcf"
+		},
 	]
 }

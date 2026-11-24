@@ -395,5 +395,11 @@
 	]
 	m_Children = 
 	[
+		{
+			m_ChildRef = resource:"particles/chibi_monster1.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/chibi_monster_aura.vpcf"
+		},
 	]
 }
