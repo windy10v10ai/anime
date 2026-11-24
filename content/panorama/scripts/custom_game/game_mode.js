@@ -27,8 +27,7 @@ var LOADING_FAQ_GROUPS = [
     entries: [
       'loading_faq_players_instant_revive',
       'loading_faq_illusions_summons',
-      'loading_faq_local_host',
-      'loading_faq_console_launch',
+      'loading_faq_launch_mode',
       'loading_faq_pause',
       'loading_faq_attributes',
       'loading_faq_treasure_rewards',
@@ -38,7 +37,6 @@ var LOADING_FAQ_GROUPS = [
     weight: 2,
     entries: [
       'loading_faq_hero_bounty',
-      'loading_faq_pulse_nova',
       'loading_faq_member_checkin',
       'loading_faq_duplicate_ability',
       'loading_faq_dragon_balls',
@@ -68,64 +66,23 @@ function ShowLoadingFAQ() {
   $('#LoadingFaqAnswer').text = $.Localize('#' + entryKey + '_answer');
 }
 
-var ADDON_WORKSHOP_ID = 3788870952;
-// 与 game.ts 中 loading_status 的成功取值一致
-var LOADING_STATUS_LOADED = 2;
+var WEBSITE_URL_MAIN = 'https://windy10v10ai.com';
+var WEBSITE_URL_CN = 'https://cn.windy10v10ai.com';
 
-// 地图名同时是 dota_launch_custom_game 的难度参数，玩家看到的始终是本局这一条
-// map_name 形如 maps/dota.vpk，命令参数要的是去掉路径与后缀的地图名
-function GetConsoleLaunchCommand() {
-  var mapPath = Game.GetMapInfo().map_name;
-  if (!mapPath) {
-    return '';
+// Keep in sync with GetWebsiteUrl in src/panorama/utils/utils.ts.
+function GetWebsiteUrl() {
+  var route = CustomNetTables.GetTableValue('api_route', String(Game.GetLocalPlayerID()));
+  if (route) {
+    if (route.country === 'CN') return WEBSITE_URL_CN;
+    if (route.channels === 0 && route.backupChannels > 0) return WEBSITE_URL_CN;
+    if (route.country) return WEBSITE_URL_MAIN;
   }
-  var mapName = mapPath.split('/').pop().split('.')[0];
-  return 'dota_launch_custom_game ' + ADDON_WORKSHOP_ID + ' ' + mapName;
+  return $.Language() === 'schinese' ? WEBSITE_URL_CN : WEBSITE_URL_MAIN;
 }
 
-function ShowConsoleLaunchCommand() {
-  var command = GetConsoleLaunchCommand();
-  // 加载界面早期 map info 还没填充，等有值再写入
-  if (!command) {
-    $.Schedule(0.5, ShowConsoleLaunchCommand);
-    return;
-  }
-  $('#ConsoleLaunchCommand').text = command;
-}
-
-// Panorama 没有剪贴板接口，只能把命令选中后交给玩家自己按 Ctrl+C
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function SelectConsoleCommand() {
-  var entry = $('#ConsoleLaunchCommand');
-  entry.SetFocus();
-  entry.SelectAll();
-}
-
-// TextEntry 是可编辑的，改动后立刻还原，避免玩家复制到残缺命令
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function RestoreConsoleCommand() {
-  var command = GetConsoleLaunchCommand();
-  var entry = $('#ConsoleLaunchCommand');
-  if (command && entry.text !== command) {
-    entry.text = command;
-  }
-}
-
-// 默认展示，只在确认读到玩家数据后收起：任何异常都宁可多显示一次，
-// 也不能让读不到数据的玩家等不到这段说明
-function UpdateConsoleLaunchVisibility(value) {
-  var loaded = value && value.status === LOADING_STATUS_LOADED;
-  $('#ConsoleLaunchPanel').style.visibility = loaded ? 'collapse' : 'visible';
-}
-
-function WatchPlayerDataStatus() {
-  UpdateConsoleLaunchVisibility(CustomNetTables.GetTableValue('loading_status', 'loading_status'));
-  CustomNetTables.SubscribeNetTableListener('loading_status', function (_table, key, value) {
-    if (key !== 'loading_status') {
-      return;
-    }
-    UpdateConsoleLaunchVisibility(value);
-  });
+function OpenWebsiteLaunch() {
+  $.DispatchEvent('ExternalBrowserGoToURL', GetWebsiteUrl() + '/launch');
 }
 
 function CheckForHostPrivileges() {
@@ -221,12 +178,26 @@ function InitCustomSetting() {
 
   // 开发模式
   if (Game.IsInToolsMode()) {
-    $('#player_gold_xp_multiplier_dropdown').SetSelected('2');
-    $('#bot_gold_xp_multiplier_dropdown').SetSelected('2');
-    $('#radiant_player_number_dropdown').SetSelected('5');
-    $('#dire_player_number_dropdown').SetSelected('5');
+    // 天辉 bot 也要出齐 T5 才能复现真实后期的负载
+    SelectToolsOnlyOption('player_gold_xp_multiplier_dropdown', '10', '10');
+    $('#bot_gold_xp_multiplier_dropdown').SetSelected('10');
+    $('#radiant_player_number_dropdown').SetSelected('10');
+    $('#dire_player_number_dropdown').SetSelected('10');
     $('#starting_gold_bot_dropdown').SetSelected('5000');
+    // 高倍经济下 500% 防御塔仍会在测完前被推平
+    SelectToolsOnlyOption('tower_power_dropdown', '700', '700%');
   }
+}
+
+// 界面上没有的档位只在工具模式下临时加进下拉框，发布版的选项不变
+function SelectToolsOnlyOption(dropdownId, id, text) {
+  var dropdown = $('#' + dropdownId);
+  if (!dropdown.FindDropDownMenuChild(id)) {
+    var option = $.CreatePanel('Label', dropdown, id);
+    option.text = text;
+    dropdown.AddOption(option);
+  }
+  dropdown.SetSelected(id);
 }
 
 // -------- Difficulty Setting --------
@@ -599,8 +570,6 @@ function SendPlayerLanguage() {
   }
   LockOption();
   ShowLoadingFAQ();
-  ShowConsoleLaunchCommand();
-  WatchPlayerDataStatus();
   // 游戏选择项目table监听
   CustomNetTables.SubscribeNetTableListener('game_options', ShowGameOptionsChange);
   CustomNetTables.SubscribeNetTableListener('game_difficulty', OnGameDifficultyChoiceChange);

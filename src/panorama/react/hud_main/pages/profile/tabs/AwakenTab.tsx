@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { GetLocalPlayerSteamAccountID, GetWebsiteProfileUrl } from '@utils/utils';
 import { PrimaryButton } from '../../../../shared/components';
+import { useDataOffline } from '../../../../shared/hooks/useDataOffline';
 import { useNetTable } from '../../../../shared/hooks/useNetTable';
 import { usePlayerInfoRefresh } from '../../../../shared/hooks/usePlayerInfoRefresh';
 import { AwakenHeroCard } from './AwakenHeroCard';
 import { AwakenRandomCard } from './AwakenRandomCard';
 import { AwakenRandomCandidatesDialog } from './AwakenRandomCandidatesDialog';
 import { AwakenUnlockConfirmDialog } from './AwakenUnlockConfirmDialog';
+import { EXTERNAL_LINK_ICON } from './member/constants';
 
 /**
  * 觉醒 Tab：觉醒技能预览墙 + 积分解锁入口。
@@ -17,39 +19,57 @@ import { AwakenUnlockConfirmDialog } from './AwakenUnlockConfirmDialog';
 // freeTrial 与 vscripts awaken-config 的 FREE_TRIAL_HEROES 对应，同样需手动同步
 const AWAKEN_ABILITIES: { heroName: string; abilityName: string; freeTrial?: boolean }[] = [
   {
+    heroName: 'npc_dota_hero_centaur',
+    abilityName: 'special_bonus_unique_centaur_upgrade',
+    freeTrial: true,
+  },
+  {
+    heroName: 'npc_dota_hero_storm_spirit',
+    abilityName: 'special_bonus_unique_storm_spirit_upgrade',
+    freeTrial: true,
+  },
+  {
+    heroName: 'npc_dota_hero_antimage',
+    abilityName: 'special_bonus_unique_antimage_mana_suppression_awaken',
+    freeTrial: true,
+  },
+  {
+    heroName: 'npc_dota_hero_terrorblade',
+    abilityName: 'terrorblade_sunder_awakened_status',
+    freeTrial: true,
+  },
+  {
+    heroName: 'npc_dota_hero_bounty_hunter',
+    abilityName: 'bounty_hunter_track_awaken',
+    freeTrial: true,
+  },
+  {
     heroName: 'npc_dota_hero_nyx_assassin',
     abilityName: 'special_bonus_unique_nyx_assassin_mobile_burrow_awaken',
-    freeTrial: true,
   },
   {
     heroName: 'npc_dota_hero_beastmaster',
     abilityName: 'beastmaster_wild_axes_awaken',
-    freeTrial: true,
   },
   {
     heroName: 'npc_dota_hero_earthshaker',
     abilityName: 'special_bonus_unique_earthshaker_upgrade',
-    freeTrial: true,
   },
   {
     heroName: 'npc_dota_hero_abyssal_underlord',
     abilityName: 'special_bonus_unique_underlord_demons_reach_awaken',
-    freeTrial: true,
   },
   {
     heroName: 'npc_dota_hero_slark',
     abilityName: 'special_bonus_unique_slark_permanent_essence_awaken',
-    freeTrial: true,
   },
   {
     heroName: 'npc_dota_hero_abaddon',
     abilityName: 'special_bonus_unique_abaddon_quickening_awaken',
-    freeTrial: true,
   },
   {
     heroName: 'npc_dota_hero_skywrath_mage',
     abilityName: 'special_bonus_unique_skywrath_upgrade',
-    freeTrial: true,
   },
   {
     heroName: 'npc_dota_hero_dazzle',
@@ -106,12 +126,17 @@ const AWAKEN_ABILITIES: { heroName: string; abilityName: string; freeTrial?: boo
   {
     heroName: 'npc_dota_hero_rattletrap',
     abilityName: 'special_bonus_unique_rattletrap_upgrade',
+    freeTrial: true,
   },
   {
     heroName: 'npc_dota_hero_windrunner',
     abilityName: 'windrunner_whirlwind_custom',
   },
-  { heroName: 'npc_dota_hero_kunkka', abilityName: 'kunkka_torrent_storm' },
+  {
+    heroName: 'npc_dota_hero_kunkka',
+    abilityName: 'kunkka_torrent_storm',
+    freeTrial: true,
+  },
   { heroName: 'npc_dota_hero_ogre_magi', abilityName: 'ogre_magi_multicast_lua' },
   {
     heroName: 'npc_dota_hero_winter_wyvern',
@@ -129,6 +154,7 @@ const AWAKEN_ABILITIES: { heroName: string; abilityName: string; freeTrial?: boo
   {
     heroName: 'npc_dota_hero_drow_ranger',
     abilityName: 'special_bonus_unique_drow_ranger_upgrade',
+    freeTrial: true,
   },
   { heroName: 'npc_dota_hero_nevermore', abilityName: 'special_bonus_unique_nevermore_upgrade' },
   {
@@ -138,6 +164,7 @@ const AWAKEN_ABILITIES: { heroName: string; abilityName: string; freeTrial?: boo
   {
     heroName: 'npc_dota_hero_phantom_assassin',
     abilityName: 'special_bonus_unique_phantom_assassin_upgrade',
+    freeTrial: true,
   },
   { heroName: 'npc_dota_hero_zuus', abilityName: 'special_bonus_unique_zuus_upgrade' },
   { heroName: 'npc_dota_hero_necrolyte', abilityName: 'necrolyte_heartstopper_aura_datadriven' },
@@ -180,6 +207,7 @@ export function AwakenTab() {
   const player = useNetTable('player_table', steamId);
   const serverEnv = useNetTable('server_env', 'server_env');
   const isLocalHost = serverEnv?.is_local_host === 1;
+  const offline = useDataOffline();
   const localHostDisabledTooltip = isLocalHost
     ? $.Localize('#local_host_feature_unsupported_hint')
     : undefined;
@@ -215,7 +243,7 @@ export function AwakenTab() {
     useableSeasonPoint >= HERO_AWAKEN_RANDOM_COST_SEASON ||
     useableMemberPoint >= HERO_AWAKEN_RANDOM_COST_MEMBER;
   const remainingPool = AWAKEN_ABILITIES.filter(
-    ({ heroName }) => !awakenedHeroes.some((h) => h.heroName === heroName),
+    ({ heroName }) => !awakenedHeroes.includes(heroName),
   ).length;
   const hasEnoughPool = remainingPool >= AWAKEN_RANDOM_MIN_POOL;
 
@@ -281,13 +309,17 @@ export function AwakenTab() {
           <Panel className="awaken-website-notice">
             <Label
               className="awaken-website-notice-text"
-              text={$.Localize('#website_local_host_notice')}
+              text={$.Localize(
+                offline ? '#website_local_host_notice_offline' : '#website_local_host_notice',
+              )}
             />
-            <PrimaryButton
-              className="awaken-website-btn"
-              label={$.Localize('#website_open_awaken_button')}
-              onClick={openAwakenWebsite}
-            />
+            <Button className="awaken-website-btn" onactivate={openAwakenWebsite}>
+              <Label
+                className="awaken-website-btn-label"
+                text={$.Localize('#website_open_awaken_button')}
+              />
+              <Image className="awaken-website-btn-icon" src={EXTERNAL_LINK_ICON} />
+            </Button>
           </Panel>
         )}
         <Panel className="awaken-intro">
@@ -334,7 +366,7 @@ export function AwakenTab() {
             onClick={handleRandomClick}
           />
           {AWAKEN_ABILITIES.map(({ heroName, abilityName, freeTrial }) => {
-            const isUnlocked = awakenedHeroes.some((h) => h.heroName === heroName);
+            const isUnlocked = awakenedHeroes.includes(heroName);
             return (
               <AwakenHeroCard
                 key={abilityName}

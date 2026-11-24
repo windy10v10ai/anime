@@ -26,6 +26,9 @@ interface CustomGameEventDeclarations {
   lottery_pick_item: LotteryPickItemEventData;
   lottery_refresh_item: Record<string, never>;
   lottery_pick_passive_tome: LotteryPickItemEventData;
+  lottery_refresh_passive_tome: Record<string, never>;
+  lottery_forget_passive_tome: LotteryForgetPassiveTomeEventData;
+  lottery_cancel_forget_passive_tome: Record<string, never>;
   player_info_refresh: Record<string, never>;
   awaken_unlock_hero: AwakenUnlockHeroEventData;
   awaken_unlock_result: Record<string, never>;
@@ -39,14 +42,63 @@ interface CustomGameEventDeclarations {
 
   player_conduct: PlayerConductEventData;
 
+  feedback_submit: FeedbackSubmitEventData;
+  feedback_result: FeedbackResultEventData;
+
+  player_stats_radar_request: Record<string, never>;
+  player_stats_radar_result: PlayerStatsRadarResultEventData;
+
   debug_panel_add_to_unit: DebugPanelAddToUnitEventData;
 
   dailytask_select_candidate: DailyTaskSelectCandidateEventData;
   dailytask_refresh_candidates: Record<string, never>;
+  dailytask_load_history: Record<string, never>;
+
+  api_html_proxy_ready: ApiHtmlProxyReadyEventData;
+  api_html_proxy_ack: ApiHtmlProxyReadyEventData;
+  api_html_proxy_request: ApiHtmlProxyRequestEventData;
+  api_html_proxy_response: ApiHtmlProxyResponseEventData;
+  api_html_proxy_failure: ApiHtmlProxyFailureEventData;
+  api_html_proxy_cancel: ApiHtmlProxyCancelEventData;
 }
 
 interface CustomGameEventDataBase {
   PlayerID: PlayerID;
+}
+
+interface FeedbackSubmitEventData {
+  type: 'problem' | 'suggestion';
+  /** 逗号拼接：数组过事件会变成以下标为键的对象 */
+  topics: string;
+  description: string;
+}
+
+type FeedbackResult = 'sent' | 'failed' | 'too_many_reports' | 'daily_limit_reached';
+
+interface FeedbackResultEventData {
+  result: FeedbackResult;
+}
+
+/** 各项是近期各局在同难度玩家中百分位的平均，0–100，越大越好 */
+interface PlayerStatsRadar {
+  damage: number;
+  gold: number;
+  participation: number;
+  push: number;
+  /** 已反过来算，死得越少越高 */
+  deaths: number;
+  tank: number;
+  healing: number;
+  assists: number;
+  stuns: number;
+}
+
+interface PlayerStatsRadarResultEventData {
+  status: 'ready' | 'failed';
+  matchCount: number;
+  minMatchCount: number;
+  /** 局数不够或还没有基准时没有 */
+  radar?: PlayerStatsRadar;
 }
 
 interface ChooseDifficultyEventData {
@@ -106,6 +158,10 @@ interface LotteryPickItemEventData {
   level: number;
 }
 
+interface LotteryForgetPassiveTomeEventData {
+  name: string;
+}
+
 interface AlipayOrderCreateEventData {
   productCode: string;
   quantity: number;
@@ -142,6 +198,35 @@ interface DebugPanelAddToUnitEventData {
 // 玩家在候选卡里本地选择一个每日任务，taskId 不认识时服务端忽略
 interface DailyTaskSelectCandidateEventData {
   taskId: string;
+}
+
+// 客户端代发 HTTP 请求：服务端拿不到 CreateHTTPRequestScriptVM 请求对象时（游廊对局），
+// 交由一名已连接玩家的客户端用 DOTAHTMLPanel 代发，响应经由 title 带回
+// The client reports ready widget counts per line and the server throttles on them; the ack echoes them back.
+// country is the code returned by the main entry's bridge page, empty when unknown.
+interface ApiHtmlProxyReadyEventData {
+  channels: number;
+  backupChannels: number;
+  country: string;
+}
+
+interface ApiHtmlProxyRequestEventData {
+  requestId: string;
+  url: string;
+}
+
+interface ApiHtmlProxyCancelEventData {
+  requestId: string;
+}
+
+interface ApiHtmlProxyResponseEventData {
+  requestId: string;
+  data: string;
+}
+
+interface ApiHtmlProxyFailureEventData {
+  requestId: string;
+  reason: string;
 }
 
 // 按地图记住/清除游戏预设的意图开关。仅传 remember，

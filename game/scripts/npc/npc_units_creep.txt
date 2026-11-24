@@ -5,22 +5,23 @@
 	//=================================================================================
 	// Creeps: 小兵 普通
 	//=================================================================================
-	// 近战远程 1.5x
+	// 经验与金币相对原版（行尾注释）的倍率。远程兵、旗手、攻城车：普通 2 倍，强化与超级 3 倍；
+	// 近战兵：普通 1.5 倍，强化与超级 经验 2.4 倍、金币约 2 倍
 	"npc_dota_creep_badguys_ranged"
 	{
 		"ModelScale"				"1.1718"
 
-		"BountyXP"					"104"		// 69
-		"BountyGoldMin"				"65"		// 43
-		"BountyGoldMax"				"78"		// 52
+		"BountyXP"					"138"		// 69
+		"BountyGoldMin"				"86"		// 43
+		"BountyGoldMax"				"104"		// 52
 	}
 	"npc_dota_creep_goodguys_ranged"
 	{
 		"ModelScale"				"1.1088"
 
-		"BountyXP"					"104"		// 69
-		"BountyGoldMin"				"65"		// 43
-		"BountyGoldMax"				"78"		// 52
+		"BountyXP"					"138"		// 69
+		"BountyGoldMin"				"86"		// 43
+		"BountyGoldMax"				"104"		// 52
 	}
 	"npc_dota_creep_badguys_melee"
 	{
@@ -38,14 +39,13 @@
 		"BountyGoldMin"				"51"		// 34
 		"BountyGoldMax"				"59"		// 39
 	}
-	// 旗手 1.5x
 	"npc_dota_creep_badguys_flagbearer"
 	{
 		"ModelScale"				"1.1718"
 
-		"BountyXP"					"86"		// 57
-		"BountyGoldMin"				"51"		// 34
-		"BountyGoldMax"				"59"		// 39
+		"BountyXP"					"114"		// 57
+		"BountyGoldMin"				"68"		// 34
+		"BountyGoldMax"				"78"		// 39
 
 		"StatusHealth"				"800"		// 550
 	}
@@ -53,13 +53,12 @@
 	{
 		"ModelScale"				"1.1718"
 
-		"BountyXP"					"86"		// 57
-		"BountyGoldMin"				"51"		// 34
-		"BountyGoldMax"				"59"		// 39
+		"BountyXP"					"114"		// 57
+		"BountyGoldMin"				"68"		// 34
+		"BountyGoldMax"				"78"		// 39
 
 		"StatusHealth"				"800"		// 550
 	}
-	// 投石车 1.5x
 	"npc_dota_goodguys_siege"
 	{
 		"ModelScale"				"0.819"
@@ -67,9 +66,9 @@
 		"BaseAttackSpeed"			"130"		// 100
 		"AttackRange"				"800"		// 690
 
-		"BountyXP"					"132"		// 88
-		"BountyGoldMin"				"88"		// 59
-		"BountyGoldMax"				"108"		// 72
+		"BountyXP"					"176"		// 88
+		"BountyGoldMin"				"118"		// 59
+		"BountyGoldMax"				"144"		// 72
 	}
 	"npc_dota_badguys_siege"
 	{
@@ -78,9 +77,9 @@
 		"BaseAttackSpeed"			"130"		// 100
 		"AttackRange"				"800"		// 690
 
-		"BountyXP"					"132"		// 88
-		"BountyGoldMin"				"88"		// 59
-		"BountyGoldMax"				"108"		// 72
+		"BountyXP"					"176"		// 88
+		"BountyGoldMin"				"118"		// 59
+		"BountyGoldMax"				"144"		// 72
 	}
 	//=================================================================================
 	// Creeps: 小兵 高级
@@ -103,9 +102,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"60"		// 22
-		"BountyGoldMin"				"45"		// 19
-		"BountyGoldMax"				"50"		// 25
+		"BountyXP"					"66"		// 22
+		"BountyGoldMin"				"57"		// 19
+		"BountyGoldMax"				"75"		// 25
 
 		// Movement
 		//----------------------------------------------------------------
@@ -135,9 +134,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"60"		// 22
-		"BountyGoldMin"				"45"		// 19
-		"BountyGoldMax"				"50"		// 25
+		"BountyXP"					"66"		// 22
+		"BountyGoldMin"				"57"		// 19
+		"BountyGoldMax"				"75"		// 25
 
 		// Movement
 		//----------------------------------------------------------------
@@ -231,9 +230,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"86"		// 25
-		"BountyGoldMin"				"51"		// 20
-		"BountyGoldMax"				"59"		// 26
+		"BountyXP"					"75"		// 25
+		"BountyGoldMin"				"60"		// 20
+		"BountyGoldMax"				"78"		// 26
 
 		// Movement
 		//----------------------------------------------------------------
@@ -261,9 +260,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"86"		// 25
-		"BountyGoldMin"				"51"		// 20
-		"BountyGoldMax"				"59"		// 26
+		"BountyXP"					"75"		// 25
+		"BountyGoldMin"				"60"		// 20
+		"BountyGoldMax"				"78"		// 26
 
 		// Movement
 		//----------------------------------------------------------------
@@ -294,9 +293,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"180"		// 88
-		"BountyGoldMin"				"150"		// 59
-		"BountyGoldMax"				"160"		// 72
+		"BountyXP"					"264"		// 88
+		"BountyGoldMin"				"177"		// 59
+		"BountyGoldMax"				"216"		// 72
 
 		// Movement
 		//----------------------------------------------------------------
@@ -325,9 +324,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"180"		// 88
-		"BountyGoldMin"				"150"		// 59
-		"BountyGoldMax"				"160"		// 72
+		"BountyXP"					"264"		// 88
+		"BountyGoldMin"				"177"		// 59
+		"BountyGoldMax"				"216"		// 72
 
 		// Movement
 		//----------------------------------------------------------------
@@ -344,7 +343,7 @@
 	"npc_dota_creep_badguys_ranged_upgraded_mega"
 	{
 		// General
-		"ModelScale"				"1.5" // 1.12
+		"ModelScale"				"1.89" // 1.12
 
 		// Armor
 		//----------------------------------------------------------------
@@ -360,9 +359,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"60"		// 22
-		"BountyGoldMin"				"45"		// 19
-		"BountyGoldMax"				"50"		// 25
+		"BountyXP"					"66"		// 22
+		"BountyGoldMin"				"57"		// 19
+		"BountyGoldMax"				"75"		// 25
 
 		// Movement
 		//----------------------------------------------------------------
@@ -376,7 +375,7 @@
 	"npc_dota_creep_goodguys_ranged_upgraded_mega"
 	{
 		// General
-		"ModelScale"				"1.5" // 1.12
+		"ModelScale"				"1.89" // 1.12
 
 		// Armor
 		//----------------------------------------------------------------
@@ -392,9 +391,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"60"		// 22
-		"BountyGoldMin"				"45"		// 19
-		"BountyGoldMax"				"50"		// 25
+		"BountyXP"					"66"		// 22
+		"BountyGoldMin"				"57"		// 19
+		"BountyGoldMax"				"75"		// 25
 
 		// Movement
 		//----------------------------------------------------------------
@@ -409,7 +408,7 @@
 	"npc_dota_creep_badguys_melee_upgraded_mega"
 	{
 		// General
-		"ModelScale"				"1.5" // 1.12
+		"ModelScale"				"1.89" // 1.12
 
 		// Armor
 		//----------------------------------------------------------------
@@ -440,7 +439,7 @@
 	"npc_dota_creep_goodguys_melee_upgraded_mega"
 	{
 		// General
-		"ModelScale"				"1.5" // 1.12
+		"ModelScale"				"1.89" // 1.12
 
 		// Armor
 		//----------------------------------------------------------------
@@ -473,7 +472,7 @@
 	"npc_dota_creep_badguys_flagbearer_upgraded_mega"
 	{
 		// General
-		"ModelScale"				"1.5" // 1.12
+		"ModelScale"				"1.89" // 1.12
 
 		// Armor
 		//----------------------------------------------------------------
@@ -488,9 +487,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"86"		// 25
-		"BountyGoldMin"				"51"		// 20
-		"BountyGoldMax"				"59"		// 26
+		"BountyXP"					"75"		// 25
+		"BountyGoldMin"				"60"		// 20
+		"BountyGoldMax"				"78"		// 26
 
 		// Movement
 		//----------------------------------------------------------------
@@ -503,7 +502,7 @@
 	"npc_dota_creep_goodguys_flagbearer_upgraded_mega"
 	{
 		// General
-		"ModelScale"				"1.5" // 1.12
+		"ModelScale"				"1.89" // 1.12
 
 		// Armor
 		//----------------------------------------------------------------
@@ -518,9 +517,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"86"		// 25
-		"BountyGoldMin"				"51"		// 20
-		"BountyGoldMax"				"59"		// 26
+		"BountyXP"					"75"		// 25
+		"BountyGoldMin"				"60"		// 20
+		"BountyGoldMax"				"78"		// 26
 
 		// Movement
 		//----------------------------------------------------------------
@@ -535,7 +534,7 @@
 	"npc_dota_goodguys_siege_upgraded_mega"
 	{
 		// General
-		"ModelScale"				"1.1" // .65
+		"ModelScale"				"1.386" // .65
 
 		// Armor
 		//----------------------------------------------------------------
@@ -551,9 +550,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"180"		// 88
-		"BountyGoldMin"				"150"		// 59
-		"BountyGoldMax"				"160"		// 72
+		"BountyXP"					"264"		// 88
+		"BountyGoldMin"				"177"		// 59
+		"BountyGoldMax"				"216"		// 72
 
 		// Movement
 		//----------------------------------------------------------------
@@ -566,7 +565,7 @@
 	"npc_dota_badguys_siege_upgraded_mega"
 	{
 		// General
-		"ModelScale"				"1.1" // .65
+		"ModelScale"				"1.386" // .65
 
 		// Armor
 		//----------------------------------------------------------------
@@ -582,9 +581,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"180"		// 88
-		"BountyGoldMin"				"150"		// 59
-		"BountyGoldMax"				"160"		// 72
+		"BountyXP"					"264"		// 88
+		"BountyGoldMin"				"177"		// 59
+		"BountyGoldMax"				"216"		// 72
 
 		// Movement
 		//----------------------------------------------------------------

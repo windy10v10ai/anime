@@ -92,6 +92,7 @@ tinker_rearm_lua.AbitilyException = {
 	["enigma_demonic_conversion"] = true,
 	["faceless_void_chronosphere"] = true,
 	["undying_tombstone"] = true,
+	["undying_ceaseless_dirge"] = true,
 	["venomancer_plague_ward"] = true,
 	["arc_warden_tempest_double"] = true,
 	["shadow_demon_disruption"] = true,
@@ -99,6 +100,7 @@ tinker_rearm_lua.AbitilyException = {
 	["terrorblade_reflection"] = true,
 	["hoodwink_decoy"] = true,
 	["grimstroke_dark_portrait"] = true,
+	["skeleton_king_reincarnation"] = true,
 	-- 额外眼：rearm 刷新会重置守卫充能与 CD，导致无限真假眼
 	["ability_ward_observer_slot"] = true,
 	["ability_ward_sentry_slot"] = true,
@@ -125,12 +127,13 @@ tinker_rearm_lua.ItemException = {
 	["item_sphere"] = true,
 
 	["item_aeon_pendant"] = true,
+	["item_aeon_amulet"] = true,
 	["item_black_king_bar_2"] = true,
 	["item_sphere_2"] = true,
 	["item_insight_armor"] = true,
 	["item_hand_of_group"] = true,
 	["item_swift_glove"] = true,
-	["item_meteor_hammer_2"] = true,
+	["item_starforge"] = true,
 	["item_saint_orb"] = true,
 	["item_candy_candy"] = true,
 	["item_switchable_crit_blade"] = true,
@@ -138,6 +141,7 @@ tinker_rearm_lua.ItemException = {
 	["item_time_gem"] = true,     -- 时间宝石
 	["item_beast_shield"] = true, -- 兽化盾
 	["item_withered_spring"] = true, -- 生命之心
+	["item_hawkeye_turret"] = true, -- 鹰眼炮台
 }
 
 --------------------------------------------------------------------------------

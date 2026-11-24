@@ -1,6 +1,8 @@
 import { Player } from '../../api/player';
 import { PlayerHelper } from '../helper/player-helper';
+import { GameEnd } from './game-end/game-end';
 import { ItemLotteryPool } from '../lottery/item/item-lottery-helper';
+import { teamKillGold } from '../filter/team-kill-gold';
 
 // 全局游戏状态 - 记录塔摧毁情况
 export class TowerPushStatus {
@@ -26,14 +28,22 @@ export class EventEntityKilled {
     if (!keys.entindex_killed) {
       return;
     }
-    if (!keys.entindex_attacker) {
-      return;
-    }
     const killedUnit = EntIndexToHScript(keys.entindex_killed) as CDOTA_BaseNPC | undefined;
-    const attacker = EntIndexToHScript(keys.entindex_attacker) as CDOTA_BaseNPC | undefined;
     if (!killedUnit) {
       return;
     }
+    if (killedUnit.IsRealHero()) {
+      this.onHeroKilled(killedUnit as CDOTA_BaseNPC_Hero, keys.entindex_attacker);
+      return;
+    }
+    if (killedUnit.GetClassname() === 'npc_dota_fort') {
+      GameEnd.OnFortKilled(killedUnit);
+      return;
+    }
+    if (!keys.entindex_attacker) {
+      return;
+    }
+    const attacker = EntIndexToHScript(keys.entindex_attacker) as CDOTA_BaseNPC | undefined;
     //print(`[EventEntityKilled] Unit killed: ${killedUnit.GetUnitName()}`);
     // 检查是否为防御塔
     if (killedUnit.IsTower()) {
@@ -42,10 +52,6 @@ export class EventEntityKilled {
     // 检查是否为兵营
     else if (this.isBarrack(killedUnit)) {
       this.onBarrackKilled(killedUnit);
-    }
-    // 检查是否为英雄
-    else if (killedUnit.IsRealHero() && !killedUnit.IsReincarnating()) {
-      this.onHeroKilled(killedUnit as CDOTA_BaseNPC_Hero, attacker);
     }
     // 检查是否为小兵
     else if (killedUnit.IsCreep()) {
@@ -168,8 +174,63 @@ export class EventEntityKilled {
   // 英雄击杀
   //--------------------------------------------------------------------------------------------------------
 
-  private onHeroKilled(hero: CDOTA_BaseNPC_Hero, _attacker: CDOTA_BaseNPC | undefined): void {
-    this.setRespawnTime(hero);
+  private readonly respawnCheckDelay = 1;
+
+  private onHeroKilled(hero: CDOTA_BaseNPC_Hero, attackerIndex?: EntityIndex): void {
+    const reincarnating = hero.IsReincarnating();
+    if (!reincarnating) {
+      this.setRespawnTime(hero);
+      this.rewardTeamKillGold(hero, attackerIndex);
+    }
+
+    // 线上偶发复活时间异常巨大且来源未明，死后复查兜底并留日志追查
+    Timers.CreateTimer(this.respawnCheckDelay, () => {
+      if (hero.IsNull() || hero.IsAlive()) {
+        return;
+      }
+      const remaining = hero.GetTimeUntilRespawn();
+      // 写成取反比较以同时拦住 NaN
+      if (!(remaining <= this.respawnTimeMax)) {
+        this.setRespawnTime(hero);
+        print(
+          `[EventEntityKilled] respawn time fallback: ${hero.GetUnitName()} reincarnating=${reincarnating} ${remaining} -> ${hero.GetTimeUntilRespawn()}`,
+        );
+      }
+    });
+  }
+
+  /** 天辉玩家击杀夜魇英雄时，给其余天辉玩家发保底金币。 */
+  private rewardTeamKillGold(hero: CDOTA_BaseNPC_Hero, attackerIndex?: EntityIndex): void {
+    if (!attackerIndex) {
+      return;
+    }
+    const attacker = EntIndexToHScript(attackerIndex) as CDOTA_BaseNPC | undefined;
+    const killer = attacker?.GetPlayerOwner();
+    if (!killer) {
+      return;
+    }
+    const killerId = killer.GetPlayerID();
+    if (
+      !PlayerHelper.IsGoodTeamPlayer(killerId) ||
+      PlayerResource.GetTeam(hero.GetPlayerID()) !== DotaTeam.BADGUYS
+    ) {
+      return;
+    }
+
+    const baseGold = teamKillGold(hero.GetLevel(), PlayerHelper.IsMultiplayerGame());
+    PlayerHelper.ForEachPlayer((playerId) => {
+      if (playerId === killerId || !PlayerHelper.IsGoodTeamPlayer(playerId)) {
+        return;
+      }
+      const teammate = PlayerResource.GetSelectedHeroEntity(playerId);
+      if (!teammate) {
+        return;
+      }
+      // 到账值已算完所有倍率，飘字用同一个数；UNSPECIFIED 不再经过金币过滤器
+      const gold = GameRules.GoldXPFilter.getHeroKillGold(playerId, baseGold);
+      teammate.ModifyGold(gold, true, ModifyGoldReason.UNSPECIFIED);
+      SendOverheadEventMessage(undefined, OverheadAlert.GOLD, teammate, gold, undefined);
+    });
   }
 
   private readonly dotaRespawnTime = [

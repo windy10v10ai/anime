@@ -161,12 +161,6 @@ export class AbilityLottery {
           abilityLotteryResults[0] = specifiedAbility;
         }
       }
-      if (IsInToolsMode()) {
-        // 开发测试用固定技能
-        if (abilityType === AbilityItemTypes.Active) {
-          abilityLotteryResults[0] = { name: 'pudge_meat_hook_lua', level: 2 };
-        }
-      }
     }
 
     CustomNetTables.SetTableValue(abilityTable, steamAccountID, abilityLotteryResults);
@@ -221,6 +215,14 @@ export class AbilityLottery {
     if (!hero) {
       return;
     }
+    const picked = AbilityLotteryHelper.resolveConflictingPick(
+      hero,
+      { name: event.name, level: event.level },
+      abilityType === AbilityItemTypes.Active ? abilityTiersActive : abilityTiersPassive,
+      this.getExcludedAbilityNames(abilityType as AbilityItemType, steamAccountID),
+    );
+    event.name = picked.name;
+    event.level = picked.level;
     hero.AddAbility(event.name);
 
     // 记录选择的技能

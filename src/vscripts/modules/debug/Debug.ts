@@ -1,11 +1,14 @@
 import { registerAbilitySpecs } from '../../ai/ability/specs';
-import { GA4 } from '../../api/analytics/ga4/ga4';
+import { ApiClient, HttpMethod } from '../../api/api-client';
 import { reloadable } from '../../utils/tstl-utils';
+import { EventPlayerDisconnect } from '../event/event-player-disconnect';
 import { GameEnd } from '../event/game-end/game-end';
 import { ModifierHelper } from '../helper/modifier-helper';
 import { PlayerHelper } from '../helper/player-helper';
 import { CMD } from './debug-cmd';
 import { handleGlobalItemDebugCommand } from './debug-item-helper';
+import { handleTestDebugCommand } from './debug-test-cmd';
+import { handlePerfDebugCommand } from './perf-cmd';
 
 @reloadable
 export class Debug {
@@ -15,7 +18,7 @@ export class Debug {
     136407523, // windy
     916506173, // windy
     385130282, // mimihua
-    116431158,
+    353885092, // 76
   ];
 
   constructor() {
@@ -102,9 +105,6 @@ export class Debug {
       this.log(`Time: ${Time()}`);
       this.log(`GameTime: ${GameRules.GetGameTime()}`);
       this.log(`GetDOTATime: ${GameRules.GetDOTATime(false, true)}`);
-      GA4.FetchCurrentTime((timestamp) => {
-        this.log(`FetchCurrentTime: ${timestamp}`);
-      });
     }
 
     if (cmd === CMD.G) {
@@ -152,11 +152,14 @@ export class Debug {
     }
 
     if (cmd === CMD.BOT_THINKING_ENABLE) {
-      GameRules.GetGameModeEntity().SetBotThinkingEnabled(true);
+      GameRules.AI.BotTeam?.SetNativeThinking(true);
     }
     if (cmd === CMD.BOT_THINKING_DISABLE) {
-      GameRules.GetGameModeEntity().SetBotThinkingEnabled(false);
+      GameRules.AI.BotTeam?.SetNativeThinking(false);
     }
+
+    handlePerfDebugCommand(cmd, args);
+    handleTestDebugCommand(cmd, args, PlayerResource.GetSelectedHeroEntity(keys.playerid));
 
     // ---- item 替换装备命令 ----
     handleGlobalItemDebugCommand(cmd);
@@ -251,7 +254,41 @@ export class Debug {
 
     if (cmd === CMD.END) {
       GameEnd.gameEndTriggered = false;
-      GameEnd.OnGameEnd(2);
+      GameEnd.settled = false;
+      GameEnd.OnGameEnd(args[0] === '3' ? DotaTeam.BADGUYS : DotaTeam.GOODGUYS);
+    }
+
+    if (cmd === CMD.RELAY_SETTLE) {
+      GameEnd.debugSettleCopies(Number(args[0] ?? 10));
+    }
+
+    if (cmd === CMD.UI_STATE) {
+      CustomNetTables.SetTableValue('loading_status', 'loading_status', {
+        status: Number(args[0] ?? 2),
+        snapshotDate: '2026-11-20',
+        dedicated: Number(args[1] ?? 0),
+      });
+      CustomNetTables.SetTableValue('ending_status', 'ending_status', {
+        status: Number(args[2] ?? 2),
+      });
+    }
+
+    if (cmd === CMD.RELAY_READ) {
+      const count = Number(args[0] ?? 10);
+      let done = 0;
+      for (let i = 0; i < count; i++) {
+        ApiClient.send(
+          { method: HttpMethod.GET, path: ApiClient.PROBE_PATH, successFunc: () => undefined },
+          (result) => {
+            done++;
+            print(`[RelayRead] ${done}/${count} status=${result.StatusCode}`);
+          },
+        );
+      }
+    }
+
+    if (cmd === CMD.DISCONNECT) {
+      EventPlayerDisconnect.Simulate(keys.playerid, Number(args[0] ?? 0));
     }
 
     if (cmd === CMD.TREASURE) {
@@ -341,13 +378,6 @@ export class Debug {
     }
 
     // ---- 当前英雄相关 ----
-    if (cmd === CMD.REPLACE_HERO) {
-      const hero = PlayerResource.GetSelectedHeroEntity(keys.playerid);
-      if (!hero) return;
-      const heroName = args[0];
-      PlayerResource.ReplaceHeroWith(hero.GetPlayerID(), heroName, 0, 0);
-    }
-
     if (cmd === CMD.RESET_ABILITY) {
       const hero = PlayerResource.GetSelectedHeroEntity(keys.playerid);
       if (!hero) return;

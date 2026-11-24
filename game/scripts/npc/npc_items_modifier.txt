@@ -12,14 +12,16 @@
 		"ItemSellable"					"0"
 		"AbilityValues"
 		{
-			"item_jump_jump_jump_bonus_all_stats"		"35"
-
 			"item_abyssal_blade_v2_bonus_strength"			"20"
 
 			"item_heavens_halberd_v2_bonus_strength"			"50"
 
 			"item_magic_scepter_bonus_intelligence"			"60"
 			"item_hallowed_scepter_bonus_intelligence"			"120"
+			"item_magic_crit_blade_bonus_intelligence"			"180"
+			"item_magic_scepter_active_boost"			"50"
+			"item_hallowed_scepter_active_boost"			"100"
+			"item_magic_crit_blade_mres_reduction"			"-25"
 
 			"item_blue_fantasy_agi"			"50"
 			"item_blue_fantasy_int"			"25"
@@ -30,45 +32,24 @@
 			"item_necronomicon_staff_bonus_strength"		"15"
 			"item_necronomicon_staff_bonus_agility"			"15"
 
-			"item_orb_of_the_brine_bonus_all_stats"		"20"
-
 			"item_six_paths_reincarnation_gun_bonus_damage"             "300"
 			"item_six_paths_reincarnation_gun_attack_speed"             "150"
 			"item_six_paths_reincarnation_gun_bonus_magic_resistance"   "20"
 
 			"item_withered_spring_bonus_armor_active"	"20"
 			"item_withered_spring_bonus_regen_active"	"300"
+
+			"item_undying_heart_buff_hp_regen"	"200"
+			"item_undying_heart_buff_hp_regen_pct"	"2"
+
+			"item_aeon_amulet_guard_mana_regen"	"500"
+			"item_aeon_amulet_guard_mana_regen_pct"	"5"
+			"item_aeon_amulet_guard_damage_reduction"	"-50"
+			"item_aeon_amulet_guard_attack_speed"	"100"
+			"item_aeon_amulet_guard_move_speed"	"100"
 		}
 		"Modifiers"
 		{
-			"modifier_item_jump_jump_jump_stats"
-			{
-				"Passive"				"1"
-				"IsHidden"				"1"
-				"RemoveOnDeath"			"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%item_jump_jump_jump_bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%item_jump_jump_jump_bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%item_jump_jump_jump_bonus_all_stats"
-				}
-			}
-			"modifier_item_undying_heart_stats"
-			{
-				"Passive"				"1"
-				"IsHidden"				"1"
-				"RemoveOnDeath"			"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"100"
-					"MODIFIER_PROPERTY_HEALTH_BONUS"			"1200"
-					"MODIFIER_PROPERTY_EVASION_CONSTANT"		"20"
-				}
-			}
 			"modifier_item_abyssal_blade_v2_stats"
 			{
 				"Passive"				"1"
@@ -118,6 +99,59 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%item_hallowed_scepter_bonus_intelligence"
 				}
 			}
+			"modifier_item_magic_scepter_active"
+			{
+				"IsBuff"				"1"
+				"IsPurgable"			"0"
+				"TextureName"			"item_magic_scepter"
+				"EffectName"			"particles/items4_fx/arcane_scepter.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%item_magic_scepter_active_boost"
+				}
+			}
+			"modifier_item_hallowed_scepter_active"
+			{
+				"IsBuff"				"1"
+				"IsPurgable"			"0"
+				"TextureName"			"item_hallowed_scepter"
+				"EffectName"			"particles/items4_fx/arcane_scepter.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%item_hallowed_scepter_active_boost"
+				}
+			}
+			"modifier_item_magic_crit_blade_stats"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%item_magic_crit_blade_bonus_intelligence"
+				}
+			}
+			// 只作标记，翻倍的智力法强由魔龙狂舞被动按它是否存在计算
+			"modifier_item_magic_crit_blade_active"
+			{
+				"IsBuff"				"1"
+				"IsPurgable"			"1"
+				"TextureName"			"molongkuangwu"
+			}
+			"modifier_item_magic_crit_blade_mres_debuff"
+			{
+				"IsDebuff"			"1"
+				"IsPurgable"			"1"
+				"TextureName"			"molongkuangwu"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%item_magic_crit_blade_mres_reduction"
+				}
+			}
 			"modifier_item_blue_fantasy_stats"
 			{
 				"Passive"				"1"
@@ -163,20 +197,6 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%item_necronomicon_staff_bonus_strength"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%item_necronomicon_staff_bonus_agility"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%item_necronomicon_staff_bonus_intellect"
-				}
-			}
-			"modifier_item_orb_of_the_brine_stats"
-			{
-				"Passive"				"1"
-				"IsHidden"				"1"
-				"RemoveOnDeath"			"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%item_orb_of_the_brine_bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%item_orb_of_the_brine_bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%item_orb_of_the_brine_bonus_all_stats"
 				}
 			}
 			"modifier_item_hand_of_group_stats"
@@ -279,8 +299,8 @@
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"30"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"30"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"30"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"140"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"20"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"120"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"10"
 					"MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE"		"50"
 					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"20"
 				}
@@ -350,23 +370,6 @@
 					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"20"
 				}
 			}
-			// 迅捷手套
-			"modifier_item_swift_glove_stats"
-			{
-				"Passive"				"1"
-				"IsHidden"				"1"
-				"RemoveOnDeath"			"0"
-
-				// 多个迅捷手套可叠加
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"200"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"240"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"400"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"60"
-				}
-			}
 			// 时间宝石
 			"modifier_item_time_gem_stats"
 			{
@@ -423,21 +426,17 @@
 					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE" "60"
 				}
 			}
-			// 枯木逢春
-			"modifier_item_withered_spring_stats"
+			// 不朽之心 主动 buff，持续时间由脚本传入
+			"modifier_item_undying_heart_buff"
 			{
-				"Passive"				"1"
-				"IsHidden"				"1"
-				"RemoveOnDeath"			"0"
-
-				// 多个枯木逢春可叠加
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"IsHidden"				"0"
+				"IsBuff"				"1"
+				"IsPurgable"			"1"
+				"TextureName"			"item_undying_heart"
 				"Properties"
 				{
-					// 生命与魔法由复用的 modifier_item_aeon_disk 提供，此处再写一遍会双倍
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"100"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"20"
-					"MODIFIER_PROPERTY_EVASION_CONSTANT"		"20"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%item_undying_heart_buff_hp_regen"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"		"%item_undying_heart_buff_hp_regen_pct"
 				}
 			}
 			// 枯木逢春 主动 buff，持续时间由脚本传入
@@ -451,6 +450,25 @@
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%item_withered_spring_bonus_armor_active"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%item_withered_spring_bonus_regen_active"
+				}
+			}
+			// 永恒护符 永恒守护，持续时间由脚本传入；生命回复、减速抗性与状态抗性由脚本另挂 modifier
+			"modifier_item_aeon_amulet_guard"
+			{
+				"IsHidden"				"0"
+				"IsBuff"				"1"
+				"IsPurgable"			"0"
+				"TextureName"			"item_aeon_amulet"
+				// 炎阳纹章友方特效里只取头顶盾牌：外层特效的环挂在控制点 1，KV 设不了
+				"EffectName"			"particles/items3_fx/star_emblem_friend_shield.vpcf"
+				"EffectAttachType"		"follow_overhead"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%item_aeon_amulet_guard_mana_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"	"%item_aeon_amulet_guard_mana_regen_pct"
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%item_aeon_amulet_guard_damage_reduction"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%item_aeon_amulet_guard_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%item_aeon_amulet_guard_move_speed"
 				}
 			}
 			// 德古拉面罩
@@ -1495,6 +1513,362 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"120"
 				}
 			}
+			// 技能增强
+			"modifier_player_property_spell_amplify_percentage_level_1"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"5"
+				}
+			}
+			"modifier_player_property_spell_amplify_percentage_level_2"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"10"
+				}
+			}
+			"modifier_player_property_spell_amplify_percentage_level_3"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"15"
+				}
+			}
+			"modifier_player_property_spell_amplify_percentage_level_4"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"20"
+				}
+			}
+			"modifier_player_property_spell_amplify_percentage_level_5"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"25"
+				}
+			}
+			"modifier_player_property_spell_amplify_percentage_level_6"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"30"
+				}
+			}
+			"modifier_player_property_spell_amplify_percentage_level_7"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"35"
+				}
+			}
+			"modifier_player_property_spell_amplify_percentage_level_8"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"40"
+				}
+			}
+			// 受到伤害
+			"modifier_player_property_incoming_damage_percentage_level_1"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"-4"
+				}
+			}
+			"modifier_player_property_incoming_damage_percentage_level_2"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"-8"
+				}
+			}
+			"modifier_player_property_incoming_damage_percentage_level_3"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"-12"
+				}
+			}
+			"modifier_player_property_incoming_damage_percentage_level_4"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"-16"
+				}
+			}
+			"modifier_player_property_incoming_damage_percentage_level_5"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"-20"
+				}
+			}
+			"modifier_player_property_incoming_damage_percentage_level_6"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"-24"
+				}
+			}
+			"modifier_player_property_incoming_damage_percentage_level_7"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"-28"
+				}
+			}
+			"modifier_player_property_incoming_damage_percentage_level_8"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"-32"
+				}
+			}
+			// 生命恢复
+			"modifier_player_property_health_regen_percentage_level_1"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"0.3"
+				}
+			}
+			"modifier_player_property_health_regen_percentage_level_2"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"0.6"
+				}
+			}
+			"modifier_player_property_health_regen_percentage_level_3"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"0.9"
+				}
+			}
+			"modifier_player_property_health_regen_percentage_level_4"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"1.2"
+				}
+			}
+			"modifier_player_property_health_regen_percentage_level_5"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"1.5"
+				}
+			}
+			"modifier_player_property_health_regen_percentage_level_6"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"1.8"
+				}
+			}
+			"modifier_player_property_health_regen_percentage_level_7"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"2.1"
+				}
+			}
+			"modifier_player_property_health_regen_percentage_level_8"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"	"2.4"
+				}
+			}
+			// 魔法恢复
+			"modifier_player_property_mana_regen_total_percentage_level_1"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"	"0.3"
+				}
+			}
+			"modifier_player_property_mana_regen_total_percentage_level_2"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"	"0.6"
+				}
+			}
+			"modifier_player_property_mana_regen_total_percentage_level_3"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"	"0.9"
+				}
+			}
+			"modifier_player_property_mana_regen_total_percentage_level_4"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"	"1.2"
+				}
+			}
+			"modifier_player_property_mana_regen_total_percentage_level_5"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"	"1.5"
+				}
+			}
+			"modifier_player_property_mana_regen_total_percentage_level_6"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"	"1.8"
+				}
+			}
+			"modifier_player_property_mana_regen_total_percentage_level_7"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"	"2.1"
+				}
+			}
+			"modifier_player_property_mana_regen_total_percentage_level_8"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"	"2.4"
+				}
+			}
 			// 必中
 			"modifier_player_property_cannot_miss"
 			{
@@ -1609,19 +1983,6 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"300"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"10"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"5"
-				}
-			}
-			// 近战BUFF
-			"modifier_global_melee_resistance"
-			{
-				"Passive"				"1"
-				"IsHidden"				"0"
-				"RemoveOnDeath"			"0"
-				"TextureName"			"bulldozer"
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"20"
 				}
 			}
 		}

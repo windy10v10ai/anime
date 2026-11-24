@@ -5,6 +5,7 @@
 	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/custom_game/game_mode.js"/>
+		<include src="file://{resources}/scripts/custom_game/api_html_proxy.js"/>
 	</scripts>
 	<Panel class="AddonLoadingRoot">
 		<Panel id="CustomBg" >
@@ -136,18 +137,14 @@
 						<DropDown id="fixed_ability_dropdown" class="GameOptionsDropdown" oninputsubmit="SendGameOptionsToServer()">
 							<Label text="#fixed_ability_none" id="none"/>
 							<!-- 主动技能 -->
-							<Label text="#DOTA_Tooltip_ability_tidehunter_ravage" id="tidehunter_ravage" />
-							<Label text="#DOTA_Tooltip_ability_shadow_shaman_mass_serpent_ward" id="shadow_shaman_mass_serpent_ward" />
-							<Label text="#DOTA_Tooltip_ability_brewmaster_primal_split_lua" id="brewmaster_primal_split_lua" />
-							<Label text="#DOTA_Tooltip_ability_clinkz_burning_barrage2" id="clinkz_burning_barrage2" />
+							<Label text="#DOTA_Tooltip_ability_abaddon_borrowed_time" id="abaddon_borrowed_time" />
 							<Label text="#DOTA_Tooltip_ability_slark_shadow_dance" id="slark_shadow_dance" />
 							<Label text="#DOTA_Tooltip_ability_life_stealer_rage" id="life_stealer_rage" />
-							<Label text="#DOTA_Tooltip_ability_faceless_void_chronosphere" id="faceless_void_chronosphere" />
+							<Label text="#DOTA_Tooltip_ability_tidehunter_kraken_shell" id="tidehunter_kraken_shell" />
 							<!-- 被动技能 -->
 							<Label text="#DOTA_Tooltip_ability_spectre_dispersion2" id="spectre_dispersion2" />
 							<Label text="#fixed_ability_ability_charge_damage_name" id="ability_charge_damage" />
 							<Label text="#DOTA_Tooltip_ability_pudge_innate_graft_flesh" id="pudge_innate_graft_flesh" />
-							<Label text="#DOTA_Tooltip_ability_death_prophet_witchcraft" id="death_prophet_witchcraft" />
 							<Label text="#DOTA_Tooltip_ability_rubick_arcane_supremacy" id="rubick_arcane_supremacy" />
 							<Label text="#DOTA_Tooltip_ability_primal_beast_colossal2" id="primal_beast_colossal2" />
 							<Label text="#DOTA_Tooltip_ability_tiny_grow" id="tiny_grow" />
@@ -156,6 +153,8 @@
 							<Label text="#fixed_ability_ability_trigger_on_spell_reflect_name" id="ability_trigger_on_spell_reflect" />
 							<Label text="#DOTA_Tooltip_ability_slardar_bash" id="slardar_bash" />
 							<Label text="#DOTA_Tooltip_ability_phantom_assassin_coup_de_grace" id="phantom_assassin_coup_de_grace" />
+							<Label text="#DOTA_Tooltip_ability_muerta_gunslinger" id="muerta_gunslinger" />
+							<Label text="#DOTA_Tooltip_ability_leshrac_defilement2" id="leshrac_defilement2" />
 						</DropDown>
 					</Panel>
 					<!-- 是否强制随机英雄 -->
@@ -244,21 +243,19 @@
 					<Label id="LoadingFaqQuestion" />
 					<Label id="LoadingFaqAnswer" />
 				</Panel>
-				<!-- 控制台启动说明：游廊直接开局只有离线数据，加载完成前固定展示，不等判定离线 -->
-				<Panel id="ConsoleLaunchPanel">
-					<Label id="ConsoleLaunchTitle" text="#console_launch_title" />
-					<Label id="ConsoleLaunchDesc" text="#console_launch_desc" />
-					<Label class="ConsoleLaunchStep" text="#console_launch_step_1" />
-					<Label class="ConsoleLaunchStep" text="#console_launch_step_2" />
-					<Label class="ConsoleLaunchStep" text="#console_launch_step_3" />
-					<Label class="ConsoleLaunchStep" text="#console_launch_step_4" />
-					<TextEntry id="ConsoleLaunchCommand" ontextentrychange="RestoreConsoleCommand()" />
-					<Panel id="ConsoleLaunchActionRow">
-						<Button id="ConsoleLaunchSelectButton" class="ButtonBevel" onactivate="SelectConsoleCommand()">
-							<Label id="ConsoleLaunchSelectLabel" text="#console_launch_select_button" />
-						</Button>
-						<Label id="ConsoleLaunchCopyHint" text="#console_launch_copy_hint" />
+				<!-- 启动器推广：解决后期卡顿，始终展示，与加载状态无关 -->
+				<Panel id="LauncherPromoPanel">
+					<Label id="LauncherPromoTitle" text="#launcher_promo_title" />
+					<Label id="LauncherPromoDesc" text="#launcher_promo_desc" />
+					<Panel id="LauncherPromoMeta">
+						<Panel id="LauncherPromoTag">
+							<Label id="LauncherPromoTagLabel" text="#launcher_promo_multiplayer" />
+						</Panel>
+						<Label id="LauncherPromoPlatforms" text="#launcher_promo_platforms" />
 					</Panel>
+					<Button id="LauncherPromoButton" class="ButtonBevel" onactivate="OpenWebsiteLaunch()">
+						<Label id="LauncherPromoButtonLabel" text="#launcher_download_button" />
+					</Button>
 				</Panel>
 			</Panel>
 		</Panel>

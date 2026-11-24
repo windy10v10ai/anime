@@ -83,6 +83,11 @@ export class PlayerHelper {
     return count;
   }
 
+  /** 真人不少于 2 人的多人局，Tools 模式放行以便单机验证。 */
+  static IsMultiplayerGame(): boolean {
+    return IsInToolsMode() || this.GetHumamPlayerCount() >= 2;
+  }
+
   static GetDamageTaken(playerId: PlayerID): number {
     let damageTaken = 0;
     for (let victimID = 0; victimID < DOTA_MAX_TEAM_PLAYERS; victimID++) {
@@ -109,7 +114,15 @@ export class PlayerHelper {
     return Math.max(0, PlayerResource.GetTotalEarnedGold(playerId) - transferredBackTotal);
   }
 
+  private static maxStuns = new Map<PlayerID, number>();
+
+  // 引擎返回的控制时间偶尔会回落，取本局读到过的最大值，保证展示给玩家的数值不倒退
   static GetStuns(playerId: PlayerID): number {
-    return normalizeControlTime(PlayerResource.GetStuns(playerId));
+    const stuns = Math.max(
+      this.maxStuns.get(playerId) ?? 0,
+      normalizeControlTime(PlayerResource.GetStuns(playerId)),
+    );
+    this.maxStuns.set(playerId, stuns);
+    return stuns;
   }
 }

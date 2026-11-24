@@ -35,6 +35,11 @@ export function CastAbilityOnTargetByBehavior(
   // const abilityName = ability.GetName();
   const behavior = GetAbilityBehaviorBits(ability);
 
+  // spec 指定了释放点时点地优先，兼顾既能指向单位又能点地的技能
+  if (castPosition && HasAbilityBehavior(behavior, AbilityBehavior.POINT)) {
+    hero.CastAbilityOnPosition(castPosition, ability, playerId);
+    return true;
+  }
   if (HasAbilityBehavior(behavior, AbilityBehavior.UNIT_TARGET)) {
     // print(`[AI] CastByBehavior ${abilityName} on target`);
     hero.CastAbilityOnTarget(target, ability, playerId);
@@ -67,7 +72,7 @@ export function CastAbilityOnTargetByBehavior(
  *  - toggleOn / toggleOff：切换 TOGGLE 技能开关（如分裂箭、严寒烧灼有 A 杖时）
  *  - autoCastOn：开启自动施法（毒性攻击、霜冻之箭等攻击型法球）
  *
- * 仅当目标状态与当前状态不一致时才切换并返回 true（命中本 tick），避免反复点击。
+ * 仅当目标状态与当前状态不一致时才切换；toggle 切换返回 true（命中本 tick），自动施法切换不占用本 tick。
  * 由 dispatcher 在命中对应 action 条件时调用。
  */
 export function ApplyAbilityAction(
@@ -84,10 +89,11 @@ export function ApplyAbilityAction(
     ability.ToggleAbility();
     return true;
   }
+  // 引擎自带的 bot 逻辑会把部分英雄的自动施法关回去，占用本 tick 会让后续出装等动作永远轮不到
   if (action.autoCastOn && !ability.GetAutoCastState()) {
     // print(`[AI] autoCastOn ${ability.GetName()}`);
     ability.ToggleAutoCast();
-    return true;
+    return false;
   }
   return false;
 }

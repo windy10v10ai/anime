@@ -15,6 +15,7 @@
 		"MaxLevel"						"5"
 		"Innate"						"0"
 		"IsOnCastBar"					"1"
+		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
@@ -57,12 +58,13 @@
 		"IsOnCastBar"					"1"
 		"AbilityTextureName"			"twin_gate_portal_warp"
 		"MaxLevel"						"1"
+		"IsBreakable"					"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"aoe_per_int"				"0.4"
+			"aoe_per_int"				"0.4"			// 0.6
 		}
 	}
 
@@ -166,13 +168,13 @@
 		"Innate"						"0"
 		"AbilityTextureName"			"clinkz_tar_bomb"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"MaxLevel"						"5"
+		"MaxLevel"						"1"
 
 		"AbilityValues"
 		{
 			"total_ticks"			"2"
 			"tick_rate"				"1"
-			"tick_attack_damage_pct"		"16 20 24 28 32"	// 20
+			"tick_attack_damage_pct"		"25"	// 20
 		}
 	}
 	//奇心 拉比克 先天
@@ -269,13 +271,13 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Innate"						"0"
 		"AbilityTextureName"			"jakiro_dual_breath"
-		"MaxLevel"						"5"
+		"MaxLevel"						"1"
 
 		"AbilityValues"
 		{
 			"attack_damage_reduction"
 			{
-				"value"							"50 40 30 20 10"	// 51 + hero_levelup -1.0/lv，lv50 ≈ 2；第3档≈原版51
+				"value"							"25"	// 50 + hero_levelup -1.0/lv
 			}
 		}
 	}
@@ -361,6 +363,7 @@
 		"Innate"						"0"
 		"AbilityTextureName"			"silencer/bts_silencer_ability/silencer_global_silence"
 		"MaxLevel"						"1"
+		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
@@ -372,6 +375,44 @@
 			"permanent_int_steal_amount"		"1"
 			"silenced_bonus_int_steal_amount"	"1"
 			"damage_pct"					"20"			// 5 (+0.5/level)
+		}
+	}
+
+	// 变体精灵 潮涨潮落
+	"morphling_ebb_and_flow2"
+	{
+		"BaseClass"						"morphling_ebb_and_flow"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Innate"						"0"
+		"AbilityTextureName"			"morphling_ebb_and_flow"
+		"MaxLevel"						"1"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"swell_up_duration"				"1.5"
+			"swell_down_duration"			"1.0"
+			"swell_duration"
+			{
+				"value"						"5.2"
+				"hero_levelup"				"+0.3"
+			}
+			"max_swell_duration"
+			{
+				"value"						"2.7"
+				"hero_levelup"				"+0.3"
+			}
+			"model_scale"					"40"
+			"stats_pct"
+			{
+				"value"						"25"
+			}
+			"attack_range_per_agi"			"25"
+			"move_speed_per_agi"			"15"
+			"cast_range_per_str"			"25"
+			"slow_resist_per_str"			"25"
+			"model_scale_min"				"0"
+			"model_scale_max"				"20"
 		}
 	}
 
@@ -475,7 +516,7 @@
 		"AbilityCooldown"				"17"
 		"AbilityCastPoint"				"0.2"
 		"AbilityChannelTime"			"2.0"
-		"AbilityManaCost"				"80"
+		"AbilityManaCost"				"150"	// 75 x2
 
 		"AbilityValues"
 		{
@@ -569,7 +610,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"IsGrantedByShard"				"0"
 		"HasShardUpgrade"				"0"
 		"AbilityTextureName"			"alchemist_berserk_potion"
@@ -577,7 +618,7 @@
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"35"
-		"AbilityManaCost"				"100"
+		"AbilityManaCost"				"75"
 
 		"MaxLevel"						"1"
 
@@ -775,6 +816,11 @@
 	//极寒光环
 	"ancient_apparition_freezing_aura"
 	{
+		"precache"
+		{
+			"particle"				"particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_freezing_field_snow_arcana1.vpcf"
+		}
+
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"				    "abilities/ancient_apparition_freezing_aura"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -800,6 +846,11 @@
 	//冰霜法球
 	"ancient_apparition_frost_orb"
 	{
+		"precache"
+		{
+			"particle"				"particles/generic_gameplay/lasthit_coins.vpcf"
+		}
+
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/ancient_apparition_frost_orb"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -917,6 +968,48 @@
 			{
 				"value"		"0 5 10 15"
 			}
+		}
+	}
+
+	// 命运轮盘（大招池中的主动/被动混合技能）
+	"ability_fate_roulette"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "abilities/ability_fate_roulette"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"            "ability_fate_roulette"
+		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+		"IsBreakable"                   "0"
+
+		"MaxLevel"                      "4"
+		"RequiredLevel"                 "6"
+		"LevelsBetweenUpgrades"         "6"
+
+		"AbilityCastPoint"              "0.1"
+		"AbilityCooldown"               "30"
+		"AbilityManaCost"               "100 150 200 250"
+
+		"precache"
+		{
+			"particle"                      "particles/items4_fx/combo_breaker_buff.vpcf"
+			"particle"                      "particles/units/heroes/hero_invoker/invoker_ghost_walk_debuff_wex.vpcf"
+			"particle"                      "particles/items4_fx/nullifier_mute.vpcf"
+			"particle"                      "particles/status_fx/status_effect_nullifier.vpcf"
+			"particle"                      "particles/generic_gameplay/generic_break.vpcf"
+			"particle"                      "particles/units/heroes/heroes_underlord/abyssal_underlord_pitofmalice_stun.vpcf"
+			"particle"                      "particles/generic_gameplay/generic_stunned.vpcf"
+			"particle"                      "particles/units/heroes/hero_oracle/oracle_fortune_purge.vpcf"
+		}
+
+		"AbilityValues"
+		{
+			"attacks_before_proc"           "4"
+			"critical_damage"               "200 300 400 500"
+			"stun_duration"                 "0.6 0.7 0.8 0.9"
+			"effect_duration"               "2 2.25 2.5 2.75"
+			"active_duration"               "4 5 6 7"
+			"dispel_interval"               "0.2"
 		}
 	}
 }

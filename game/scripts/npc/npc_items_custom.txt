@@ -493,7 +493,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2000"
+		"ItemCost"						"2050"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -624,7 +624,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						""
+		"ItemCost"						"250"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -659,7 +659,7 @@
 
 				"bonus_mana"			"400"
 				"bonus_mana_regen"		"3"
-				"cast_range_bonus"			"250"
+				"cast_range_bonus"			"250"	// 200
 			}
 	}
 	//=================================================================================================================
@@ -722,10 +722,10 @@
 					"bonus_armor"			"20"
 					"mana_regen_aura"		"6"
 					"damage_aura"			"20"
-					"vampiric_aura"			"25"
+					"lifesteal_aura"		"25"
 					"aura_radius"			"900"
 					"aura_positive_armor"	"10"
-					"aura_attack_speed"		"60"
+					"aura_attack_speed"		"50"
 					"aura_negative_armor"	"-10"
 			}
 
@@ -741,6 +741,23 @@
 							{
 									"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%bonus_attack_speed"
 									"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"				"%bonus_armor"
+							}
+							// 吸血、攻击力、回蓝光环交给原版强袭祭品光环
+							"OnCreated"
+							{
+								"RunScript"
+								{
+									"ScriptFile"	"items/item_vladmir_2"
+									"Function"		"NativeAuraCreated"
+								}
+							}
+							"OnDestroy"
+							{
+								"RunScript"
+								{
+									"ScriptFile"	"items/item_vladmir_2"
+									"Function"		"NativeAuraDestroyed"
+								}
 							}
 					}
 					"modifier_item_vladmir_2_building_aura_emitter"  //We use two aura emitters because the lifesteal part only affects melee units.
@@ -787,20 +804,8 @@
 
 							"Properties"
 							{
-									"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"		"%damage_aura"
 									"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"				"%aura_positive_armor"
-									"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"					"%mana_regen_aura"
 									"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%aura_attack_speed"
-							}
-
-							"OnAttackLanded"
-							{
-								"RunScript"
-								{
-									"ScriptFile"	"items/item_vladmir_2"
-									"Function"		"VampiricAuraApply"
-									"attack_damage"	"%attack_damage"
-								}
 							}
 					}
 
@@ -879,7 +884,7 @@
 
 		"AbilityValues"
 		{
-				"bonus_all_stats"		"20"
+				"bonus_all_stats"		"20"	// 17
 				"bonus_health_regen"	"12"
 				"bonus_mana_regen"		"9"
 				"block_cooldown"		"7.0"
@@ -996,7 +1001,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4500"
+		"ItemCost"						"4400"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -1016,7 +1021,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_lua"
+		"BaseClass"						"item_datadriven"
 		"ID"							"10323"
 		"AbilityTextureName"			"item_undying_heart"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
@@ -1031,22 +1036,66 @@
 		"ItemAliases"					"hot;heart of tarrasque"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ScriptFile"					"items/item_undying_heart"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_strength"		"100"	// Tooltip, real value in modifier_item_undying_heart_stats
-				"bonus_health"			"1200"	// Tooltip, real value in modifier_item_undying_heart_stats
-				"health_regen_pct"		"2"
-				"bonus_evasion"			"20"	// Tooltip, real value in modifier_item_undying_heart_stats
-				"status_resistance"		"8"
-				"dur"					"5"
-				"active_hp_regen"		"1000"
-				"active_hp_regen_pct"	"4"
-				"buff_hp_regen"			"200"
-				"buff_hp_regen_pct"		"2"
+			// 力量与回复由原版 modifier_item_heart 按原版字段名读取
+			"bonus_strength"			"100"
+			"hp_regen"					"1"
+			"missing_health_regen"		"2"
+
+			// 生命不能用 bonus_health：原版 modifier_item_heart 也读这个字段，会多加一份
+			"bonus_health_passive"		"1200"
+			"bonus_evasion"				"20"
+
+			"dur"						"5"
+			"active_hp_regen"			"1000"
+			"active_hp_regen_pct"		"4"
+			"buff_hp_regen"				"200"
+			"buff_hp_regen_pct"			"2"
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_undying_heart"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"%bonus_health_passive"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"		"%bonus_evasion"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_undying_heart"
+						"Function"		"UndyingHeartOnCreated"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_undying_heart"
+						"Function"		"UndyingHeartOnDestroy"
+					}
+				}
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/item_undying_heart"
+				"Function"		"UndyingHeartOnSpellStart"
+			}
 		}
 	}
 
@@ -1064,7 +1113,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1000"
+		"ItemCost"						"800"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -1437,7 +1486,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_health"			"1000"
+				"bonus_health"			"900"
 				"bonus_armor"			"20"
 				"magical_resis"			"20"
 
@@ -1554,7 +1603,7 @@
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1900"
+		"ItemCost"						"1700"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -1686,7 +1735,7 @@
 		"ItemResult"					"item_monkey_king_bar_2"
 		"ItemRequirements"
 		{
-			"01"						"item_monkey_king_bar;item_javelin;item_javelin"
+			"01"						"item_monkey_king_bar;item_quarterstaff;item_quarterstaff"
 		}
 	}
 
@@ -1712,10 +1761,22 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_damage"			"60"
-				"bonus_attack_speed"	"50"
-				"bonus_chance"			"85"
-				"bonus_chance_damage"	"260"
+				"bonus_damage"					"60"	// 55
+				"bonus_attack_speed"			"50"
+				"bonus_chance"
+				{
+					"value"				"85"
+					"apply_effectiveness"	"1"
+				}
+				"bonus_chance_damage"
+				{
+					"value"				"260"
+				}
+
+				"bonus_chance_damage_illu"
+				{
+					"value"				"260"
+				}
 		}
 	}
 
@@ -1734,7 +1795,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3100"
+		"ItemCost"						"3200"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -1759,7 +1820,7 @@
 		"AbilityTextureName" 			"magic_scepter"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"ScriptFile"					"items/item_magic_scepter"
+		"ScriptFile"					"items/ts_items/item_magic_scepter"
 		"AbilitySharedCooldown"			"magic_scepter"
 
 		"AbilityCooldown"				"60.0"
@@ -1782,8 +1843,11 @@
 		{
 				"bonus_intelligence"		"60"	// tooltip, real value in item_magic_scepter_bonus_intelligence
 				"spell_amp_per_int"			"0.1"
-				"active_boost"				"50"
-				"active_boost_duration"		"4"
+				"active_boost"				"50"	// tooltip, real value in item_magic_scepter_active_boost
+				"active_duration"			"4"
+				// 慧光被动 modifier_item_kaya 按这两个键名取值
+				"spell_amp"					"18"
+				"mana_regen_multiplier"		"25"
 		}
 	}
 
@@ -1827,7 +1891,7 @@
 		"AbilityTextureName" 			"hallowed_scepter"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"ScriptFile"					"items/item_hallowed_scepter"
+		"ScriptFile"					"items/ts_items/item_magic_scepter"
 		"AbilitySharedCooldown"			"magic_scepter"
 
 		"AbilityCooldown"				"60.0"
@@ -1850,8 +1914,11 @@
 		{
 				"bonus_intelligence"		"120"	// Tooltip, real value in item_hallowed_scepter_bonus_intelligence
 				"spell_amp_per_int"			"0.2"
-				"active_boost"				"100"
-				"active_boost_duration"		"4"
+				"active_boost"				"100"	// tooltip, real value in item_hallowed_scepter_active_boost
+				"active_duration"			"4"
+				// 慧光被动 modifier_item_kaya 按这两个键名取值
+				"spell_amp"					"24"
+				"mana_regen_multiplier"		"30"
 		}
 	}
 
@@ -1895,12 +1962,32 @@
 				"bonus_all_stats"		"80"
 				// "bonus_health"			"600"
 				// "bonus_mana"			"600"
-				"cold_slow_melee"		"-60"
-				"cold_attack_slow_melee"	"-60"
-				"cold_slow_ranged"	"-75"
-				"cold_attack_slow_ranged"	"-60"
+				"cold_slow_melee"
+				{
+					"value"		"-60"	// -20
+					"apply_effectiveness"	"1"
+				}
+				"cold_attack_slow_melee"
+				{
+					"value"		"-60"
+					"apply_effectiveness"	"1"
+				}
+				"cold_slow_ranged"
+				{
+					"value"		"-75"	// -40
+					"apply_effectiveness"	"1"
+				}
+				"cold_attack_slow_ranged"
+				{
+					"value"		"-60"
+					"apply_effectiveness"	"1"
+				}
 				"cold_duration"	"4.0"
-				"restoration_reduction" "60"	// 40
+				"restoration_reduction"
+				{
+					"value"		"60"	// 40
+					"apply_effectiveness"	"1"
+				}
 				"heal_reduction"	"60"		// 40
 		}
 	}
@@ -2008,7 +2095,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"550"
+		"ItemCost"						"650"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -2045,7 +2132,7 @@
 				"bonus_agility"			"50"
 				"bonus_intellect"		"20"
 				"bonus_attack_speed"	"30"
-				"bonus_movement_speed"	"20"
+				"bonus_movement_speed"	"20"	// 6
 				"images_count"			"1"	// 2
 				"illusion_duration"			"24"	// 18
 				"images_do_damage_percent_melee"	"-0"
@@ -2097,7 +2184,7 @@
 				"bonus_agility"			"100"	//26
 				"bonus_intellect"		"60"	//10
 				"bonus_attack_speed"	"60"	//15
-				"bonus_movement_speed"	"30"	//10
+				"bonus_movement_speed"	"30"	// 6
 				"images_count"			"1"		//2
 				"illusion_duration"			"30"	// 18
 				"images_do_damage_percent_melee"	"+50"
@@ -2170,10 +2257,14 @@
 			"bonus_intellect"			"0"
 			"bonus_mana_regen"		"0"
 			"windwalk_duration"		"17.0"
-			"windwalk_movement_speed"	"30"
+			"windwalk_movement_speed"	"30"	// 18
 			"windwalk_fade_time"	"0.3"
 			"windwalk_bonus_damage"	"600"
-			"backstab_duration"		"6"
+			"backstab_duration"
+			{
+				"value"		"6"		// 5
+				"apply_effectiveness"	"1"
+			}
 			"max_movement_speed"	"200"
 			"visibility_radius"		"1025"
 		}
@@ -2293,7 +2384,11 @@
 		"AbilityValues"
 		{
 				"bonus_damage"			"120"
-				"corruption_armor"		"-12"
+				"corruption_armor"
+				{
+					"value"		"-12"
+					"apply_effectiveness"	"1"
+				}
 				"corruption_duration"	"7.0"
 				"bonus_damage_per_kill"	"3"
 				"bonus_damage_per_assist"	"2"
@@ -2351,7 +2446,11 @@
 		"AbilityValues"
 		{
 			"bonus_damage"			"260"
-			"corruption_armor"		"-25"
+			"corruption_armor"
+			{
+				"value"		"-25"
+				"apply_effectiveness"	"1"
+			}
 			"corruption_duration"	"7.0"
 			"bonus_damage_per_kill"	"5"
 			"bonus_damage_per_assist"	"2"
@@ -2373,7 +2472,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2100"
+		"ItemCost"						"2400"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -2458,9 +2557,9 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_lua"
+		"BaseClass"						"item_datadriven"
 		"ID"							"10358"
-		"ScriptFile"					"items/ts_items/item_sacred_six_vein"
+		"ScriptFile"					"items/item_sacred_six_vein"
 		"AbilityTextureName"			"item_sacred_six_vein"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
@@ -2475,21 +2574,54 @@
 		"AbilityValues"
 		{
 			// 由原生 modifier_item_trident 提供，它不属于散华/夜叉/慧光家族，多件之间正常叠加
-			"bonus_strength"				"180"
-			"bonus_agility"					"180"
-			"bonus_intellect"				"180"
-			"bonus_attack_speed"			"120"
+			"bonus_strength"				"160"
+			"bonus_agility"					"160"
+			"bonus_intellect"				"160"
+			"bonus_attack_speed"			"100"
 			"movement_speed_percent_bonus"	"40"
 			"status_resistance"				"46"
 			"hp_regen_amp"					"80"
-			"mana_regen_multiplier"			"120"
-			"spell_amp"						"60"
+			"mana_regen_multiplier"			"100"
+			"spell_amp"						"50"
 			"magic_damage_attack"			"100"
 
-			// 三叉戟没有这三项，由脚本侧读取
-			"slow_resistance"				"75"
+			// KV 属性表写不了蓝耗降低，由中立强化「神秘」的原生 modifier 读取
 			"manacost_reduction"			"40"
-			"cast_speed_pct"				"50"
+			"cast_pct_improvement"			"50"
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_sacred_six_vein"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_CASTTIME_PERCENTAGE"	"%cast_pct_improvement"
+				}
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_sacred_six_vein"
+						"Function"		"SixVeinOnCreated"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_sacred_six_vein"
+						"Function"		"SixVeinOnDestroy"
+					}
+				}
+			}
 		}
 	}
 
@@ -2508,7 +2640,7 @@
 		"FightRecapLevel"						"1"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4550"
+		"ItemCost"						"4650"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -2527,6 +2659,11 @@
 	//=================================================================================================================
 	"item_abyssal_blade_v2"
 	{
+		"precache"
+		{
+			"particle"				"particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_v2_omni_slash_tgt.vpcf"
+		}
+
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10360"
@@ -2591,7 +2728,7 @@
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"								"3200"
+		"ItemCost"								"4200"
 		"ItemShopTags"							""
 
 
@@ -2601,7 +2738,7 @@
 		"ItemResult"							"item_heavens_halberd_v2"
 		"ItemRequirements"
 		{
-			"01"								"item_heavens_halberd_2"
+			"01"								"item_heavens_halberd"
 		}
 	}
 
@@ -2625,7 +2762,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"10100"
+		"ItemCost"						"6600"
 		"ItemShopTags"					"armor;boost_armor"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"jinkela;heaven's halberd;heaven's lament;heavens halberd;heavens lament"
@@ -2688,6 +2825,11 @@
 	//=================================================================================================================
 	"item_adi_king"
 	{
+		"precache"
+		{
+			"particle"				"particles/econ/events/ti10/phase_boots_ti10.vpcf"
+		}
+
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"									"10364"
@@ -2763,6 +2905,11 @@
 	//=================================================================================================================
 	"item_adi_king_plus"
 	{
+		"precache"
+		{
+			"particle"				"particles/econ/events/ti10/phase_boots_ti10.vpcf"
+		}
+
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"									"10366"
@@ -2774,7 +2921,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"						"12"
+		"AbilityCooldown"						"15"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -2796,7 +2943,7 @@
 				"rate"					"50"
 				"bonus_evasion"		    "20"
 				// actual values
-				"active_sp"				"50"
+				"active_sp"				"40"
 				"active_evasion"		"20"
 				"dur"					"3"
 
@@ -2818,7 +2965,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4250"
+		"ItemCost"						"4150"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -2849,7 +2996,7 @@
 		"AbilitySharedCooldown"			"force"
 
 		"AbilityManaCost"				"250"
-		"ItemCost"						"4450"
+		"ItemCost"						"9710"
 		"ItemShopTags"					"int;damage;attack_speed;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"fs;force staff"
@@ -2974,7 +3121,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2100"
+		"ItemCost"						"2000"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3009,7 +3156,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"11000"
+		"ItemCost"						"10000"
 		"ItemShopTags"					"damage"
 		"ItemQuality"					"arcane"
 		"ItemAliases"					"DMD;daedalus;greater crit;"
@@ -3159,7 +3306,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2550"
+		"ItemCost"						"3000"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3650,7 +3797,7 @@
 		"ItemResult"					"item_shotgun"
 		"ItemRequirements"
 		{
-			"01"						"item_mithril_hammer;item_blitz_knuckles;item_javelin"
+			"01"						"item_mithril_hammer;item_blitz_knuckles;item_quarterstaff"
 		}
 	}
 	//=================================================================================================================
@@ -3774,59 +3921,59 @@
 	//=================================================================================================================
 	// 星落
 	//=================================================================================================================
-	"item_recipe_meteor_hammer_2"
-	{
-		"BaseClass"						"item_recipe_meteor_hammer"
-		"ItemCost"						"350"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_meteor_hammer_2"
-		"ItemRequirements"
-		{
-			"01"						"item_meteor_hammer;item_ultimate_orb"
-		}
-	}
-	"item_meteor_hammer_2"
-	{
-		"BaseClass"						"item_meteor_hammer"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"FightRecapLevel"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"AbilityChannelTime"			"1.5"	//2
-		"AbilityCastRange"				"900"	//600
-		"AbilityCooldown"				"20"
-		"AbilityManaCost"				"300"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		"AbilityTextureName"			"meteor_hammer_2"
-		"AbilityValues"
-		{
-				"bonus_strength"		"30"	//6
-				"bonus_agility"			"30"	//6
-				"bonus_intellect"		"50"	//24
-				"spell_amp"				"30"	//10
-				"mana_regen_multiplier"	"75"	//25
-
-				"burn_dps_buildings"	"60"	//50
-				"burn_dps_units"		"150"	//50
-				"burn_slow"			"50"		//20
-				"burn_duration"		"6"			//6
-				"stun_duration"		"1.0"		//0.75
-				"burn_interval"			"1.0"	//1.0
-				"land_time"				".5"	//0.5
-				"impact_radius"
-				{
-					"value"		"400"			// 400
-					"affected_by_aoe_increase"	"1"
-				}
-				"max_duration"		"1.5"			//2
-				"impact_damage_buildings"	"120"	//90
-				"impact_damage_units"		"400"	//130
-				"enemy_particles_visible"		"0"
-		}
-	}
+	//{
+	//	"BaseClass"						"item_recipe_meteor_hammer"
+	//	"ItemCost"						"450"
+	//	"ItemShopTags"					""
+	//	"ItemRecipe"					"1"
+	//	"ItemResult"					"item_meteor_hammer_2"
+	//	"ItemRequirements"
+	//	{
+	//		"01"						"item_meteor_hammer;item_ultimate_orb"
+	//	}
+	//}
+	//"item_meteor_hammer_2"
+	//{
+	//	"BaseClass"						"item_meteor_hammer"
+	//	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	//	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	//	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	//	"FightRecapLevel"				"1"
+	//	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+	//	"AbilityChannelTime"			"1.5"	//2
+	//	"AbilityCastRange"				"900"	//600
+	//	"AbilityCooldown"				"20"
+	//	"AbilityManaCost"				"300"
+	//	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	//"item_recipe_meteor_hammer_2"
+	//	"ShouldBeSuggested"				"1"
+	//	"AbilityTextureName"			"meteor_hammer_2"
+	//	"AbilityValues"
+	//	{
+	//			"bonus_strength"		"30"	//6
+	//			"bonus_agility"			"30"	//6
+	//			"bonus_intellect"		"50"	//24
+	//			"spell_amp"				"24"	//10
+	//			"mana_regen_multiplier"	"50"	//25
+//
+	//			"burn_dps_buildings"	"60"	//50
+	//			"burn_dps_units"		"100"	//50
+	//			"burn_slow"			"40"		//20
+	//			"burn_duration"		"6"			//6
+	//			"stun_duration"		"1.0"		//0.75
+	//			"burn_interval"			"1.0"	//1.0
+	//			"land_time"				".5"	//0.5
+	//			"impact_radius"
+	//			{
+	//				"value"		"400"			// 400
+	//				"affected_by_aoe_increase"	"1"
+	//			}
+	//			"max_duration"		"1.5"			//2
+	//			"impact_damage_buildings"	"120"	//90
+	//			"impact_damage_units"		"300"	//130
+	//			"enemy_particles_visible"		"0"
+	//	}
+	//}
 	//=================================================================================================================
 	// Jump!Jump!Jump! 跳！跳！跳！刀合成图
 	//=================================================================================================================
@@ -3841,7 +3988,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"
+		"ItemCost"						"2000"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -3850,54 +3997,187 @@
 		"ItemResult"					"item_jump_jump_jump"
 		"ItemRequirements"
 		{
-			"01"						"item_overwhelming_blink;item_swift_blink;item_arcane_blink_2"
+			"01"						"item_overwhelming_blink_2;item_starforge"
+			"02"						"item_swift_blink_2;item_starforge"
+			"03"						"item_arcane_blink;item_starforge"
 		}
 	}
 	"item_jump_jump_jump"
 	{
+		"precache"
+		{
+			"particle"				"particles/items3_fx/blink_overwhelming_burst.vpcf"
+			"particle"				"particles/items4_fx/meteor_hammer_spell.vpcf"
+			"particle"				"particles/items_fx/blink_dagger_end.vpcf"
+			"particle"				"particles/items_fx/blink_dagger_start.vpcf"
+		}
+
 		"ID"							"10384"
 		"BaseClass"						"item_lua"
-		"ScriptFile"					"items/item_jump_jump_jump"
+		"ScriptFile"					"items/ts_items/item_jump_jump_jump"
 		"AbilityTextureName"			"jump_jump_jump"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"15"
-		"AbilityManaCost"				"250"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"200"
 		"AbilitySharedCooldown"			"blink"
 
-		"ItemCost"						"15650"
+		"ItemCost"						"18600"
 		"ItemAliases"					"blink dagger;arcane blink;swift blink;overwhelming blink;fallen sky;meteor hammer"
 
 		"AbilityValues"
 		{
-			"bonus_all_stats"		"35"	// Tooltip, real value in item_jump_jump_jump_bonus_all_stats
-			"blink_damage_cooldown"	"1.0"
-			"meteor_fall_time"		"0.5"
-			"meteor_land_radius"
+			"bonus_strength"			"60"
+			"bonus_agility"			"60"
+			"bonus_intellect"		"60"
+			"spell_amp"				"36"
+			"mana_regen_multiplier"	"50"
+
+			"blink_range"			"1600"
+			"blink_damage_cooldown"	"0.2"
+			"meteor_fall_time"		"0.3"
+			"remote_cast_range"		"900"
+			"remote_land_time"		"0.5"
+
+			"impact_radius"
 			{
 				"value"		"400"
 				"affected_by_aoe_increase"	"1"
 			}
-			"buff_duration"			"6"
-			// Below are the overwhelming, swift, and arcane modifier values
-			"movement_slow"			"50"
-			"attack_slow"			"50"
+			"stun_duration"			"1.0"
+			"impact_damage_units"	"300"
+			"impact_damage_buildings"	"150"
+			"impact_stat_pct_units"	"30"
+			"impact_stat_pct_buildings"	"15"
+			"burn_dps_units"			"200"
+			"burn_dps_buildings"		"75"
+			"burn_slow"				"40"
+			"burn_duration"			"6"
+			"burn_interval"			"1.0"
 
-			"bonus_movement"		"40"
-			"bonus_agi_active"		"35"
-
+			"movement_slow"			"80"
+			"attack_slow"			"100"
+			"slow_duration"			"6"
+			"bonus_movement"			"60"
+			"bonus_agi_active"		"70"
+			"buff_duration"			"7"
+			"heal_amount"			"1000"
+			"mana_amount"			"400"
 			"cast_pct_improvement"	"50"
 			"manacost_reduction"	"25"
-			"debuff_amp"			"20"
-			// Fall down effect
-			"base_damage"			"100"
-			"str_damage"			"100"
-			"meteor_stun_duration"	"1.0"
-			"slow_duration"			"6.0"
-			"meteor_burn_duration"	"6.0"
-			"meteor_burn_dps"		"100"
+		}
+	}
+	//=================================================================================================================
+	// Fall!Fall!Fall! 落！落！落！刀：跳！跳！跳！刀施放方式对调，两者经转换来回合成
+	//=================================================================================================================
+	"item_exchange"
+	{
+		"ID"							"10465"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"exchange"
+		"ItemCost"						"1000"
+		"ItemShopTags"					""
+		"ItemAliases"					"exchange;swap"
+	}
+	"item_recipe_fall_fall_fall"
+	{
+		"ID"							"10466"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe_jump_jump_jump"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_fall_fall_fall"
+		"ItemRequirements"
+		{
+			"01"						"item_jump_jump_jump;item_exchange"
+		}
+	}
+	"item_recipe_jump_jump_jump_swap"
+	{
+		"ID"							"10468"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe_jump_jump_jump"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_jump_jump_jump"
+		"ItemRequirements"
+		{
+			"01"						"item_fall_fall_fall;item_exchange"
+		}
+	}
+	"item_fall_fall_fall"
+	{
+		"precache"
+		{
+			"particle"				"particles/items3_fx/blink_overwhelming_burst.vpcf"
+			"particle"				"particles/items4_fx/meteor_hammer_spell.vpcf"
+			"particle"				"particles/items_fx/blink_dagger_end.vpcf"
+			"particle"				"particles/items_fx/blink_dagger_start.vpcf"
+		}
+
+		"ID"							"10467"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/ts_items/item_jump_jump_jump"
+		"AbilityTextureName"			"fall_fall_fall"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"200"
+		"AbilitySharedCooldown"			"blink"
+
+		"ItemCost"						"18600"
+		"ItemAliases"					"blink dagger;arcane blink;swift blink;overwhelming blink;fallen sky;meteor hammer"
+
+		// 与 item_jump_jump_jump 同步
+		"AbilityValues"
+		{
+			"bonus_strength"			"60"
+			"bonus_agility"			"60"
+			"bonus_intellect"		"60"
+			"spell_amp"				"36"
+			"mana_regen_multiplier"	"50"
+
+			"blink_range"			"1600"
+			"blink_damage_cooldown"	"0.2"
+			"meteor_fall_time"		"0.3"
+			"remote_cast_range"		"900"
+			"remote_land_time"		"0.5"
+
+			"impact_radius"
+			{
+				"value"		"400"
+				"affected_by_aoe_increase"	"1"
+			}
+			"stun_duration"			"1.0"
+			"impact_damage_units"	"300"
+			"impact_damage_buildings"	"150"
+			"impact_stat_pct_units"	"30"
+			"impact_stat_pct_buildings"	"15"
+			"burn_dps_units"			"200"
+			"burn_dps_buildings"		"75"
+			"burn_slow"				"40"
+			"burn_duration"			"6"
+			"burn_interval"			"1.0"
+
+			"movement_slow"			"80"
+			"attack_slow"			"100"
+			"slow_duration"			"6"
+			"bonus_movement"			"60"
+			"bonus_agi_active"		"70"
+			"buff_duration"			"7"
+			"heal_amount"			"1000"
+			"mana_amount"			"400"
+			"cast_pct_improvement"	"50"
+			"manacost_reduction"	"25"
 		}
 	}
 	//=================================================================================================================
@@ -3963,7 +4243,7 @@
 		{
 			"bonus_aoe"					"150"			// If changing this, change radius_tooltip
 			"bonus_hp"					"900"			// 450
-			"bonus_intellect"			"30"			// 15
+			"bonus_intellect"			"30"			// 20
 			"bonus_mana"				"400"			// 200
 			"radius"
 			{
@@ -4081,7 +4361,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10390"
-		"BaseClass"						"item_lua"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"orb_of_the_brine"
 		"ScriptFile"					"items/item_orb_of_the_brine"
 
@@ -4111,10 +4391,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_all_stats"		"20"	// tooltip, real value in item_orb_of_the_brine_bonus_all_stats
+			"bonus_all_stats"		"20"
 			"bonus_health"			"600"
+			// 由原生 modifier_item_enhancement_restorative 读取，KV 属性表的治疗增强不生效
 			"bonus_mana"			"600"
-			"heal_increase"			"50"
+			"heal_amp"				"50"
 
 			"bubble_duration"		"1"
 			"bubble_move_speed"		"400"
@@ -4122,6 +4403,52 @@
 
 			"bubble_total_heal_tip"	"1500"
 			"bubble_total_mana_tip"	"1500"
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/item_orb_of_the_brine"
+				"Function"		"OrbOfTheBrineOnSpellStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_orb_of_the_brine"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"				"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"					"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_all_stats"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"						"%bonus_health"
+				}
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_orb_of_the_brine"
+						"Function"		"OrbOfTheBrineOnCreated"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_orb_of_the_brine"
+						"Function"		"OrbOfTheBrineOnDestroy"
+					}
+				}
+			}
 		}
 	}
 
@@ -4290,9 +4617,9 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10396"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"BaseClass"						"item_armlet"
+		"BaseClass"						"item_berserkers_sabatons"
 		"AbilityTextureName"			"item_armlet_plus"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4315,10 +4642,14 @@
 			"bonus_attack_speed"	"35"
 			"bonus_armor"			"12"
 			"bonus_health_regen"	"10"
+			"bonus_movement_speed_ranged"	"0"	// 本体不是鞋子，不提供常驻移速
+			"bonus_movement_speed_melee"	"0"
+			"phase_movement_speed"	"20"		// 开启时相位移速
+			"phase_movement_speed_range"	"10"
 			"unholy_bonus_damage"	"45"
 			"unholy_bonus_strength"	"50"
 			"unholy_bonus_armor"	"8"
-			"unholy_bonus_slow_resistance"	"35"
+			"unholy_bonus_slow_resistance"	"40"
 			"unholy_health_drain_per_second"	"25"
 			"toggle_cooldown"		"0.036f"
 		}
@@ -4354,9 +4685,9 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"10398"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"BaseClass"						"item_armlet"
+		"BaseClass"						"item_berserkers_sabatons"
 		"AbilityTextureName"			"item_armlet_pro_max"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -4379,6 +4710,10 @@
 			"bonus_attack_speed"	"45"
 			"bonus_armor"			"18"
 			"bonus_health_regen"	"15"
+			"bonus_movement_speed_ranged"	"0"	// 本体不是鞋子，不提供常驻移速
+			"bonus_movement_speed_melee"	"0"
+			"phase_movement_speed"	"25"		// 开启时相位移速
+			"phase_movement_speed_range"	"12"
 			"unholy_bonus_damage"	"55"
 			"unholy_bonus_strength"	"75"
 			"unholy_bonus_armor"	"12"
@@ -4571,6 +4906,7 @@
 		"ShouldBeSuggested"				"1"
 		"precache"
 		{
+			"particle"				"particles/items2_fx/refresher.vpcf"
 			"particle"	"particles/items2_fx/hand_of_midas.vpcf"
 			"particle"	"particles/items_fx/chain_lightning.vpcf"
 		}
@@ -4962,7 +5298,7 @@
 		"BaseClass"						"item_recipe_bloodthorn"
 		"ID"							"10415"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"ItemCost"						"0"
+		"ItemCost"						"150"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_bloodthorn_ultra"
 		"AbilityTextureName"			"item_recipe_bloodthorn_ultra"
@@ -4995,16 +5331,19 @@
 				"bonus_intellect"			"30"
 				"bonus_attack_speed"		"160"
 				"bonus_mana_regen"			"10"
-				"bonus_health_regen"		"15"
 				"silence_duration"			"5"
 				"silence_damage_percent"	"120"
 				"bonus_damage"				"30"
 				"duration"					"6"
 				"spell_amp_debuff"			"70"
-				"proc_damage_heroes"		"100"
-				"proc_damage_creeps"		"50"
-				"passive_proc_damage"		"120"
-				"proc_chance"				"80"
+				"proc_damage_heroes"
+				{
+					"value"					"100"	// 50
+				}
+				"proc_damage_creeps"
+				{
+					"value"					"50"	// 20
+				}
 		}
 	}
 
@@ -5066,11 +5405,21 @@
 				"bonus_armor"			"14"
 				"bonus_mana_regen"		"3"
 				"projectile_speed"		"300"
-				"int_damage_multiplier"	"1.2"
-				"slow"	"50"
-				"slow_duration"	"4"
-				"active_mres_reduction"		"35"
-				"passive_cooldown"		"4"
+				"int_damage_multiplier"	"1.2"	// 0.85
+				"slow"
+				{
+					"value"		"50"					// 25
+					"apply_effectiveness"	"1"
+				}
+				"slow_duration"		"4"
+				"reduction_duration"	"4"
+				"passive_cooldown"	"4"
+				"building_effectiveness_pct"	"40"
+				"active_mres_reduction"
+				{
+					"value"		"35"					// 15
+					"apply_effectiveness"	"1"
+				}
 		}
 	}
 
@@ -5102,9 +5451,9 @@
 					"value"	"1200"				// 800
 					"affected_by_aoe_increase"	"1"
 				}
-				"movement_slow"		"80"			//50
-				"attack_slow"		"100"			//50
-				"duration"		"6"					//6
+				"movement_slow"		"70"	// 35 x2
+				"attack_slow"		"140"	// 70 x2
+				"duration"		"4.5"					// 4.5
 				"damage_base"			"200"		//100
 				"damage_pct_instant"		"100"	//50
 				"damage_pct_over_time"		"200"	//100
@@ -5220,7 +5569,7 @@
 	"item_recipe_kaya_and_sange_1"
 	{
 		"BaseClass"						"item_recipe_kaya_and_sange"
-		"ItemCost"						"0"
+		"ItemCost"						"400"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_kaya_and_sange_1"
 		"AbilityTextureName"			"item_recipe_kaya_and_sange_1"
@@ -5243,9 +5592,9 @@
 				"bonus_strength"		"60"
 				"bonus_intellect"			"60"
 				"slow_resistance"			"50"	// 25
-				"mana_regen_multiplier"		"60"	// 30
-				"spell_amp"				"25"		// 12
-				"hp_regen_amp"			"40"		// 20
+				"mana_regen_multiplier"		"50"	// 25
+				"spell_amp"				"25"	// 10
+				"hp_regen_amp"			"40"	// 20
 				"manacost_reduction"	"40"		// 25
 		}
 	}
@@ -5256,7 +5605,7 @@
 	"item_recipe_sange_and_yasha_1"
 	{
 		"BaseClass"						"item_recipe_sange_and_yasha"
-		"ItemCost"						"0"
+		"ItemCost"						"400"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_sange_and_yasha_1"
 		"AbilityTextureName"			"item_recipe_sange_and_yasha_1"
@@ -5280,8 +5629,8 @@
 				"bonus_agility"			"60"	// 16
 				"status_resistance"		"30"	// 15
 				"bonus_attack_speed"	"40"	// 20
-				"movement_speed_percent_bonus"	"25" // 12
-				"hp_regen_amp"			"40"	// 25
+				"movement_speed_percent_bonus"	"25"	// 10
+				"hp_regen_amp"			"40"	// 20
 				"slow_resistance"		"50"	// 25
 		}
 	}
@@ -5292,7 +5641,7 @@
 	"item_recipe_yasha_and_kaya_1"
 	{
 		"BaseClass"						"item_recipe_yasha_and_kaya"
-		"ItemCost"						"0"
+		"ItemCost"						"400"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_yasha_and_kaya_1"
 		"AbilityTextureName"			"item_recipe_yasha_and_kaya_1"
@@ -5315,48 +5664,10 @@
 				"bonus_agility"			"60"
 				"bonus_intellect"		"60"
 				"bonus_attack_speed"	"40" // 20
-				"mana_regen_multiplier"	"60" // 30
-				"movement_speed_percent_bonus"	"25" // 12
-				"spell_amp"				"25" // 12
+				"mana_regen_multiplier"	"50"	// 25
+				"movement_speed_percent_bonus"	"25"	// 10
+				"spell_amp"				"25"	// 10
 				"cast_speed_pct"		"50" // 25
-		}
-	}
-
-	//=================================================================================================================
-	// 法师泳衣
-	//=================================================================================================================
-	"item_recipe_eternal_shroud_ultra"
-	{
-		"BaseClass"						"item_recipe_eternal_shroud"
-		"ItemCost"						"2200"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"AbilityTextureName"			"item_recipe_eternal_shroud_ultra"
-		"ItemResult"					"item_eternal_shroud_ultra"
-		"ItemRequirements"
-		{
-			"01"						"item_cloak;item_ogre_axe;item_vitality_booster"
-		}
-	}
-
-	"item_eternal_shroud_ultra"
-	{
-		"BaseClass"						"item_eternal_shroud"
-		"AbilityTextureName"			"item_eternal_shroud_ultra"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SuggestLategame"				"1"
-		"AbilityValues"
-		{
-			"bonus_spell_resist"					"30"	//20
-			"bonus_strength"						"20"	//10
-			"bonus_health"							"500"	//250
-			// 禁用被动防止炸房
-			"stack_threshold"						"99999"	//300
-			"stack_duration"						"0"		//5
-			"stack_resist"							"0.0"	//3.5
-
-			"mana_restore_pct"						"30"	//25
-			"max_stacks"							"8"		//6
 		}
 	}
 
@@ -5448,7 +5759,7 @@
 		"AbilityTextureName"		"fusion_beast"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-		"ItemCost"					"20000"
+		"ItemCost"					"10000"
 		"ItemIsNeutralDrop"			"0"
 		"ItemPurchasable"			"1"
 		"ItemKillable"				"0"
@@ -5816,6 +6127,11 @@
 
 	"item_hawkeye_fighter"
 	{
+		"precache"
+		{
+			"particle"				"particles/econ/events/ti10/phase_boots_ti10.vpcf"
+		}
+
 		"BaseClass"					"item_lua"
 		"ID"						"10430"
 		"ScriptFile"				"items/item_hawkeye_fighter"
@@ -5834,13 +6150,13 @@
 		{
 			// 被动属性（已迁移到 item_apply_modifiers 的 DataDriven，仅用于 tooltip 显示）
 			"bonus_all_stats"			"30"	// tooltip only - 全属性
-			"bonus_movement_speed"		"140"	// tooltip only - 移动速度
-			"bonus_movement_speed_pct"	"20"	// tooltip only - 移动速度百分比
+			"bonus_movement_speed"		"120"	// tooltip only - 移动速度
+			"bonus_movement_speed_pct"	"10"	// tooltip only - 移动速度百分比
 			"bonus_turn_rate"			"50"	// tooltip only - 转身速率
 			"bonus_evasion"			"20"	// tooltip only - 闪避
 			// 主动效果（在 Lua 中实现）
-			"active_movement_speed_pct"	"50"
-			"active_duration"			"4"
+			"active_movement_speed_pct"	"40"
+			"active_duration"			"3"
 		}
 	}
 
@@ -5923,6 +6239,7 @@
 		}
 		"precache"
 		{
+			"particle"				"particles/items4_fx/meteor_hammer_spell.vpcf"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
 			"particle"					"particles/units/heroes/hero_necrolyte/necrolyte_pulse.vpcf"
 		}
@@ -6059,21 +6376,21 @@
 
 			// 暴击参数（Lua 逻辑需要 - 动态暴击计算）
 			// 模式1:
-			"crit_chance_mode1"			"18"
+			"crit_chance_mode1"			"15"
 			"crit_multiplier_mode1"		"5"
 			"guaranteed_crit_multiplier_mode1"	"4"
 			"cooldown_mode1"			"4"
 
 			// 模式2:
-			"crit_chance_mode2"			"6"
+			"crit_chance_mode2"			"5"
 			"crit_multiplier_mode2"		"13"
 			"guaranteed_crit_multiplier_mode2"	"12"
 			"cooldown_mode2"			"12"
 
 			// 模式3:
 			"crit_chance_mode3"			"1"
-			"crit_multiplier_mode3"		"80"
-			"guaranteed_crit_multiplier_mode3"	"30"
+			"crit_multiplier_mode3"		"70"
+			"guaranteed_crit_multiplier_mode3"	"25"
 			"cooldown_mode3"			"30"
 		}
 	}
@@ -6101,96 +6418,48 @@
 		"ItemResult"				"item_magic_crit_blade"
 		"ItemRequirements"
 		{
-			"01"					"item_hallowed_scepter;item_devastator_2;item_veil_of_discord_2;item_fusion_brutal"
+			"01"					"item_hallowed_scepter;item_force_staff_3;item_veil_of_discord_2;item_fusion_brutal"
 		}
 	}
 
 	"item_magic_crit_blade"
 	{
-		"BaseClass"					"item_datadriven"
+		"BaseClass"					"item_lua"
 		"ID"						"10438"
 		"AbilityTextureName"		"molongkuangwu"
-		"ScriptFile"				"items/item_magic_crit_blade"
+		"ScriptFile"				"items/ts_items/item_magic_scepter"
 
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"			"4"
+		"AbilityCooldown"			"60"
 		"AbilityManaCost"			"1200"
 		"AbilitySharedCooldown"		"magic_scepter"
 
-		"ItemCost"					"43800"
+		"ItemCost"					"36800"
 		"ItemPurchasable"			"1"
 		"ItemSellable"				"0"
 
+		"precache"
+		{
+			"particle"	"particles/items2_fx/veil_of_discord.vpcf"
+		}
+
 		"AbilityValues"
 		{
-			// Lua 逻辑需要 - 法术增强计算(动态)
+			"bonus_intelligence"		"180"	// tooltip, real value in item_magic_crit_blade_bonus_intelligence
 			"spell_amp_per_int"			"0.3"
+			// 慧光被动 modifier_item_kaya 按这两个键名取值
+			"spell_amp"					"40"
+			"mana_regen_multiplier"		"40"
 
-			// 主动技能 - 龙息爆发
-			"active_cooldown"			"60"
+			// 主动：龙息爆发
 			"active_duration"			"4"
 			"spell_amp_multiplier"		"2"
+			"active_radius"				"1200"
+			"active_mres_reduction"		"25"	// tooltip, real value in item_magic_crit_blade_mres_reduction
 
-			// 神圣斧
-			"bonus_intellect"			"200"
-			"bonus_attack_speed"		"80"
-			"bonus_armor"				"14"
-			// 巫师之刃 + 魔蚀 modifier
-			"projectile_speed"			"300"
-			"int_damage_multiplier"		"1.2"
-			"slow"						"50"
-			"slow_duration"				"4"
-			"active_mres_reduction"		"40"
-			"passive_cooldown"			"4"
-
-			// 法术暴击 modifier
+			// 法术暴击
 			"spell_crit_chance"			"30"
 			"spell_crit_multiplier"		"180"
-		}
-
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/item_magic_crit_blade"
-				"Function"		"MagicCritBladeOnSpellStart"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_magic_crit_blade"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"RemoveOnDeath"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
-
-				"States"
-				{
-					"MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_magic_crit_blade"
-						"Function"		"MagicCritBladeOnCreated"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_magic_crit_blade"
-						"Function"		"MagicCritBladeOnDestroy"
-					}
-				}
-			}
 		}
 	}
 
@@ -6217,9 +6486,8 @@
 
 	"item_withered_spring"
 	{
-		"BaseClass"					"item_lua"
+		"BaseClass"					"item_datadriven"
 		"ID"						"10440"
-		"ScriptFile"				"items/ts_items/item_withered_spring"
 		"AbilityTextureName"		"withered_spring"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilitySharedCooldown"		"aeon"
@@ -6250,11 +6518,12 @@
 			"cooldown_duration"			"60"	// 单值 + max_level 1 关闭原版的触发递增
 			"max_level"					"1"
 			"initial_cooldown"			"6"
-			"bonus_health"				"2500"
 			"bonus_mana"				"2500"
 
-			// DataDriven 表达不了，留在 TS
-			"health_regen_pct"			"3"
+			// 力量由原版 modifier_item_heart 按原版字段名读取
+			"bonus_strength"			"100"
+			"hp_regen"					"1"
+			"missing_health_regen"		"2.5"
 
 			// 主动技能参数
 			"replenish_health"			"2500"
@@ -6271,10 +6540,55 @@
 			"bonus_armor_active"		"20"
 			"bonus_regen_active"		"300"
 
-			// 被动属性，真值在 item_apply_modifiers，此处仅供 tooltip
-			"bonus_strength"			"100"
+			// 被动生命、护甲与闪避，真值在本物品被动 modifier 的 Properties
+			// 生命不能用 bonus_health：原版 modifier_item_heart 也读这个字段，会和永恒之盘各加一次
+			"bonus_health_passive"		"2500"
 			"bonus_armor"				"20"
 			"bonus_evasion"				"20"
+		}
+
+		"Modifiers"
+		{
+			// 魔法由原版 modifier_item_aeon_disk 提供，力量由原版 modifier_item_heart 提供，
+			// 在 Properties 里再写一遍会双倍
+			"modifier_item_withered_spring"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"%bonus_health_passive"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"		"%bonus_evasion"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_withered_spring"
+						"Function"		"WitheredSpringOnCreated"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_withered_spring"
+						"Function"		"WitheredSpringOnDestroy"
+					}
+				}
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/item_withered_spring"
+				"Function"		"WitheredSpringOnSpellStart"
+			}
 		}
 	}
 	//=================================================================================================================
@@ -6475,8 +6789,8 @@
 		"ItemPurchasable"			"1"
 		"ItemSellable"				"0"
 
-		"AbilityCooldown"			"1"	// 被动冷却，主动冷却见 active_cooldown
-		"AbilityManaCost"			"800"
+		"AbilityCooldown"			"0.1"	// 被动冷却，主动冷却见 active_cooldown
+		"AbilityManaCost"			"600"
 		"AbilityCastRange"			"800"
 		"AbilityCastPoint"			"0.2"
 
@@ -6491,7 +6805,7 @@
 			}
 			"pure_damage"
 			{
-				"value"					"500"
+				"value"					"400"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 
@@ -6508,8 +6822,8 @@
 			// "bonus_all_stats"			"25"	// 绝刃自身加成
 			"slow"						"50"	// 绝刃减速
 			"slow_duration"				"2"		// 绝刃减速持续时间
-			"bonus_spell_damage"		"700"	// 绝刃法术伤害加成
-			"passive_cooldown"			"1"		// 绝刃自身充能冷却
+			"bonus_spell_damage"		"600"	// 绝刃法术伤害加成
+			"passive_cooldown"			"0.1"	// tooltip only - 被动冷却，实际读 AbilityCooldown
 
 			// 被动属性（已迁移到 item_apply_modifiers 的 DataDriven，仅用于 tooltip 显示）
 			"bonus_intellect"			"200"	// tooltip only - 智力
@@ -6524,6 +6838,7 @@
 
 		"precache"
 		{
+			"particle"				"particles/items_fx/dagon.vpcf"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
 			"particle"					"particles/units/heroes/hero_necrolyte/necrolyte_pulse.vpcf"
 		}
@@ -6550,8 +6865,7 @@
 
 	"item_swift_glove"
 	{
-		"BaseClass"					"item_lua"
-		"ScriptFile"				"items/item_swift_glove"
+		"BaseClass"					"item_datadriven"
 		"ID"						"10448"
 		"AbilityTextureName"		"swift_glove"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -6580,21 +6894,22 @@
 
 		"AbilityValues"
 		{
-			// 被动属性（已迁移到 item_apply_modifiers 的 DataDriven，仅用于 tooltip 显示）
-			"bonus_strength"			"200"	// tooltip only - 力量（光暗臂章切换部分折算）
-			"bonus_attack_speed"		"240"	// tooltip only - 攻击速度（取材料常驻较大值）
-			"bonus_damage"				"400"	// tooltip only - 攻击力（神雷锤/光暗臂章）
-			"bonus_armor"				"60"	// tooltip only - 护甲（光暗臂章）
+			// 被动属性
+			"bonus_strength"			"200"	// 力量（光暗臂章切换部分折算）
+			"bonus_attack_speed"		"240"	// 攻击速度（取材料常驻较大值）
+			"bonus_damage"				"400"	// 攻击力（神雷锤/光暗臂章）
+			"bonus_armor"				"60"	// 护甲（光暗臂章）
 
-			// Lua 逻辑需要的参数
-			"bat_reduction_pct"			"25"	// Lua 逻辑需要 - 动态计算 BAT
+			"bat_reduce"			"20"	// 原版粗暴按此字段读数值，本地化也引用此名
+
+			// 脚本需要的参数
 			"self_xp"			"2"
 			"self_gold"			"600"
 			"group_range"		"1800"
 			"group_xp"			"0.5"
 			"group_gold"		"120"
 			"hero_kill_chance"	"50"
-			"chain_chance"		"40"
+			"chain_chance"		"35"
 			"chain_damage"		"500"
 			"chain_strikes"		"12"
 			"chain_radius"		"900"
@@ -6608,6 +6923,50 @@
 			"decuple_damage_chance"	"1"
 			"decuple_damage_multiplier"	"3"
 			"decuple_damage_cooldown"	"1"
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_swift_glove"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"IsPurgable"			"0"
+				"RemoveOnDeath"			"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_swift_glove"
+						"Function"		"SwiftGloveOnCreated"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_swift_glove"
+						"Function"		"SwiftGloveOnDestroy"
+					}
+				}
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/item_swift_glove"
+				"Function"		"SwiftGloveOnSpellStart"
+			}
 		}
 	}
 
@@ -6633,6 +6992,11 @@
 
 	"item_time_gem"
 	{
+		"precache"
+		{
+			"particle"				"particles/items2_fx/refresher.vpcf"
+		}
+
 		"ID"						"10450"
 		"BaseClass"					"item_lua"
 		"ScriptFile"				"items/item_time_gem"
@@ -6692,7 +7056,7 @@
 		"ItemResult"				"item_beast_shield"
 		"ItemRequirements"
 		{
-			"01"					"item_black_king_bar_2;item_vladmir_2;item_eternal_shroud_ultra;item_insight_armor;item_fusion_beast"
+			"01"					"item_black_king_bar_2;item_vladmir_2;item_insight_armor;item_fusion_beast"
 		}
 	}
 
@@ -6708,39 +7072,30 @@
 		"AbilityCooldown"			"60.0"
 		"AbilityManaCost"			"300"
 
-		"ItemCost"					"57300"
+		"ItemCost"					"42200"
 
 		"AbilityValues"
 		{
 			// 主动技能
 			"active_duration"				"8"
 			"active_bonus_multiplier_tooltip"	"100"
-			// BKB
-			"magic_resist"					"100"
-
-			// 法师泳衣被动
-			// 禁用被动防止炸房
-			"stack_threshold"			"99999"
-			"stack_duration"			"0"
-			"stack_resist"				"0"
-
-			"mana_restore_pct"			"30"
-			"max_stacks"				"8"
+			// modifier_black_king_bar_immune 的魔抗
+			"spell_reduce"					"100"
 
 			// 被动属性
-			"passive_bonus_strength"			"100"
-			"passive_bonus_health"				"2000"
+			"passive_bonus_strength"			"80"
+			"passive_bonus_health"				"1400"
 			"passive_bonus_armor"				"40"
 			"passive_bonus_spell_resist"		"40"
-			"passive_bonus_health_regen"		"50"
-			"passive_bonus_attack_speed"		"50"
+			"passive_bonus_health_regen"		"40"
+			"passive_bonus_attack_speed"		"40"
 			"passive_bonus_damage"				"100"
 
 			// 强袭光环
 			"aura_radius"					"900"
-			"aura_positive_armor"			"15"
-			"aura_attack_speed"				"90"
-			"aura_negative_armor"			"-15"
+			"aura_positive_armor"			"10"
+			"aura_attack_speed"				"50"
+			"aura_negative_armor"			"-10"
 		}
 
 		"OnSpellStart"
@@ -6751,11 +7106,10 @@
 				"Target"		"CASTER"
 			}
 
-			"ApplyModifier"
+			"RunScript"
 			{
-				"ModifierName"	"modifier_black_king_bar_immune"
-				"Target"		"CASTER"
-				"Duration"		"%active_duration"
+				"ScriptFile"	"items/item_beast_shield"
+				"Function"		"BeastShieldOnSpellStart"
 			}
 
 			"ApplyModifier"
@@ -6785,24 +7139,6 @@
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%passive_bonus_health_regen"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%passive_bonus_attack_speed"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%passive_bonus_damage"
-				}
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_beast_shield"
-						"Function"		"BeastShieldOnCreated"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_beast_shield"
-						"Function"		"BeastShieldOnDestroy"
-					}
 				}
 			}
 
@@ -6911,7 +7247,7 @@
 		"AbilityCooldown"			"20.0"
 		"AbilityManaCost"			"600"
 
-		"ItemCost"					"56000"
+		"ItemCost"					"46000"
 		"ItemShopTags"				"damage;armor;int;hard_to_tag"
 		"ItemQuality"				"artifact"
 		"ItemAliases"				"beast armor"
@@ -6949,7 +7285,7 @@
 		{
 			// 刃甲属性
 			"passive_reflection_constant"	"60"	// 被动反伤固定值
-			"passive_reflection_pct"		"25"	// 被动反伤百分比
+			"passive_reflection_pct"		"20"	// 被动反伤百分比
 			"active_reflection_pct"			"100"	// 主动反伤百分比
 			"bonus_armor"					"60"	// 护甲
 
@@ -6958,16 +7294,16 @@
 
 			"active_duration"				"4"		// 主动持续时间
 			"blast_radius"					"900"	// 冲击波范围
-			"blast_damage"					"1200"	// 冲击波伤害
+			"blast_damage"					"800"	// 冲击波伤害
 
 			// 主动Debuff 需要同时修改 modifier_item_beast_armor_debuff
 			"movement_slow"					"40"	// tooltip only - 移速减缓
-			"attack_slow"					"120"	// tooltip only - 攻速减缓
+			"attack_slow"					"100"	// tooltip only - 攻速减缓
 			"spell_resist_reduction"		"20"	// tooltip only - 魔法抗性降低
 
 			// 辉耀光环（事件驱动）
 			"aura_radius"					"900"	// 光环范围
-			"aura_damage"					"180"	// 光环伤害
+			"aura_damage"					"120"	// 光环伤害
 			"blind_pct"						"10"	// 致盲百分比
 
 			// 被动属性
@@ -6975,9 +7311,9 @@
 			"bonus_strength"				"30"	// 力量
 			"bonus_agility"					"30"	// 敏捷
 			"bonus_intellect_passive"		"30"	// 智力
-			"bonus_health_regen"			"40"	// 生命回复
-			"bonus_mana_regen"				"25"	// 魔法回复
-			"bonus_damage_passive"			"120"	// 攻击力
+			"bonus_health_regen"			"20"	// 生命回复
+			"bonus_mana_regen"				"15"	// 魔法回复
+			"bonus_damage_passive"			"90"	// 攻击力
 			"evasion"						"25"	// 闪避
 
 			"bonus_aoe"						"150"	// 作用范围 lua
@@ -7045,7 +7381,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-40"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-120"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-100"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"-20"
 				}
 
@@ -7285,7 +7621,7 @@
 		"ItemInitialStockTime"			"660"	// 10分钟买（开局准备1分钟）
 		"ItemStockInitial"				"0"
 		"ItemStockMax"					"3"
-		"ItemStockTime"					"300"
+		"ItemStockTime"					"120"
 		"ItemCanBeUsedWithoutInventory"	"1"
 		"OnSpellStart"
 		{
@@ -7306,7 +7642,7 @@
 	{
 		"ID"						"10458"
 		"BaseClass"					"item_lua"
-		"ScriptFile"				"items/item_skill_reset"
+		"ScriptFile"				"items/ts_items/item_skill_reset"
 		"AbilityTextureName"		"skill_remover"
 		"Model"						"models/gameplay/attrib_tome_xp.vmdl"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -7324,10 +7660,10 @@
 		"ItemPermanent"				"0"
 		"ItemShareability"			"ITEM_FULLY_SHAREABLE"
 		// 库存设置
-		"ItemInitialStockTime"		"180"	// 2分钟买（开局准备1分钟）
+		"ItemInitialStockTime"		"660"	// 11分钟买（开局准备1分钟）
 		"ItemStockInitial"			"0"
 		"ItemStockMax"				"1"
-		"ItemStockTime"				"120"
+		"ItemStockTime"				"1"
 		"ItemCanBeUsedWithoutInventory"	"1"
 	}
 
@@ -7340,7 +7676,7 @@
 		"BaseClass"                     "item_datadriven"
 		"AbilityTextureName"            "item_recipe_six_paths_reincarnation_gun"
 		"Model"                         "models/props_gameplay/recipe.vmdl"
-		"ItemCost"                      "6900"
+		"ItemCost"                      "8200"
 		"ItemRecipe"                    "1"
 		"ItemResult"                    "item_six_paths_reincarnation_gun"
 		"ItemRequirements"
@@ -7461,7 +7797,7 @@
 		"ItemQuality"				"consumable"
 	}
 
-	// 被动技能书：一次性消耗品，使用后按 premium 概率随机学一个被动技能，每名玩家整局最多 3 次
+	// 被动技能书：一次性消耗品，使用后按 premium 概率随机学一个被动技能，每名玩家整局最多 2 次；商店购买，不可出售
 	"item_passive_skill_tome"
 	{
 		"ID"						"10463"
@@ -7472,15 +7808,18 @@
 
 		"AbilityCooldown"			"1.0"
 		"AbilityManaCost"			"0"
-		"ItemCost"					"0"
-		"ItemPurchasable"			"0"
+		"ItemCost"					"80000"
+		"ItemPurchasable"			"1"
 		"ItemSellable"				"0"
 		"ItemDroppable"				"1"
 		"ItemKillable"				"0"
 		"ItemPermanent"				"0"
 		"ItemShareability"			"ITEM_FULLY_SHAREABLE"
+		// 库存设置
+		"ItemInitialStockTime"		"660"	// 11分钟买（开局准备1分钟）
 		"ItemStockInitial"			"0"
-		"ItemStockMax"				"0"
+		"ItemStockMax"				"2"
+		"ItemStockTime"				"300"
 		"ItemCanBeUsedWithoutInventory"	"1"
 
 		"ItemShopTags"				"consumable"
@@ -7515,6 +7854,156 @@
 
 		"ItemShopTags"				"consumable"
 		"ItemQuality"				"consumable"
+	}
+
+	//=================================================================================================================
+	// 永恒护符 苍洋魔珠 + 炎阳纹章 + 咸鱼之王
+	//=================================================================================================================
+	"item_recipe_aeon_amulet"
+	{
+		"BaseClass"					"item_datadriven"
+		"ID"						"10469"
+		"Model"						"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"		"item_recipe_aeon_amulet"
+
+		"ItemCost"					"1425"
+		"ItemShopTags"				""
+
+		"ItemRecipe"				"1"
+		"ItemResult"				"item_aeon_amulet"
+		"ItemRequirements"
+		{
+			"01"					"item_orb_of_the_brine;item_solar_crest;item_aeon_pendant"
+		}
+	}
+
+	"item_aeon_amulet"
+	{
+		"BaseClass"					"item_datadriven"
+		"ID"						"10470"
+		"AbilityTextureName"		"aeon_amulet"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"		"SPELL_DISPELLABLE_NO"
+		"AbilitySharedCooldown"		"aeon"
+		"FightRecapLevel"			"1"
+
+		"AbilityCastRange"			"1200"
+		"AbilityCooldown"			"30"
+		"AbilityManaCost"			"250"
+
+		"ItemCost"					"18000"
+		"ItemShopTags"				"str;agi;int;health;mana;regen;hard_to_tag"
+		"ItemQuality"				"epic"
+		"ItemPurchasable"			"1"
+		"ItemSellable"				"1"
+
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_items.vsndevts"
+			"particle"					"particles/items4_fx/combo_breaker_buff.vpcf"
+			"particle"					"particles/items3_fx/star_emblem_friend_shield.vpcf"
+		}
+		"AbilityValues"
+		{
+			// 由原版 modifier_item_aeon_disk 按原版字段名读取
+			"health_threshold_pct"		"50"
+			"buff_duration"				"3"
+			"status_resistance"			"80"
+			"cooldown_duration"			"30"	// 单值 + max_level 1 关闭原版的触发递增
+			"max_level"					"1"
+			"initial_cooldown"			"6"
+			"bonus_health"				"2000"
+
+			// 永恒之盘与原版滋补各读一次 bonus_mana，合计 2000
+			"bonus_mana"				"1000"
+			"bonus_mana_total"			"2000"
+
+			// 由原版 modifier_item_enhancement_restorative 读取
+			"heal_amp"					"75"
+
+			// 由原版 modifier_item_enhancement_brawny 读取，永恒守护期间不吃减速
+			"slow_resist"				"100"
+
+			"guard_duration"			"3"
+			"guard_heal_interval"		"0.5"
+			// 永恒守护期间的生命回复总量，由脚本按间隔分次 Heal
+			"guard_heal"				"1500"
+			"guard_heal_pct"			"15"
+
+			// 被动属性由本物品被动 modifier 读取
+			"bonus_all_stats"			"25"
+			"bonus_move_speed"			"50"
+
+			// 永恒守护的真值在 item_apply_modifiers，此处仅供 tooltip
+			"guard_mana_regen"			"500"
+			"guard_mana_regen_pct"		"5"
+			"guard_damage_reduction"	"50"
+			"guard_attack_speed"		"100"
+			"guard_move_speed"			"100"
+		}
+
+		"Modifiers"
+		{
+			// 生命、魔法、治疗增强由脚本挂的原版 modifier 提供，此处再写一遍会双倍
+			"modifier_item_aeon_amulet"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"RemoveOnDeath"			"0"
+				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_move_speed"
+				}
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_aeon_amulet"
+						"Function"		"AeonAmuletOnCreated"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_aeon_amulet"
+						"Function"		"AeonAmuletOnDestroy"
+					}
+				}
+			}
+
+			// 永恒守护的生命回复：KV 回复不计入治疗统计，所以用定时 Heal
+			"modifier_item_aeon_amulet_heal"
+			{
+				"IsHidden"				"1"
+				"IsPurgable"			"0"
+				"ThinkInterval"			"%guard_heal_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/item_aeon_amulet"
+						"Function"		"AeonAmuletHealTick"
+					}
+				}
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/item_aeon_amulet"
+				"Function"		"AeonAmuletOnSpellStart"
+			}
+		}
 	}
 
 }

@@ -58,6 +58,7 @@ no_support_abilitys = {
 	naga_siren_mirror_image = 1,  -- 娜迦海妖 镜像
 	skeleton_king_reincarnation = 1, -- 冥魂大帝 绝冥再生
 	spectre_shadow_step = 1,      -- 幽鬼 如影随形
+	shadow_shaman_mass_serpent_ward = 1, -- 暗影萨满 群蛇守卫
 
 	-- 持续施法与持续区域
 	bane_fiends_grip = 1,           -- 祸乱之源 魔爪
@@ -98,6 +99,7 @@ no_support_abilitys = {
 	puck_illusory_orb = 1,               -- 帕克 幻象法球
 	spirit_breaker_charge_of_darkness = 1, -- 裂魂人 暗影冲刺
 	rattletrap_hookshot = 1,             -- 发条技师 发射钩爪
+	shredder_timber_chain = 1,           -- 伐木机 伐木锯链
 	huskar_life_break = 1,               -- 哈斯卡 牺牲
 	pangolier_swashbuckle = 1,           -- 石鳞剑士 虚张声势
 	pangolier_gyroshell = 1,             -- 石鳞剑士 地雷滚滚
@@ -162,7 +164,6 @@ no_support_abilitys = {
 	yukari_twin_trains = 1,                            -- 八云紫 大招 无人废线车辆炸弹
 	storm_spirit_ball_lightning = 1,                   --  球状闪电
 	phantom_assassin_phantom_strike = 1,               --  幻影突袭
-	special_bonus_unique_phantom_assassin_upgrade = 1, --  幻影突袭觉醒
 	earthshaker_enchant_totem = 1,                     --  强化图腾
 	wisp_tether = 1,                                   -- 羁绊
 	dawnbreaker_celestial_hammer = 1,                  -- 上界重锤
@@ -370,6 +371,7 @@ function modifier_ogre_magi_multicast_lua:OnAbilityExecuted(keys)
 		keys.unit:GiveMana(ability:GetManaCost(-1))
 		-- 还原cursor position target
 		keys.unit:SetCursorPosition(cursorPositionBeforeCast)
+		keys.unit:SetCursorCastTarget(nil)
 
 		ability.multicast = ability.multicast - 1
 		if ability.multicast <= 1 then

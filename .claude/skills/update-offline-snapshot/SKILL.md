@@ -1,9 +1,7 @@
 ---
 name: update-offline-snapshot
-description: >-
-  刷新游戏内离线玩家数据快照：从 Firestore 直接导出会员、积分与属性、觉醒、玩家设置 KV 文件与导出时间到
-  game/scripts/kv/。7.41f 起本地主机发不出 HTTP 请求，游戏靠这批随地图发布的快照读玩家数据。
-  Use when 用户说「更新快照」「拉一下离线数据」「刷新会员数据」，或准备发布创意工坊地图之前。
+description: 从 Firestore 导出会员、积分、觉醒、玩家设置快照到 game/scripts/kv/，发布创意工坊地图前用。导出后可接着准备发布（版本号、更新日志、启动 Dota Tools）。
+disable-model-invocation: true
 ---
 
 # Update Offline Snapshot
@@ -54,6 +52,16 @@ cd <firebase>/api && npm run export:snapshot -- <本仓库绝对路径>/game/scr
   发出去会让一批玩家的会员或属性凭空消失
 
 把四行统计原样报给用户，这是判断窗口开得合不合适的唯一反馈。
+
+### 4. 询问是否发布
+
+校验通过后用 `AskUserQuestion` 问用户是否现在发布到创意工坊。选否就到此结束。选是则不自己点 Workshop Manager（授权弹窗只有用户本人能点），按下面做：
+
+1. **目标**：用 `AskUserQuestion` 问测试服（`2636824668`，第一个选项）还是正式服（`2307479570`）。选正式服时按 `deploy` skill 第 1 步复述日志全文并列出 release PR 没勾的 Checklist，等用户确认。
+2. **版本号**：按 `.claude/references/release-version.md` 取 Steam 最新版本与 release PR 版本，目标是下一个补丁字母版本（`v5.68` → `v5.68a` → `v5.68b`）。
+3. **更新日志**：中英文各一块，条目为 release PR 的 `## Release Note` 大版本块里 Steam 最新日志还没有的条目（用户写进 release PR 的新内容），末尾固定加一条「更新离线数据」/ `Updated offline data`。release PR 没有新条目时只有这一条。写法遵守 `release-note` skill 第 2 步的格式，不写具体数字。
+4. **启动 Dota Tools**：`dota2.exe` 已在运行就不动它，否则运行 `game/bin/win64/dota2.exe -novid -tools -addon windy10v10ai`。
+5. **提示用户**：把目标（名称与编号）、版本号、中英文日志全文发给用户，提醒按 `deploy` skill 第 4、5 步自己上传并补中文日志。
 
 ## 发布须知
 
