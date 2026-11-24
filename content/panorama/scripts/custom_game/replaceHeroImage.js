@@ -31,7 +31,8 @@ var imagefile = {
   npc_dota_hero_hoodwink: 'file://{images}/heroes/npc_dota_hero_hoodwink_custom.png',
   npc_dota_hero_invoker: 'file://{images}/heroes/npc_dota_hero_invoker_custom.png',
   npc_dota_hero_juggernaut: 'file://{images}/heroes/npc_dota_hero_juggernaut_custom.png',
-  npc_dota_hero_keeper_of_the_light: 'file://{images}/heroes/npc_dota_hero_keeper_of_the_light_custom.png',
+  npc_dota_hero_keeper_of_the_light:
+    'file://{images}/heroes/npc_dota_hero_keeper_of_the_light_custom.png',
   npc_dota_hero_kez: 'file://{images}/heroes/npc_dota_hero_kez_custom.png',
   npc_dota_hero_kunkka: 'file://{images}/heroes/npc_dota_hero_kunkka_custom.png',
   npc_dota_hero_leshrac: 'file://{images}/heroes/npc_dota_hero_leshrac_custom.png',
@@ -52,7 +53,8 @@ var imagefile = {
   npc_dota_hero_ogre_magi: 'file://{images}/heroes/npc_dota_hero_ogre_magi_custom.png',
   npc_dota_hero_omniknight: 'file://{images}/heroes/npc_dota_hero_omniknight_custom.png',
   npc_dota_hero_oracle: 'file://{images}/heroes/npc_dota_hero_oracle_custom.png',
-  npc_dota_hero_phantom_assassin: 'file://{images}/heroes/npc_dota_hero_phantom_assassin_custom.png',
+  npc_dota_hero_phantom_assassin:
+    'file://{images}/heroes/npc_dota_hero_phantom_assassin_custom.png',
   npc_dota_hero_phoenix: 'file://{images}/heroes/npc_dota_hero_phoenix_custom.png',
   npc_dota_hero_puck: 'file://{images}/heroes/npc_dota_hero_puck_custom.png',
   npc_dota_hero_pudge: 'file://{images}/heroes/npc_dota_hero_pudge_custom.png',
@@ -65,7 +67,8 @@ var imagefile = {
   npc_dota_hero_spirit_breaker: 'file://{images}/heroes/npc_dota_hero_spirit_breaker_custom.png',
   npc_dota_hero_storm_spirit: 'file://{images}/heroes/npc_dota_hero_storm_spirit_custom.png',
   npc_dota_hero_sven: 'file://{images}/heroes/npc_dota_hero_sven_custom.png',
-  npc_dota_hero_templar_assassin: 'file://{images}/heroes/npc_dota_hero_templar_assassin_custom.png',
+  npc_dota_hero_templar_assassin:
+    'file://{images}/heroes/npc_dota_hero_templar_assassin_custom.png',
   npc_dota_hero_tinker: 'file://{images}/heroes/npc_dota_hero_tinker_custom.png',
   npc_dota_hero_tiny: 'file://{images}/heroes/npc_dota_hero_tiny_custom.png',
   npc_dota_hero_troll_warlord: 'file://{images}/heroes/npc_dota_hero_troll_warlord_custom.png',

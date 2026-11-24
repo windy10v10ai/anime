@@ -45,7 +45,16 @@ declare global {
     };
     loading_status: {
       // snapshotDate 为离线快照导出日期（YYYY-MM-DD），仅在读取快照时下发
-      loading_status: { status: number; snapshotDate?: string };
+      // dedicated 为 1 表示启动器开的专用服，结算失败时由启动器上传，结算画面不提示积分未记录
+      loading_status: { status: number; snapshotDate?: string; dedicated?: number };
+    };
+    launcher_room: {
+      // entering 是启动器里还没进入游戏的玩家名，inGame 含主机
+      launcher_room: { entering: string[]; inGame: number; maxPlayers: number };
+    };
+    // Per-player relay readiness and country, used to pick the website domain; key = playerId.
+    api_route: {
+      [playerId: string]: { channels: number; backupChannels: number; country: string };
     };
     server_env: {
       server_env: { is_local_host: number };
@@ -56,16 +65,6 @@ declare global {
     };
     player_table: {
       [steamAccountID: string]: PlayerInfoDto;
-    };
-    ranking_table: {
-      topSteamIds: string[];
-      rankScores: {
-        top1000: number;
-        top2000: number;
-        top3000: number;
-        top4000: number;
-        top5000: number;
-      };
     };
     point_info: {
       [steamAccountID: string]: PointInfoDto[];
@@ -93,10 +92,17 @@ declare global {
         poolType: string;
       };
     };
-    // 被动技能书抽奖（使用技能书触发，瞬时事件，key = playerId）
+    // 被动技能书抽奖与遗忘（key = playerId）
     lottery_passive_tome: {
       [playerId: string]: {
         candidates: LotteryDto[];
+        isRefreshed: boolean;
+        // 已使用会员积分刷新的次数，每次使用技能书从 0 开始
+        paidRefreshCount: number;
+        // 遗忘选择窗口是否打开
+        forgetting: boolean;
+        // 被动技能书学到的被动，供遗忘技能书选择
+        owned: string[];
       };
     };
     // 添加虚拟金币表定义

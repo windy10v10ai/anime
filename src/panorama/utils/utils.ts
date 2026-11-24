@@ -22,11 +22,30 @@ export function ConvertSteamIdTo32Bit(steamId64: string): string {
   return steamId32;
 }
 
-export const WEBSITE_URL = 'https://windy10v10ai.com';
+const WEBSITE_URL_MAIN = 'https://windy10v10ai.com';
+const WEBSITE_URL_CN = 'https://cn.windy10v10ai.com';
 
-/** 网站上当前玩家的属性或觉醒页，未登录时网站先显示登录面板 */
-export function GetWebsiteProfileUrl(page: 'property' | 'awaken'): string {
-  return `${WEBSITE_URL}/profile/${GetLocalPlayerSteamAccountID()}/${page}`;
+/**
+ * Picks the website domain at click time from this player's own network signals.
+ * game_mode.js and battlepass.js carry a copy of this logic and must stay in sync.
+ */
+export function GetWebsiteUrl(): string {
+  const route = CustomNetTables.GetTableValue('api_route', Game.GetLocalPlayerID().toString());
+  if (route) {
+    if (route.country === 'CN') return WEBSITE_URL_CN;
+    if (route.channels === 0 && route.backupChannels > 0) return WEBSITE_URL_CN;
+    if (route.country) return WEBSITE_URL_MAIN;
+  }
+  return $.Language() === 'schinese' ? WEBSITE_URL_CN : WEBSITE_URL_MAIN;
+}
+
+/**
+ * 网站上当前玩家的资料页，未登录时网站先显示登录面板。
+ * 不传 page 时指向资料主页（生涯数据、近期战绩都在那），游戏内没有对应的子页面。
+ */
+export function GetWebsiteProfileUrl(page?: 'property' | 'awaken'): string {
+  const base = `${GetWebsiteUrl()}/profile/${GetLocalPlayerSteamAccountID()}`;
+  return page ? `${base}/${page}` : base;
 }
 
 export function GetAfdianSubscribeUrl(): string {
@@ -59,20 +78,28 @@ export const KOFI_POINTS_URLS = [
 ];
 
 export const KOFI_SUBSCRIBE_URL = 'https://ko-fi.com/post/Membership-Z8Z01CDJLU';
-export const AFDIAN_SHOP_URL = 'https://ifdian.net/a/windy10v10ai?tab=shop';
-export const KOFI_SHOP_URL = 'https://ko-fi.com/windy10v10ai/shop';
 
-export type PaymentPlatform = 'alipay' | 'afdian' | 'kofi';
+export type PaymentPlatform = 'alipay' | 'afdian' | 'kofi' | 'stripe';
+
+/** 网站会员页；「其他支付方式」跳这里，不带参数，由网站按自己的语言选默认标签 */
+export function GetMembershipPageUrl(): string {
+  return `${GetWebsiteUrl()}/membership`;
+}
+/** Stripe 档位按钮与卡片底部链接统一跳这里，网站按参数直接选中 Stripe 标签 */
+export function GetStripeMembershipUrl(): string {
+  return `${GetMembershipPageUrl()}?platform=stripe`;
+}
 
 /**
- * 支付方式展示顺序：简体中文玩家优先支付宝（折扣最大且仅限国内），
- * 其他语言优先 Ko-fi。数组首两项默认展示，第 3 项折叠。
+ * 支付方式展示顺序：游戏内只展示两张卡，其余平台统一交给网站。
+ * 简体中文优先支付宝（折扣最大且仅限国内）+ 爱发电；其他语言（含繁中、日文等）优先自动到账的
+ * Stripe + Ko-fi。推荐的平台排在前面。
  */
 export function GetPaymentPlatformOrder(): PaymentPlatform[] {
   if ($.Language() === 'schinese') {
-    return ['alipay', 'afdian', 'kofi'];
+    return ['alipay', 'afdian'];
   }
-  return ['kofi', 'afdian', 'alipay'];
+  return ['stripe', 'kofi'];
 }
 
 /**

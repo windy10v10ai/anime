@@ -424,16 +424,6 @@
 		"Ability10"		"special_bonus_unique_marci_guardian_lifesteal"
 		"Ability11"		"special_bonus_unique_marci_lunge_range"	// 覆盖原有天赋范围
 		"Ability15"		"special_bonus_status_resistance_25"
-
-		"AttackRate"				"1.5"	// 1.7
-		"MovementSpeed"				"325"	// 315
-		"ArmorPhysical"				"3"		// 0
-		"AttributeBaseStrength"		"32"	// 23
-		"AttributeStrengthGain"		"3.3"	// 3
-		"AttributeBaseAgility"		"24"	// 20
-		"AttributeAgilityGain"		"2.5"	// 2.2
-		"AttributeBaseIntelligence"	"22"	// 19
-		"AttributeIntelligenceGain" "2.1"	// 1.9
 	}
 
 	"npc_dota_hero_obsidian_destroyer"
@@ -510,9 +500,6 @@
 		"ItemSlots"		{}
 		"ModelScale"		"0.95"
 		"LoadoutScale"		"0.95"
-
-		"Ability17"		"special_bonus_unique_naga_siren"
-		"Ability15"		"special_bonus_unique_naga_siren_net_breaks"
 	}
 
 	"npc_dota_hero_night_stalker"
@@ -625,12 +612,12 @@
 				"12"		"abaddon_borrowed_time"
 				"13"		"abaddon_frostmourne"
 				"14"		"abaddon_death_coil"
-				"15"		"special_bonus_unique_abaddon_2"
+				"15"		"special_bonus_unique_abaddon_borrowed_time_cd"
 				"16"		"abaddon_death_coil"
 				"17"		""
 				"18"		"abaddon_borrowed_time"
 				"19"		""
-				"20"		"special_bonus_unique_abaddon_immolation"
+				"20"		"special_bonus_unique_abaddon"
 				"21"		""
 				"22"		""
 				"23"		"abaddon_frostmourne"
@@ -638,9 +625,9 @@
 				"25"		"special_bonus_unique_abaddon_3"
 				"26"		"abaddon_frostmourne"
 				"27"		"special_bonus_unique_abaddon_7"
-				"28"		"special_bonus_unique_abaddon_borrowed_time_cd"
-				"29"		"special_bonus_unique_abaddon"
-				"30"		"special_bonus_unique_abaddon_4"
+				"28"		"special_bonus_unique_abaddon_6"
+				"29"		"special_bonus_unique_abaddon_4"
+				"30"		"special_bonus_unique_abaddon_2"
 				"31"		"abaddon_borrowed_time"
 			}
 		}
@@ -758,12 +745,12 @@
 				"17"		""
 				"18"		"bounty_hunter_track"
 				"19"		""
-				"20"		"special_bonus_unique_bounty_hunter_8"
+				"20"		"special_bonus_unique_bounty_hunter_2"
 				"21"		""
 				"22"		""
 				"23"		"bounty_hunter_wind_walk"
 				"24"		"bounty_hunter_track"
-				"25"		"special_bonus_unique_bounty_hunter_2"
+				"25"		"special_bonus_unique_bounty_hunter_8"
 				"26"		"bounty_hunter_wind_walk"
 				"27"		"special_bonus_attack_damage_30"
 				"28"		"special_bonus_unique_bounty_hunter_9"
@@ -787,7 +774,7 @@
 				"5"		"bloodseeker_thirst"
 				"6"		"bloodseeker_rupture"
 				"7"		"bloodseeker_thirst"
-				"8"		"bloodseeker_bloodrage"
+				"8"		"bloodseeker_blood_bath"
 				"9"		"bloodseeker_thirst"
 				"10"		"special_bonus_unique_bloodseeker_5"
 				"11"		"bloodseeker_bloodrage"
@@ -795,7 +782,7 @@
 				"13"		"bloodseeker_bloodrage"
 				"14"		"bloodseeker_bloodrage"
 				"15"		"special_bonus_unique_bloodseeker_2"
-				"16"		"bloodseeker_blood_bath"
+				"16"		"bloodseeker_bloodrage"
 				"17"		""
 				"18"		"bloodseeker_rupture"
 				"19"		""
@@ -859,6 +846,7 @@
 	"npc_dota_hero_chaos_knight"
 	{
 		"Ability6"		"imba_chaos_knight_phantasm"
+		"Ability17"		"special_bonus_unique_chaos_knight_4"
 		"Bot"
 		{
 			"Build"
@@ -892,7 +880,7 @@
 				"27"		"special_bonus_unique_chaos_knight_2"
 				"28"		"special_bonus_strength_10"
 				"29"		"special_bonus_unique_chaos_knight"
-				"30"		"special_bonus_unique_chaos_knight_7"
+				"30"		"special_bonus_unique_chaos_knight_4"
 			}
 		}
 	}
@@ -903,32 +891,32 @@
 		{
 			"Build"
 			{
-				"1"		"crystal_maiden_frostbite"
-				"2"		"crystal_maiden_brilliance_aura"
-				"3"		"crystal_maiden_frostbite"
+				"1"		"crystal_maiden_crystal_nova"
+				"2"		"crystal_maiden_frostbite"
+				"3"		"crystal_maiden_crystal_nova"
 				"4"		"crystal_maiden_brilliance_aura"
-				"5"		"crystal_maiden_frostbite"
+				"5"		"crystal_maiden_crystal_nova"
 				"6"		"crystal_maiden_freezing_field"
-				"7"		"crystal_maiden_frostbite"
-				"8"		"crystal_maiden_brilliance_aura"
-				"9"		"crystal_maiden_brilliance_aura"
+				"7"		"crystal_maiden_crystal_nova"
+				"8"		"crystal_maiden_frostbite"
+				"9"		"crystal_maiden_crystal_nova"
 				"10"		"special_bonus_intelligence_12"
-				"11"		"crystal_maiden_crystal_nova"
+				"11"		"crystal_maiden_frostbite"
 				"12"		"crystal_maiden_freezing_field"
-				"13"		"crystal_maiden_crystal_nova"
-				"14"		"crystal_maiden_crystal_nova"
+				"13"		"crystal_maiden_frostbite"
+				"14"		"crystal_maiden_frostbite"
 				"15"		"special_bonus_unique_crystal_maiden_frostbite_castrange"
-				"16"		"crystal_maiden_crystal_nova"
+				"16"		"crystal_maiden_brilliance_aura"
 				"17"		""
 				"18"		"crystal_maiden_freezing_field"
 				"19"		""
 				"20"		"special_bonus_unique_crystal_maiden_3"
 				"21"		""
 				"22"		""
-				"23"		"crystal_maiden_crystal_nova"
+				"23"		"crystal_maiden_brilliance_aura"
 				"24"		"crystal_maiden_freezing_field"
 				"25"		"special_bonus_unique_crystal_maiden_1"
-				"26"		"crystal_maiden_frostbite"
+				"26"		"crystal_maiden_brilliance_aura"
 				"27"		"special_bonus_hp_200"
 				"28"		"special_bonus_unique_crystal_maiden_5"
 				"29"		"special_bonus_unique_crystal_maiden_glacial_guard_mana_multiplier"
@@ -940,11 +928,12 @@
 	// 戴泽
 	"npc_dota_hero_dazzle"
 	{
+		"Ability4"		"dazzle_innate_weave"	// 编织钉在 4 槽，5/6 槽留给善咒/邪能
 		"Ability5"		"dazzle_good_juju"
 		"Ability6"		"dazzle_bad_juju"
 		"Ability7"		"generic_hidden"
+		"Ability15"		"special_bonus_unique_dazzle_shallow_grave_heal_amplify"	// 替代本图没有的虚无投影减冷却
 
-		"Ability13"		"special_bonus_unique_dazzle_shallow_grave_heal_amplify"
 		"Bot"
 		{
 			"Build"
@@ -958,27 +947,27 @@
 				"7"		"dazzle_poison_touch"
 				"8"		"dazzle_shadow_wave"
 				"9"		"dazzle_poison_touch"
-				"10"		"special_bonus_unique_dazzle_poison_touch_attack_range_bonus"
+				"10"		"special_bonus_unique_dazzle_1"
 				"11"		"dazzle_shadow_wave"
 				"12"		"dazzle_good_juju"
 				"13"		"dazzle_shadow_wave"
 				"14"		"dazzle_shadow_wave"
-				"15"		"special_bonus_unique_dazzle_shallow_grave_heal_amplify"
+				"15"		"special_bonus_unique_dazzle_3"
 				"16"		"dazzle_shallow_grave"
 				"17"		""
 				"18"		"dazzle_good_juju"
 				"19"		""
-				"20"		"special_bonus_unique_dazzle_3"
+				"20"		"special_bonus_unique_dazzle_shallow_grave_cooldown"
 				"21"		""
 				"22"		""
 				"23"		"dazzle_shallow_grave"
 				"24"		"dazzle_good_juju"
-				"25"		"special_bonus_unique_dazzle_1"
+				"25"		"special_bonus_unique_dazzle_poison_touch_undispellable"
 				"26"		"dazzle_shallow_grave"
-				"27"		"special_bonus_mp_regen_175"
+				"27"		"special_bonus_unique_dazzle_shadow_wave_cast_range"
 				"28"		"special_bonus_unique_dazzle_2"
-				"29"		"special_bonus_unique_dazzle_shallow_grave_cooldown"
-				"30"		"special_bonus_unique_dazzle_4"
+				// 29 留空：20 级档的另一天赋是虚无投影减冷却，本图没有该技能，待设计换天赋
+				"30"		"special_bonus_unique_dazzle_shallow_grave_duration"
 				"31"		"dazzle_shallow_grave"
 			}
 		}
@@ -1013,22 +1002,22 @@
 				"12"		"death_prophet_exorcism"
 				"13"		"death_prophet_silence"
 				"14"		"death_prophet_silence"
-				"15"		"special_bonus_unique_death_prophet_2"
+				"15"		"special_bonus_unique_death_prophet_silence_aoe"
 				"16"		"death_prophet_silence"
 				"17"		""
 				"18"		"death_prophet_exorcism"
 				"19"		""
-				"20"		"special_bonus_unique_death_prophet_3"
+				"20"		"special_bonus_unique_death_prophet"
 				"21"		""
 				"22"		""
 				"23"		"death_prophet_silence"
 				"24"		"death_prophet_exorcism"
-				"25"		"special_bonus_unique_death_prophet_5"
+				"25"		"special_bonus_unique_death_prophet_2"
 				"26"		"death_prophet_spirit_siphon"
-				"27"		"special_bonus_unique_death_prophet_silence_aoe"
-				"28"		"special_bonus_attack_speed_50"
-				"29"		"special_bonus_unique_death_prophet"
-				"30"		"special_bonus_unique_death_prophet_exorcism_duration_on_kill"
+				"27"		"special_bonus_attack_damage_20"
+				"28"		"special_bonus_unique_death_prophet_5"
+				"29"		"special_bonus_unique_death_prophet_crypt_swarm_damage"
+				"30"		"special_bonus_unique_death_prophet_4"
 				"31"		"death_prophet_carrion_swarm"
 			}
 		}
@@ -1066,7 +1055,7 @@
 				"24"		"dragon_knight_wyrms_wrath"
 				"25"		"special_bonus_unique_dragon_knight"
 				"26"		"dragon_knight_wyrms_wrath"
-				"27"		"special_bonus_attack_damage_15"
+				"27"		"special_bonus_attack_damage_12"
 				"28"		"special_bonus_hp_300"
 				"29"		"special_bonus_unique_dragon_knight_9"
 				"30"		"special_bonus_unique_dragon_knight_wyrms_wrath_damage"
@@ -1162,6 +1151,7 @@
 	}
 	"npc_dota_hero_furion"
 	{
+		"Ability15"		"special_bonus_unique_furion_teleportation_barrier"
 		"Bot"
 		{
 			"Build"
@@ -1193,8 +1183,8 @@
 				"25"		"special_bonus_unique_furion"
 				"26"		"furion_teleportation"
 				"27"		"special_bonus_unique_furion_5"
-				"28"		"special_bonus_unique_furion_teleportation_barrier"
-				"29"		"special_bonus_unique_furion_4"
+				"28"		"special_bonus_hp_300"
+				"29"		"special_bonus_unique_furion_teleportation_barrier"
 				"30"		"special_bonus_unique_furion_3"
 				"31"		"furion_teleportation"
 			}
@@ -1257,7 +1247,7 @@
 	"npc_dota_hero_juggernaut"
 	{
 		"Ability10"		"special_bonus_unique_juggernaut_5"
-		"Ability20"		"special_bonus_unique_juggernaut"// 对调10和15
+		"Ability15"		"special_bonus_unique_juggernaut"
 		"Bot"
 		{
 			"Build"
@@ -1339,12 +1329,12 @@
 				"22"		""
 				"23"		"kunkka_x_marks_the_spot"
 				"24"		"kunkka_ghostship"
-				"25"		"special_bonus_spell_aoe_100"
+				"25"		"special_bonus_spell_aoe_75"
 				"26"		"kunkka_x_marks_the_spot"
 				"27"		"special_bonus_unique_kunkka_rum_duration"
 				"28"		"special_bonus_unique_kunkka_2"
 				"29"		"special_bonus_unique_kunkka_4"
-				"30"		"" // **special_bonus_unique_kunkka_tidebringer_armor_pierce**
+				"30"		"special_bonus_unique_kunkka_tidebringer_armor_pierce"
 				"31"		"kunkka_x_marks_the_spot"
 			}
 		}
@@ -1434,7 +1424,7 @@
 				"25"		"special_bonus_unique_lina_crit_debuff"
 				"26"		"lina_fiery_soul"
 				"27"		"special_bonus_unique_lina_dragon_slave_damage"
-				"28"		"special_bonus_unique_lina_4"
+				"28"		"special_bonus_attack_damage_30"
 				"29"		"special_bonus_unique_lina_2"
 				"30"		"special_bonus_unique_lina_7"
 				"31"		"lina_fiery_soul"
@@ -1549,7 +1539,7 @@
 				"7"			"medusa_mystic_snake"
 				"8"			"medusa_split_shot"
 				"9"			"medusa_mystic_snake"
-				"10"		"special_bonus_unique_medusa_gorgons_grasp_radius"
+				"10"		"special_bonus_unique_medusa_gorgons_grasp_duration"
 				"11"		"medusa_split_shot"
 				"12"		"medusa_stone_gaze"
 				"13"		"medusa_split_shot"
@@ -1567,7 +1557,7 @@
 				"25"		"special_bonus_unique_medusa"
 				"26"		"medusa_gorgon_grasp"
 				"27"		"special_bonus_unique_medusa_8"
-				"28"		"special_bonus_unique_medusa_gorgons_grasp_volleys"
+				"28"		"special_bonus_unique_medusa_gorgons_grasp_radius"
 				"29"		"special_bonus_unique_medusa_2"
 				"30"		"special_bonus_intelligence_40"
 				"31"		"medusa_gorgon_grasp"
@@ -1640,7 +1630,7 @@
 				"12"		"nevermore_requiem"
 				"13"		"nevermore_dark_lord"
 				"14"		"nevermore_dark_lord"
-				"15"		"special_bonus_unique_nevermore_frenzy_max_collection_count"
+				"15"		"special_bonus_unique_nevermore_3"
 				"16"		"nevermore_dark_lord"
 				"17"		""
 				"18"		"nevermore_requiem"
@@ -1652,8 +1642,8 @@
 				"24"		"nevermore_requiem"
 				"25"		"special_bonus_unique_nevermore_raze_procsattacks"
 				"26"		"nevermore_frenzy"
-				"27"		"special_bonus_unique_nevermore_4"
-				"28"		"special_bonus_unique_nevermore_3"
+				"27"		"special_bonus_unique_nevermore_frenzy_max_collection_count"
+				"28"		"special_bonus_unique_nevermore_frenzy_heal_per_soul"
 				"29"		"special_bonus_unique_nevermore_1"
 				"30"		"special_bonus_unique_nevermore_frenzy_castspeed"
 				"31"		"nevermore_frenzy"
@@ -1694,7 +1684,7 @@
 				"26"		"necrolyte_ghost_shroud"
 				"27"		"special_bonus_unique_necrophos_heartstopper_regen_duration"
 				"28"		"special_bonus_unique_necrophos_3"
-				"29"		"special_bonus_spell_aoe_75"
+				"29"		"special_bonus_spell_aoe_50"
 				"30"		"special_bonus_unique_necrophos_reaper_scythe_damage_per_health"
 				"31"		"necrolyte_ghost_shroud"
 			}
@@ -1735,7 +1725,7 @@
 				"17"		""
 				"18"		"ogre_magi_multicast"
 				"19"		""
-				"20"		"special_bonus_strength_30"
+				"20"		"special_bonus_strength_25"
 				"21"		""
 				"22"		""
 				"23"		"ogre_magi_bloodlust"
@@ -1777,6 +1767,7 @@
 
 		"Ability5"		"generic_hidden" // Remove 烈焰之军
 		"Ability12"		"special_bonus_attack_range_100"
+		"Ability15"		"special_bonus_hp_400" // 7.42 skeleton talent has no effect here (skeletons removed)
 	}
 	// 全能骑士
 	"npc_dota_hero_omniknight"
@@ -2048,7 +2039,7 @@
 				"5"		"sandking_burrowstrike"
 				"6"		"sandking_epicenter"
 				"7"		"sandking_burrowstrike"
-				"8"		"sandking_sand_storm"
+				"8"		"sandking_scorpion_strike"
 				"9"		"sandking_burrowstrike"
 				"10"		"special_bonus_unique_sand_king_3"
 				"11"		"sandking_sand_storm"
@@ -2056,7 +2047,7 @@
 				"13"		"sandking_sand_storm"
 				"14"		"sandking_sand_storm"
 				"15"		"special_bonus_unique_sand_king_8"
-				"16"		"sandking_scorpion_strike"
+				"16"		"sandking_sand_storm"
 				"17"		""
 				"18"		"sandking_epicenter"
 				"19"		""
@@ -2197,7 +2188,7 @@
 				"26"		"skeleton_king_spectral_blade"
 				"27"		"special_bonus_unique_wraith_king_2"
 				"28"		"special_bonus_hp_300"
-				"29"		"special_bonus_attack_speed_50"
+				"29"		"special_bonus_attack_speed_40"
 				"30"		"special_bonus_unique_wraith_king_10"
 				"31"		"skeleton_king_spectral_blade"
 			}
@@ -2225,7 +2216,7 @@
 				"7"		"skywrath_mage_arcane_bolt"
 				"8"		"skywrath_mage_ancient_seal"
 				"9"		"skywrath_mage_ancient_seal"
-				"10"		"special_bonus_mp_regen_150"
+				"10"		"special_bonus_unique_skywrath_scion_shield_barrier"
 				"11"		"skywrath_mage_ancient_seal"
 				"12"		"skywrath_mage_mystic_flare"
 				"13"		"skywrath_mage_concussive_shot"
@@ -2392,19 +2383,19 @@
 				"1"		"vengefulspirit_magic_missile"
 				"2"		"vengefulspirit_command_aura"
 				"3"		"vengefulspirit_magic_missile"
-				"4"		"vengefulspirit_command_aura"
+				"4"		"vengefulspirit_wave_of_terror"
 				"5"		"vengefulspirit_magic_missile"
 				"6"		"vengefulspirit_nether_swap"
 				"7"		"vengefulspirit_magic_missile"
-				"8"		"vengefulspirit_command_aura"
+				"8"		"vengefulspirit_wave_of_terror"
 				"9"		"vengefulspirit_magic_missile"
 				"10"		"special_bonus_unique_vengeful_spirit_missile_castrange"
 				"11"		"vengefulspirit_command_aura"
 				"12"		"vengefulspirit_nether_swap"
-				"13"		"vengefulspirit_wave_of_terror"
+				"13"		"vengefulspirit_command_aura"
 				"14"		"vengefulspirit_command_aura"
 				"15"		"special_bonus_unique_vengeful_spirit_1"
-				"16"		"vengefulspirit_wave_of_terror"
+				"16"		"vengefulspirit_command_aura"
 				"17"		""
 				"18"		"vengefulspirit_nether_swap"
 				"19"		""
@@ -2462,8 +2453,8 @@
 				"24"		"viper_viper_strike"
 				"25"		"special_bonus_unique_viper_nethertoxin_radius"
 				"26"		"viper_corrosive_skin"
-				"27"		"special_bonus_unique_viper_7"
-				"28"		"special_bonus_unique_viper_1"
+				"27"		"special_bonus_unique_viper_1"
+				"28"		"special_bonus_unique_viper_7"
 				"29"		"special_bonus_unique_viper_predator_damage"
 				"30"		"special_bonus_unique_viper_8"
 				"31"		"viper_corrosive_skin"
@@ -2532,7 +2523,7 @@
 				"12"		"warlock_rain_of_chaos"
 				"13"		"warlock_upheaval"
 				"14"		"warlock_upheaval"
-				"15"		"special_bonus_unique_warlock_7"
+				"15"		"special_bonus_unique_warlock_shadow_word_damage"
 				"16"		"warlock_upheaval"
 				"17"		""
 				"18"		"warlock_rain_of_chaos"
@@ -2544,7 +2535,7 @@
 				"24"		"warlock_rain_of_chaos"
 				"25"		"special_bonus_unique_warlock_4"
 				"26"		"warlock_fatal_bonds"
-				"27"		"special_bonus_unique_warlock_upheaval_aoe"
+				"27"		"special_bonus_unique_warlock_7"
 				"28"		"special_bonus_unique_warlock_10"
 				"29"		"special_bonus_unique_warlock_3"
 				"30"		"special_bonus_unique_warlock_fatal_bonds_count"
@@ -2605,7 +2596,7 @@
 	// 宙斯
 	"npc_dota_hero_zuus"
 	{
-		"AttackRange"			"750"
+		"AttackRange"			"750"	// 365
 		"Bot"
 		{
 			"Build"

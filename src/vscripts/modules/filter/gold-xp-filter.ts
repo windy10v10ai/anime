@@ -1,11 +1,16 @@
 import { reloadable } from '../../utils/tstl-utils';
+import { TowerPushStatus } from '../event/event-entity-killed';
 import { PlayerHelper } from '../helper/player-helper';
+import { farmRewardBonus } from './comeback-reward';
 
 @reloadable
 export class GoldXPFilter {
-  private readonly REDUCE_RATE_3_MIN = 0.6;
-  private readonly REDUCE_RATE_6_MIN = 0.8;
-  private readonly REDUCE_RATE_HERO_KILL = 0.5;
+  private readonly REDUCE_RATE_3_MIN = 0.5;
+  private readonly REDUCE_RATE_6_MIN = 0.7;
+  private readonly REDUCE_RATE_HERO_KILL = 0.4;
+  private readonly KILL_SHARE_MIN_TEAM_KILLS = 10;
+  // 多人局强势玩家的领先在开局就形成，要更早介入
+  private readonly KILL_SHARE_MIN_TEAM_KILLS_MULTIPLAYER = 5;
 
   constructor() {
     GameRules.GetGameModeEntity().SetModifyGoldFilter((args) => this.filterGold(args), this);
@@ -42,22 +47,37 @@ export class GoldXPFilter {
     let gold = args.gold;
     const playerID = args.player_id_const;
     const reason = args.reason_const;
-    let mul = this.getPlayerGoldXpMultiplier(playerID);
 
     if (this.GOLD_REASON_NOT_FILTER.includes(reason)) {
       return true;
     }
 
     if (reason === ModifyGoldReason.HERO_KILL) {
-      gold = this.filterHeroKillGold(gold);
+      args.gold = this.getHeroKillGold(playerID, gold);
+      return true;
+    }
 
-      gold = gold * this.rewardFilterByKill(playerID);
-      mul = this.filterHeroKillGoldByMultiplier(mul);
+    const mul = this.getPlayerGoldXpMultiplier(playerID);
+
+    if (reason === ModifyGoldReason.CREEP_KILL || reason === ModifyGoldReason.NEUTRAL_KILL) {
+      gold = gold * this.getFarmRewardBonus(playerID);
     }
 
     args.gold = Math.floor(gold * mul);
 
     return true;
+  }
+
+  /**
+   * 计算一笔英雄击杀金币的实际到账值。
+   *
+   * @param playerID - 收钱的玩家ID。
+   * @param gold - 过滤前的金币。
+   * @returns 实际到账的金币。
+   */
+  getHeroKillGold(playerID: PlayerID, gold: number): number {
+    const mul = this.filterHeroKillGoldByMultiplier(this.getPlayerGoldXpMultiplier(playerID));
+    return Math.floor(this.filterHeroKillGold(gold) * this.rewardFilterByKill(playerID) * mul);
   }
 
   filterHeroKillGold(gold: number): number {
@@ -73,13 +93,20 @@ export class GoldXPFilter {
   }
 
   private filterXP(args: ModifyExperienceFilterEvent): boolean {
-    const xp = args.experience;
+    let xp = args.experience;
     const playerID = args.player_id_const;
     const reason = args.reason_const;
     let mul = this.getPlayerGoldXpMultiplier(playerID);
 
     if (reason === ModifyXpReason.HERO_KILL) {
       mul = this.filterHeroKillGoldByMultiplier(mul);
+      if (this.isMultiplayerRadiant(playerID)) {
+        xp = xp * this.rewardFilterByKill(playerID);
+      }
+    }
+
+    if (reason === ModifyXpReason.CREEP_KILL) {
+      xp = xp * this.getFarmRewardBonus(playerID);
     }
 
     args.experience = Math.floor(xp * mul);
@@ -88,11 +115,37 @@ export class GoldXPFilter {
   }
 
   /**
+   * 真人玩家丢塔后打野与补兵的收益倍数，电脑玩家保持原收益。
+   *
+   * @param playerID - 要计算收益倍数的玩家ID。
+   * @returns 按己方丢塔数计算的收益倍数。
+   */
+  private getFarmRewardBonus(playerID: PlayerID): number {
+    if (!PlayerHelper.IsHumanPlayerByPlayerId(playerID)) {
+      return 1;
+    }
+
+    // 字段按推掉塔的一方命名：天辉的塔被推掉记在 Bad，夜魇的记在 Good
+    const towersLost =
+      PlayerResource.GetTeam(playerID) === DotaTeam.GOODGUYS
+        ? TowerPushStatus.tower1PushedBad +
+          TowerPushStatus.tower2PushedBad +
+          TowerPushStatus.tower3PushedBad +
+          TowerPushStatus.tower4PushedBad
+        : TowerPushStatus.tower1PushedGood +
+          TowerPushStatus.tower2PushedGood +
+          TowerPushStatus.tower3PushedGood +
+          TowerPushStatus.tower4PushedGood;
+
+    return farmRewardBonus(towersLost);
+  }
+
+  /**
    * 根据玩家的击杀数相对于团队总击杀数计算奖励倍数。
    * 击杀数较多的玩家获得的奖励更少，击杀数较少的玩家获得的奖励更多。
    *
    * @param playerID - 要计算奖励倍数的玩家ID。
-   * @returns 玩家奖励倍数。如果团队总击杀数小于10，倍数为1；
+   * @returns 玩家奖励倍数。团队总击杀数未到门槛时倍数为1，多人局天辉的门槛更低；
    *          否则，倍数根据玩家的击杀数与团队总击杀数计算得出。
    */
   rewardFilterByKill(playerID: PlayerID): number {
@@ -100,12 +153,20 @@ export class GoldXPFilter {
     const teamKill = PlayerResource.GetTeamKills(PlayerResource.GetTeam(playerID));
     const teamCount = PlayerResource.GetPlayerCountForTeam(PlayerResource.GetTeam(playerID));
 
+    const minTeamKills = this.isMultiplayerRadiant(playerID)
+      ? this.KILL_SHARE_MIN_TEAM_KILLS_MULTIPLAYER
+      : this.KILL_SHARE_MIN_TEAM_KILLS;
+
     let rewardMulti = 1;
-    if (teamKill < 10) {
+    if (teamKill < minTeamKills) {
       return rewardMulti;
     }
     rewardMulti = 1 + (1 / teamCount - playerKill / teamKill) / 2;
     return rewardMulti;
+  }
+
+  private isMultiplayerRadiant(playerID: PlayerID): boolean {
+    return PlayerHelper.IsGoodTeamPlayer(playerID) && PlayerHelper.IsMultiplayerGame();
   }
 
   public getPlayerGoldXpMultiplier(playerID: PlayerID): number {

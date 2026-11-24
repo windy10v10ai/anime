@@ -68,6 +68,7 @@ export const itemTiers: Tier[] = [
       'item_crellas_crozier', // 克莱拉牧杖
       'item_specialists_array', // 行家阵列
       'item_hand_of_group', // 团队之手
+      'item_horn_of_battle_greater', // 大战角
     ],
   },
   // 2k
@@ -84,7 +85,7 @@ export const itemTiers: Tier[] = [
       'item_ancient_janggo', // 韧鼓
       'item_holy_locket', // 圣洁吊坠
       'item_consecrated_wraps', // 圣化护服
-      'item_veil_of_discord_2', // 纷争面纱
+      'item_veil_of_discord', // 纷争面纱
     ],
   },
   // 1k

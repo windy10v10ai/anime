@@ -1,4 +1,5 @@
 // 需要与 particles/units/heroes/ 目录下的英雄名一致
+// 注释掉的英雄不整包预载粒子，首次施法现场加载，用于控制开局同时加载的资源数（引擎上限 32767）
 export const heroNameListParticles = [
   'hero_abaddon', // 亚巴顿
   'heroes_underlord', // 孽主
@@ -75,7 +76,7 @@ export const heroNameListParticles = [
   'hero_rattletrap', // 发条技师
   'hero_razor', // 雷泽
   'hero_riki', // 力丸
-  'hero_rubick', // 拉比克
+  // 'hero_rubick', // 拉比克
   'hero_sandking', // 沙王
   // 'hero_shadow_demon', // 暗影恶魔
   'hero_shadowshaman', // 暗影萨满
@@ -90,7 +91,7 @@ export const heroNameListParticles = [
   'hero_spirit_breaker', // 裂魂人
   'hero_stormspirit', // 风暴之灵
   'hero_sven', // 斯温
-  'hero_techies', // 工程师
+  // 'hero_techies', // 工程师
   'hero_templar_assassin', // 圣堂刺客
   // 'hero_terrorblade', // 恐怖利刃
   'hero_tidehunter', // 潮汐猎人
@@ -123,7 +124,7 @@ export const heroNameListParticles = [
   // 'hero_grimstroke', // 天涯墨客
   'hero_pangolier', // 石鳞剑士
   'hero_muerta', // 琼英碧灵
-  'hero_ringmaster', // 百戏大王
+  // 'hero_ringmaster', // 百戏大王
   // 'hero_kez', // 凯
 ];
 
@@ -258,9 +259,23 @@ export const heroNameListSound = [
 
 export const abilityModelNameList = [
   'models/heroes/witchdoctor/witchdoctor_ward.vmdl', // 巫医守卫
+  'models/heroes/shadowshaman/shadowshaman_totem.vmdl', // 群蛇守卫
+  'models/items/wards/ti9_totem_ward/ti9_totem_ward.vmdl', // 群蛇守卫饰品
   'models/heroes/techies/fx_techiesfx_mine.vmdl', // 感应地雷
   // 'models/heroes/phoenix/phoenix_egg.vmdl', // 超新星
   'models/heroes/mars/mars_soldier.vmdl', // 护身甲盾
   'models/heroes/gyro/gyro_flak_cannon_fx.vmdl', // 高射火炮
   'models/heroes/dragon_knight/dragon_knight_dragon.vmdl', // 变龙
+];
+
+/** 多个技能共用的 Lua 工具库（飘字、吸血）创建的粒子，无法归到单个技能的 KV */
+export const luaParticleNameList = [
+  'particles/items3_fx/octarine_core_lifesteal.vpcf',
+  'particles/msg_fx/msg_block.vpcf',
+  'particles/msg_fx/msg_crit.vpcf',
+  'particles/msg_fx/msg_damage.vpcf',
+  'particles/msg_fx/msg_gold.vpcf',
+  'particles/msg_fx/msg_heal.vpcf',
+  'particles/msg_fx/msg_miss.vpcf',
+  'particles/msg_fx/msg_poison.vpcf',
 ];

@@ -265,6 +265,12 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
     tier: ItemTier.T2,
     cost: 2575,
   },
+  item_meteor_hammer: {
+    name: 'item_meteor_hammer',
+    nameCN: '陨星锤',
+    tier: ItemTier.T2,
+    cost: 2850,
+  },
   item_consecrated_wraps: {
     name: 'item_consecrated_wraps',
     nameCN: '圣化护服',
@@ -300,7 +306,7 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
     name: 'item_revenants_brooch',
     nameCN: '英灵胸针',
     tier: ItemTier.T2,
-    cost: 3300,
+    cost: 2000,
   },
   item_blink: {
     name: 'item_blink',
@@ -439,7 +445,7 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
     name: 'item_force_staff_2',
     nameCN: '风力法杖',
     tier: ItemTier.T2,
-    cost: 3700,
+    cost: 3500,
     baseItems: ['item_force_staff'],
   },
   item_pipe: { name: 'item_pipe', nameCN: '洞察烟斗', tier: ItemTier.T2, cost: 3725 },
@@ -514,6 +520,7 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
     nameCN: '飓风长戟',
     tier: ItemTier.T2,
     cost: 4450,
+    baseItems: ['item_force_staff'],
   },
   item_shotgun: {
     name: 'item_shotgun',
@@ -646,8 +653,9 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
   item_force_staff_3: {
     name: 'item_force_staff_3',
     nameCN: '黄金法杖',
+    // 风力法杖占着 T2，升级品放 T3 才有出装节奏，价格按 T2 区间算
     tier: ItemTier.T3,
-    cost: 5200,
+    cost: 5000,
     baseItems: ['item_force_staff', 'item_force_staff_2'],
   },
   item_swift_blink: {
@@ -696,6 +704,7 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
     cost: 5800,
     baseItems: ['item_blade_mail'],
   },
+  // 死亡掉落，电脑出了会被玩家捡走、还会反复补买，出装不要选；仅作合成材料登记
   item_rapier: {
     name: 'item_rapier',
     nameCN: '圣剑',
@@ -734,11 +743,12 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
     tier: ItemTier.T3,
     cost: 6000,
   },
-  item_meteor_hammer_2: {
-    name: 'item_meteor_hammer_2',
-    nameCN: '星落',
+  item_starforge: {
+    name: 'item_starforge',
+    nameCN: '锻星炉',
     tier: ItemTier.T3,
     cost: 6000,
+    baseItems: ['item_meteor_hammer'],
   },
   item_aeon_pendant: {
     name: 'item_aeon_pendant',
@@ -858,13 +868,6 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
     cost: 9600,
     baseItems: ['item_adi_king', 'item_phase_boots'],
   },
-  item_eternal_shroud_ultra: {
-    name: 'item_eternal_shroud_ultra',
-    nameCN: '法师泳衣',
-    tier: ItemTier.T3,
-    cost: 9600,
-    baseItems: ['item_eternal_shroud'],
-  },
   item_hurricane_pike_2: {
     name: 'item_hurricane_pike_2',
     nameCN: '黄金魔龙枪 Ultimate',
@@ -903,7 +906,7 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
     name: 'item_revenants_brooch_ultra',
     nameCN: '神器·魔武双修',
     tier: ItemTier.T3,
-    cost: 10000,
+    cost: 8700,
     baseItems: ['item_revenants_brooch'],
   },
   item_consecrated_wraps_2: {
@@ -953,7 +956,7 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
     name: 'item_arcane_blink',
     nameCN: '爱因斯坦闪光',
     tier: ItemTier.T4,
-    cost: 10100,
+    cost: 10600,
     baseItems: ['item_arcane_blink_2'],
   },
   item_angels_demise: {
@@ -1128,16 +1131,12 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
     name: 'item_jump_jump_jump',
     nameCN: '跳！跳！跳！刀',
     tier: ItemTier.T4,
-    cost: 15650,
-    // 可以有多个前置：overwhelming_blink_2, arcane_blink, swift_blink_2，选择其中一个作为主要前置
+    cost: 18600,
     baseItems: [
-      'item_arcane_blink',
-      'item_arcane_blink_2',
-      'item_blink',
-      'item_overwhelming_blink',
       'item_overwhelming_blink_2',
-      'item_swift_blink',
       'item_swift_blink_2',
+      'item_arcane_blink',
+      'item_starforge',
     ],
   },
   item_necronomicon_staff: {
@@ -1300,7 +1299,7 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
     name: 'item_magic_crit_blade',
     nameCN: '魔龙狂舞',
     tier: ItemTier.T5,
-    cost: 43800,
+    cost: 36800,
     baseItems: ['item_hallowed_scepter'],
   },
   item_beast_armor: {
@@ -1320,7 +1319,7 @@ export const ItemTierConfig: Record<string, ItemConfig> = {
     name: 'item_beast_shield',
     nameCN: '兽化盾',
     tier: ItemTier.T5,
-    cost: 57300,
+    cost: 52200,
     baseItems: ['item_black_king_bar_2'],
   },
   item_time_gem: {

@@ -1,0 +1,238 @@
+import { UnitHandlerRegistry } from './unit-handler-registry';
+
+/**
+ * 全场共用的 modifier 事件监听：引擎会对场上每个声明了全局事件的 modifier 各回调一次，
+ * 持有者越多开销成倍增长，所以全场只挂一个监听、按事件里的单位查表分发
+ */
+// 带 @registerModifier 的文件在引擎创建该 modifier 时会再执行一遍，监听若与登记表同文件就会多出一份互不相通的登记表，
+// 因此监听放在单独文件、按名字引用
+export const DAMAGE_LISTENER_MODIFIER = 'modifier_damage_event_listener';
+export const MODIFIER_ADDED_LISTENER_MODIFIER = 'modifier_modifier_added_event_listener';
+export const ATTACK_LANDED_LISTENER_MODIFIER = 'modifier_attack_landed_event_listener';
+
+// 持续伤害的零碎小跳占伤害事件的大头，触发效果收益很小；后期普攻与暴击基本都高于此值
+const MIN_DISPATCH_DAMAGE = 20;
+
+type Handler<TEvent> = (this: void, event: TEvent) => void;
+
+/** 一个隐藏监听 modifier，可被多条通道共用，所有通道都空了才移除 */
+class SharedListener {
+  private listener: CDOTA_BaseNPC | undefined;
+  private users = 0;
+
+  constructor(private readonly listenerModifier: string) {}
+
+  Acquire(): void {
+    this.users += 1;
+    this.Ensure();
+  }
+
+  Release(): void {
+    this.users -= 1;
+    if (this.users > 0 || this.listener === undefined) return;
+    if (!this.listener.IsNull()) {
+      UTIL_Remove(this.listener);
+    }
+    this.listener = undefined;
+  }
+
+  Ensure(): void {
+    if (this.listener !== undefined && !this.listener.IsNull()) return;
+    this.listener = CreateModifierThinker(
+      undefined,
+      undefined,
+      this.listenerModifier,
+      undefined,
+      Vector(0, 0, 0),
+      DotaTeam.NOTEAM,
+      false,
+    );
+  }
+}
+
+/** 一种全局事件：一张按单位的登记表，监听由 SharedListener 按需创建 */
+class EventChannel<TEvent> {
+  private readonly registry = new UnitHandlerRegistry<TEvent>();
+
+  constructor(
+    private readonly listener: SharedListener,
+    private readonly unitOf: (this: void, event: TEvent) => CDOTA_BaseNPC | undefined,
+    private readonly accept?: (this: void, event: TEvent) => boolean,
+  ) {}
+
+  Register(unit: CDOTA_BaseNPC, owner: object, handler: Handler<TEvent>): void {
+    const wasEmpty = this.registry.IsEmpty();
+    this.registry.Add(unit.entindex(), owner, handler);
+    if (wasEmpty) {
+      this.listener.Acquire();
+    } else {
+      this.listener.Ensure();
+    }
+  }
+
+  Unregister(unit: CDOTA_BaseNPC, owner: object): void {
+    const wasEmpty = this.registry.IsEmpty();
+    this.registry.Remove(unit.entindex(), owner);
+    if (!wasEmpty && this.registry.IsEmpty()) {
+      this.listener.Release();
+    }
+  }
+
+  /** 实体可能已失效拿不到句柄，只凭登记时的实体编号注销 */
+  UnregisterByIndex(unit: EntityIndex, owner: object): void {
+    const wasEmpty = this.registry.IsEmpty();
+    this.registry.Remove(unit, owner);
+    if (!wasEmpty && this.registry.IsEmpty()) {
+      this.listener.Release();
+    }
+  }
+
+  Dispatch(event: TEvent): void {
+    if (this.accept !== undefined && !this.accept(event)) return;
+    const unit = this.unitOf(event);
+    if (unit === undefined) return;
+    this.registry.Dispatch(unit.entindex(), event);
+  }
+}
+
+// 受伤的两条通道共用一个监听。放在类外：静态字段互相引用时类还没赋值完，编译后会取到 nil
+const damageListener = new SharedListener(DAMAGE_LISTENER_MODIFIER);
+
+// 高频低伤的持续伤害每跳都会进来，小伤害对各处理都没有意义，查表前先挡掉
+function acceptDamage(this: void, event: ModifierInstanceEvent): boolean {
+  return event.damage >= MIN_DISPATCH_DAMAGE;
+}
+
+export class ModifierEventHub {
+  private static readonly damageByAttacker = new EventChannel<ModifierInstanceEvent>(
+    damageListener,
+    (event) => event.attacker,
+    acceptDamage,
+  );
+
+  private static readonly damageByVictim = new EventChannel<ModifierInstanceEvent>(
+    damageListener,
+    (event) => event.unit,
+    acceptDamage,
+  );
+
+  private static readonly attackLandedByAttacker = new EventChannel<ModifierAttackEvent>(
+    new SharedListener(ATTACK_LANDED_LISTENER_MODIFIER),
+    (event) => event.attacker,
+  );
+
+  private static readonly modifierAddedByUnit = new EventChannel<ModifierAddedEvent>(
+    new SharedListener(MODIFIER_ADDED_LISTENER_MODIFIER),
+    (event) => event.unit,
+  );
+
+  /** 登记攻击者造成伤害时的处理，owner 用于注销，一般传 modifier 自身 */
+  static RegisterDamageByAttacker(
+    attacker: CDOTA_BaseNPC,
+    owner: object,
+    handler: Handler<ModifierInstanceEvent>,
+  ): void {
+    this.damageByAttacker.Register(attacker, owner, handler);
+  }
+
+  static UnregisterDamageByAttacker(attacker: CDOTA_BaseNPC, owner: object): void {
+    this.damageByAttacker.Unregister(attacker, owner);
+  }
+
+  /** 登记单位受到伤害时的处理，event.damage 是减免后实际掉的血 */
+  static RegisterDamageByVictim(
+    victim: CDOTA_BaseNPC,
+    owner: object,
+    handler: Handler<ModifierInstanceEvent>,
+  ): void {
+    this.damageByVictim.Register(victim, owner, handler);
+  }
+
+  static UnregisterDamageByVictim(victim: CDOTA_BaseNPC, owner: object): void {
+    this.damageByVictim.Unregister(victim, owner);
+  }
+
+  /** 单位实体已失效、拿不到句柄时，用登记时记下的实体编号注销 */
+  static UnregisterDamageByVictimIndex(victim: EntityIndex, owner: object): void {
+    this.damageByVictim.UnregisterByIndex(victim, owner);
+  }
+
+  static DispatchDamage(event: ModifierInstanceEvent): void {
+    this.damageByAttacker.Dispatch(event);
+    this.damageByVictim.Dispatch(event);
+  }
+
+  /** 登记攻击者普攻命中时的处理 */
+  static RegisterAttackLandedByAttacker(
+    attacker: CDOTA_BaseNPC,
+    owner: object,
+    handler: Handler<ModifierAttackEvent>,
+  ): void {
+    this.attackLandedByAttacker.Register(attacker, owner, handler);
+  }
+
+  static UnregisterAttackLandedByAttacker(attacker: CDOTA_BaseNPC, owner: object): void {
+    this.attackLandedByAttacker.Unregister(attacker, owner);
+  }
+
+  static DispatchAttackLanded(event: ModifierAttackEvent): void {
+    this.attackLandedByAttacker.Dispatch(event);
+  }
+
+  /** 登记单位身上被加 modifier 时的处理 */
+  static RegisterModifierAdded(
+    unit: CDOTA_BaseNPC,
+    owner: object,
+    handler: Handler<ModifierAddedEvent>,
+  ): void {
+    this.modifierAddedByUnit.Register(unit, owner, handler);
+  }
+
+  static UnregisterModifierAdded(unit: CDOTA_BaseNPC, owner: object): void {
+    this.modifierAddedByUnit.Unregister(unit, owner);
+  }
+
+  static DispatchModifierAdded(event: ModifierAddedEvent): void {
+    this.modifierAddedByUnit.Dispatch(event);
+  }
+}
+
+declare global {
+  /** 供 Lua 物品登记攻击者造成伤害时的处理 */
+  function ModifierEventRegisterDamageByAttacker(
+    this: void,
+    attacker: CDOTA_BaseNPC,
+    owner: object,
+    handler: (this: void, event: ModifierInstanceEvent) => void,
+  ): void;
+  function ModifierEventUnregisterDamageByAttacker(
+    this: void,
+    attacker: CDOTA_BaseNPC,
+    owner: object,
+  ): void;
+}
+
+_G.ModifierEventRegisterDamageByAttacker = (attacker, owner, handler) =>
+  ModifierEventHub.RegisterDamageByAttacker(attacker, owner, handler);
+_G.ModifierEventUnregisterDamageByAttacker = (attacker, owner) =>
+  ModifierEventHub.UnregisterDamageByAttacker(attacker, owner);
+
+declare global {
+  /** 供 Lua 物品登记单位被加 modifier 时的处理 */
+  function ModifierEventRegisterModifierAdded(
+    this: void,
+    unit: CDOTA_BaseNPC,
+    owner: object,
+    handler: (this: void, event: ModifierAddedEvent) => void,
+  ): void;
+  function ModifierEventUnregisterModifierAdded(
+    this: void,
+    unit: CDOTA_BaseNPC,
+    owner: object,
+  ): void;
+}
+
+_G.ModifierEventRegisterModifierAdded = (unit, owner, handler) =>
+  ModifierEventHub.RegisterModifierAdded(unit, owner, handler);
+_G.ModifierEventUnregisterModifierAdded = (unit, owner) =>
+  ModifierEventHub.UnregisterModifierAdded(unit, owner);

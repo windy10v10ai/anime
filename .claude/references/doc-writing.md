@@ -1,0 +1,51 @@
+# 文档写法
+
+写模块 `README.md`、设计 spec、issue 时读这份。各类文档放哪见根 `.claude/CLAUDE.md`「文档分工」。
+
+## 设计 spec
+
+- 讨论阶段用 artifact（`Artifact` 工具发布 HTML 页面，边谈边改）
+- 用户定稿后挂到 issue 上（命令见下文「issue artifact」）：名为「设计」的 HTML artifact（给人看）和指向讨论页的链接 artifact（备用）。agent 读的是名为「执行说明」的 Markdown artifact（格式见 `agent-issue.md`），不读 HTML 源码，所以设计里和实现有关的结论要写进它。没有 issue 的先开一个。不写本地文件
+- 内容讲设计思路和数据流：背景/目标、设计决策与理由、数据流（谁读谁写、字段名、经过哪些层）、修改文件列表（每个文件一行说改什么）、验证方式。函数签名、代码块、参数列表留给实现阶段
+- spec 跟着 issue 走，issue 关闭后很少再看。留得住的设计思路另写进版本控制：模块级的进该模块 `README.md`，只影响一两处实现的写成代码注释
+
+## issue
+
+issue 管整体目标、统一规范、进度与验证结论。具体文件、key 清单、实施步骤、设计细节放进 issue artifact 或就近文档，issue 正文用链接指过去。「规划 issue」只授权讨论方案和更新 issue，实现要等用户另行开口。
+
+## issue artifact
+
+GitHub issue 的附件（预览功能），三种：Markdown 文档（`generic`）、HTML 文档（`embedded_html`）、链接（`link`）。用 `gh issue artifact` 操作，按扩展名定类型：
+
+```bash
+gh issue artifact create <n> -R windy10v10ai/game '<文件>.html#设计' '<claude.ai artifact URL>'
+gh issue artifact create <n> -R windy10v10ai/game '<文件>.md#<名称>'
+gh issue artifact list <n> -R windy10v10ai/game
+gh issue artifact view <n> <编号> -R windy10v10ai/game
+gh issue artifact edit <n> <编号> -R windy10v10ai/game --body-file <文件>
+```
+
+- **HTML**：定稿的设计、给人看的说明页（流程图、进度、方案对比）。claude.ai 页面在 GitHub 上不能内嵌，挂 HTML 文件本身。页面自包含（内联 CSS，不引外部资源），用 `prefers-color-scheme` 适配深色模式
+- **链接**：指回讨论用的 artifact，只对有权限的人可见，作备用；HTML 才是定稿
+- **Markdown**：「执行说明」（agent 读它）、测量报告、多个子 issue 共用的规约
+- agent 用 `gh issue artifact view` 读内容，HTML 读的是源码
+- 定稿后再改：HTML 与 Markdown 都用 `edit` 覆盖（保留版本历史，不删了重建），讨论用 artifact 同步改。名称不能含括号等字符
+- issue 正文引用时写名称加 URL（`https://github.com/windy10v10ai/game/issues/<n>/artifacts/<编号>`）
+- 预览功能，需要 `gh` 2.103.0 以上，报 `unknown command "artifact"` 时先升级 `gh`（`brew upgrade gh`）；其他失败把内容写进 issue 正文或评论兜底
+
+## 模块 README
+
+框架性文档，长期维护，只回答新接手的人最需要的几个问题，写法和设计 spec 一样站在宏观层面：
+
+1. **背景**：这个模块为什么存在，面对什么限制或问题
+2. **目的**：它要达成什么，对玩家或上层系统意味着什么
+3. **设计**：整体怎么搭（几个角色、谁负责什么、数据怎么流），每个关键决定带一句理由，没选的方案值得提时带半句「没选 X，因为 Y」
+4. **要求**：改动它时必须守住的约束，以及容易踩的坑
+
+写法：
+
+- **宏观，不讲实现**。函数名、常量与取值、超时与重试次数、间隔、字段拼法、调用链都以代码为准，不进 README。判断标准：这句话换一种实现还成立吗？成立才写
+- **只记用户拍板的决定**。AI 实现时自行选定、以后可能调整的细节留在代码注释里
+- **按现状组织，不按阶段**。进度、本次改了哪些文件、排查过程与证据、实测数字进 issue 或 PR
+- **越短越好，按读者写**。面向玩家或外部读者的目录只写做什么、怎么用、怎么编译发布
+- **随决策变更同步更新**。一次改动新增或推翻了背景、目的、设计、要求里的内容，就在同一个 PR 里改 README。只是按既有设计多接了一处，README 不动

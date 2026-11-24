@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   GetLocalPlayerSteamAccountID,
   GetAfdianPointsUrl,
   GetPaymentPlatformOrder,
+  GetMembershipPageUrl,
   PaymentPlatform,
   KOFI_POINTS_URLS,
 } from '@utils/utils';
@@ -10,13 +11,14 @@ import { AlipaySubscribeCard, AlipayCardItem } from './alipay';
 import { MEMBER_POINTS_ICONS } from './alipay/constants';
 import { ExternalPointsCard } from './ExternalPointsCard';
 import {
-  AFDIAN_ACTIVATE_URL,
+  GetAfdianActivateUrl,
   AFDIAN_ICON,
   ALIPAY_POINTS_TIERS,
-  KOFI_ACTIVATE_URL,
+  GetKofiActivateUrl,
   KOFI_LOGO,
   openUrl,
 } from './constants';
+import { StripePointsCard } from './StripeCard';
 
 interface PointsPageProps {
   refreshing: boolean;
@@ -31,7 +33,6 @@ const POINTS_AMOUNTS = [4000, 12500, 31000];
 export function PointsPage({ refreshing, onRefresh }: PointsPageProps) {
   const steamId = GetLocalPlayerSteamAccountID();
   const order = GetPaymentPlatformOrder();
-  const [expanded, setExpanded] = useState(false);
 
   const alipayItems: AlipayCardItem[] = ALIPAY_POINTS_TIERS.map((tier, i) => ({
     productCode: tier.productCode,
@@ -69,7 +70,7 @@ export function PointsPage({ refreshing, onRefresh }: PointsPageProps) {
           price: `¥${AFDIAN_POINTS_PRICES[i]}`,
           onClick: openUrl(GetAfdianPointsUrl(i)),
         }))}
-        activateUrl={AFDIAN_ACTIVATE_URL}
+        activateUrl={GetAfdianActivateUrl}
       />
     ),
     kofi: (
@@ -84,9 +85,10 @@ export function PointsPage({ refreshing, onRefresh }: PointsPageProps) {
           price: `$${KOFI_POINTS_PRICES[i]}`,
           onClick: openUrl(KOFI_POINTS_URLS[i]),
         }))}
-        activateUrl={KOFI_ACTIVATE_URL}
+        activateUrl={GetKofiActivateUrl}
       />
     ),
+    stripe: <StripePointsCard />,
   };
 
   return (
@@ -125,22 +127,15 @@ export function PointsPage({ refreshing, onRefresh }: PointsPageProps) {
       </Panel>
 
       <Panel className="member-platform-cards">
-        {order.map((key, i) => (
-          <Panel
-            key={key}
-            className="member-platform-slot"
-            style={{ visibility: i < 2 || expanded ? 'visible' : 'collapse' }}
-          >
+        {order.map((key) => (
+          <Panel key={key} className="member-platform-slot">
             {cards[key]}
           </Panel>
         ))}
       </Panel>
 
-      <Panel
-        className="member-other-payment-row"
-        style={{ visibility: expanded ? 'collapse' : 'visible' }}
-      >
-        <Button className="member-other-payment-btn" onactivate={() => setExpanded(true)}>
+      <Panel className="member-other-payment-row">
+        <Button className="member-other-payment-btn" onactivate={openUrl(GetMembershipPageUrl)}>
           <Label
             className="member-other-payment-label"
             text={$.Localize('#member_other_payment')}

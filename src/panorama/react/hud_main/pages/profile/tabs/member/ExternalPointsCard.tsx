@@ -15,7 +15,7 @@ interface ExternalPointsCardProps {
   name: string;
   desc: string;
   buttons: PointsButton[];
-  activateUrl: string;
+  activateUrl: () => string;
 }
 
 /** 外链积分卡（爱发电 / Ko-fi）：三档位按钮各自跳浏览器，底部保留手动激活链接。 */
@@ -29,26 +29,33 @@ export function ExternalPointsCard({
   activateUrl,
 }: ExternalPointsCardProps) {
   return (
-    <Panel className={`member-platform-card ${variantClassName}`}>
-      <PlatformCardHeader logoSrc={logoSrc} name={name} desc={desc} descClassName={descClassName} />
-      {buttons.map((btn, i) => (
-        <Button
-          key={i}
-          className="member-platform-btn member-platform-btn-subscribe points-external-btn"
-          onactivate={btn.onClick}
-        >
-          <Panel className="subscribe-price-row">
-            <Label className="subscribe-price-main" text={btn.label} />
-            <Label className="subscribe-price-unit" text={btn.price} />
-          </Panel>
-        </Button>
-      ))}
+    <Panel className={`member-platform-card member-platform-card-layered ${variantClassName}`}>
+      <Panel className="member-platform-card-body">
+        <PlatformCardHeader
+          logoSrc={logoSrc}
+          name={name}
+          desc={desc}
+          descClassName={descClassName}
+        />
+        {buttons.map((btn, i) => (
+          <Button
+            key={i}
+            className="member-platform-btn member-platform-btn-subscribe points-external-btn"
+            onactivate={btn.onClick}
+          >
+            <Panel className="subscribe-price-row">
+              <Label className="subscribe-price-main" text={btn.label} />
+              <Label className="subscribe-price-unit" text={btn.price} />
+            </Panel>
+          </Button>
+        ))}
+      </Panel>
       <ActivateRow activateUrl={activateUrl} />
     </Panel>
   );
 }
 
-function ActivateRow({ activateUrl }: { activateUrl: string }) {
+function ActivateRow({ activateUrl }: { activateUrl: () => string }) {
   const tipRef = useRef<ImagePanel | null>(null);
   const tooltipText = $.Localize('#member_activate_tooltip');
   return (

@@ -4,6 +4,7 @@ import { PlayerHelper } from '../modules/helper/player-helper';
 import { GameEndDto } from './analytics/dto/game-end-dto';
 import { GA4ConfigDto } from './analytics/ga4/dto/ga4-dto';
 import { GA4 } from './analytics/ga4/ga4';
+import { UsesLauncherSettleLog } from './launcher-settle-log';
 import { ApiClient, HttpMethod } from './api-client';
 import { Player, PlayerInfoDto, PointInfoDto } from './player';
 import { PlayerSnapshot } from './player-snapshot';
@@ -19,41 +20,87 @@ export class Game {
   public static readonly GAME_START_URL = '/game/start';
   public static readonly GAME_END_URL = '/game/end';
   public static readonly LOCAL_GAME_END_URL = '/game/end/local';
+  public static customMatchId = '';
 
   constructor() {}
 
+  private static loadedSteamIds = new Set<number>();
+  private static routeSelected = false;
+  private static offline = false;
+  private static firstLoadDone = false;
+  private static playerDataLoadedListeners: (() => void)[] = [];
+
+  /** 玩家数据（线上或离线快照）写入后的回调，英雄可能早于数据出生，需要补应用 */
+  public static OnPlayerDataLoaded(listener: () => void) {
+    Game.playerDataLoadedListeners.push(listener);
+  }
+
+  private static NotifyPlayerDataLoaded() {
+    for (const listener of Game.playerDataLoadedListeners) {
+      listener();
+    }
+  }
+
   public static StartGame() {
+    if (Game.customMatchId === '') {
+      // Lua's math.random is unseeded and repeats the same IDs on every launch.
+      Game.customMatchId = `${RandomInt(0, 999999999)}-${RandomInt(0, 999999999)}`;
+    }
     CustomNetTables.SetTableValue('loading_status', 'loading_status', {
       status: 1,
     });
-    // get IsValidPlayer player's steamIds
+    // 自建专用服第一名玩家连入就进入设置阶段，其余玩家陆续连入，需要按人补拉
+    ListenToGameEvent(
+      'player_connect_full',
+      () => Timers.CreateTimer(1, () => Game.LoadNewPlayers(false)),
+      undefined,
+    );
+    ApiClient.SelectRoute(() => {
+      Game.routeSelected = true;
+      Game.LoadNewPlayers(true);
+    });
+  }
+
+  private static LoadNewPlayers(isFirst: boolean) {
+    // 选路完成前连入的玩家由首次拉取一并带上
+    if (!Game.routeSelected) return;
+
     const steamIds: number[] = [];
-    let playerCount = 0;
     PlayerHelper.ForEachPlayer((playerId) => {
       const steamId = PlayerResource.GetSteamAccountID(playerId);
+      if (steamId === 0 || Game.loadedSteamIds.has(steamId)) return;
+      Game.loadedSteamIds.add(steamId);
       steamIds.push(steamId);
-      playerCount++;
     });
-    Player.playerCount = playerCount;
+    if (!isFirst && steamIds.length === 0) return;
+    Player.playerCount = Game.loadedSteamIds.size;
 
     const matchId = GameRules.Script_GetMatchID().toString();
 
     // 定义成功回调
     const onSuccess = (data: string) => {
       const gameStart = json.decode(data)[0] as GameStart;
+      if (isFirst) {
+        Game.firstLoadDone = true;
+        Game.offline = false;
+      }
 
       // Initialize GA4 if config is provided (only for official servers)
-      if (gameStart.ga4Config) {
-        GA4.Initialize(gameStart.ga4Config);
-        print(`[Game] GA4 initialized with measurementId: ${gameStart.ga4Config.measurementId}`);
-      } else {
-        print('[Game] GA4 config not provided (non-official server)');
+      if (isFirst) {
+        if (gameStart.ga4Config) {
+          GA4.Initialize(gameStart.ga4Config);
+          print(`[Game] GA4 initialized with measurementId: ${gameStart.ga4Config.measurementId}`);
+        } else {
+          print('[Game] GA4 config not provided (non-official server)');
+        }
       }
 
       // 走 MergePlayerInfo 统一写入入口；首次 existing 为空，merge 等价覆盖
       for (const player of gameStart.players) {
         Player.MergePlayerInfo(player);
       }
+      // 英雄可能早于数据到达而出生，补上会员、觉醒、属性等效果
+      Game.NotifyPlayerDataLoaded();
 
       Game.PublishGamePresets();
 
@@ -79,6 +126,7 @@ export class Game {
         });
       }
 
+      if (!isFirst) return;
       const status = gameStart.players.length > 0 ? 2 : 3;
       CustomNetTables.SetTableValue('loading_status', 'loading_status', {
         status,
@@ -87,25 +135,46 @@ export class Game {
 
     // 定义失败回调
     const onFailure = (_: string) => {
-      const snapshotDate = PlayerSnapshot.Load();
-      Game.PublishGamePresets();
-      CustomNetTables.SetTableValue('loading_status', 'loading_status', {
-        status: 3,
-        snapshotDate,
-      });
+      // 首次拉取已成功时不读快照，否则会用快照覆盖先到玩家的在线数据
+      if (!isFirst && !Game.offline) {
+        print(`[Game] load failed for late players: ${steamIds.join(',')}`);
+        return;
+      }
+      // 选英雄阶段已改用快照的，不再重复读取
+      if (isFirst && Game.offline) return;
+      Game.firstLoadDone = true;
+      Game.UseOfflineSnapshot(isFirst);
     };
 
-    const apiParameter = {
+    ApiClient.sendWithRetry({
       method: HttpMethod.GET,
       path: Game.GAME_START_URL,
       querys: { steamIds: steamIds.join(','), matchId, version: GameConfig.GAME_VERSION },
       successFunc: onSuccess,
       failureFunc: onFailure,
       timeoutSeconds: 15,
-      retryTimes: 6,
-    };
+    });
+  }
 
-    ApiClient.sendWithRetry(apiParameter);
+  /** 技能抽选在英雄出生时按会员等级定数量，进入 PRE_GAME 仍没有玩家数据时直接用离线快照，不等请求超时 */
+  public static EnsurePlayerData() {
+    if (Game.firstLoadDone) return;
+    Game.firstLoadDone = true;
+    print('[Game] player data not ready at pre game, using offline snapshot');
+    Game.UseOfflineSnapshot(true);
+  }
+
+  private static UseOfflineSnapshot(isFirst: boolean) {
+    Game.offline = true;
+    const snapshotDate = PlayerSnapshot.Load();
+    Game.NotifyPlayerDataLoaded();
+    Game.PublishGamePresets();
+    if (!isFirst) return;
+    CustomNetTables.SetTableValue('loading_status', 'loading_status', {
+      status: 3,
+      snapshotDate,
+      dedicated: UsesLauncherSettleLog() ? 1 : 0,
+    });
   }
 
   /** 按 playerId 发布玩家存过的游戏预设，方便加载界面用 GetLocalPlayerID 读取 */
@@ -124,26 +193,29 @@ export class Game {
     });
   }
 
-  public static EndGame(gameEndDto: GameEndDto) {
+  public static EndGame(gameEndDto: GameEndDto, onDone?: (recorded: boolean) => void) {
     CustomNetTables.SetTableValue('ending_status', 'ending_status', {
       status: 1,
     });
 
+    const isLocalhost = ApiClient.IsLocalhost();
     const apiParameter = {
       method: HttpMethod.POST,
-      path: ApiClient.IsLocalhost() ? Game.LOCAL_GAME_END_URL : Game.GAME_END_URL,
+      path: isLocalhost ? Game.LOCAL_GAME_END_URL : Game.GAME_END_URL,
       body: gameEndDto,
+      // 三次尝试要在基地锁血的等待上限内跑完；后端处理最慢约 1 秒，超时回来时前一次已记上
+      timeoutSeconds: 3,
+      // 后端成功时固定回 OK，非 OK 的 2xx 说明响应不是后端给的
+      validateResponse: (data: string) => data === 'OK',
       successFunc: (data: string) => {
-        // CustomNetTables.SetTableValue('ending_status', 'ending_status', {
-        //   status: 2,
-        // });
+        // 启动器联机房间靠这行日志判断结算已结束，改写法要同步启动器
         print(`[Game] end game callback data ${data}`);
+        onDone?.(true);
       },
       failureFunc: (data: string) => {
-        // CustomNetTables.SetTableValue('ending_status', 'ending_status', {
-        //   status: 3,
-        // });
+        // 启动器联机房间靠这行日志判断结算已结束，改写法要同步启动器
         print(`[Game] end game callback data ${data}`);
+        onDone?.(false);
       },
     };
 

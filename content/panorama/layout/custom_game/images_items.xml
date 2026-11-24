@@ -7,6 +7,7 @@
 			<Image id="abyssal_blade_v2" class="SeqImg" src="file://{images}/items/abyssal_blade_v2.png" />
 			<Image id="adi_king" class="SeqImg" src="file://{images}/items/adi_king.png" />
 			<Image id="adi_king_plus" class="SeqImg" src="file://{images}/items/adi_king_plus.png" />
+			<Image id="aeon_amulet" class="SeqImg" src="file://{images}/items/aeon_amulet.png" />
 			<Image id="aeon_pendant" class="SeqImg" src="file://{images}/items/aeon_pendant.png" />
 			<Image id="aether_lens_2" class="SeqImg" src="file://{images}/items/aether_lens_2.png" />
 			<Image id="anyingcaijue" class="SeqImg" src="file://{images}/items/anyingcaijue.png" />
@@ -52,8 +53,9 @@
 			<Image id="dragon_ball_7" class="SeqImg" src="file://{images}/items/dragon_ball_7.png" />
 			<Image id="echo_sabre_2" class="SeqImg" src="file://{images}/items/echo_sabre_2.png" />
 			<Image id="essence_distiller_2" class="SeqImg" src="file://{images}/items/essence_distiller_2.png" />
-			<Image id="eternal_shroud_ultra" class="SeqImg" src="file://{images}/items/eternal_shroud_ultra.png" />
 			<Image id="excalibur" class="SeqImg" src="file://{images}/items/excalibur.png" />
+			<Image id="exchange" class="SeqImg" src="file://{images}/items/exchange.png" />
+			<Image id="fall_fall_fall" class="SeqImg" src="file://{images}/items/fall_fall_fall.png" />
 			<Image id="force_staff_2" class="SeqImg" src="file://{images}/items/force_staff_2.png" />
 			<Image id="force_staff_3" class="SeqImg" src="file://{images}/items/force_staff_3.png" />
 			<Image id="foulfells_satanic" class="SeqImg" src="file://{images}/items/foulfells_satanic.png" />
@@ -71,7 +73,6 @@
 			<Image id="hallowed_scepter" class="SeqImg" src="file://{images}/items/hallowed_scepter.png" />
 			<Image id="hand_of_group" class="SeqImg" src="file://{images}/items/hand_of_group.png" />
 			<Image id="hawkeye_turret" class="SeqImg" src="file://{images}/items/hawkeye_turret.png" />
-			<Image id="heavens_halberd_2" class="SeqImg" src="file://{images}/items/heavens_halberd_2.png" />
 			<Image id="heavens_halberd_v2" class="SeqImg" src="file://{images}/items/heavens_halberd_v2.png" />
 			<Image id="hurricane_pike_2" class="SeqImg" src="file://{images}/items/hurricane_pike_2.png" />
 			<Image id="hydras_breath_2" class="SeqImg" src="file://{images}/items/hydras_breath_2.png" />
@@ -100,7 +101,6 @@
 			<Image id="power" class="SeqImg" src="file://{images}/items/power.png" />
 			<Image id="qiji" class="SeqImg" src="file://{images}/items/qiji.png" />
 			<Image id="quelling_blade_2_datadriven" class="SeqImg" src="file://{images}/items/quelling_blade_2_datadriven.png" />
-			<Image id="radar_of_dragon" class="SeqImg" src="file://{images}/items/radar_of_dragon.png" />
 			<Image id="radiance_2" class="SeqImg" src="file://{images}/items/radiance_2.png" />
 			<Image id="radiance_2_inactive" class="SeqImg" src="file://{images}/items/radiance_2_inactive.png" />
 			<Image id="rapier_ultra" class="SeqImg" src="file://{images}/items/rapier_ultra.png" />

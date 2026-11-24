@@ -1,6 +1,5 @@
 import { PlayerHelper } from '../modules/helper/player-helper';
 import {
-  AwakenedHeroDto,
   GamePresetCustomOptions,
   MemberDto,
   MemberLevel,
@@ -182,7 +181,7 @@ export class PlayerSnapshot {
   private static ToPlayerPartial(steamId: number, row: SnapshotRow): Partial<PlayerInfoDto> {
     const seasonLevel = PlayerSnapshot.ToNumber(row.seasonLevel);
     const memberLevel = PlayerSnapshot.ToNumber(row.memberLevel);
-    const properties = PlayerSnapshot.ToProperties(steamId, row.properties);
+    const properties = PlayerSnapshot.ToProperties(row.properties);
     // 属性点只是等级与加点的加减，游戏侧现算可省去导出；等级本身涉及档位公式，仍以导出值为准
     const totalLevel = seasonLevel + memberLevel;
     const usedLevel = properties.reduce((sum, property) => sum + property.level, 0);
@@ -200,7 +199,7 @@ export class PlayerSnapshot {
     };
   }
 
-  private static ToProperties(steamId: number, raw: unknown): PlayerProperty[] {
+  private static ToProperties(raw: unknown): PlayerProperty[] {
     const properties: PlayerProperty[] = [];
     // 玩家没花过属性点时整个子表不存在
     if (!raw) {
@@ -208,16 +207,16 @@ export class PlayerSnapshot {
     }
     const levelByName = raw as Record<string, unknown>;
     for (const name in levelByName) {
-      properties.push({ steamId, name, level: PlayerSnapshot.ToNumber(levelByName[name]) });
+      properties.push({ name, level: PlayerSnapshot.ToNumber(levelByName[name]) });
     }
     return properties;
   }
 
-  private static ToAwakenedHeroes(row: SnapshotRow): AwakenedHeroDto[] {
-    const heroes: AwakenedHeroDto[] = [];
+  private static ToAwakenedHeroes(row: SnapshotRow): string[] {
+    const heroes: string[] = [];
     // 数字 key 只是 KV 表示数组的占位，取值即可
     for (const index in row) {
-      heroes.push({ heroName: tostring(row[index]) });
+      heroes.push(tostring(row[index]));
     }
     return heroes;
   }

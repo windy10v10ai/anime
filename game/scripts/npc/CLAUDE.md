@@ -13,7 +13,7 @@
 | `npc_items_custom.txt` | `npc_items_modifier.txt`<br>`npc_items_artifact.txt`<br>`npc_items_clone.txt` | 自制物品。modifier 放物品间共享的 DataDriven modifier（`item_apply_modifiers` 引用），artifact 放神器，clone 放原版物品的倍率克隆 |
 | `npc_units_custom.txt` | `npc_units_building.txt`<br>`npc_units_creep.txt`<br>`npc_units_neutral.txt` | 自定义单位 |
 
-其余独立文件：`npc_heroes_custom.txt`（英雄覆盖与 `Bot.Build` 加点）、`herolist.txt`（可选英雄开关）、`neutral_items.txt`（中立物品掉落表，改动需同步 `src/vscripts/ai/item/neutral-item.ts` 的 `GetDefaultConfig`）、`portraits_custom.txt`（自定义模型头像）。
+其余独立文件：`npc_heroes_custom.txt`（英雄覆盖与 `Bot.Build` 加点，改加点前先调用 `update-bot-hero-build` skill，哪些等级没有技能点、每级最多几点都在那里）、`herolist.txt`（可选英雄开关）、`neutral_items.txt`（中立物品掉落表，改动需同步 `src/vscripts/ai/item/neutral-item.ts` 的 `GetDefaultConfig`）、`portraits_custom.txt`（自定义模型头像）。
 
 `npc_items_clone.txt` 由 `clone-item` skill 生成，勿手改。
 
@@ -54,3 +54,48 @@ comm -12 /tmp/ours.txt /tmp/valve.txt   # 有输出即冲突
 ## 格式
 
 所有 `.txt` 全程使用 **tab**，包括行首缩进与 key/value 之间的对齐间距，不得用空格。
+
+## 数值配置
+
+- **override 只写与原版不同的键**：要恢复原版值时删掉该键，不写一个等于原版的值。某个原版值不能被调整时，在该技能块内、该键原本的位置写一行注释说明原因
+
+技能射程、伤害值及其他可调参数一律从 KV 文件**动态读取**，不要在 TS/Lua 里硬编码已存在于 KV 中的数值。
+
+- **让 tooltip 计入技能增强**：某条 `AbilityValues` 数值想在游戏中按住 ALT 时显示「被技能增强放大后」的值，在该数值块内加 `"CalculateSpellDamageTooltip" "1"`（**不是** `affected_by_spell_amplify`，没有这个字段）。原版默认多为 `"0"`（不计入）。配套字段：`"DamageTypeTooltip"`（伤害类型）、`"display_type"`（如 `kMagicalDamagePercentage` 百分比显示）
+
+## 预载入资源
+
+通用预载入（`src/vscripts/utils/precache.ts`）在开局扫 `npc_items_custom.txt`、`npc_abilities_custom_lottery.txt`、`npc_abilities_custom_awaken.txt` 里的字符串**值**，Lua/TS 里临时给路径或按等级拼名字的粒子、模型扫不到，首次出现时引擎会断言并卡一帧。
+
+- **不扫 `npc_abilities_custom.txt`**：开局同时加载的资源数有引擎上限（32767，超出即 `CUtlBlockVector<...CLoadingResource...>::GrowCount` 崩溃），抽奖池按英雄目录整包预载后已贴近上限。该文件里挂在英雄技能栏（`npc_heroes_custom.txt` 的 `AbilityN`）上的技能由引擎在选定英雄时按其 `"precache"` 块加载；会在对局中加给任意英雄的技能（抽奖池、觉醒）要放 lottery / awaken 文件才会被预载
+- **就近登记到使用它的技能或物品块**：在该块加 `"precache"`，路径写值，同键 `"particle"` / `"model"` 可重复，删技能时一并删掉。`npc_abilities_override.txt` 不在扫描范围，写在它里面不生效
+- **共用工具库创建的资源**（飘字、吸血等没有单一所属技能）才放 `src/vscripts/utils/precache-data.ts` 的 `luaParticleNameList`
+- **登记前确认文件存在**：路径写错或文件缺失，启动时只会多一条 `Failed loading resource`，不会补上缺的资源
+
+## 原版 KV 参考
+
+`<version>` 取 `docs/reference/` 下最新版本目录（含字母后缀，如 `7.41f` 新于 `7.41`）。
+
+| 用途 | 路径 |
+|------|------|
+| 原版技能（非英雄技能） | `docs/reference/<version>/npc_abilities.txt` |
+| 英雄基础属性、技能槽位、技能 KV | `docs/reference/<version>/heroes/npc_dota_hero_<hero>.txt` |
+| 英雄列表 | `docs/reference/<version>/npc_heroes.txt` |
+| 原版物品 | `docs/reference/<version>/items.txt` |
+| 官方 ability/item ID 占用表 | `docs/reference/<version>/npc_ability_ids.txt` |
+| 官方说明文本 | `docs/reference/<version>/abilities_schinese.txt` / `abilities_english.txt` |
+
+7.41f 起英雄数据全部并入 `heroes/npc_dota_hero_<hero>.txt`，`npc_heroes.txt` 只剩 `#base` 列表，`npc_abilities.txt` 里查不到英雄技能；更早版本英雄属性与槽位在 `npc_heroes.txt`，`heroes/` 下只有技能。
+
+### 查原版技能
+
+- **系统名**（如 `dragon_knight_dragon_blood`）：直接使用
+- **中文名**（如「龙血」）或**英雄名-技能名**（如「幻影刺客-幻影之矛」）：在 `abilities_schinese.txt` 搜中文名，从匹配行的 key `DOTA_Tooltip_ability_<系统名>` 取系统名；多个候选用 `AskUserQuestion` 让用户确认
+- **英雄名**：从 `heroes/` 文件名或 `abilities_schinese.txt` 定位英雄 ID，再从 `heroes/npc_dota_hero_<hero>.txt` 读技能槽位
+- 显示名可能与系统名不同（显示名 "Sproink" 的系统名是 `enchantress_bunny_hop`），以 `DOTA_Tooltip_ability_<系统名>` 的对应关系为准
+
+编写自定义技能/物品说明时 grep 两份官方说明文本里的 `DOTA_Tooltip_ability_<系统名>`，对齐术语。
+
+## 图标
+
+`AbilityTextureName` 引用 Dota2 已有的原版 texture 时直接写名字，无需放 png。自定义图标要放 png 并登记，走 `add-image` skill（漏步骤就是紫块）。
