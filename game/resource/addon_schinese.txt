@@ -110,7 +110,7 @@
 		"player_info_refresh"				"刷新"
 
 		// 相关链接
-		"anime_version_button"			"二次元版"
+		"original_version_button"		"10v10AI 原版"
 		"dota_survivor_button"			"联动地图 刀塔幸存者"
 		"join_qq"						"点击加群"
 		"join_discord"					"点击加入Discord"

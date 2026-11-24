@@ -110,7 +110,7 @@
 		"player_info_refresh"				"Refresh"
 
 		// 相关链接
-		"anime_version_button"			"Anime Version"
+		"original_version_button"		"10v10AI Original"
 		"dota_survivor_button"			"Also check out: Dota Survivor"
 		"join_qq"						"Click to join the QQ"
 		"join_discord"					"Click to join the Discord"
